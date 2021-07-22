@@ -196,4 +196,16 @@ public:
     
     > usdrates_index;
 
+
+
+    struct [[eosio::table]] usdrates2 {
+        uint64_t id;
+        eosio::time_point_sec created_at;
+        
+        uint64_t primary_key() const {return id;}
+    };
+
+
+    typedef eosio::multi_index<"usdrates2"_n, usdrates2> usdrates2_index;
+
 };

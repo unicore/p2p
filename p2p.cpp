@@ -533,15 +533,26 @@ void p2p::uprate(eosio::name out_contract, eosio::asset out_asset){
     
     } else {
 
-      double rate = usd_rate -> rate  + (double(eosio::current_time_point().sec_since_epoch() - usd_rate -> updated_at.sec_since_epoch() ) / (double)86400 * (double)_PERCENTS_PER_MONTH / (double)30);
-      print("rate:", rate);
+      double rate = usd_rate -> rate  + (double(eosio::current_time_point().sec_since_epoch() - usd_rate -> updated_at.sec_since_epoch() ) / (double)86400 * (double)_PERCENTS_PER_MONTH / (double)30 / (double)100);
 
       rates_by_contract_and_symbol.modify(usd_rate, "eosio"_n, [&](auto &r){
       
         r.rate = rate;
         r.updated_at = eosio::time_point_sec(eosio::current_time_point().sec_since_epoch());
       
-      });    
+      }); 
+
+      
+      usdrates2_index usdrates2(_me, _me.value);
+      auto usdrate2 = usdrates2.find(usd_rate -> id);
+
+      if (usdrate2 == usdrates2.end()){
+        usdrates2.emplace(_me, [&](auto &ur2){
+          ur2.id = usd_rate -> id;
+          ur2.created_at = eosio::time_point_sec(eosio::current_time_point().sec_since_epoch());
+        });
+      }
+
 
     }
 

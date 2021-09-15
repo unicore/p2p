@@ -55,7 +55,7 @@ public:
     static constexpr eosio::name _me = "p2p"_n;
     static constexpr eosio::name _curator = "p2p"_n;
     static constexpr eosio::name _rater = "rater"_n;
-    static constexpr eosio::symbol _SYM     = eosio::symbol(eosio::symbol_code("FLO"), 4);
+    static constexpr eosio::symbol _SYM     = eosio::symbol(eosio::symbol_code("FLOWER"), 4);
     static const uint64_t _PERCENTS_PER_MONTH = 10;
 
 

@@ -442,12 +442,11 @@ void p2p::cancel(name username, uint64_t id)
         });
 
       } else if (order -> status == "waiting"_n) {
-        //Если родительский ордер заполнен, то позволяем отменить его любой стороне сделки.
-        if (parent_order -> root_remain.amount == 0) {
+        // if (parent_order -> root_remain.amount == 0) {
           eosio::check(has_auth(order->creator) || has_auth(order->parent_creator), "missing required authority");
-        } else {
-          eosio::check(order -> creator == username, "Only creator can cancel order2");
-        }
+        // } else {
+          // eosio::check(order -> creator == username, "Only creator can cancel order2");
+        // }
 
 
         if (order -> type == "sell"_n) {
@@ -558,6 +557,7 @@ void p2p::uprate(eosio::name out_contract, eosio::asset out_asset){
 
 
 }
+
 
 void p2p::setrate(eosio::name out_contract, eosio::asset out_asset, double rate)
 {

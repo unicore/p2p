@@ -505,56 +505,69 @@ void p2p::del(name username, uint64_t id) //удаление завершенн�
 
 }
 
+void p2p::delrate(uint64_t id){
+  
+  require_auth( "eosio"_n );
+  usdrates_index usd_rates(_me, _me.value);
+
+  auto rate = usd_rates.find(id);
+  usd_rates.erase(rate);
+
+}
+
 void p2p::uprate(eosio::name out_contract, eosio::asset out_asset){
   
   require_auth( "eosio"_n );
   
-  usdrates_index usd_rates(_me, _me.value);
+  if (_ENABLE_GROWHT == true) {
 
-  auto rates_by_contract_and_symbol = usd_rates.template get_index<"byconsym"_n>();
-  auto contract_and_symbol_index = combine_ids(out_contract.value, out_asset.symbol.code().raw());
-  
-  eosio::check(out_contract == "eosio.token"_n && out_asset.symbol == _SYM, "Only system asset can be used for uprate");
+    usdrates_index usd_rates(_me, _me.value);
 
-  auto usd_rate = rates_by_contract_and_symbol.find(contract_and_symbol_index);
-
-  if (usd_rate == rates_by_contract_and_symbol.end()) {
-
-      usd_rates.emplace("eosio"_n, [&](auto &r){
-
-        r.id = usd_rates.available_primary_key();
-        r.out_contract = out_contract;
-        r.out_asset = out_asset;
-        r.rate = 1;
-        r.updated_at = eosio::time_point_sec(eosio::current_time_point().sec_since_epoch());
-
-      });
+    auto rates_by_contract_and_symbol = usd_rates.template get_index<"byconsym"_n>();
+    auto contract_and_symbol_index = combine_ids(out_contract.value, out_asset.symbol.code().raw());
     
-    } else {
+    eosio::check(out_contract == "eosio.token"_n && out_asset.symbol == _SYM, "Only system asset can be used for uprate");
 
-      double rate = usd_rate -> rate  + (double(eosio::current_time_point().sec_since_epoch() - usd_rate -> updated_at.sec_since_epoch() ) / (double)86400 * (double)_PERCENTS_PER_MONTH / (double)30 / (double)100);
+    auto usd_rate = rates_by_contract_and_symbol.find(contract_and_symbol_index);
 
-      rates_by_contract_and_symbol.modify(usd_rate, "eosio"_n, [&](auto &r){
-      
-        r.rate = rate;
-        r.updated_at = eosio::time_point_sec(eosio::current_time_point().sec_since_epoch());
-      
-      }); 
+    if (usd_rate == rates_by_contract_and_symbol.end()) {
 
-      
-      usdrates2_index usdrates2(_me, _me.value);
-      auto usdrate2 = usdrates2.find(usd_rate -> id);
+        usd_rates.emplace("eosio"_n, [&](auto &r){
 
-      if (usdrate2 == usdrates2.end()){
-        usdrates2.emplace(_me, [&](auto &ur2){
-          ur2.id = usd_rate -> id;
-          ur2.created_at = eosio::time_point_sec(eosio::current_time_point().sec_since_epoch());
+          r.id = usd_rates.available_primary_key();
+          r.out_contract = out_contract;
+          r.out_asset = out_asset;
+          r.rate = _START_RATE;
+          r.updated_at = eosio::time_point_sec(eosio::current_time_point().sec_since_epoch());
+
         });
+      
+      } else {
+
+        double rate = usd_rate -> rate  + usd_rate -> rate * (double(eosio::current_time_point().sec_since_epoch() - usd_rate -> updated_at.sec_since_epoch() ) / (double)86400 * (double)_PERCENTS_PER_MONTH / (double)30 / (double)100);
+
+        rates_by_contract_and_symbol.modify(usd_rate, "eosio"_n, [&](auto &r){
+        
+          r.rate = rate;
+          r.updated_at = eosio::time_point_sec(eosio::current_time_point().sec_since_epoch());
+        
+        }); 
+
+        
+        usdrates2_index usdrates2(_me, _me.value);
+        auto usdrate2 = usdrates2.find(usd_rate -> id);
+
+        if (usdrate2 == usdrates2.end()){
+          usdrates2.emplace(_me, [&](auto &ur2){
+            ur2.id = usd_rate -> id;
+            ur2.created_at = eosio::time_point_sec(eosio::current_time_point().sec_since_epoch());
+          });
+        }
+
+
       }
 
-
-    }
-
+  }
 
 }
 
@@ -563,7 +576,7 @@ void p2p::setrate(eosio::name out_contract, eosio::asset out_asset, double rate)
 {
     require_auth(_rater); 
 
-    eosio::check(out_contract == ""_n, "Out contract is not supported now");  
+    // eosio::check(out_contract == ""_n, "Out contract is not supported now");  
 
     usdrates_index usd_rates(_me, _me.value);
 
@@ -617,6 +630,8 @@ extern "C" {
             execute_action(name(receiver), name(code), &p2p::setrate);
           } else if (action == "uprate"_n.value){
             execute_action(name(receiver), name(code), &p2p::uprate);
+          } else if (action == "delrate"_n.value){
+            execute_action(name(receiver), name(code), &p2p::delrate);
           } 
 
 

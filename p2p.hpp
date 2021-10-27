@@ -50,6 +50,8 @@ public:
     [[eosio::action]]
     void uprate(eosio::name out_contract, eosio::asset out_asset);
      
+    [[eosio::action]]
+    void delrate(uint64_t id);
     
     
     static constexpr eosio::name _me = "p2p"_n;
@@ -58,10 +60,11 @@ public:
     static constexpr eosio::symbol _SYM     = eosio::symbol(eosio::symbol_code("FLOWER"), 4);
     static const uint64_t _PERCENTS_PER_MONTH = 10;
 
+    static const bool _ENABLE_GROWHT = true;
 
     // static const uint64_t _ORDER_EXPIRATION = 10; //10 secs
     static const uint64_t _ORDER_EXPIRATION = 30 * 60; //30 mins
-
+    static constexpr double _START_RATE = 0.5;
 
     struct [[eosio::table]] balance {
         uint64_t id;

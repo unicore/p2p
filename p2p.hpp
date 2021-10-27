@@ -57,10 +57,10 @@ public:
     static constexpr eosio::name _me = "p2p"_n;
     static constexpr eosio::name _curator = "p2p"_n;
     static constexpr eosio::name _rater = "rater"_n;
-    static constexpr eosio::symbol _SYM     = eosio::symbol(eosio::symbol_code("FLOWER"), 4);
+    static constexpr eosio::symbol _SYM     = eosio::symbol(eosio::symbol_code("GAIA"), 4);
     static const uint64_t _PERCENTS_PER_MONTH = 10;
 
-    static const bool _ENABLE_GROWHT = true;
+    static const bool _ENABLE_GROWHT = false;
 
     // static const uint64_t _ORDER_EXPIRATION = 10; //10 secs
     static const uint64_t _ORDER_EXPIRATION = 30 * 60; //30 mins

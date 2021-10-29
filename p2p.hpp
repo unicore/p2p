@@ -21,6 +21,12 @@ public:
     static void add_balance(eosio::name payer, eosio::asset quantity, eosio::name contract);   
     static void sub_balance(eosio::name username, eosio::asset quantity, eosio::name contract);
 
+    static void addbbal(eosio::name host, eosio::name contract, eosio::asset quantity);
+    static void subbbal(eosio::name host, eosio::name contract, eosio::asset quantity);
+
+
+    static void check_bonuse_system(eosio::name creator, eosio::asset quantity);
+
     static uint64_t get_order_id();
 
     [[eosio::action]]
@@ -53,11 +59,19 @@ public:
     [[eosio::action]]
     void delrate(uint64_t id);
     
+    [[eosio::action]]
+    void setbrate(eosio::name host, double distribution_rate);
+    
+
+    
+    
     
     static constexpr eosio::name _me = "p2p"_n;
     static constexpr eosio::name _curator = "p2p"_n;
     static constexpr eosio::name _rater = "rater"_n;
     static constexpr eosio::symbol _SYM     = eosio::symbol(eosio::symbol_code("NBT"), 4);
+    static constexpr eosio::name _core = "unicore"_n;
+    
     static const uint64_t _PERCENTS_PER_MONTH = 10;
 
     static const bool _ENABLE_GROWHT = false;
@@ -210,5 +224,21 @@ public:
 
 
     typedef eosio::multi_index<"usdrates2"_n, usdrates2> usdrates2_index;
+
+
+
+    struct [[eosio::table]] bbonuses {
+        eosio::name host;
+        eosio::name contract;
+        eosio::asset total;
+        eosio::asset available;
+        eosio::asset distributed;
+        double distribution_rate;
+
+        uint64_t primary_key() const {return host.value;}
+    };
+
+
+    typedef eosio::multi_index<"bbonuses"_n, bbonuses> bbonuses_index;
 
 };

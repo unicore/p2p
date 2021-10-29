@@ -27,6 +27,122 @@ void p2p::add_balance(eosio::name payer, eosio::asset quantity, eosio::name cont
   
 }
 
+
+//Бонусный баланс пополняется только прямым переводом от хоста
+void p2p::addbbal(eosio::name host, eosio::name contract, eosio::asset quantity){
+    require_auth(host);
+
+    bbonuses_index bonuses(_me, _me.value);
+    
+    auto bonuse_bal = bonuses.find(host.value);
+
+    if (bonuse_bal  == bonuses.end()) {
+
+      bonuses.emplace(_me, [&](auto &b) {
+        b.host = host;
+        b.contract = contract;
+        b.total = quantity;
+        b.available = quantity;
+        b.distributed = asset(0, quantity.symbol);
+        b.distribution_rate = 0;
+      }); 
+
+    } else {
+      eosio::check(bonuse_bal -> contract == contract, "Wrong contract for add to bonuse balance");
+
+      bonuses.modify(bonuse_bal, _me, [&](auto &b){
+        b.total += quantity;
+        b.available += quantity;
+      });
+
+    };
+}
+
+
+//Бонусный баланс уменьшается путём перевода на аккаунт ядра на распределение в момент покупки здесь
+void p2p::subbbal(eosio::name host, eosio::name contract, eosio::asset quantity){
+    require_auth(host);
+
+    bbonuses_index bonuses(_me, _me.value);
+    
+    auto bonuse_bal = bonuses.find(host.value);
+
+    if (bonuse_bal  == bonuses.end()) {
+
+      eosio::check(false, "Cannot spread bonuse balance without balance");
+
+    } else {
+      eosio::check(bonuse_bal -> contract == contract, "Wrong contract for add to bonuse balance");
+
+      bonuses.modify(bonuse_bal, _me, [&](auto &b) {
+        b.available -= quantity;
+        b.distributed += quantity;
+      });
+
+    };
+}
+
+
+//Установка курсу конвертации в бонусы
+void p2p::setbrate(eosio::name host, double distribution_rate) {
+
+    require_auth(host);
+
+    bbonuses_index bonuses(_me, _me.value);
+    
+    auto bonuse_bal = bonuses.find(host.value);
+
+    eosio::check(bonuse_bal != bonuses.end(), "Bonus balance is not exist");
+    
+    bonuses.modify(bonuse_bal, _me, [&](auto &b) {
+      b.distribution_rate = distribution_rate;
+    });
+
+}
+
+//Установка курсу конвертации в бонусы
+void p2p::check_bonuse_system(eosio::name creator, eosio::asset quantity) {
+
+    bbonuses_index bonuses(_me, _me.value);
+    
+    auto bonuse_bal = bonuses.find(creator.value);
+
+    if (bonuse_bal != bonuses.end()) {
+     
+      eosio::asset to_distribution = asset(quantity.amount * bonuse_bal -> distribution_rate, quantity.symbol);
+    
+      if (to_distribution <= bonuse_bal -> available && to_distribution.amount > 0) {
+        
+        std::string st1 = "111";
+        std::string st2 = std::string(creator.to_string());
+        std::string st3 = "-";
+        
+        std::string st = std::string(st1 + st3 + st2 + st3 + st2);
+        
+        action(
+            permission_level{ _me, "active"_n },
+            bonuse_bal->contract, "transfer"_n,
+            std::make_tuple( _me, _core, to_distribution, st) 
+        ).send();
+
+        bonuses.modify(bonuse_bal, _me, [&](auto &b) {
+          b.available -= to_distribution;
+          b.distributed += to_distribution;
+        });  
+
+      }
+      
+
+    }
+    
+    
+}
+
+
+
+
+
+
 void p2p::sub_balance(eosio::name username, eosio::asset quantity, eosio::name contract){
     balances_index balances(_me, username.value);
     
@@ -228,7 +344,7 @@ void p2p::accept(name username, uint64_t id, std::string details) // подтв�
         action(
             permission_level{ _me, "active"_n },
             order->root_contract, "transfer"_n,
-            std::make_tuple( _me, order->creator, to_back, std::string("p2p-back")) 
+            std::make_tuple( _me, order->creator, to_back, std::string("p2pback")) 
         ).send();
     
       }
@@ -319,12 +435,15 @@ void p2p::approve(name username, uint64_t id) //подтверждение ус�
 
     if (order -> type == "buy"_n) {
       eosio::check(parent_order -> creator == username, "Waiting approve from creator of parent order");
-
+      print("TEST");
       action(
           permission_level{ _me, "active"_n },
           order->root_contract, "transfer"_n,
-          std::make_tuple( _me, order->creator, order->root_quantity, std::string("p2p-buy")) 
+          std::make_tuple( _me, order->creator, order->root_quantity, std::string("p2pbuy")) 
       ).send();
+
+      
+      check_bonuse_system(order->parent_creator, order->root_quantity);
     
     } else if (order -> type == "sell"_n) {
       eosio::check(order -> creator == username, "Waiting approve from creator of child order");
@@ -332,9 +451,12 @@ void p2p::approve(name username, uint64_t id) //подтверждение ус�
       action(
           permission_level{ _me, "active"_n },
           order->root_contract, "transfer"_n,
-          std::make_tuple( _me, parent_order->creator, order->root_quantity, std::string("p2p-sell")) 
+          std::make_tuple( _me, parent_order->creator, order->root_quantity, std::string("p2psell")) 
       ).send();
       
+      check_bonuse_system(order->creator, order->root_quantity);
+      
+
     } else {
 
       check(false, "System error 1");
@@ -387,23 +509,26 @@ void p2p::cancel(name username, uint64_t id)
     orders_index orders(_me, _me.value);
     auto order = orders.find(id);
     eosio::check(order != orders.end(), "Order is not found");
-        
+    
+    print("WHAT THE FUCK?");
     if (order -> parent_id == 0) {
 
+      print("WHAT THE FUCK?2");
       eosio::check(order -> creator == username, "Only creator can cancel order");
     
       if ((order -> status == "waiting"_n)){ 
-
+        print("WHAT THE FUCK?3");
         eosio::check(order -> root_locked.amount == 0, "Can not cancel order with locked amounts");
 
         if (order -> type == "sell"_n) {
-          
-          if (order->root_remain.amount > 0){
+
+          print("WHAT THE FUCK?4: ", order->root_contract, order->creator, order->root_remain);
+          if (order->root_remain.amount > 0) {
 
             action (
                 permission_level{ _me, "active"_n },
                 order->root_contract, "transfer"_n,
-                std::make_tuple( _me, order->creator, order->root_remain, std::string("p2p-cancel")) 
+                std::make_tuple( _me, order->creator, order->root_remain, std::string("p2pcancel")) 
             ).send();
 
           };
@@ -453,7 +578,7 @@ void p2p::cancel(name username, uint64_t id)
           action (
               permission_level{ _me, "active"_n },
               order->root_contract, "transfer"_n,
-              std::make_tuple( _me, order->creator, order->root_remain, std::string("p2p-cancel")) 
+              std::make_tuple( _me, order->creator, order->root_remain, std::string("p2pcancel")) 
           ).send(); 
         };
       };
@@ -632,6 +757,8 @@ extern "C" {
             execute_action(name(receiver), name(code), &p2p::uprate);
           } else if (action == "delrate"_n.value){
             execute_action(name(receiver), name(code), &p2p::delrate);
+          } else if (action == "setbrate"_n.value){
+            execute_action(name(receiver), name(code), &p2p::setbrate);
           } 
 
 
@@ -647,10 +774,22 @@ extern "C" {
                 std::string memo;
             };
 
-            auto op = eosio::unpack_action_data<transfer>();
-            if (op.to == p2p::_me){
 
-              p2p::add_balance(op.from, op.quantity, eosio::name(code));
+            
+            auto op = eosio::unpack_action_data<transfer>();
+            
+            if (op.to == p2p::_me) {
+
+              eosio::name host = name(op.memo.c_str());
+            
+              if (host.value == 0) {
+
+                p2p::add_balance(op.from, op.quantity, eosio::name(code));  
+
+              } else {
+                p2p::addbbal(host, eosio::name(code), op.quantity);
+              }
+              
             }
           }
         }

@@ -203,7 +203,7 @@ void p2p::createorder(name username, uint64_t parent_id, name type, eosio::name 
     //CHECK for currency which can be used as a quote and out
     check(quote_contract == ""_n, "quote contract is not need to set");
     check(quote_quantity.symbol == eosio::symbol(eosio::symbol_code("USD"),4), "Wrong symbol as a QUOTE");
-    check(asset(uint64_t(root_quantity.amount * quote_rate), quote_quantity.symbol) == quote_quantity, "root_quantity * quote_rate is not equal setted quote_quantity");
+    // check(asset(uint64_t(root_quantity.amount * quote_rate), quote_quantity.symbol) <= quote_quantity, "root_quantity * quote_rate is not equal setted quote_quantity");
     check(out_contract == ""_n, "out contract is not need to set right now");
     check(out_type == "crypto"_n, "only crypto types is accepted as a out currency");
     check(quote_type == "external"_n, "only external quote currency is accepted for now");
@@ -222,7 +222,7 @@ void p2p::createorder(name username, uint64_t parent_id, name type, eosio::name 
       check(parent_order -> parent_id == 0, "Parent order should not have a parent");
       check(parent_order -> root_remain >= root_quantity, "Not enought quantity in the parent order");
       check(parent_order -> root_contract == root_contract, "Wrong root contract in the parent order");
-      check(parent_order -> quote_rate == quote_rate, "quote_rate is not equal to parent");
+      // check(parent_order -> quote_rate == quote_rate, "quote_rate is not equal to parent");
       check(parent_order -> quote_quantity.symbol == quote_quantity.symbol, "Quote symbol is not equal");
       check(parent_order -> quote_contract == quote_contract, "Quote contract is not equal");
       check(parent_order -> out_quantity.symbol == out_quantity.symbol, "Out symbols is not equal");
@@ -435,7 +435,6 @@ void p2p::approve(name username, uint64_t id) //подтверждение ус�
 
     if (order -> type == "buy"_n) {
       eosio::check(parent_order -> creator == username, "Waiting approve from creator of parent order");
-      print("TEST");
       action(
           permission_level{ _me, "active"_n },
           order->root_contract, "transfer"_n,
@@ -510,19 +509,15 @@ void p2p::cancel(name username, uint64_t id)
     auto order = orders.find(id);
     eosio::check(order != orders.end(), "Order is not found");
     
-    print("WHAT THE FUCK?");
     if (order -> parent_id == 0) {
 
-      print("WHAT THE FUCK?2");
       eosio::check(order -> creator == username, "Only creator can cancel order");
     
       if ((order -> status == "waiting"_n)){ 
-        print("WHAT THE FUCK?3");
         eosio::check(order -> root_locked.amount == 0, "Can not cancel order with locked amounts");
 
         if (order -> type == "sell"_n) {
 
-          print("WHAT THE FUCK?4: ", order->root_contract, order->creator, order->root_remain);
           if (order->root_remain.amount > 0) {
 
             action (
@@ -669,7 +664,7 @@ void p2p::uprate(eosio::name out_contract, eosio::asset out_asset){
       
       } else {
 
-        double rate = usd_rate -> rate  + usd_rate -> rate * (double(eosio::current_time_point().sec_since_epoch() - usd_rate -> updated_at.sec_since_epoch() ) / (double)86400 * (double)_PERCENTS_PER_MONTH / (double)30 / (double)100);
+        double rate = usd_rate -> rate  + _START_RATE * (double(eosio::current_time_point().sec_since_epoch() - usd_rate -> updated_at.sec_since_epoch() ) / (double)86400 * (double)_PERCENTS_PER_MONTH / (double)30 / (double)100);
 
         rates_by_contract_and_symbol.modify(usd_rate, "eosio"_n, [&](auto &r){
         

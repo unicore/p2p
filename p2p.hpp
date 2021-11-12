@@ -72,7 +72,7 @@ public:
     static constexpr eosio::name _core = "unicore"_n;
     
     static constexpr eosio::symbol _SYM     = eosio::symbol(eosio::symbol_code("FLOWER"), 4);
-    static const uint64_t _PERCENTS_PER_MONTH = 10;
+    static const uint64_t _PERCENTS_PER_MONTH = 42;
 
     static const bool _ENABLE_GROWHT = true;
 

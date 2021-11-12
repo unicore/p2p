@@ -72,13 +72,13 @@ public:
     static constexpr eosio::symbol _SYM     = eosio::symbol(eosio::symbol_code("NBT"), 4);
     static constexpr eosio::name _core = "unicore"_n;
     
-    static const uint64_t _PERCENTS_PER_MONTH = 10;
+    static const uint64_t _PERCENTS_PER_MONTH = 42;
 
-    static const bool _ENABLE_GROWHT = false;
+    static const bool _ENABLE_GROWHT = true;
 
     // static const uint64_t _ORDER_EXPIRATION = 10; //10 secs
     static const uint64_t _ORDER_EXPIRATION = 30 * 60; //30 mins
-    static constexpr double _START_RATE = 0.5;
+    static constexpr double _START_RATE = 0.2;
 
     struct [[eosio::table]] balance {
         uint64_t id;

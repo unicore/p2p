@@ -81,7 +81,7 @@ public:
 
     static const bool _ENABLE_GROWHT = true;
 
-    static const bool _ENABLE_VESTING = false;
+    static const bool _ENABLE_VESTING = true;
     static const uint64_t _VESTING_SECONDS = 15770000;
     static constexpr eosio::name _CORE_SALE_ACCOUNT = "core"_n;
 

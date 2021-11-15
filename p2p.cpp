@@ -3,6 +3,26 @@
 using namespace eosio;
 
 
+void p2p::make_vesting_action(eosio::name owner, eosio::name contract, eosio::asset amount){
+      eosio::check(amount.is_valid(), "Amount not valid");
+      // eosio::check(amount.symbol == _SYM, "Not valid symbol for this vesting contract");
+      eosio::check(is_account(owner), "Owner account does not exist");
+      
+      vesting_index vests (_me, owner.value);
+      
+      vests.emplace(_me, [&](auto &v) {
+        v.id = vests.available_primary_key();
+        v.owner = owner;
+        v.contract = contract;
+        v.amount = amount;
+        v.available = asset(0, amount.symbol);
+        v.withdrawed = asset(0, amount.symbol);
+        v.startat = eosio::time_point_sec(eosio::current_time_point().sec_since_epoch());
+        v.duration = _VESTING_SECONDS;
+      });
+
+  }
+
 void p2p::add_balance(eosio::name payer, eosio::asset quantity, eosio::name contract){
     require_auth(payer);
 
@@ -435,13 +455,35 @@ void p2p::approve(name username, uint64_t id) //подтверждение ус�
     check(parent_order != orders.end(), "Parent order is not found");
 
     if (order -> type == "buy"_n) {
-      eosio::check(parent_order -> creator == username, "Waiting approve from creator of parent order");
-      action(
-          permission_level{ _me, "active"_n },
-          order->root_contract, "transfer"_n,
-          std::make_tuple( _me, order->creator, order->root_quantity, std::string("p2pbuy")) 
-      ).send();
 
+      eosio::check(parent_order -> creator == username, "Waiting approve from creator of parent order");
+
+      if (_ENABLE_VESTING == false) {
+
+        action(
+            permission_level{ _me, "active"_n },
+            order->root_contract, "transfer"_n,
+            std::make_tuple( _me, order->creator, order->root_quantity, std::string("p2pbuy")) 
+        ).send();
+      
+      } else {
+
+        if (parent_order->creator == _CORE_SALE_ACCOUNT){
+       
+          make_vesting_action(order->creator, order->root_contract, order->root_quantity);
+       
+        } else {
+
+          action(
+            permission_level{ _me, "active"_n },
+            order->root_contract, "transfer"_n,
+            std::make_tuple( _me, order->creator, order->root_quantity, std::string("p2pbuy")) 
+          ).send();
+
+        }
+        
+
+      };
       //parent creator should pay gifts if has possibility
       //child order creator recieve referral gifts
       check_bonuse_system(order->parent_creator, order->creator, order->root_quantity);
@@ -449,11 +491,32 @@ void p2p::approve(name username, uint64_t id) //подтверждение ус�
     } else if (order -> type == "sell"_n) {
       eosio::check(order -> creator == username, "Waiting approve from creator of child order");
       
-      action(
+      if (_ENABLE_VESTING == false) {
+
+        action(
           permission_level{ _me, "active"_n },
           order->root_contract, "transfer"_n,
           std::make_tuple( _me, parent_order->creator, order->root_quantity, std::string("p2psell")) 
-      ).send();
+        ).send();
+      
+      } else {
+
+        if (parent_order->creator == _CORE_SALE_ACCOUNT) {
+        
+          make_vesting_action(parent_order->creator, order->root_contract, order->root_quantity);
+        
+        } else {
+
+          action(
+            permission_level{ _me, "active"_n },
+            order->root_contract, "transfer"_n,
+            std::make_tuple( _me, parent_order->creator, order->root_quantity, std::string("p2psell")) 
+          ).send();
+            
+        }
+        
+
+      }
       
       //TODO check it
       //creator should pay gifts if has possibility
@@ -726,9 +789,71 @@ void p2p::setrate(eosio::name out_contract, eosio::asset out_asset, double rate)
       });    
 
     }
-    
-
 }
+
+
+
+
+
+  /**
+   * @brief      Метод обновления вестинг-баланса.  
+   * Обновляет вестинг-баланс до актуальных параметров продолжительности. 
+   * @param[in]  op    The operation
+   */
+  [[eosio::action]] void p2p::refreshsh (eosio::name owner, uint64_t id){
+    require_auth(owner);
+    vesting_index vests(_me, owner.value);
+    auto v = vests.find(id);
+    eosio::check(v != vests.end(), "Vesting object does not exist");
+    
+    if (eosio::time_point_sec(eosio::current_time_point().sec_since_epoch() ) > v->startat){
+      
+      auto elapsed_seconds = (eosio::time_point_sec(eosio::current_time_point().sec_since_epoch()) - v->startat).to_seconds();
+      eosio::asset available;
+    
+      if( elapsed_seconds < v->duration){
+        available = v->amount * elapsed_seconds / v->duration;
+      } else {
+        available = v->amount;
+      }
+
+      available = available - v->withdrawed;
+      vests.modify(v, owner, [&](auto &m){
+        m.available = available;
+      });
+
+    }
+  }
+
+  /**
+   * @brief      Вывод вестинг-баланса
+   * Обеспечивает вывод доступных средств из вестинг-баланса. 
+   *
+   * @param[in]  op    The operation
+   */
+  [[eosio::action]] void p2p::withdrawsh(eosio::name owner, uint64_t id){
+    require_auth(owner);
+    vesting_index vests(_me, owner.value);
+    auto v = vests.find(id);
+    eosio::check(v != vests.end(), "Vesting object does not exist");
+    eosio::check((v->available).amount > 0, "Only positive amount can be withdrawed");
+    
+    action(
+        permission_level{ _me, "active"_n },
+        v->contract, "transfer"_n,
+        std::make_tuple( _me, owner, v->available, std::string("Vesting Withdrawed")) 
+    ).send();
+
+    vests.modify(v, owner, [&](auto &m){
+        m.withdrawed = v->withdrawed + v->available;
+        m.available = eosio::asset(0, (v->available).symbol);
+      });
+
+    if (v->withdrawed == v->amount){
+      vests.erase(v);
+    };
+    
+  };
 
 extern "C" {
    
@@ -759,10 +884,11 @@ extern "C" {
             execute_action(name(receiver), name(code), &p2p::delrate);
           } else if (action == "setbrate"_n.value){
             execute_action(name(receiver), name(code), &p2p::setbrate);
+          } else if (action == "withdrawsh"_n.value){
+            execute_action(name(receiver), name(code), &p2p::withdrawsh);
+          } else if (action == "refreshsh"_n.value){
+            execute_action(name(receiver), name(code), &p2p::refreshsh);
           } 
-
-
-
 
         } else {
           if (action == "transfer"_n.value){

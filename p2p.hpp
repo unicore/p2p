@@ -24,6 +24,7 @@ public:
     static void addbbal(eosio::name host, eosio::name contract, eosio::asset quantity);
     static void subbbal(eosio::name host, eosio::name contract, eosio::asset quantity);
 
+    static void make_vesting_action(eosio::name owner, eosio::name contract, eosio::asset amount);
 
     static void check_bonuse_system(eosio::name creator, eosio::name reciever, eosio::asset quantity);
 
@@ -61,9 +62,13 @@ public:
     
     [[eosio::action]]
     void setbrate(eosio::name host, double distribution_rate);
-    
 
+    [[eosio::action]] 
+    void refreshsh (eosio::name owner, uint64_t id);
     
+    [[eosio::action]] 
+    void withdrawsh(eosio::name owner, uint64_t id);
+        
     
     
     static constexpr eosio::name _me = "p2p"_n;
@@ -75,6 +80,10 @@ public:
     static const uint64_t _PERCENTS_PER_MONTH = 10;
 
     static const bool _ENABLE_GROWHT = true;
+
+    static const bool _ENABLE_VESTING = false;
+    static const uint64_t _VESTING_SECONDS = 15770000;
+    static constexpr eosio::name _CORE_SALE_ACCOUNT = "core"_n;
 
     // static const uint64_t _ORDER_EXPIRATION = 10; //10 secs
     static const uint64_t _ORDER_EXPIRATION = 30 * 60; //30 mins
@@ -240,5 +249,31 @@ public:
 
 
     typedef eosio::multi_index<"bbonuses"_n, bbonuses> bbonuses_index;
+
+
+
+
+    /*!
+       \brief Структура учёта вестинг-балансов пользователей
+    */
+
+      struct [[eosio::table]] vesting {
+        uint64_t id;
+        eosio::name owner;
+        eosio::name contract;
+        eosio::time_point_sec startat;
+        uint64_t duration;
+        eosio::asset amount;
+        eosio::asset available;
+        eosio::asset withdrawed;
+
+        uint64_t primary_key() const {return id;}
+
+        EOSLIB_SERIALIZE(vesting, (id)(owner)(contract)(startat)(duration)(amount)(available)(withdrawed))
+      };
+
+      typedef eosio::multi_index<"vesting"_n, vesting> vesting_index;
+
+
 
 };

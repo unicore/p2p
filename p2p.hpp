@@ -25,7 +25,7 @@ public:
     static void subbbal(eosio::name host, eosio::name contract, eosio::asset quantity);
 
 
-    static void check_bonuse_system(eosio::name creator, eosio::asset quantity);
+    static void check_bonuse_system(eosio::name creator, eosio::name reciever, eosio::asset quantity);
 
     static uint64_t get_order_id();
 

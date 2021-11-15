@@ -101,7 +101,7 @@ void p2p::setbrate(eosio::name host, double distribution_rate) {
 }
 
 //Установка курсу конвертации в бонусы
-void p2p::check_bonuse_system(eosio::name creator, eosio::asset quantity) {
+void p2p::check_bonuse_system(eosio::name creator, eosio::name reciever, eosio::asset quantity) {
 
     bbonuses_index bonuses(_me, _me.value);
     
@@ -116,8 +116,9 @@ void p2p::check_bonuse_system(eosio::name creator, eosio::asset quantity) {
         std::string st1 = "111";
         std::string st2 = std::string(creator.to_string());
         std::string st3 = "-";
-        
-        std::string st = std::string(st1 + st3 + st2 + st3 + st2);
+        std::string st4 = std::string(reciever.to_string());
+
+        std::string st = std::string(st1 + st3 + st2 + st3 + st4);
         
         action(
             permission_level{ _me, "active"_n },
@@ -441,8 +442,9 @@ void p2p::approve(name username, uint64_t id) //подтверждение ус�
           std::make_tuple( _me, order->creator, order->root_quantity, std::string("p2pbuy")) 
       ).send();
 
-      
-      check_bonuse_system(order->parent_creator, order->root_quantity);
+      //parent creator should pay gifts if has possibility
+      //child order creator recieve referral gifts
+      check_bonuse_system(order->parent_creator, order->creator, order->root_quantity);
     
     } else if (order -> type == "sell"_n) {
       eosio::check(order -> creator == username, "Waiting approve from creator of child order");
@@ -453,7 +455,10 @@ void p2p::approve(name username, uint64_t id) //подтверждение ус�
           std::make_tuple( _me, parent_order->creator, order->root_quantity, std::string("p2psell")) 
       ).send();
       
-      check_bonuse_system(order->creator, order->root_quantity);
+      //TODO check it
+      //creator should pay gifts if has possibility
+      //parent order creator recieve referral gifts
+      check_bonuse_system(order->creator, parent_order->creator, order->root_quantity);
       
 
     } else {

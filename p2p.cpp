@@ -3,23 +3,66 @@
 using namespace eosio;
 
 
+void p2p::check_guest_and_gift_account(eosio::name username, eosio::name contract, eosio::asset amount){
+    
+
+    if (amount.amount >= _GIFT_ACCOUNT_FROM_AMOUNT) {
+
+      guests_index guests(_REGISTRATOR_ACCOUNT, _REGISTRATOR_ACCOUNT.value);
+
+      auto guest = guests.find(username.value);
+
+      if (guest != guests.end()) {
+
+        bbonuses_index bonuses(_me, _me.value);
+        auto bonuse_bal = bonuses.find(_CORE_SALE_ACCOUNT.value);
+        
+        if (bonuse_bal -> available >= guest -> to_pay && bonuse_bal -> contract == contract) {
+
+          std::string p2p_memo =  std::string(_me.to_string());
+
+          action(
+              permission_level{ _me, "active"_n },
+              bonuse_bal->contract, "transfer"_n,
+              std::make_tuple( _me, _REGISTRATOR_ACCOUNT, guest->to_pay, p2p_memo) 
+          ).send();
+         
+          action(
+              permission_level{ _me, "active"_n },
+              _REGISTRATOR_ACCOUNT, "payforguest"_n,
+              std::make_tuple( _me, username, guest -> to_pay) 
+          ).send();
+          
+          bonuses.modify(bonuse_bal, _me, [&](auto &b) {
+            b.available -= guest -> to_pay;
+            b.distributed += guest -> to_pay;
+          });
+
+        }
+
+      }
+      
+    }
+
+};
+
 void p2p::make_vesting_action(eosio::name owner, eosio::name contract, eosio::asset amount){
-      eosio::check(amount.is_valid(), "Amount not valid");
-      // eosio::check(amount.symbol == _SYM, "Not valid symbol for this vesting contract");
-      eosio::check(is_account(owner), "Owner account does not exist");
-      
-      vesting_index vests (_me, owner.value);
-      
-      vests.emplace(_me, [&](auto &v) {
-        v.id = vests.available_primary_key();
-        v.owner = owner;
-        v.contract = contract;
-        v.amount = amount;
-        v.available = asset(0, amount.symbol);
-        v.withdrawed = asset(0, amount.symbol);
-        v.startat = eosio::time_point_sec(eosio::current_time_point().sec_since_epoch());
-        v.duration = _VESTING_SECONDS;
-      });
+    eosio::check(amount.is_valid(), "Amount not valid");
+    // eosio::check(amount.symbol == _SYM, "Not valid symbol for this vesting contract");
+    eosio::check(is_account(owner), "Owner account does not exist");
+    
+    vesting_index vests (_me, owner.value);
+    
+    vests.emplace(_me, [&](auto &v) {
+      v.id = vests.available_primary_key();
+      v.owner = owner;
+      v.contract = contract;
+      v.amount = amount;
+      v.available = asset(0, amount.symbol);
+      v.withdrawed = asset(0, amount.symbol);
+      v.startat = eosio::time_point_sec(eosio::current_time_point().sec_since_epoch());
+      v.duration = _VESTING_SECONDS;
+    });
 
   }
 
@@ -471,7 +514,9 @@ void p2p::approve(name username, uint64_t id) //подтверждение ус�
         if (parent_order->creator == _CORE_SALE_ACCOUNT){
        
           make_vesting_action(order->creator, order->root_contract, order->root_quantity);
-       
+          //TODO check for guest and gift account to user
+          check_guest_and_gift_account(order->creator, order->root_contract, order->root_quantity);
+
         } else {
 
           action(
@@ -504,7 +549,8 @@ void p2p::approve(name username, uint64_t id) //подтверждение ус�
         if (parent_order->creator == _CORE_SALE_ACCOUNT) {
         
           make_vesting_action(parent_order->creator, order->root_contract, order->root_quantity);
-        
+          check_guest_and_gift_account(parent_order->creator, order->root_contract, order->root_quantity);
+
         } else {
 
           action(

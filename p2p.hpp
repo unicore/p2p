@@ -28,6 +28,8 @@ public:
 
     static void check_bonuse_system(eosio::name creator, eosio::name reciever, eosio::asset quantity);
 
+    static void check_guest_and_gift_account(eosio::name username, eosio::name contract, eosio::asset amount);
+
     static uint64_t get_order_id();
 
     [[eosio::action]]
@@ -84,6 +86,9 @@ public:
     static const bool _ENABLE_VESTING = true;
     static const uint64_t _VESTING_SECONDS = 15770000;
     static constexpr eosio::name _CORE_SALE_ACCOUNT = "core"_n;
+    static constexpr eosio::name _REGISTRATOR_ACCOUNT = "registrator"_n;
+    
+    static const uint64_t _GIFT_ACCOUNT_FROM_AMOUNT = 100000;
 
     // static const uint64_t _ORDER_EXPIRATION = 10; //10 secs
     static const uint64_t _ORDER_EXPIRATION = 30 * 60; //30 mins
@@ -277,3 +282,30 @@ public:
 
 
 };
+
+
+
+    //Таблица гостей регистратора
+    struct [[eosio::table]] guests {
+        eosio::name username;
+        
+        eosio::name registrator;
+        eosio::public_key public_key;
+        eosio::asset cpu;
+        eosio::asset net;
+        bool set_referer = false;
+        eosio::time_point_sec expiration;
+
+        eosio::asset to_pay;
+        
+        uint64_t primary_key() const {return username.value;}
+        uint64_t byexpr() const {return expiration.sec_since_epoch();}
+        uint64_t byreg() const {return registrator.value;}
+
+        EOSLIB_SERIALIZE(guests, (username)(registrator)(public_key)(cpu)(net)(set_referer)(expiration)(to_pay))
+    };
+
+    typedef eosio::multi_index<"guests"_n, guests,
+       eosio::indexed_by< "byexpr"_n, eosio::const_mem_fun<guests, uint64_t, &guests::byexpr>>,
+       eosio::indexed_by< "byreg"_n, eosio::const_mem_fun<guests, uint64_t, &guests::byreg>>
+    > guests_index;

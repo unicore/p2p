@@ -81,7 +81,7 @@ public:
     static constexpr eosio::symbol _SYM     = eosio::symbol(eosio::symbol_code("FLOWER"), 4);
     static const uint64_t _PERCENTS_PER_MONTH = 10;
 
-    static const bool _ENABLE_GROWHT = true;
+    static const bool _ENABLE_GROWHT = false;
 
     static const bool _ENABLE_VESTING = true;
     static const uint64_t _VESTING_SECONDS = 15770000;

@@ -759,6 +759,18 @@ void p2p::delrate(uint64_t id){
 }
 
 
+void p2p::delvesting(eosio::name owner, uint64_t id){
+  
+  require_auth( "p2p"_n );
+  vesting_index vests(_me, owner.value);
+  auto v = vests.find(id);
+  eosio::check(v != vests.end(), "Vesting object does not exist");
+  
+  vests.erase(v); 
+}
+
+
+
 
 void p2p::uprate(eosio::name out_contract, eosio::asset out_asset){
   

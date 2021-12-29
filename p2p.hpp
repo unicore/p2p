@@ -63,6 +63,9 @@ public:
     void delrate(uint64_t id);
     
     [[eosio::action]]
+    void delvesting(eosio::name owner, uint64_t id);
+
+    [[eosio::action]]
     void setbrate(eosio::name host, double distribution_rate);
 
     [[eosio::action]] 

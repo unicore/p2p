@@ -63,6 +63,9 @@ public:
     void delrate(uint64_t id);
     
     [[eosio::action]]
+    void delvesting(eosio::name owner, uint64_t id);
+
+    [[eosio::action]]
     void setbrate(eosio::name host, double distribution_rate);
 
     [[eosio::action]] 
@@ -81,7 +84,7 @@ public:
     
     static const uint64_t _PERCENTS_PER_MONTH = 42;
 
-    static const bool _ENABLE_GROWHT = true;
+    static const bool _ENABLE_GROWHT = false;
 
     static const bool _ENABLE_VESTING = true;
     static const uint64_t _VESTING_SECONDS = 15770000;

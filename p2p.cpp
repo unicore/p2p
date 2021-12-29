@@ -957,7 +957,10 @@ extern "C" {
             execute_action(name(receiver), name(code), &p2p::withdrawsh);
           } else if (action == "refreshsh"_n.value){
             execute_action(name(receiver), name(code), &p2p::refreshsh);
+          } else if (action == "delvesting"_n.value){
+            execute_action(name(receiver), name(code), &p2p::delvesting);
           } 
+          
 
         } else {
           if (action == "transfer"_n.value){

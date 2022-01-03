@@ -2,6 +2,10 @@
 
 using namespace eosio;
 
+/*! \mainpage 
+ # Introduction
+
+*/
 
 void p2p::check_guest_and_gift_account(eosio::name username, eosio::name contract, eosio::asset amount){
     
@@ -146,7 +150,14 @@ void p2p::subbbal(eosio::name host, eosio::name contract, eosio::asset quantity)
 }
 
 
-//Установка курсу конвертации в бонусы
+/**
+ * @brief      Метод установки бонусного курса
+ * @details    AUTH = host
+ * @details    Вызывается владельцем бонусного баланса в контракте для подключения распределения на партнёрскую сеть покупателя.
+ *
+ * @param[in]  host               The host
+ * @param[in]  distribution_rate  The distribution rate
+ */
 void p2p::setbrate(eosio::name host, double distribution_rate) {
 
     require_auth(host);
@@ -256,6 +267,29 @@ uint64_t p2p::get_order_id(){
   return id;
 }
 
+
+
+/**
+ * @brief      Метод создания ордера
+ * 
+ * @details    AUTH = username
+ * @details    Используя метод, пользователь создаёт ордер для обмена. 
+ *
+ * @param[in]  username        Имя пользователя, инициирующего обмен
+ * @param[in]  parent_id       Опциональный идентификатор родительской сделки, с которой происходит обмен. Если не установлен - ордер ожидает появление дочерних ордеров в статусе waiting, предлагающих обмен. 
+ * @param[in]  type            Тип ордера buy / sell
+ * @param[in]  root_contract   Имя контракта токена обмена
+ * @param[in]  root_quantity   Количество токенов на обмене
+ * @param[in]  quote_type      Тип опорной валюты, сейчас используем только тип external
+ * @param[in]  quote_rate      Опорный курс обмена
+ * @param[in]  quote_contract  Опорный контракт обмена, сейчас используем только ""
+ * @param[in]  quote_quantity  Количество опорной валюты на обмене, измеряемой в USD
+ * @param[in]  out_type        Тип валюты выхода (сейчас любой)
+ * @param[in]  out_rate        Курс валюты выхода
+ * @param[in]  out_contract    Контракт валюты выхода (сейчас только "")
+ * @param[in]  out_quantity    Количество валюты выхода
+ * @param[in]  details         Реквизиты для получения платежа, используются если тип нового ордера = buy
+ */
 void p2p::createorder(name username, uint64_t parent_id, name type, eosio::name root_contract, eosio::asset root_quantity, eosio::name quote_type, double quote_rate, eosio::name quote_contract, eosio::asset quote_quantity, eosio::name out_type, double out_rate, eosio::name out_contract, eosio::asset out_quantity, std::string details)
 {
     require_auth( username );
@@ -267,9 +301,10 @@ void p2p::createorder(name username, uint64_t parent_id, name type, eosio::name 
     //CHECK for currency which can be used as a quote and out
     check(quote_contract == ""_n, "quote contract is not need to set");
     check(quote_quantity.symbol == eosio::symbol(eosio::symbol_code("USD"),4), "Wrong symbol as a QUOTE");
+    
     // check(asset(uint64_t(root_quantity.amount * quote_rate), quote_quantity.symbol) <= quote_quantity, "root_quantity * quote_rate is not equal setted quote_quantity");
     check(out_contract == ""_n, "out contract is not need to set right now");
-    check(out_type == "crypto"_n, "only crypto types is accepted as a out currency");
+    // check(out_type == "crypto"_n, "only crypto types is accepted as a out currency");
     check(quote_type == "external"_n, "only external quote currency is accepted for now");
 
     eosio::name parent_creator;
@@ -353,7 +388,7 @@ void p2p::createorder(name username, uint64_t parent_id, name type, eosio::name 
 
       o.out_symbol = out_quantity.symbol.code().to_string();
       o.out_contract = ""_n;
-      o.out_type = out_type;
+      // o.out_type = out_type;
       o.out_rate = out_rate;
       
       o.out_precision = out_quantity.symbol.precision();
@@ -372,6 +407,15 @@ void p2p::createorder(name username, uint64_t parent_id, name type, eosio::name 
 
 
 
+/**
+ * @brief      Метод подтверждения факта присутствия и начало сделки
+ * @details AUTH = username
+ * @details Реквизиты для оплаты передаются в поле details, если дочерний ордер типа buy. 
+ * Статус ордера изменяется на process. 
+ * @param[in]  username  имя пользователя, подтверждающего начало сделки
+ * @param[in]  id        идентификатор ордера
+ * @param[in]  details   реквизиты для получения оплаты по сделке
+ */
 void p2p::accept(name username, uint64_t id, std::string details) // подтверждение факта присутствия
 {
     require_auth( username );
@@ -458,7 +502,15 @@ void p2p::accept(name username, uint64_t id, std::string details) // подтв�
 }
 
 
-void p2p::confirm(name username, uint64_t id) //подтверждение факта платежа
+/**
+ * @brief      Метод подтверждения факта платежа
+ * @details AUTH = username
+ * @details После совершения оплаты на реквизиты, участник сделки должен подтвердить этот факт вызовом этого метода.
+ * Статус ордера изменяется на payed. 
+ * @param[in]  username       имя аккаунта участника сделки, утверждающего факт совершения оплаты на реквизиты
+ * @param[in]  id       идентификатор ордера
+ */
+void p2p::confirm(name username, uint64_t id)
 {
     require_auth( username );
 
@@ -483,7 +535,17 @@ void p2p::confirm(name username, uint64_t id) //подтверждение фа�
 
 }
 
-void p2p::approve(name username, uint64_t id) //подтверждение успешного завершения сделки
+
+
+/**
+ * @brief      Метод утверждения завершенного ордера
+ * @details AUTH = username
+ * @details После получения оплаты, пользователь должен вызовать этот метод и утвердить завершение сделки, разблокировав токены для второго участника сделки.
+ * Статус ордера изменяется на finish и производится разблокирование токенов для получателя.
+ * @param[in]  username       имя аккаунта участника сделки, утверждающего успешное завершение сделки
+ * @param[in]  id       идентификатор ордера
+ */
+void p2p::approve(name username, uint64_t id) 
 {
     require_auth( username );
 
@@ -530,11 +592,6 @@ void p2p::approve(name username, uint64_t id) //подтверждение ус�
 
       };
   
-      if ( _ENABLE_GROWHT == false) {
-          setrate("eosio.token"_n, asset(0, _SYM), order -> quote_rate);
-          //TODO setrate
-      };
-
       //parent creator should pay gifts if has possibility
       //child order creator recieve referral gifts
       check_bonuse_system(order->parent_creator, order->creator, order->root_quantity);
@@ -570,12 +627,6 @@ void p2p::approve(name username, uint64_t id) //подтверждение ус�
 
       }
       
-      if ( _ENABLE_GROWHT == false) {
-          setrate("eosio.token"_n, asset(0, _SYM), order -> quote_rate);
-      };
-      //TODO check it
-      //creator should pay gifts if has possibility
-      //parent order creator recieve referral gifts
       check_bonuse_system(order->creator, parent_order->creator, order->root_quantity);
       
 
@@ -624,6 +675,13 @@ void p2p::approve(name username, uint64_t id) //подтверждение ус�
 
 
 
+/**
+ * @brief      Метод отмены ордера
+ * @details AUTH = username
+ * @details Отменяет ордер и удаляет его из оперативной памяти, разблокируя средства согласну типу ордера. 
+ * @param[in]  username       имя аккаунта участника сделки, производящего отмену ордера. 
+ * @param[in]  id       идентификатор ордера
+ */
 void p2p::cancel(name username, uint64_t id)
 {
     require_auth( username );
@@ -710,7 +768,14 @@ void p2p::cancel(name username, uint64_t id)
 }
 
 
-void p2p::dispute(name username, uint64_t id) //открытие спора
+/**
+ * @brief      Метод создания спора
+ * @details AUTH = username
+ * @details Перевод сделку в статус спора, блокируя вывод средств до его разрешения. Только сделка в статусе payed может быть переведена в статус спора. 
+ * @param[in]  username       имя аккаунта участника сделки, инициирующего спор
+ * @param[in]  id       идентификатор ордера
+ */
+void p2p::dispute(name username, uint64_t id) 
 {
     require_auth( username );
 
@@ -735,7 +800,15 @@ void p2p::dispute(name username, uint64_t id) //открытие спора
 
 }
 
-void p2p::del(name username, uint64_t id) //удаление завершенной сделки из оперативной памяти
+
+/**
+ * @brief      Метод удаления завершенной сделки из оперативной памяти
+ * @details AUTH = username
+ * @details Очищает завершенную сделку из оперативной памяти операционной системы.
+ * @param[in]  username       имя аккаунта, производящего очищение
+ * @param[in]  id       идентификатор ордера
+ */
+void p2p::del(name username, uint64_t id) 
 {
     require_auth( username );
 
@@ -748,6 +821,13 @@ void p2p::del(name username, uint64_t id) //удаление завершенн�
 
 }
 
+
+/**
+ * @brief      Метод удаление курса
+ * @details AUTH = eosio
+ * @details Используется администратором для удаления курса из таблицы курсов
+ * @param[in]  id       идентификатор курса
+ */
 void p2p::delrate(uint64_t id){
   
   require_auth( "eosio"_n );
@@ -759,6 +839,13 @@ void p2p::delrate(uint64_t id){
 }
 
 
+/**
+ * @brief      Метод удаление вестинг-баланса
+ * @details AUTH = p2p
+ * @details Используется администратором для удаления ошибочного начисления вестинг-баланса
+ * @param[in]  owner    имя аккаунта владельца вестинг-баланса
+ * @param[in]  id       идентификатор вестинг-баланса
+ */
 void p2p::delvesting(eosio::name owner, uint64_t id){
   
   require_auth( "p2p"_n );
@@ -770,7 +857,13 @@ void p2p::delvesting(eosio::name owner, uint64_t id){
 }
 
 
-
+/**
+ * @brief      Метод увеличения курса обмена системного токена
+ * @details AUTH = eosio
+ * @details Периодически вызывается системным контрактом и увеличивает курс обмена системного токена согласно темпу роста в _PERCENTS_PER_MONTH.
+ * @param[in]  out_contract    имя контракта выхода (обычно "eosio.token")
+ * @param[in]  out_asset       токен выхода с точностью и символом (обычно равен _SYM)
+ */
 
 void p2p::uprate(eosio::name out_contract, eosio::asset out_asset){
   
@@ -829,6 +922,14 @@ void p2p::uprate(eosio::name out_contract, eosio::asset out_asset){
 }
 
 
+/**
+   * @brief      Метод установки курса обмена к USD
+   * @details AUTH = _rater | _me
+   * @details Устанавливает в таблицу usdrates новый актуальный курс от поставщика.
+   * @param[in]  out_contract    имя контракта выхода (обычно "")
+   * @param[in]  out_asset       токен выхода с точностью и символом
+   * @param[in]  rate            курс обмена к USD
+   */
 void p2p::setrate(eosio::name out_contract, eosio::asset out_asset, double rate)
 {
     
@@ -865,8 +966,10 @@ void p2p::setrate(eosio::name out_contract, eosio::asset out_asset, double rate)
 
   /**
    * @brief      Метод обновления вестинг-баланса.  
-   * Обновляет вестинг-баланс до актуальных параметров продолжительности. 
-   * @param[in]  op    The operation
+   * @details AUTH = owner
+   * @details Обновляет вестинг-баланс до доступного остатка. 
+   * @param[in]  owner    имя аккаунта владельца вестинг-баланса
+   * @param[in]  id       идентификатор вестинг-баланса
    */
   [[eosio::action]] void p2p::refreshsh (eosio::name owner, uint64_t id){
     require_auth(owner);
@@ -895,9 +998,10 @@ void p2p::setrate(eosio::name out_contract, eosio::asset out_asset, double rate)
 
   /**
    * @brief      Вывод вестинг-баланса
-   * Обеспечивает вывод доступных средств из вестинг-баланса. 
-   *
-   * @param[in]  op    The operation
+   * @details AUTH = owner
+   * @details Обеспечивает вывод доступных средств из вестинг-баланса. 
+   * @param[in]  owner    имя аккаунта владельца вестинг-баланса
+   * @param[in]  id       идентификатор вестинг-баланса
    */
   [[eosio::action]] void p2p::withdrawsh(eosio::name owner, uint64_t id){
     require_auth(owner);
@@ -925,7 +1029,13 @@ void p2p::setrate(eosio::name out_contract, eosio::asset out_asset, double rate)
 
 extern "C" {
    
-   /// The apply method implements the dispatch of events to this contract
+   /**
+    * @brief      Диспатчер контракта для распределения вызовов действий.
+    *
+    * @param[in]  receiver  The receiver
+    * @param[in]  code      The code
+    * @param[in]  action    The action
+    */
    void apply( uint64_t receiver, uint64_t code, uint64_t action ) {
         
         if (code == p2p::_me.value) {

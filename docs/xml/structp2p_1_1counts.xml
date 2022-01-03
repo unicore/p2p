@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="structp2p_1_1counts" kind="struct" language="C++" prot="public">
+    <compoundname>p2p::counts</compoundname>
+    <includes refid="p2p_8hpp" local="no">p2p.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structp2p_1_1counts_1a020c8e7885212e936588e4bed5acb2d6" prot="public" static="no" mutable="no">
+        <type>name</type>
+        <definition>name p2p::counts::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>идентификатор ключа </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="141" column="1" bodyfile="p2p.hpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structp2p_1_1counts_1ababe8a6132ad10bc973c664c6a062749" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::counts::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>идентификатор значения </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="142" column="1" bodyfile="p2p.hpp" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structp2p_1_1counts_1aef65d71b33a8ec444becd69edc9cd704" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::counts::primary_key</definition>
+        <argsstring>() const</argsstring>
+        <name>primary_key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>key - primary_key </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="144" column="1" bodyfile="p2p.hpp" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Таблица счётчиков ордеров </para>    </briefdescription>
+    <detaileddescription>
+<para>CONTRACT = _me, SCOPE = _me, TABLE = counts  Используется для хранения счётчика ордеров с ключом totalorders. При создании нового ордера, счётчик увеличивается на 1. При завершении или удалении ордера, счётчик не изменяется. </para>    </detaileddescription>
+    <location file="p2p.hpp" line="140" column="1" bodyfile="p2p.hpp" bodystart="140" bodyend="146"/>
+    <listofallmembers>
+      <member refid="structp2p_1_1counts_1a020c8e7885212e936588e4bed5acb2d6" prot="public" virt="non-virtual"><scope>p2p::counts</scope><name>key</name></member>
+      <member refid="structp2p_1_1counts_1aef65d71b33a8ec444becd69edc9cd704" prot="public" virt="non-virtual"><scope>p2p::counts</scope><name>primary_key</name></member>
+      <member refid="structp2p_1_1counts_1ababe8a6132ad10bc973c664c6a062749" prot="public" virt="non-virtual"><scope>p2p::counts</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

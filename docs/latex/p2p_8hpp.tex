@@ -1,0 +1,46 @@
+\hypertarget{p2p_8hpp}{}\section{p2p.\+hpp File Reference}
+\label{p2p_8hpp}\index{p2p.\+hpp@{p2p.\+hpp}}
+{\ttfamily \#include $<$eosio/eosio.\+hpp$>$}\newline
+{\ttfamily \#include $<$eosio/asset.\+hpp$>$}\newline
+{\ttfamily \#include $<$eosio/system.\+hpp$>$}\newline
+{\ttfamily \#include $<$eosio/time.\+hpp$>$}\newline
+{\ttfamily \#include $<$eosio/multi\+\_\+index.\+hpp$>$}\newline
+{\ttfamily \#include $<$eosio/contract.\+hpp$>$}\newline
+{\ttfamily \#include $<$eosio/crypto.\+hpp$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classp2p}{p2p}}
+\item 
+struct \mbox{\hyperlink{structp2p_1_1balance}{p2p\+::balance}}
+\item 
+struct \mbox{\hyperlink{structp2p_1_1counts}{p2p\+::counts}}
+\item 
+struct \mbox{\hyperlink{structp2p_1_1orders}{p2p\+::orders}}
+\item 
+struct \mbox{\hyperlink{structp2p_1_1usdrates}{p2p\+::usdrates}}
+\item 
+struct \mbox{\hyperlink{structp2p_1_1usdrates2}{p2p\+::usdrates2}}
+\item 
+struct \mbox{\hyperlink{structp2p_1_1bbonuses}{p2p\+::bbonuses}}
+\begin{DoxyCompactList}\small\item\em Таблица резервов контракта для выплат бонусов в реферальную сеть \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structp2p_1_1vesting}{p2p\+::vesting}}
+\begin{DoxyCompactList}\small\item\em Структура учёта вестинг-\/балансов пользователей \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structguests}{guests}}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef eosio\+::multi\+\_\+index$<$\char`\"{}guests\char`\"{}\+\_\+n, \mbox{\hyperlink{structguests}{guests}}, eosio\+::indexed\+\_\+by$<$ \char`\"{}byexpr\char`\"{}\+\_\+n, eosio\+::const\+\_\+mem\+\_\+fun$<$ \mbox{\hyperlink{structguests}{guests}}, uint64\+\_\+t, \&\mbox{\hyperlink{structguests_a1f409e9372ba160ae769a2057decf311}{guests\+::byexpr}} $>$ $>$, eosio\+::indexed\+\_\+by$<$ \char`\"{}byreg\char`\"{}\+\_\+n, eosio\+::const\+\_\+mem\+\_\+fun$<$ \mbox{\hyperlink{structguests}{guests}}, uint64\+\_\+t, \&\mbox{\hyperlink{structguests_a56bc73e33f8f164d28f05e009d19eeaa}{guests\+::byreg}} $>$ $>$ $>$ \mbox{\hyperlink{p2p_8hpp_a3c408d2b78da6739bf805aacc80e9761}{guests\+\_\+index}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{p2p_8hpp_a3c408d2b78da6739bf805aacc80e9761}\label{p2p_8hpp_a3c408d2b78da6739bf805aacc80e9761}} 
+\index{p2p.\+hpp@{p2p.\+hpp}!guests\+\_\+index@{guests\+\_\+index}}
+\index{guests\+\_\+index@{guests\+\_\+index}!p2p.\+hpp@{p2p.\+hpp}}
+\subsubsection{\texorpdfstring{guests\+\_\+index}{guests\_index}}
+{\footnotesize\ttfamily typedef eosio\+::multi\+\_\+index$<$\char`\"{}guests\char`\"{}\+\_\+n, \mbox{\hyperlink{structguests}{guests}}, eosio\+::indexed\+\_\+by$<$ \char`\"{}byexpr\char`\"{}\+\_\+n, eosio\+::const\+\_\+mem\+\_\+fun$<$\mbox{\hyperlink{structguests}{guests}}, uint64\+\_\+t, \&\mbox{\hyperlink{structguests_a1f409e9372ba160ae769a2057decf311}{guests\+::byexpr}}$>$ $>$, eosio\+::indexed\+\_\+by$<$ \char`\"{}byreg\char`\"{}\+\_\+n, eosio\+::const\+\_\+mem\+\_\+fun$<$\mbox{\hyperlink{structguests}{guests}}, uint64\+\_\+t, \&\mbox{\hyperlink{structguests_a56bc73e33f8f164d28f05e009d19eeaa}{guests\+::byreg}}$>$ $>$ $>$ \mbox{\hyperlink{p2p_8hpp_a3c408d2b78da6739bf805aacc80e9761}{guests\+\_\+index}}}
+

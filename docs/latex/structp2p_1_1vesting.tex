@@ -1,0 +1,107 @@
+\hypertarget{structp2p_1_1vesting}{}\section{p2p\+:\+:vesting Struct Reference}
+\label{structp2p_1_1vesting}\index{p2p\+::vesting@{p2p\+::vesting}}
+
+
+Таблица вестинг-\/балансов пользователей  
+
+
+
+
+{\ttfamily \#include $<$p2p.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{structp2p_1_1vesting_a816764ab2ece434f3569aa4210d7442f}{primary\+\_\+key}} () const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{structp2p_1_1vesting_af92c78d429a89e9b6ce552ef480794d5}{id}}
+\item 
+eosio\+::name \mbox{\hyperlink{structp2p_1_1vesting_a46a58437b03f9c7947c76e91f358003e}{owner}}
+\item 
+eosio\+::name \mbox{\hyperlink{structp2p_1_1vesting_aa514aefb9ae797ecbf711997efb94d5b}{contract}}
+\item 
+eosio\+::time\+\_\+point\+\_\+sec \mbox{\hyperlink{structp2p_1_1vesting_ac2a702d706aa9146588fffb6113d1c79}{startat}}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{structp2p_1_1vesting_a86ada5ec19fb224f483ab95bf5908547}{duration}}
+\item 
+eosio\+::asset \mbox{\hyperlink{structp2p_1_1vesting_a5a06c08d24cb3f9b929bc4285dd51179}{amount}}
+\item 
+eosio\+::asset \mbox{\hyperlink{structp2p_1_1vesting_a3759f66455f668a402c365554ad6550d}{available}}
+\item 
+eosio\+::asset \mbox{\hyperlink{structp2p_1_1vesting_a88ce3db1c7e1d53750a8d6e864da8c6c}{withdrawed}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Таблица вестинг-\/балансов пользователей 
+
+C\+O\+N\+T\+R\+A\+CT = \+\_\+me, S\+C\+O\+PE = owner, T\+A\+B\+LE = vesting
+
+Пополняется контрактом в случае, если ключ \+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+V\+E\+S\+T\+I\+NG = T\+R\+UE на количество секунд в \+\_\+\+V\+E\+S\+T\+I\+N\+G\+\_\+\+S\+E\+C\+O\+N\+DS, срабатывает только для аккаунта продавца \+\_\+\+C\+O\+R\+E\+\_\+\+S\+A\+L\+E\+\_\+\+A\+C\+C\+O\+U\+NT. Позволяет заморозить покупку токенов у компании на указанное количество секунд. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structp2p_1_1vesting_a816764ab2ece434f3569aa4210d7442f}\label{structp2p_1_1vesting_a816764ab2ece434f3569aa4210d7442f}} 
+\index{p2p\+::vesting@{p2p\+::vesting}!primary\+\_\+key@{primary\+\_\+key}}
+\index{primary\+\_\+key@{primary\+\_\+key}!p2p\+::vesting@{p2p\+::vesting}}
+\subsubsection{\texorpdfstring{primary\+\_\+key()}{primary\_key()}}
+{\footnotesize\ttfamily uint64\+\_\+t p2p\+::vesting\+::primary\+\_\+key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+id -\/ primary\+\_\+key 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structp2p_1_1vesting_a5a06c08d24cb3f9b929bc4285dd51179}\label{structp2p_1_1vesting_a5a06c08d24cb3f9b929bc4285dd51179}} 
+\index{p2p\+::vesting@{p2p\+::vesting}!amount@{amount}}
+\index{amount@{amount}!p2p\+::vesting@{p2p\+::vesting}}
+\subsubsection{\texorpdfstring{amount}{amount}}
+{\footnotesize\ttfamily eosio\+::asset p2p\+::vesting\+::amount}
+
+общее количество токенов на ветсинге \mbox{\Hypertarget{structp2p_1_1vesting_a3759f66455f668a402c365554ad6550d}\label{structp2p_1_1vesting_a3759f66455f668a402c365554ad6550d}} 
+\index{p2p\+::vesting@{p2p\+::vesting}!available@{available}}
+\index{available@{available}!p2p\+::vesting@{p2p\+::vesting}}
+\subsubsection{\texorpdfstring{available}{available}}
+{\footnotesize\ttfamily eosio\+::asset p2p\+::vesting\+::available}
+
+доступное количество токенов из вестинга \mbox{\Hypertarget{structp2p_1_1vesting_aa514aefb9ae797ecbf711997efb94d5b}\label{structp2p_1_1vesting_aa514aefb9ae797ecbf711997efb94d5b}} 
+\index{p2p\+::vesting@{p2p\+::vesting}!contract@{contract}}
+\index{contract@{contract}!p2p\+::vesting@{p2p\+::vesting}}
+\subsubsection{\texorpdfstring{contract}{contract}}
+{\footnotesize\ttfamily eosio\+::name p2p\+::vesting\+::contract}
+
+имя контракта токена вестинга \mbox{\Hypertarget{structp2p_1_1vesting_a86ada5ec19fb224f483ab95bf5908547}\label{structp2p_1_1vesting_a86ada5ec19fb224f483ab95bf5908547}} 
+\index{p2p\+::vesting@{p2p\+::vesting}!duration@{duration}}
+\index{duration@{duration}!p2p\+::vesting@{p2p\+::vesting}}
+\subsubsection{\texorpdfstring{duration}{duration}}
+{\footnotesize\ttfamily uint64\+\_\+t p2p\+::vesting\+::duration}
+
+продолжительность вестинга в секундах \mbox{\Hypertarget{structp2p_1_1vesting_af92c78d429a89e9b6ce552ef480794d5}\label{structp2p_1_1vesting_af92c78d429a89e9b6ce552ef480794d5}} 
+\index{p2p\+::vesting@{p2p\+::vesting}!id@{id}}
+\index{id@{id}!p2p\+::vesting@{p2p\+::vesting}}
+\subsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily uint64\+\_\+t p2p\+::vesting\+::id}
+
+идентификатор объекта вестинга \mbox{\Hypertarget{structp2p_1_1vesting_a46a58437b03f9c7947c76e91f358003e}\label{structp2p_1_1vesting_a46a58437b03f9c7947c76e91f358003e}} 
+\index{p2p\+::vesting@{p2p\+::vesting}!owner@{owner}}
+\index{owner@{owner}!p2p\+::vesting@{p2p\+::vesting}}
+\subsubsection{\texorpdfstring{owner}{owner}}
+{\footnotesize\ttfamily eosio\+::name p2p\+::vesting\+::owner}
+
+имя аккаунта владельца объекта вестинга (дублируется со S\+C\+O\+PE) \mbox{\Hypertarget{structp2p_1_1vesting_ac2a702d706aa9146588fffb6113d1c79}\label{structp2p_1_1vesting_ac2a702d706aa9146588fffb6113d1c79}} 
+\index{p2p\+::vesting@{p2p\+::vesting}!startat@{startat}}
+\index{startat@{startat}!p2p\+::vesting@{p2p\+::vesting}}
+\subsubsection{\texorpdfstring{startat}{startat}}
+{\footnotesize\ttfamily eosio\+::time\+\_\+point\+\_\+sec p2p\+::vesting\+::startat}
+
+объект вестинга создан в \mbox{\Hypertarget{structp2p_1_1vesting_a88ce3db1c7e1d53750a8d6e864da8c6c}\label{structp2p_1_1vesting_a88ce3db1c7e1d53750a8d6e864da8c6c}} 
+\index{p2p\+::vesting@{p2p\+::vesting}!withdrawed@{withdrawed}}
+\index{withdrawed@{withdrawed}!p2p\+::vesting@{p2p\+::vesting}}
+\subsubsection{\texorpdfstring{withdrawed}{withdrawed}}
+{\footnotesize\ttfamily eosio\+::asset p2p\+::vesting\+::withdrawed}
+
+выведенное количество токенов из вестинга 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+p2p.\+hpp\end{DoxyCompactItemize}

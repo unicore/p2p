@@ -11,6 +11,9 @@
 
 using namespace eosio;
 
+/**
+ * @brief      Начните ознакомление здесь.
+ */
 class [[eosio::contract]] p2p : public eosio::contract {
 
 public:
@@ -76,26 +79,37 @@ public:
         
     
     
-    static constexpr eosio::name _me = "p2p"_n;
-    static constexpr eosio::name _curator = "p2p"_n;
-    static constexpr eosio::name _rater = "rater"_n;
-    static constexpr eosio::symbol _SYM     = eosio::symbol(eosio::symbol_code("NBT"), 4);
-    static constexpr eosio::name _core = "unicore"_n;
+    static constexpr eosio::name _me = "p2p"_n;                                             /*!< собственное имя аккаунта контракта */
+    static constexpr eosio::name _curator = "p2p"_n;                                        /*!< дефолтное имя аккаунта куратора всех сделок */
+    static constexpr eosio::name _rater = "rater"_n;                                        /*!< имя аккаунта поставщика курсов */
+    static constexpr eosio::symbol _SYM     = eosio::symbol(eosio::symbol_code("NBT"), 4);  /*!< системный токен */
+    static constexpr eosio::name _core = "unicore"_n;                                       /*!< имя аккаунта распределения реферальных бонусов в сеть */
     
-    static const uint64_t _PERCENTS_PER_MONTH = 42;
+    static const uint64_t _PERCENTS_PER_MONTH = 42;                                         /*!< если рост курса системного токена подключен, то растёт с указанной здесь скоростью */
 
-    static const bool _ENABLE_GROWHT = false;
+    static const bool _ENABLE_GROWHT = true;                                                /*!< флаг подключения автоматического роста курса, допускающего вызов метода uprate от системного контракта eosio */
 
-    static const bool _ENABLE_VESTING = true;
-    static const uint64_t _VESTING_SECONDS = 15770000;
-    static constexpr eosio::name _CORE_SALE_ACCOUNT = "core"_n;
-    static constexpr eosio::name _REGISTRATOR_ACCOUNT = "registrator"_n;
+    static const bool _ENABLE_VESTING = true;                                               /*!< флаг подключения режима вестинга для совершенных покупок у аккаунта _CORE_SALE_ACCOUNT */
+    static const uint64_t _VESTING_SECONDS = 15770000;                                      /*!< продолжительность вестинга в секундах */
+    static constexpr eosio::name _CORE_SALE_ACCOUNT = "core"_n;                             /*!< аккаунт системного продавца токенов, в сделке к которым срабатывает вестинг */
+    static constexpr eosio::name _REGISTRATOR_ACCOUNT = "registrator"_n;                    /*!< аккаунт контракта регистратора, хранящего таблицу с гостями для подарочного выкупа */
     
-    static const uint64_t _GIFT_ACCOUNT_FROM_AMOUNT = 100000;
+    static const uint64_t _GIFT_ACCOUNT_FROM_AMOUNT = 100000;                               /*!< подарок в виде аккаунта партнера осуществляется, если гость совершает покупку на сумму более, чем указано здесь (с учётом точности) */
 
-    // static const uint64_t _ORDER_EXPIRATION = 10; //10 secs
-    static const uint64_t _ORDER_EXPIRATION = 30 * 60; //30 mins
-    static constexpr double _START_RATE = 0.2;
+    // static const uint64_t _ORDER_EXPIRATION = 10;                                        /*!< время до истечения срока давности ордера */
+    static const uint64_t _ORDER_EXPIRATION = 30 * 60;                                      /*!< время до истечения срока давности ордера */
+    static constexpr double _START_RATE = 0.2;                                              /*!< начальный курс старта роста системного токена относительно USD */
+
+    static uint128_t combine_ids(const uint64_t &x, const uint64_t &y) {
+        return (uint128_t{x} << 64) | y;
+    };
+
+
+    /**
+     * @brief      Таблица промежуточного хранения балансов пользователей.
+     * @details CONTRACT = _me, SCOPE = username, TABLE = balance
+     * @details Таблица баланса пользователя пополняется им путём совершения перевода на аккаунт контракта p2p. При создании ордера используется баланс пользователя из этой таблицы. Чтобы исключить необходимость пользователю контролировать свой баланс в контракте p2p, терминал доступа вызывает транзакцию с одновременно двумя действиями: перевод на аккаунт p2p и создание ордера на ту же сумму. 
+     */
 
     struct [[eosio::table]] balance {
         uint64_t id;
@@ -117,81 +131,86 @@ public:
     > balances_index;
 
 
-    static uint128_t combine_ids(const uint64_t &x, const uint64_t &y) {
-        return (uint128_t{x} << 64) | y;
-    };
 
-
+    /**
+     * @brief      Таблица счётчиков ордеров
+     * @details CONTRACT = _me, SCOPE = _me, TABLE = counts
+     * @detals Используется для хранения счётчика ордеров с ключом totalorders. При создании нового ордера, счётчик увеличивается на 1. При завершении или удалении ордера, счётчик не изменяется. 
+     */
     struct [[eosio::table]] counts {
-        name key;
-        uint64_t value;
+        name key;           /*!< идентификатор ключа */
+        uint64_t value;     /*!< идентификатор значения */
 
-        uint64_t primary_key()const { return key.value; }
+        uint64_t primary_key()const { return key.value; } /*!< key - primary_key */
         
     };
 
     typedef eosio::multi_index<"counts"_n, counts> counts_index;
     
 
-    //что сделать? 
+    /**
+     * @brief      Таблица ордеров
+     * @details    CONTRACT = _me, SCOPE = _me, TABLE = orders
+     * @details    Ордера создаются продавцами или покупателями вызовом метода createorder, с дальнейшим использованием методов accept, approve и confirm.
+    */
 
     struct [[eosio::table]] orders {
-        uint64_t id;
-        uint64_t parent_id;
+        uint64_t id;                                /*!< идентификатор ордера */
+        uint64_t parent_id;                         /*!< идентификатор родительского ордера, с которым происходит сделка */
 
-        name curator;
-        name creator;
-        name parent_creator;
-        name type;
-        asset root_quantity;
+        name curator;                               /*!< имя аккаунта куратора (оракула), обладающий доступом к методам разрешения конфликтов */
+        name creator;                               /*!< имя аккаунта создателя ордера */
+        name parent_creator;                        /*!< имя аккаунта создателя родительского ордера */
+        name type;                                  /*!< тип ордера buy / sell */
+        asset root_quantity;                        /*!< количество токенов на обмене */
 
-        std::string root_symbol;
-        eosio::name root_contract; 
-        uint64_t root_precision;
+        std::string root_symbol;                    /*!< символ токена обмена */
+        eosio::name root_contract;                  /*!< контракт токена обмена */
+        uint64_t root_precision;                    /*!< точность токена обмена */
 
-        asset root_remain;
-        eosio::asset root_locked;
-        eosio::asset root_completed;
+        asset root_remain;                          /*!< сколько токенов осталось на обмене */
+        eosio::asset root_locked;                   /*!< сколько токенов заблокировано в обмене */
+        eosio::asset root_completed;                /*!< сколько токенов завершили обмен */
 
-        name quote_type;
-        double quote_rate;
-        std::string quote_symbol;
-        eosio::name quote_contract;
-        uint64_t quote_precision;
+        name quote_type;                            /*!< маркер внутреннего обмена external / internal. Сейчас используем только external, при internal контракт должен передать out_asset покупателю/продавцу, при external покупатель/продавец должен подтвердить поступление средств на свой счёт вручную, а средства это - внешние относительно блокчейна валюты (фиат). */
+        double quote_rate;                          /*!< курс опорной валюты при конвертации (USD) */
+        std::string quote_symbol;                   /*!< символ опорной валюты при конвертации (USD) */
+        eosio::name quote_contract;                 /*!< контракт опорной валюты при конвертации (при USD - не указывается) */
+        uint64_t quote_precision;                   /*!< точность опорной валюты при конвертации (4 знака для USD) */
 
-        asset quote_quantity;
-        asset quote_remain;
-        asset quote_locked;
-        asset quote_completed;
+        asset quote_quantity;                       /*!< общее количество опорной валюты на конвертации (USD) */
+        asset quote_remain;                         /*!< сколько опорной валюты осталось на конвертации (USD) */ 
+        asset quote_locked;                         /*!< сколько опорной валюты заблокировано на конвертации (USD) */ 
+        asset quote_completed;                      /*!< сколько опорной валюты завершило конвертацию (USD) */ 
 
-        uint64_t out_currency_code; //ISO3166
-        name out_type;
-        double out_rate;
-        std::string out_symbol;
-        name out_contract;
-        uint64_t out_precision;
+        uint64_t out_currency_code;                 /*!< код валюты выхода из конвертации по стандарту ISO3166 (не используем сейчас) */ 
+        name out_type;                              /*!< тип валюты выхода из конвертации (crypto / fiat) - не используем сейчас */ 
+        double out_rate;                            /*!< курс валюты выхода из конвертации относительно опорной валюты (USD) */ 
+        std::string out_symbol;                     /*!< символ валюты выхода из конвертации */ 
+        name out_contract;                          /*!< контракт валюты выхода из конвертации (не используется сейчас) */ 
+        uint64_t out_precision;                     /*!< точность валюты выхода из конвертации */ 
         
-        asset out_quantity;
-        asset out_remain;
-        asset out_locked;
-        asset out_completed;
+        asset out_quantity;                         /*!< общее количество валюты выхода из конвертации */ 
+        asset out_remain;                           /*!< сколько валюты выхода осталось на конвертации */ 
+        asset out_locked;                           /*!< сколько валюты выхода заблокировано на конвертации */ 
+        asset out_completed;                        /*!< сколько валюты выхода завершило конвертацию */ 
 
-        std::string details;
-        name status;
-        eosio::time_point_sec expired_at;
-        eosio::time_point_sec created_at;
+        std::string details;                        /*!< обычно зашированные детали сделки */ 
+        name status;                                /*!< статус ордера: waiting / process / payed / finish / dispute */ 
+        eosio::time_point_sec expired_at;           /*!< дата истечения срока давности ордера */ 
+        eosio::time_point_sec created_at;           /*!< дата создания ордера */ 
 
-        uint64_t primary_key()const { return id; }
-        uint64_t bycurrcode() const {return out_currency_code;}
+        uint64_t primary_key()const { return id; }                              /*!< id - primary_key */
+        uint64_t bycurrcode() const {return out_currency_code;}                 /*!< out_currency_code - secondary_key 2 */
 
-        uint64_t byparentid()const { return parent_id;}
-        uint64_t bytype() const {return type.value;} 
+        uint64_t byparentid()const { return parent_id;}                         /*!< parent_id - secondary_key 3 */
+        uint64_t bytype() const {return type.value;}                            /*!< type - secondary_key 4 */
 
-        uint64_t bycreator() const {return creator.value;}
-        uint64_t bycurator() const {return curator.value;}
-        uint64_t bystatus() const {return status.value;} 
-        uint64_t byexpr() const {return expired_at.sec_since_epoch();}
-        uint64_t bycreated() const {return created_at.sec_since_epoch();}
+        uint64_t bycreator() const {return creator.value;}                      /*!< creator - secondary_key 5 */
+        uint64_t bycurator() const {return curator.value;}                      /*!< curator - secondary_key 6 */
+        uint64_t bystatus() const {return status.value;}                        /*!< status - secondary_key 7 */
+        uint64_t byexpr() const {return expired_at.sec_since_epoch();}          /*!< expired_at - secondary_key 8 */
+        uint64_t bycreated() const {return created_at.sec_since_epoch();}       /*!< created_at - secondary_key 9 */
     
     };
 
@@ -209,20 +228,23 @@ public:
 
 
 
+    /**
+     * @brief      Таблица содержит курсы конвертации к доллару.
+     * @details    CONTRACT = _me, SCOPE = _me, TABLE = usdrates
+     * @details    Курсы обновляются аккаунтом rater методом setrate или системным контрактом eosio методом uprate. 
+    */
+    
     struct [[eosio::table]] usdrates {
-        uint64_t id;
-        eosio::name out_contract;
-        eosio::asset out_asset;
-        double rate;
-        eosio::time_point_sec updated_at;
+        uint64_t id;                        /*!< идентификатор курса */
+        eosio::name out_contract;           /*!< контракт выхода; если в конвертации используется внешняя валюта (например, фиатный RUB), контракт не устанавливается. Во внутренних конвертациях используется только при указании курса жетона ядра системы к доллару. */
+        eosio::asset out_asset;             /*!< токен выхода */
+        double rate;                        /*!< курс токена выхода к доллару */
+        eosio::time_point_sec updated_at;   /*!< дата последнего обновления курса */
         
-        uint64_t primary_key() const {return id;}
-        uint128_t byconsym() const {return combine_ids(out_contract.value, out_asset.symbol.code().raw());}
+        uint64_t primary_key() const {return id;} /*!< id - primary_key */
+        uint128_t byconsym() const {return combine_ids(out_contract.value, out_asset.symbol.code().raw());} /*!< (out_contract, out_asset.symbol) - комбинированный secondary_key для получения курса по имени выходного контракта и символу */
 
     };
-
-
-
 
     typedef eosio::multi_index<"usdrates"_n, usdrates,
     
@@ -232,27 +254,36 @@ public:
 
 
 
+    /**
+     * @brief      Таблица расширения usdrates с указанием даты установки первого курса
+     * @details    CONTRACT = _me, SCOPE = _me, TABLE = usdrates2
+     */
     struct [[eosio::table]] usdrates2 {
-        uint64_t id;
-        eosio::time_point_sec created_at;
+        uint64_t id; /*!< идентификатор курса */
+        eosio::time_point_sec created_at; /*!< дата установки первого курса */
         
-        uint64_t primary_key() const {return id;}
+        uint64_t primary_key() const {return id;} /*!< id - primary_key */
     };
 
 
     typedef eosio::multi_index<"usdrates2"_n, usdrates2> usdrates2_index;
 
 
-
+    /**
+     * @brief      Таблица резервов контракта для выплат бонусов в реферальную сеть
+     * @details    CONTRACT = _me, SCOPE = _me, TABLE = bbonuses
+     * @details    Таблица пополняется переводом на аккаунт контракта с указаним в поле memo аккаунта продавца, 
+     * который будет использовать распределение на сеть покупателя. Распределение срабатывает в момент завершения сделки, увеличивая значение в поле distributed согласно курсу распределения disctribution_rate.
+     */
     struct [[eosio::table]] bbonuses {
-        eosio::name host;
-        eosio::name contract;
-        eosio::asset total;
-        eosio::asset available;
-        eosio::asset distributed;
-        double distribution_rate;
+        eosio::name host;           /*!< имя хоста продавца, при сделке с которым, срабатывает выплата в сеть */
+        eosio::name contract;       /*!< имя контракта токена */
+        eosio::asset total;         /*!< сколько токенов всего было на распределении */
+        eosio::asset available;     /*!< сколько токенов доступно для распределения */
+        eosio::asset distributed;   /*!< сколько токенов уже распределено */
+        double distribution_rate;   /*!< курс распределения бонусов, согласно которому, в сеть распределяется столько же монет, сколько получил пользователь, умноженное на этот курс */
 
-        uint64_t primary_key() const {return host.value;}
+        uint64_t primary_key() const {return host.value;} /*!< host - primary_key */
     };
 
 
@@ -261,21 +292,22 @@ public:
 
 
 
-    /*!
-       \brief Структура учёта вестинг-балансов пользователей
-    */
-
+    /**
+     * @brief      Таблица вестинг-балансов пользователей
+     * @details CONTRACT = _me, SCOPE = owner, TABLE = vesting
+     * @details Пополняется контрактом в случае, если ключ _ENABLE_VESTING = TRUE на количество секунд в _VESTING_SECONDS, срабатывает только для аккаунта продавца _CORE_SALE_ACCOUNT. Позволяет заморозить покупку токенов у компании на указанное количество секунд.
+     */
       struct [[eosio::table]] vesting {
-        uint64_t id;
-        eosio::name owner;
-        eosio::name contract;
-        eosio::time_point_sec startat;
-        uint64_t duration;
-        eosio::asset amount;
-        eosio::asset available;
-        eosio::asset withdrawed;
+        uint64_t id;                            /*!< идентификатор объекта вестинга */
+        eosio::name owner;                      /*!< имя аккаунта владельца объекта вестинга (дублируется со SCOPE) */
+        eosio::name contract;                   /*!< имя контракта токена вестинга */
+        eosio::time_point_sec startat;          /*!< объект вестинга создан в */
+        uint64_t duration;                      /*!< продолжительность вестинга в секундах */
+        eosio::asset amount;                    /*!< общее количество токенов на ветсинге */
+        eosio::asset available;                 /*!< доступное количество токенов из вестинга */
+        eosio::asset withdrawed;                /*!< выведенное количество токенов из вестинга */
 
-        uint64_t primary_key() const {return id;}
+        uint64_t primary_key() const {return id;} /*!< id - primary_key */
 
         EOSLIB_SERIALIZE(vesting, (id)(owner)(contract)(startat)(duration)(amount)(available)(withdrawed))
       };
@@ -284,11 +316,12 @@ public:
 
 
 
-};
-
-
-
-    //Таблица гостей регистратора
+    /**
+     * @brief      Таблица доступа к записям гостей платформы
+     * @details CONTRACT = _REGISTRATOR_ACCOUNT, SCOPE = _REGISTRATOR_ACCOUNT, TABLE = guests
+     * @details Таблица находится на контракте registrator и используется для проверки необходимости выкупа аккаунта пользователя, если его покупка у _CORE_SALE_ACCOUNT больше, чем _GIFT_ACCOUNT_FROM_AMOUNT. Если пользователю полагается подарочный аккаунт, то контракт p2p совершает его выкуп для пользователя из числа токенов бонусного баланса контракта.
+     */
+    
     struct [[eosio::table]] guests {
         eosio::name username;
         
@@ -312,3 +345,6 @@ public:
        eosio::indexed_by< "byexpr"_n, eosio::const_mem_fun<guests, uint64_t, &guests::byexpr>>,
        eosio::indexed_by< "byreg"_n, eosio::const_mem_fun<guests, uint64_t, &guests::byreg>>
     > guests_index;
+
+
+};

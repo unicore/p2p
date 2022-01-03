@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="structp2p_1_1usdrates2" kind="struct" language="C++" prot="public">
+    <compoundname>p2p::usdrates2</compoundname>
+    <includes refid="p2p_8hpp" local="no">p2p.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structp2p_1_1usdrates2_1aba230f3a86e3c9eb693c41d501378c22" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::usdrates2::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>идентификатор курса </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="262" column="1" bodyfile="p2p.hpp" bodystart="262" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structp2p_1_1usdrates2_1a2f8aa31571d84a178259fa42461cf140" prot="public" static="no" mutable="no">
+        <type>eosio::time_point_sec</type>
+        <definition>eosio::time_point_sec p2p::usdrates2::created_at</definition>
+        <argsstring></argsstring>
+        <name>created_at</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>дата установки первого курса </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="263" column="1" bodyfile="p2p.hpp" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structp2p_1_1usdrates2_1aa3556a870e531f2a33d3a40ba45bc2da" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::usdrates2::primary_key</definition>
+        <argsstring>() const</argsstring>
+        <name>primary_key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>id - primary_key </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="265" column="1" bodyfile="p2p.hpp" bodystart="265" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Таблица расширения usdrates с указанием даты установки первого курса </para>    </briefdescription>
+    <detaileddescription>
+<para>CONTRACT = _me, SCOPE = _me, TABLE = <ref refid="structp2p_1_1usdrates2" kindref="compound">usdrates2</ref> </para>    </detaileddescription>
+    <location file="p2p.hpp" line="261" column="1" bodyfile="p2p.hpp" bodystart="261" bodyend="266"/>
+    <listofallmembers>
+      <member refid="structp2p_1_1usdrates2_1a2f8aa31571d84a178259fa42461cf140" prot="public" virt="non-virtual"><scope>p2p::usdrates2</scope><name>created_at</name></member>
+      <member refid="structp2p_1_1usdrates2_1aba230f3a86e3c9eb693c41d501378c22" prot="public" virt="non-virtual"><scope>p2p::usdrates2</scope><name>id</name></member>
+      <member refid="structp2p_1_1usdrates2_1aa3556a870e531f2a33d3a40ba45bc2da" prot="public" virt="non-virtual"><scope>p2p::usdrates2</scope><name>primary_key</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

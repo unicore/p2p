@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
   <compounddef id="structp2p_1_1balance" kind="struct" language="C++" prot="public">
     <compoundname>p2p::balance</compoundname>
     <includes refid="p2p_8hpp" local="no">p2p.hpp</includes>
@@ -9,39 +9,42 @@
         <definition>uint64_t p2p::balance::id</definition>
         <argsstring></argsstring>
         <name>id</name>
+        <qualifiedname>p2p::balance::id</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="115" column="1" bodyfile="p2p.hpp" bodystart="115" bodyend="-1"/>
+        <location file="p2p.hpp" line="125" column="18" bodyfile="p2p.hpp" bodystart="125" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1balance_1ae764a6535e50b4f284d7c6e080376a73" prot="public" static="no" mutable="no">
         <type>eosio::name</type>
         <definition>eosio::name p2p::balance::contract</definition>
         <argsstring></argsstring>
         <name>contract</name>
+        <qualifiedname>p2p::balance::contract</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="116" column="1" bodyfile="p2p.hpp" bodystart="116" bodyend="-1"/>
+        <location file="p2p.hpp" line="126" column="21" bodyfile="p2p.hpp" bodystart="126" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1balance_1aed079d7e8d81efd98a65fd0703184883" prot="public" static="no" mutable="no">
         <type>eosio::asset</type>
         <definition>eosio::asset p2p::balance::quantity</definition>
         <argsstring></argsstring>
         <name>quantity</name>
+        <qualifiedname>p2p::balance::quantity</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="117" column="1" bodyfile="p2p.hpp" bodystart="117" bodyend="-1"/>
+        <location file="p2p.hpp" line="127" column="22" bodyfile="p2p.hpp" bodystart="127" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -50,33 +53,38 @@
         <definition>uint64_t p2p::balance::primary_key</definition>
         <argsstring>() const</argsstring>
         <name>primary_key</name>
+        <qualifiedname>p2p::balance::primary_key</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="119" column="1" bodyfile="p2p.hpp" bodystart="119" bodyend="119"/>
+        <location file="p2p.hpp" line="129" column="18" bodyfile="p2p.hpp" bodystart="129" bodyend="129"/>
       </memberdef>
       <memberdef kind="function" id="structp2p_1_1balance_1a156c77b56c8c0bd71d769fd3281bdf11" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>uint128_t</type>
         <definition>uint128_t p2p::balance::byconsym</definition>
         <argsstring>() const</argsstring>
         <name>byconsym</name>
+        <qualifiedname>p2p::balance::byconsym</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="120" column="1" bodyfile="p2p.hpp" bodystart="120" bodyend="120"/>
+        <location file="p2p.hpp" line="130" column="19" bodyfile="p2p.hpp" bodystart="130" bodyend="130"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Таблица промежуточного хранения балансов пользователей. </para>    </briefdescription>
+<para>Таблица промежуточного хранения балансов пользователей. </para>
+    </briefdescription>
     <detaileddescription>
-<para>CONTRACT = _me, SCOPE = username, TABLE = balance</para><para>Таблица баланса пользователя пополняется им путём совершения перевода на аккаунт контракта <ref refid="classp2p" kindref="compound">p2p</ref>. При создании ордера используется баланс пользователя из этой таблицы. Чтобы исключить необходимость пользователю контролировать свой баланс в контракте <ref refid="classp2p" kindref="compound">p2p</ref>, терминал доступа вызывает транзакцию с одновременно двумя действиями: перевод на аккаунт <ref refid="classp2p" kindref="compound">p2p</ref> и создание ордера на ту же сумму. </para>    </detaileddescription>
-    <location file="p2p.hpp" line="114" column="1" bodyfile="p2p.hpp" bodystart="114" bodyend="123"/>
+<para>CONTRACT = _me, SCOPE = username, TABLE = balance</para>
+<para>Таблица баланса пользователя пополняется им путём совершения перевода на аккаунт контракта <ref refid="classp2p" kindref="compound">p2p</ref>. При создании ордера используется баланс пользователя из этой таблицы. Чтобы исключить необходимость пользователю контролировать свой баланс в контракте <ref refid="classp2p" kindref="compound">p2p</ref>, терминал доступа вызывает транзакцию с одновременно двумя действиями: перевод на аккаунт <ref refid="classp2p" kindref="compound">p2p</ref> и создание ордера на ту же сумму. </para>
+    </detaileddescription>
+    <location file="p2p.hpp" line="124" column="5" bodyfile="p2p.hpp" bodystart="124" bodyend="133"/>
     <listofallmembers>
       <member refid="structp2p_1_1balance_1a156c77b56c8c0bd71d769fd3281bdf11" prot="public" virt="non-virtual"><scope>p2p::balance</scope><name>byconsym</name></member>
       <member refid="structp2p_1_1balance_1ae764a6535e50b4f284d7c6e080376a73" prot="public" virt="non-virtual"><scope>p2p::balance</scope><name>contract</name></member>

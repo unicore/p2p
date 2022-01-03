@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="group__public__consts" kind="group">
+    <compoundname>public_consts</compoundname>
+    <title>CONSTS</title>
+      <sectiondef kind="user-defined">
+      <memberdef kind="variable" id="group__public__consts_1gade9426b6e05cdb60d41e808717199b89" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr eosio::name</type>
+        <definition>constexpr eosio::name p2p::_me</definition>
+        <argsstring></argsstring>
+        <name>_me</name>
+        <qualifiedname>p2p::_me</qualifiedname>
+        <initializer>= &quot;p2p&quot;_n</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>/** собственное имя аккаунта контракта </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="87" column="34" bodyfile="p2p.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1gaa5528a78186585c3a033d89b6c027a5b" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr eosio::name</type>
+        <definition>constexpr eosio::name p2p::_curator</definition>
+        <argsstring></argsstring>
+        <name>_curator</name>
+        <qualifiedname>p2p::_curator</qualifiedname>
+        <initializer>= &quot;p2p&quot;_n</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>дефолтное имя аккаунта куратора всех сделок </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="88" column="34" bodyfile="p2p.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1gabaf26be47ba132e33bdadf4a6f65a052" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr eosio::name</type>
+        <definition>constexpr eosio::name p2p::_rater</definition>
+        <argsstring></argsstring>
+        <name>_rater</name>
+        <qualifiedname>p2p::_rater</qualifiedname>
+        <initializer>= &quot;rater&quot;_n</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>имя аккаунта поставщика курсов </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="89" column="34" bodyfile="p2p.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1gafe8d32633b8a87ce35209184d222f6de" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr eosio::symbol</type>
+        <definition>constexpr eosio::symbol p2p::_SYM</definition>
+        <argsstring></argsstring>
+        <name>_SYM</name>
+        <qualifiedname>p2p::_SYM</qualifiedname>
+        <initializer>= eosio::symbol(eosio::symbol_code(&quot;FLOWER&quot;), 4)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>системный токен </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="90" column="36" bodyfile="p2p.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1ga582434add36ca36a326bdab9e7c8cb4e" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr eosio::name</type>
+        <definition>constexpr eosio::name p2p::_core</definition>
+        <argsstring></argsstring>
+        <name>_core</name>
+        <qualifiedname>p2p::_core</qualifiedname>
+        <initializer>= &quot;unicore&quot;_n</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>имя аккаунта распределения реферальных бонусов в сеть </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="91" column="34" bodyfile="p2p.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1ga6a7a6607c93e930cfa3984a8c318942b" prot="public" static="yes" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t p2p::_PERCENTS_PER_MONTH</definition>
+        <argsstring></argsstring>
+        <name>_PERCENTS_PER_MONTH</name>
+        <qualifiedname>p2p::_PERCENTS_PER_MONTH</qualifiedname>
+        <initializer>= 42</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>если рост курса системного токена подключен, то растёт с указанной здесь скоростью </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="93" column="27" bodyfile="p2p.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1ga738ddf63d1276c74f28b7d2f51ba1475" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool p2p::_ENABLE_GROWHT</definition>
+        <argsstring></argsstring>
+        <name>_ENABLE_GROWHT</name>
+        <qualifiedname>p2p::_ENABLE_GROWHT</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>флаг подключения автоматического роста курса, допускающего вызов метода uprate от системного контракта eosio </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="95" column="23" bodyfile="p2p.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1ga817118e4e422393acc35439edb0187af" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool p2p::_ENABLE_VESTING</definition>
+        <argsstring></argsstring>
+        <name>_ENABLE_VESTING</name>
+        <qualifiedname>p2p::_ENABLE_VESTING</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>флаг подключения режима вестинга для совершенных покупок у аккаунта _CORE_SALE_ACCOUNT </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="97" column="23" bodyfile="p2p.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1gaf52bcfc4c42cb8a001ab4935d06539c0" prot="public" static="yes" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t p2p::_VESTING_SECONDS</definition>
+        <argsstring></argsstring>
+        <name>_VESTING_SECONDS</name>
+        <qualifiedname>p2p::_VESTING_SECONDS</qualifiedname>
+        <initializer>= 15770000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>продолжительность вестинга в секундах </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="98" column="27" bodyfile="p2p.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr eosio::name</type>
+        <definition>constexpr eosio::name p2p::_CORE_SALE_ACCOUNT</definition>
+        <argsstring></argsstring>
+        <name>_CORE_SALE_ACCOUNT</name>
+        <qualifiedname>p2p::_CORE_SALE_ACCOUNT</qualifiedname>
+        <initializer>= &quot;core&quot;_n</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>аккаунт системного продавца токенов, в сделке к которым срабатывает вестинг </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="99" column="34" bodyfile="p2p.hpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1gad3c9fd465ea37d16657bd9910c631d22" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr eosio::name</type>
+        <definition>constexpr eosio::name p2p::_REGISTRATOR_ACCOUNT</definition>
+        <argsstring></argsstring>
+        <name>_REGISTRATOR_ACCOUNT</name>
+        <qualifiedname>p2p::_REGISTRATOR_ACCOUNT</qualifiedname>
+        <initializer>= &quot;registrator&quot;_n</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>аккаунт контракта регистратора, хранящего таблицу с гостями для подарочного выкупа </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="100" column="34" bodyfile="p2p.hpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1gada18e95b855fa10dc57a33620b4dd51d" prot="public" static="yes" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t p2p::_GIFT_ACCOUNT_FROM_AMOUNT</definition>
+        <argsstring></argsstring>
+        <name>_GIFT_ACCOUNT_FROM_AMOUNT</name>
+        <qualifiedname>p2p::_GIFT_ACCOUNT_FROM_AMOUNT</qualifiedname>
+        <initializer>= 100000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>подарок в виде аккаунта партнера осуществляется, если гость совершает покупку на сумму более, чем указано здесь (с учётом точности) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="102" column="27" bodyfile="p2p.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1ga714001f0f556d0db16b3746fa2261ddb" prot="public" static="yes" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t p2p::_ORDER_EXPIRATION</definition>
+        <argsstring></argsstring>
+        <name>_ORDER_EXPIRATION</name>
+        <qualifiedname>p2p::_ORDER_EXPIRATION</qualifiedname>
+        <initializer>= 30 * 60</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>время до истечения срока давности ордера </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="105" column="27" bodyfile="p2p.hpp" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1ga41fd0523f7a4103ea012c69c376d0823" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr double</type>
+        <definition>constexpr double p2p::_START_RATE</definition>
+        <argsstring></argsstring>
+        <name>_START_RATE</name>
+        <qualifiedname>p2p::_START_RATE</qualifiedname>
+        <initializer>= 0.2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>начальный курс старта роста системного токена относительно USD </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="106" column="29" bodyfile="p2p.hpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Структуры констант контракта </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

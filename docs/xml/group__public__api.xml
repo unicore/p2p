@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__public__api" kind="group">
+    <compoundname>public_api</compoundname>
+    <title>Public API</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__public__api_1ga4f3c89b4ae21f54b6e16334e681a7860" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void p2p::setbrate</definition>
+        <argsstring>(eosio::name host, double distribution_rate)</argsstring>
+        <name>setbrate</name>
+        <param>
+          <type>eosio::name</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>distribution_rate</declname>
+        </param>
+        <briefdescription>
+<para>Метод установки бонусного курса </para>        </briefdescription>
+        <detaileddescription>
+<para>AUTH = host</para><para>Вызывается владельцем бонусного баланса в контракте для подключения распределения на партнёрскую сеть покупателя.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">host</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The host </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">distribution_rate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The distribution rate </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="72" column="1" bodyfile="p2p.cpp" bodystart="168" bodyend="182"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is a list of the primary functions that comprise the public API. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

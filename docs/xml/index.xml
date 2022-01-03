@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.14">
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.3" xml:lang="en-US">
   <compound refid="structp2p_1_1balance" kind="struct"><name>p2p::balance</name>
     <member refid="structp2p_1_1balance_1a64daf2f578332cd8011c70cfa8683589" kind="variable"><name>id</name></member>
     <member refid="structp2p_1_1balance_1ae764a6535e50b4f284d7c6e080376a73" kind="variable"><name>contract</name></member>
@@ -82,6 +82,20 @@
     <member refid="structp2p_1_1orders_1a6eab9cb4d0f7b605aef8856aad730fe5" kind="function"><name>bycreated</name></member>
   </compound>
   <compound refid="classp2p" kind="class"><name>p2p</name>
+    <member refid="group__public__consts_1gade9426b6e05cdb60d41e808717199b89" kind="variable"><name>_me</name></member>
+    <member refid="group__public__consts_1gaa5528a78186585c3a033d89b6c027a5b" kind="variable"><name>_curator</name></member>
+    <member refid="group__public__consts_1gabaf26be47ba132e33bdadf4a6f65a052" kind="variable"><name>_rater</name></member>
+    <member refid="group__public__consts_1gafe8d32633b8a87ce35209184d222f6de" kind="variable"><name>_SYM</name></member>
+    <member refid="group__public__consts_1ga582434add36ca36a326bdab9e7c8cb4e" kind="variable"><name>_core</name></member>
+    <member refid="group__public__consts_1ga6a7a6607c93e930cfa3984a8c318942b" kind="variable"><name>_PERCENTS_PER_MONTH</name></member>
+    <member refid="group__public__consts_1ga738ddf63d1276c74f28b7d2f51ba1475" kind="variable"><name>_ENABLE_GROWHT</name></member>
+    <member refid="group__public__consts_1ga817118e4e422393acc35439edb0187af" kind="variable"><name>_ENABLE_VESTING</name></member>
+    <member refid="group__public__consts_1gaf52bcfc4c42cb8a001ab4935d06539c0" kind="variable"><name>_VESTING_SECONDS</name></member>
+    <member refid="group__public__consts_1gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99" kind="variable"><name>_CORE_SALE_ACCOUNT</name></member>
+    <member refid="group__public__consts_1gad3c9fd465ea37d16657bd9910c631d22" kind="variable"><name>_REGISTRATOR_ACCOUNT</name></member>
+    <member refid="group__public__consts_1gada18e95b855fa10dc57a33620b4dd51d" kind="variable"><name>_GIFT_ACCOUNT_FROM_AMOUNT</name></member>
+    <member refid="group__public__consts_1ga714001f0f556d0db16b3746fa2261ddb" kind="variable"><name>_ORDER_EXPIRATION</name></member>
+    <member refid="group__public__consts_1ga41fd0523f7a4103ea012c69c376d0823" kind="variable"><name>_START_RATE</name></member>
     <member refid="classp2p_1a562223292a6b99a97d486136b2eb0d9e" kind="typedef"><name>balances_index</name></member>
     <member refid="classp2p_1a6bef060ed784c193c2a60b397c869c29" kind="typedef"><name>counts_index</name></member>
     <member refid="classp2p_1af7e337013ebdcc44b420a6d55d0d385f" kind="typedef"><name>orders_index</name></member>
@@ -90,36 +104,22 @@
     <member refid="classp2p_1ad2b234c3e4a379adfeebb42efe3fdb25" kind="typedef"><name>bbonuses_index</name></member>
     <member refid="classp2p_1a9e10c97b92e817371f627c84094dce39" kind="typedef"><name>vesting_index</name></member>
     <member refid="classp2p_1a08507c2c104ad7e99765afd19d4fdd10" kind="typedef"><name>guests_index</name></member>
-    <member refid="classp2p_1ade9426b6e05cdb60d41e808717199b89" kind="variable"><name>_me</name></member>
-    <member refid="classp2p_1aa5528a78186585c3a033d89b6c027a5b" kind="variable"><name>_curator</name></member>
-    <member refid="classp2p_1abaf26be47ba132e33bdadf4a6f65a052" kind="variable"><name>_rater</name></member>
-    <member refid="classp2p_1afe8d32633b8a87ce35209184d222f6de" kind="variable"><name>_SYM</name></member>
-    <member refid="classp2p_1a582434add36ca36a326bdab9e7c8cb4e" kind="variable"><name>_core</name></member>
-    <member refid="classp2p_1a6a7a6607c93e930cfa3984a8c318942b" kind="variable"><name>_PERCENTS_PER_MONTH</name></member>
-    <member refid="classp2p_1a738ddf63d1276c74f28b7d2f51ba1475" kind="variable"><name>_ENABLE_GROWHT</name></member>
-    <member refid="classp2p_1a817118e4e422393acc35439edb0187af" kind="variable"><name>_ENABLE_VESTING</name></member>
-    <member refid="classp2p_1af52bcfc4c42cb8a001ab4935d06539c0" kind="variable"><name>_VESTING_SECONDS</name></member>
-    <member refid="classp2p_1aaf70e52c0f57cc4fa3d9d7fd0e8f0d99" kind="variable"><name>_CORE_SALE_ACCOUNT</name></member>
-    <member refid="classp2p_1ad3c9fd465ea37d16657bd9910c631d22" kind="variable"><name>_REGISTRATOR_ACCOUNT</name></member>
-    <member refid="classp2p_1ada18e95b855fa10dc57a33620b4dd51d" kind="variable"><name>_GIFT_ACCOUNT_FROM_AMOUNT</name></member>
-    <member refid="classp2p_1a714001f0f556d0db16b3746fa2261ddb" kind="variable"><name>_ORDER_EXPIRATION</name></member>
-    <member refid="classp2p_1a41fd0523f7a4103ea012c69c376d0823" kind="variable"><name>_START_RATE</name></member>
-    <member refid="classp2p_1a5dac3e80d9e970fbc86c4fbaf781f894" kind="function"><name>p2p</name></member>
+    <member refid="classp2p_1af05b8ff51661058078be1b96eb2bccb0" kind="function"><name>p2p</name></member>
     <member refid="classp2p_1a1ba9938186b683d21e39ae021d7a0a6f" kind="function"><name>apply</name></member>
-    <member refid="classp2p_1a0b05f55568e9469d33379512b29a116a" kind="function"><name>createorder</name></member>
-    <member refid="classp2p_1ab7d91c105e22cc794a42cb12d996d0cb" kind="function"><name>accept</name></member>
-    <member refid="classp2p_1a4562d6493c57589bf2259f119481d39a" kind="function"><name>approve</name></member>
-    <member refid="classp2p_1aa1abaf488133faec3fae6c6c9c9917c2" kind="function"><name>confirm</name></member>
-    <member refid="classp2p_1af81f265e37d1f1572a9a5fa17fa99f32" kind="function"><name>cancel</name></member>
-    <member refid="classp2p_1a4f0c0c376096f7a73b21b39f0dc58d1d" kind="function"><name>dispute</name></member>
-    <member refid="classp2p_1a805effb2c6e15ab30e7f36bf13558910" kind="function"><name>del</name></member>
-    <member refid="classp2p_1a432842119735888f862933882e6a4da6" kind="function"><name>setrate</name></member>
-    <member refid="classp2p_1a6684d814e1a17f87c492e2b394cc1846" kind="function"><name>uprate</name></member>
-    <member refid="classp2p_1abea413390558d072de45f9ff47217ff8" kind="function"><name>delrate</name></member>
-    <member refid="classp2p_1a6ef3ff3b489159e054195c1d8fbd7092" kind="function"><name>delvesting</name></member>
-    <member refid="classp2p_1a4f3c89b4ae21f54b6e16334e681a7860" kind="function"><name>setbrate</name></member>
-    <member refid="classp2p_1a2cb80d56fbb68ac3ccc688112d86532a" kind="function"><name>refreshsh</name></member>
-    <member refid="classp2p_1adb4fde78468ee3b060717a785febdcc4" kind="function"><name>withdrawsh</name></member>
+    <member refid="group__public__actions_1ga0b05f55568e9469d33379512b29a116a" kind="function"><name>createorder</name></member>
+    <member refid="group__public__actions_1gab7d91c105e22cc794a42cb12d996d0cb" kind="function"><name>accept</name></member>
+    <member refid="group__public__actions_1ga4562d6493c57589bf2259f119481d39a" kind="function"><name>approve</name></member>
+    <member refid="group__public__actions_1gaa1abaf488133faec3fae6c6c9c9917c2" kind="function"><name>confirm</name></member>
+    <member refid="group__public__actions_1gaf81f265e37d1f1572a9a5fa17fa99f32" kind="function"><name>cancel</name></member>
+    <member refid="group__public__actions_1ga4f0c0c376096f7a73b21b39f0dc58d1d" kind="function"><name>dispute</name></member>
+    <member refid="group__public__actions_1ga805effb2c6e15ab30e7f36bf13558910" kind="function"><name>del</name></member>
+    <member refid="group__public__actions_1ga432842119735888f862933882e6a4da6" kind="function"><name>setrate</name></member>
+    <member refid="group__public__actions_1ga6684d814e1a17f87c492e2b394cc1846" kind="function"><name>uprate</name></member>
+    <member refid="group__public__actions_1gabea413390558d072de45f9ff47217ff8" kind="function"><name>delrate</name></member>
+    <member refid="group__public__actions_1ga6ef3ff3b489159e054195c1d8fbd7092" kind="function"><name>delvesting</name></member>
+    <member refid="group__public__actions_1ga4f3c89b4ae21f54b6e16334e681a7860" kind="function"><name>setbrate</name></member>
+    <member refid="group__public__actions_1ga2cb80d56fbb68ac3ccc688112d86532a" kind="function"><name>refreshsh</name></member>
+    <member refid="group__public__actions_1gadb4fde78468ee3b060717a785febdcc4" kind="function"><name>withdrawsh</name></member>
     <member refid="classp2p_1ac36f6042dcb8942679dddbf672684ddc" kind="function"><name>add_balance</name></member>
     <member refid="classp2p_1afc44fa7dedaeea9559af5f70445b5218" kind="function"><name>sub_balance</name></member>
     <member refid="classp2p_1aa6f449f9ebec47b6741ed3497a3b92f9" kind="function"><name>addbbal</name></member>
@@ -161,6 +161,42 @@
     <member refid="p2p_8cpp_1a569d3d0ca7b56fb8c580faaa3d73179a" kind="function"><name>apply</name></member>
   </compound>
   <compound refid="p2p_8hpp" kind="file"><name>p2p.hpp</name>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="group__public__consts" kind="group"><name>public_consts</name>
+    <member refid="group__public__consts_1gade9426b6e05cdb60d41e808717199b89" kind="variable"><name>_me</name></member>
+    <member refid="group__public__consts_1gaa5528a78186585c3a033d89b6c027a5b" kind="variable"><name>_curator</name></member>
+    <member refid="group__public__consts_1gabaf26be47ba132e33bdadf4a6f65a052" kind="variable"><name>_rater</name></member>
+    <member refid="group__public__consts_1gafe8d32633b8a87ce35209184d222f6de" kind="variable"><name>_SYM</name></member>
+    <member refid="group__public__consts_1ga582434add36ca36a326bdab9e7c8cb4e" kind="variable"><name>_core</name></member>
+    <member refid="group__public__consts_1ga6a7a6607c93e930cfa3984a8c318942b" kind="variable"><name>_PERCENTS_PER_MONTH</name></member>
+    <member refid="group__public__consts_1ga738ddf63d1276c74f28b7d2f51ba1475" kind="variable"><name>_ENABLE_GROWHT</name></member>
+    <member refid="group__public__consts_1ga817118e4e422393acc35439edb0187af" kind="variable"><name>_ENABLE_VESTING</name></member>
+    <member refid="group__public__consts_1gaf52bcfc4c42cb8a001ab4935d06539c0" kind="variable"><name>_VESTING_SECONDS</name></member>
+    <member refid="group__public__consts_1gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99" kind="variable"><name>_CORE_SALE_ACCOUNT</name></member>
+    <member refid="group__public__consts_1gad3c9fd465ea37d16657bd9910c631d22" kind="variable"><name>_REGISTRATOR_ACCOUNT</name></member>
+    <member refid="group__public__consts_1gada18e95b855fa10dc57a33620b4dd51d" kind="variable"><name>_GIFT_ACCOUNT_FROM_AMOUNT</name></member>
+    <member refid="group__public__consts_1ga714001f0f556d0db16b3746fa2261ddb" kind="variable"><name>_ORDER_EXPIRATION</name></member>
+    <member refid="group__public__consts_1ga41fd0523f7a4103ea012c69c376d0823" kind="variable"><name>_START_RATE</name></member>
+  </compound>
+  <compound refid="group__public__actions" kind="group"><name>public_actions</name>
+    <member refid="group__public__actions_1ga4f3c89b4ae21f54b6e16334e681a7860" kind="function"><name>setbrate</name></member>
+    <member refid="group__public__actions_1ga0b05f55568e9469d33379512b29a116a" kind="function"><name>createorder</name></member>
+    <member refid="group__public__actions_1gab7d91c105e22cc794a42cb12d996d0cb" kind="function"><name>accept</name></member>
+    <member refid="group__public__actions_1gaa1abaf488133faec3fae6c6c9c9917c2" kind="function"><name>confirm</name></member>
+    <member refid="group__public__actions_1ga4562d6493c57589bf2259f119481d39a" kind="function"><name>approve</name></member>
+    <member refid="group__public__actions_1gaf81f265e37d1f1572a9a5fa17fa99f32" kind="function"><name>cancel</name></member>
+    <member refid="group__public__actions_1ga4f0c0c376096f7a73b21b39f0dc58d1d" kind="function"><name>dispute</name></member>
+    <member refid="group__public__actions_1ga805effb2c6e15ab30e7f36bf13558910" kind="function"><name>del</name></member>
+    <member refid="group__public__actions_1gabea413390558d072de45f9ff47217ff8" kind="function"><name>delrate</name></member>
+    <member refid="group__public__actions_1ga6ef3ff3b489159e054195c1d8fbd7092" kind="function"><name>delvesting</name></member>
+    <member refid="group__public__actions_1ga6684d814e1a17f87c492e2b394cc1846" kind="function"><name>uprate</name></member>
+    <member refid="group__public__actions_1ga432842119735888f862933882e6a4da6" kind="function"><name>setrate</name></member>
+    <member refid="group__public__actions_1ga2cb80d56fbb68ac3ccc688112d86532a" kind="function"><name>refreshsh</name></member>
+    <member refid="group__public__actions_1gadb4fde78468ee3b060717a785febdcc4" kind="function"><name>withdrawsh</name></member>
+  </compound>
+  <compound refid="group__public__tables" kind="group"><name>public_tables</name>
   </compound>
   <compound refid="indexpage" kind="page"><name>index</name>
   </compound>

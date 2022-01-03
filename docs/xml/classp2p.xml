@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
   <compounddef id="classp2p" kind="class" language="C++" prot="public">
     <compoundname>p2p</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">contract</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">eosio::contract</basecompoundref>
     <includes refid="p2p_8hpp" local="no">p2p.hpp</includes>
     <innerclass refid="structp2p_1_1balance" prot="public">p2p::balance</innerclass>
     <innerclass refid="structp2p_1_1bbonuses" prot="public">p2p::bbonuses</innerclass>
@@ -12,316 +12,353 @@
     <innerclass refid="structp2p_1_1usdrates" prot="public">p2p::usdrates</innerclass>
     <innerclass refid="structp2p_1_1usdrates2" prot="public">p2p::usdrates2</innerclass>
     <innerclass refid="structp2p_1_1vesting" prot="public">p2p::vesting</innerclass>
+      <sectiondef kind="user-defined">
+      <memberdef kind="variable" id="group__public__consts_1gade9426b6e05cdb60d41e808717199b89" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr eosio::name</type>
+        <definition>constexpr eosio::name p2p::_me</definition>
+        <argsstring></argsstring>
+        <name>_me</name>
+        <qualifiedname>p2p::_me</qualifiedname>
+        <initializer>= &quot;p2p&quot;_n</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>/** собственное имя аккаунта контракта </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="87" column="34" bodyfile="p2p.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1gaa5528a78186585c3a033d89b6c027a5b" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr eosio::name</type>
+        <definition>constexpr eosio::name p2p::_curator</definition>
+        <argsstring></argsstring>
+        <name>_curator</name>
+        <qualifiedname>p2p::_curator</qualifiedname>
+        <initializer>= &quot;p2p&quot;_n</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>дефолтное имя аккаунта куратора всех сделок </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="88" column="34" bodyfile="p2p.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1gabaf26be47ba132e33bdadf4a6f65a052" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr eosio::name</type>
+        <definition>constexpr eosio::name p2p::_rater</definition>
+        <argsstring></argsstring>
+        <name>_rater</name>
+        <qualifiedname>p2p::_rater</qualifiedname>
+        <initializer>= &quot;rater&quot;_n</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>имя аккаунта поставщика курсов </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="89" column="34" bodyfile="p2p.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1gafe8d32633b8a87ce35209184d222f6de" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr eosio::symbol</type>
+        <definition>constexpr eosio::symbol p2p::_SYM</definition>
+        <argsstring></argsstring>
+        <name>_SYM</name>
+        <qualifiedname>p2p::_SYM</qualifiedname>
+        <initializer>= eosio::symbol(eosio::symbol_code(&quot;FLOWER&quot;), 4)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>системный токен </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="90" column="36" bodyfile="p2p.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1ga582434add36ca36a326bdab9e7c8cb4e" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr eosio::name</type>
+        <definition>constexpr eosio::name p2p::_core</definition>
+        <argsstring></argsstring>
+        <name>_core</name>
+        <qualifiedname>p2p::_core</qualifiedname>
+        <initializer>= &quot;unicore&quot;_n</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>имя аккаунта распределения реферальных бонусов в сеть </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="91" column="34" bodyfile="p2p.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1ga6a7a6607c93e930cfa3984a8c318942b" prot="public" static="yes" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t p2p::_PERCENTS_PER_MONTH</definition>
+        <argsstring></argsstring>
+        <name>_PERCENTS_PER_MONTH</name>
+        <qualifiedname>p2p::_PERCENTS_PER_MONTH</qualifiedname>
+        <initializer>= 42</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>если рост курса системного токена подключен, то растёт с указанной здесь скоростью </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="93" column="27" bodyfile="p2p.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1ga738ddf63d1276c74f28b7d2f51ba1475" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool p2p::_ENABLE_GROWHT</definition>
+        <argsstring></argsstring>
+        <name>_ENABLE_GROWHT</name>
+        <qualifiedname>p2p::_ENABLE_GROWHT</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>флаг подключения автоматического роста курса, допускающего вызов метода uprate от системного контракта eosio </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="95" column="23" bodyfile="p2p.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1ga817118e4e422393acc35439edb0187af" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool p2p::_ENABLE_VESTING</definition>
+        <argsstring></argsstring>
+        <name>_ENABLE_VESTING</name>
+        <qualifiedname>p2p::_ENABLE_VESTING</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>флаг подключения режима вестинга для совершенных покупок у аккаунта _CORE_SALE_ACCOUNT </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="97" column="23" bodyfile="p2p.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1gaf52bcfc4c42cb8a001ab4935d06539c0" prot="public" static="yes" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t p2p::_VESTING_SECONDS</definition>
+        <argsstring></argsstring>
+        <name>_VESTING_SECONDS</name>
+        <qualifiedname>p2p::_VESTING_SECONDS</qualifiedname>
+        <initializer>= 15770000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>продолжительность вестинга в секундах </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="98" column="27" bodyfile="p2p.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr eosio::name</type>
+        <definition>constexpr eosio::name p2p::_CORE_SALE_ACCOUNT</definition>
+        <argsstring></argsstring>
+        <name>_CORE_SALE_ACCOUNT</name>
+        <qualifiedname>p2p::_CORE_SALE_ACCOUNT</qualifiedname>
+        <initializer>= &quot;core&quot;_n</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>аккаунт системного продавца токенов, в сделке к которым срабатывает вестинг </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="99" column="34" bodyfile="p2p.hpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1gad3c9fd465ea37d16657bd9910c631d22" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr eosio::name</type>
+        <definition>constexpr eosio::name p2p::_REGISTRATOR_ACCOUNT</definition>
+        <argsstring></argsstring>
+        <name>_REGISTRATOR_ACCOUNT</name>
+        <qualifiedname>p2p::_REGISTRATOR_ACCOUNT</qualifiedname>
+        <initializer>= &quot;registrator&quot;_n</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>аккаунт контракта регистратора, хранящего таблицу с гостями для подарочного выкупа </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="100" column="34" bodyfile="p2p.hpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1gada18e95b855fa10dc57a33620b4dd51d" prot="public" static="yes" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t p2p::_GIFT_ACCOUNT_FROM_AMOUNT</definition>
+        <argsstring></argsstring>
+        <name>_GIFT_ACCOUNT_FROM_AMOUNT</name>
+        <qualifiedname>p2p::_GIFT_ACCOUNT_FROM_AMOUNT</qualifiedname>
+        <initializer>= 100000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>подарок в виде аккаунта партнера осуществляется, если гость совершает покупку на сумму более, чем указано здесь (с учётом точности) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="102" column="27" bodyfile="p2p.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1ga714001f0f556d0db16b3746fa2261ddb" prot="public" static="yes" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t p2p::_ORDER_EXPIRATION</definition>
+        <argsstring></argsstring>
+        <name>_ORDER_EXPIRATION</name>
+        <qualifiedname>p2p::_ORDER_EXPIRATION</qualifiedname>
+        <initializer>= 30 * 60</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>время до истечения срока давности ордера </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="105" column="27" bodyfile="p2p.hpp" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1ga41fd0523f7a4103ea012c69c376d0823" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr double</type>
+        <definition>constexpr double p2p::_START_RATE</definition>
+        <argsstring></argsstring>
+        <name>_START_RATE</name>
+        <qualifiedname>p2p::_START_RATE</qualifiedname>
+        <initializer>= 0.2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>начальный курс старта роста системного токена относительно USD </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="106" column="29" bodyfile="p2p.hpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="public-type">
       <memberdef kind="typedef" id="classp2p_1a562223292a6b99a97d486136b2eb0d9e" prot="public" static="no">
         <type>eosio::multi_index&lt;&quot;balance&quot;_n, <ref refid="structp2p_1_1balance" kindref="compound">balance</ref>, eosio::indexed_by&lt; &quot;byconsym&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1balance" kindref="compound">balance</ref>, uint128_t, &amp;balance::byconsym &gt; &gt; &gt;</type>
         <definition>typedef eosio::multi_index&lt;&quot;balance&quot;_n, balance, eosio::indexed_by&lt; &quot;byconsym&quot;_n, eosio::const_mem_fun&lt;balance, uint128_t, &amp;balance::byconsym&gt; &gt; &gt; p2p::balances_index</definition>
         <argsstring></argsstring>
         <name>balances_index</name>
+        <qualifiedname>p2p::balances_index</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="131" column="1" bodyfile="p2p.hpp" bodystart="131" bodyend="-1"/>
+        <location file="p2p.hpp" line="141" column="2" bodyfile="p2p.hpp" bodystart="141" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classp2p_1a6bef060ed784c193c2a60b397c869c29" prot="public" static="no">
         <type>eosio::multi_index&lt;&quot;counts&quot;_n, <ref refid="structp2p_1_1counts" kindref="compound">counts</ref> &gt;</type>
         <definition>typedef eosio::multi_index&lt;&quot;counts&quot;_n, counts&gt; p2p::counts_index</definition>
         <argsstring></argsstring>
         <name>counts_index</name>
+        <qualifiedname>p2p::counts_index</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="148" column="1" bodyfile="p2p.hpp" bodystart="148" bodyend="-1"/>
+        <location file="p2p.hpp" line="159" column="32" bodyfile="p2p.hpp" bodystart="159" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classp2p_1af7e337013ebdcc44b420a6d55d0d385f" prot="public" static="no">
         <type>eosio::multi_index&lt; &quot;orders&quot;_n, <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, eosio::indexed_by&lt;&quot;bycurrcode&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, uint64_t, &amp;<ref refid="structp2p_1_1orders_1ab6f05a725122c94d3f2dcfaf24322c47" kindref="member">orders::bycurrcode</ref> &gt; &gt;, eosio::indexed_by&lt;&quot;byparentid&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, uint64_t, &amp;<ref refid="structp2p_1_1orders_1a2b790da517561e8a593b6c56d63c4cfd" kindref="member">orders::byparentid</ref> &gt; &gt;, eosio::indexed_by&lt;&quot;bytype&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, uint64_t, &amp;<ref refid="structp2p_1_1orders_1a17505cc3759a5ba5099f490c982535e1" kindref="member">orders::bytype</ref> &gt; &gt;, eosio::indexed_by&lt;&quot;bycreator&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, uint64_t, &amp;<ref refid="structp2p_1_1orders_1a91b49c417f79ef405982bfe348651a98" kindref="member">orders::bycreator</ref> &gt; &gt;, eosio::indexed_by&lt;&quot;bycurator&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, uint64_t, &amp;<ref refid="structp2p_1_1orders_1a76fa8b54f391ccd2e29b640d4c0199df" kindref="member">orders::bycurator</ref> &gt; &gt;, eosio::indexed_by&lt;&quot;bystatus&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, uint64_t, &amp;<ref refid="structp2p_1_1orders_1a31e70a285fb324d4ee07b1b149debff3" kindref="member">orders::bystatus</ref> &gt; &gt;, eosio::indexed_by&lt;&quot;byexpr&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, uint64_t, &amp;<ref refid="structp2p_1_1orders_1a8cf94dfb0902511c6baae1dd0434dcbf" kindref="member">orders::byexpr</ref> &gt; &gt;, eosio::indexed_by&lt;&quot;bycreated&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, uint64_t, &amp;<ref refid="structp2p_1_1orders_1a6eab9cb4d0f7b605aef8856aad730fe5" kindref="member">orders::bycreated</ref> &gt; &gt; &gt;</type>
         <definition>typedef eosio::multi_index&lt; &quot;orders&quot;_n, orders, eosio::indexed_by&lt;&quot;bycurrcode&quot;_n, eosio::const_mem_fun&lt;orders, uint64_t, &amp;orders::bycurrcode&gt; &gt;, eosio::indexed_by&lt;&quot;byparentid&quot;_n, eosio::const_mem_fun&lt;orders, uint64_t, &amp;orders::byparentid&gt; &gt;, eosio::indexed_by&lt;&quot;bytype&quot;_n, eosio::const_mem_fun&lt;orders, uint64_t, &amp;orders::bytype&gt; &gt;, eosio::indexed_by&lt;&quot;bycreator&quot;_n, eosio::const_mem_fun&lt;orders, uint64_t, &amp;orders::bycreator&gt; &gt;, eosio::indexed_by&lt;&quot;bycurator&quot;_n, eosio::const_mem_fun&lt;orders, uint64_t, &amp;orders::bycurator&gt; &gt;, eosio::indexed_by&lt;&quot;bystatus&quot;_n, eosio::const_mem_fun&lt;orders, uint64_t, &amp;orders::bystatus&gt; &gt;, eosio::indexed_by&lt;&quot;byexpr&quot;_n, eosio::const_mem_fun&lt;orders, uint64_t, &amp;orders::byexpr&gt; &gt;, eosio::indexed_by&lt;&quot;bycreated&quot;_n, eosio::const_mem_fun&lt;orders, uint64_t, &amp;orders::bycreated&gt; &gt; &gt; p2p::orders_index</definition>
         <argsstring></argsstring>
         <name>orders_index</name>
+        <qualifiedname>p2p::orders_index</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="227" column="1" bodyfile="p2p.hpp" bodystart="227" bodyend="-1"/>
+        <location file="p2p.hpp" line="239" column="2" bodyfile="p2p.hpp" bodystart="239" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classp2p_1ac0dc7fa780d52c554aea91ab34bb3cfb" prot="public" static="no">
         <type>eosio::multi_index&lt;&quot;usdrates&quot;_n, <ref refid="structp2p_1_1usdrates" kindref="compound">usdrates</ref>, eosio::indexed_by&lt; &quot;byconsym&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1usdrates" kindref="compound">usdrates</ref>, uint128_t, &amp;<ref refid="structp2p_1_1usdrates_1a6d13bdd9e62d26ca68146e642e330099" kindref="member">usdrates::byconsym</ref> &gt; &gt; &gt;</type>
         <definition>typedef eosio::multi_index&lt;&quot;usdrates&quot;_n, usdrates, eosio::indexed_by&lt; &quot;byconsym&quot;_n, eosio::const_mem_fun&lt;usdrates, uint128_t, &amp;usdrates::byconsym&gt; &gt; &gt; p2p::usdrates_index</definition>
         <argsstring></argsstring>
         <name>usdrates_index</name>
+        <qualifiedname>p2p::usdrates_index</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="253" column="1" bodyfile="p2p.hpp" bodystart="253" bodyend="-1"/>
+        <location file="p2p.hpp" line="266" column="2" bodyfile="p2p.hpp" bodystart="266" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classp2p_1abbacbe5996794991fcbfb554dae6dc41" prot="public" static="no">
         <type>eosio::multi_index&lt;&quot;usdrates2&quot;_n, <ref refid="structp2p_1_1usdrates2" kindref="compound">usdrates2</ref> &gt;</type>
         <definition>typedef eosio::multi_index&lt;&quot;usdrates2&quot;_n, usdrates2&gt; p2p::usdrates2_index</definition>
         <argsstring></argsstring>
         <name>usdrates2_index</name>
+        <qualifiedname>p2p::usdrates2_index</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="269" column="1" bodyfile="p2p.hpp" bodystart="269" bodyend="-1"/>
+        <location file="p2p.hpp" line="283" column="32" bodyfile="p2p.hpp" bodystart="283" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classp2p_1ad2b234c3e4a379adfeebb42efe3fdb25" prot="public" static="no">
         <type>eosio::multi_index&lt;&quot;bbonuses&quot;_n, <ref refid="structp2p_1_1bbonuses" kindref="compound">bbonuses</ref> &gt;</type>
         <definition>typedef eosio::multi_index&lt;&quot;bbonuses&quot;_n, bbonuses&gt; p2p::bbonuses_index</definition>
         <argsstring></argsstring>
         <name>bbonuses_index</name>
+        <qualifiedname>p2p::bbonuses_index</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="290" column="1" bodyfile="p2p.hpp" bodystart="290" bodyend="-1"/>
+        <location file="p2p.hpp" line="305" column="32" bodyfile="p2p.hpp" bodystart="305" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classp2p_1a9e10c97b92e817371f627c84094dce39" prot="public" static="no">
         <type>eosio::multi_index&lt;&quot;vesting&quot;_n, <ref refid="structp2p_1_1vesting" kindref="compound">vesting</ref> &gt;</type>
         <definition>typedef eosio::multi_index&lt;&quot;vesting&quot;_n, vesting&gt; p2p::vesting_index</definition>
         <argsstring></argsstring>
         <name>vesting_index</name>
+        <qualifiedname>p2p::vesting_index</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="315" column="1" bodyfile="p2p.hpp" bodystart="315" bodyend="-1"/>
+        <location file="p2p.hpp" line="331" column="34" bodyfile="p2p.hpp" bodystart="331" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classp2p_1a08507c2c104ad7e99765afd19d4fdd10" prot="public" static="no">
         <type>eosio::multi_index&lt;&quot;guests&quot;_n, <ref refid="structp2p_1_1guests" kindref="compound">guests</ref>, eosio::indexed_by&lt; &quot;byexpr&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1guests" kindref="compound">guests</ref>, uint64_t, &amp;guests::byexpr &gt; &gt;, eosio::indexed_by&lt; &quot;byreg&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1guests" kindref="compound">guests</ref>, uint64_t, &amp;guests::byreg &gt; &gt; &gt;</type>
         <definition>typedef eosio::multi_index&lt;&quot;guests&quot;_n, guests, eosio::indexed_by&lt; &quot;byexpr&quot;_n, eosio::const_mem_fun&lt;guests, uint64_t, &amp;guests::byexpr&gt; &gt;, eosio::indexed_by&lt; &quot;byreg&quot;_n, eosio::const_mem_fun&lt;guests, uint64_t, &amp;guests::byreg&gt; &gt; &gt; p2p::guests_index</definition>
         <argsstring></argsstring>
         <name>guests_index</name>
+        <qualifiedname>p2p::guests_index</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="347" column="1" bodyfile="p2p.hpp" bodystart="347" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-static-attrib">
-      <memberdef kind="variable" id="classp2p_1ade9426b6e05cdb60d41e808717199b89" prot="public" static="yes" mutable="no">
-        <type>constexpr eosio::name</type>
-        <definition>constexpr eosio::name p2p::_me</definition>
-        <argsstring></argsstring>
-        <name>_me</name>
-        <initializer>= &quot;p2p&quot;_n</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>собственное имя аккаунта контракта </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="82" column="1" bodyfile="p2p.hpp" bodystart="82" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classp2p_1aa5528a78186585c3a033d89b6c027a5b" prot="public" static="yes" mutable="no">
-        <type>constexpr eosio::name</type>
-        <definition>constexpr eosio::name p2p::_curator</definition>
-        <argsstring></argsstring>
-        <name>_curator</name>
-        <initializer>= &quot;p2p&quot;_n</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>дефолтное имя аккаунта куратора всех сделок </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="83" column="1" bodyfile="p2p.hpp" bodystart="83" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classp2p_1abaf26be47ba132e33bdadf4a6f65a052" prot="public" static="yes" mutable="no">
-        <type>constexpr eosio::name</type>
-        <definition>constexpr eosio::name p2p::_rater</definition>
-        <argsstring></argsstring>
-        <name>_rater</name>
-        <initializer>= &quot;rater&quot;_n</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>имя аккаунта поставщика курсов </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="84" column="1" bodyfile="p2p.hpp" bodystart="84" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classp2p_1afe8d32633b8a87ce35209184d222f6de" prot="public" static="yes" mutable="no">
-        <type>constexpr eosio::symbol</type>
-        <definition>constexpr eosio::symbol p2p::_SYM</definition>
-        <argsstring></argsstring>
-        <name>_SYM</name>
-        <initializer>= eosio::symbol(eosio::symbol_code(&quot;NBT&quot;), 4)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>системный токен </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="85" column="1" bodyfile="p2p.hpp" bodystart="85" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classp2p_1a582434add36ca36a326bdab9e7c8cb4e" prot="public" static="yes" mutable="no">
-        <type>constexpr eosio::name</type>
-        <definition>constexpr eosio::name p2p::_core</definition>
-        <argsstring></argsstring>
-        <name>_core</name>
-        <initializer>= &quot;unicore&quot;_n</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>имя аккаунта распределения реферальных бонусов в сеть </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="86" column="1" bodyfile="p2p.hpp" bodystart="86" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classp2p_1a6a7a6607c93e930cfa3984a8c318942b" prot="public" static="yes" mutable="no">
-        <type>const uint64_t</type>
-        <definition>const uint64_t p2p::_PERCENTS_PER_MONTH</definition>
-        <argsstring></argsstring>
-        <name>_PERCENTS_PER_MONTH</name>
-        <initializer>= 42</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>если рост курса системного токена подключен, то растёт с указанной здесь скоростью </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="88" column="1" bodyfile="p2p.hpp" bodystart="88" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classp2p_1a738ddf63d1276c74f28b7d2f51ba1475" prot="public" static="yes" mutable="no">
-        <type>const bool</type>
-        <definition>const bool p2p::_ENABLE_GROWHT</definition>
-        <argsstring></argsstring>
-        <name>_ENABLE_GROWHT</name>
-        <initializer>= true</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>флаг подключения автоматического роста курса, допускающего вызов метода uprate от системного контракта eosio </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="90" column="1" bodyfile="p2p.hpp" bodystart="90" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classp2p_1a817118e4e422393acc35439edb0187af" prot="public" static="yes" mutable="no">
-        <type>const bool</type>
-        <definition>const bool p2p::_ENABLE_VESTING</definition>
-        <argsstring></argsstring>
-        <name>_ENABLE_VESTING</name>
-        <initializer>= true</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>флаг подключения режима вестинга для совершенных покупок у аккаунта _CORE_SALE_ACCOUNT </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="92" column="1" bodyfile="p2p.hpp" bodystart="92" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classp2p_1af52bcfc4c42cb8a001ab4935d06539c0" prot="public" static="yes" mutable="no">
-        <type>const uint64_t</type>
-        <definition>const uint64_t p2p::_VESTING_SECONDS</definition>
-        <argsstring></argsstring>
-        <name>_VESTING_SECONDS</name>
-        <initializer>= 15770000</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>продолжительность вестинга в секундах </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="93" column="1" bodyfile="p2p.hpp" bodystart="93" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classp2p_1aaf70e52c0f57cc4fa3d9d7fd0e8f0d99" prot="public" static="yes" mutable="no">
-        <type>constexpr eosio::name</type>
-        <definition>constexpr eosio::name p2p::_CORE_SALE_ACCOUNT</definition>
-        <argsstring></argsstring>
-        <name>_CORE_SALE_ACCOUNT</name>
-        <initializer>= &quot;core&quot;_n</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>аккаунт системного продавца токенов, в сделке к которым срабатывает вестинг </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="94" column="1" bodyfile="p2p.hpp" bodystart="94" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classp2p_1ad3c9fd465ea37d16657bd9910c631d22" prot="public" static="yes" mutable="no">
-        <type>constexpr eosio::name</type>
-        <definition>constexpr eosio::name p2p::_REGISTRATOR_ACCOUNT</definition>
-        <argsstring></argsstring>
-        <name>_REGISTRATOR_ACCOUNT</name>
-        <initializer>= &quot;registrator&quot;_n</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>аккаунт контракта регистратора, хранящего таблицу с гостями для подарочного выкупа </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="95" column="1" bodyfile="p2p.hpp" bodystart="95" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classp2p_1ada18e95b855fa10dc57a33620b4dd51d" prot="public" static="yes" mutable="no">
-        <type>const uint64_t</type>
-        <definition>const uint64_t p2p::_GIFT_ACCOUNT_FROM_AMOUNT</definition>
-        <argsstring></argsstring>
-        <name>_GIFT_ACCOUNT_FROM_AMOUNT</name>
-        <initializer>= 100000</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>подарок в виде аккаунта партнера осуществляется, если гость совершает покупку на сумму более, чем указано здесь (с учётом точности) </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="97" column="1" bodyfile="p2p.hpp" bodystart="97" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classp2p_1a714001f0f556d0db16b3746fa2261ddb" prot="public" static="yes" mutable="no">
-        <type>const uint64_t</type>
-        <definition>const uint64_t p2p::_ORDER_EXPIRATION</definition>
-        <argsstring></argsstring>
-        <name>_ORDER_EXPIRATION</name>
-        <initializer>= 30 * 60</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>время до истечения срока давности ордера </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="100" column="1" bodyfile="p2p.hpp" bodystart="100" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classp2p_1a41fd0523f7a4103ea012c69c376d0823" prot="public" static="yes" mutable="no">
-        <type>constexpr double</type>
-        <definition>constexpr double p2p::_START_RATE</definition>
-        <argsstring></argsstring>
-        <name>_START_RATE</name>
-        <initializer>= 0.2</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>начальный курс старта роста системного токена относительно USD </para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="101" column="1" bodyfile="p2p.hpp" bodystart="101" bodyend="-1"/>
+        <location file="p2p.hpp" line="364" column="2" bodyfile="p2p.hpp" bodystart="364" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classp2p_1a5dac3e80d9e970fbc86c4fbaf781f894" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classp2p_1af05b8ff51661058078be1b96eb2bccb0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>p2p::p2p</definition>
-        <argsstring>(eosio::name receiver, eosio::name code, eosio::datastream&lt; const char *&gt; ds)</argsstring>
+        <argsstring>(eosio::name receiver, eosio::name code, eosio::datastream&lt; const char * &gt; ds)</argsstring>
         <name>p2p</name>
+        <qualifiedname>p2p::p2p</qualifiedname>
         <param>
           <type>eosio::name</type>
           <declname>receiver</declname>
@@ -331,7 +368,7 @@
           <declname>code</declname>
         </param>
         <param>
-          <type>eosio::datastream&lt; const char *&gt;</type>
+          <type>eosio::datastream&lt; const char * &gt;</type>
           <declname>ds</declname>
         </param>
         <briefdescription>
@@ -340,13 +377,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="20" column="1" bodyfile="p2p.hpp" bodystart="20" bodyend="21"/>
+        <location file="p2p.hpp" line="20" column="5" bodyfile="p2p.hpp" bodystart="20" bodyend="21"/>
       </memberdef>
       <memberdef kind="function" id="classp2p_1a1ba9938186b683d21e39ae021d7a0a6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::apply</definition>
         <argsstring>(uint64_t receiver, uint64_t code, uint64_t action)</argsstring>
         <name>apply</name>
+        <qualifiedname>p2p::apply</qualifiedname>
         <param>
           <type>uint64_t</type>
           <declname>receiver</declname>
@@ -365,13 +403,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="22" column="1"/>
+        <location file="p2p.hpp" line="22" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classp2p_1a0b05f55568e9469d33379512b29a116a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__public__actions_1ga0b05f55568e9469d33379512b29a116a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::createorder</definition>
         <argsstring>(name username, uint64_t parent_id, name type, eosio::name root_contract, eosio::asset root_quantity, eosio::name quote_type, double quote_rate, eosio::name quote_contract, eosio::asset quote_quantity, eosio::name out_type, double out_rate, eosio::name out_contract, eosio::asset out_quantity, std::string details)</argsstring>
         <name>createorder</name>
+        <qualifiedname>p2p::createorder</qualifiedname>
         <param>
           <type>name</type>
           <declname>username</declname>
@@ -429,117 +468,136 @@
           <declname>details</declname>
         </param>
         <briefdescription>
-<para>Метод создания ордера </para>        </briefdescription>
+<para>Метод создания ордера </para>
+        </briefdescription>
         <detaileddescription>
-<para>AUTH = username</para><para>Используя метод, пользователь создаёт ордер для обмена.</para><para><parameterlist kind="param"><parameteritem>
+<para>Используя метод, пользователь создаёт ордер для обмена. <simplesect kind="par"><title>AUTH: username</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">username</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Имя пользователя, инициирующего обмен </para></parameterdescription>
+<para>Имя пользователя, инициирующего обмен </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">parent_id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Опциональный идентификатор родительской сделки, с которой происходит обмен. Если не установлен - ордер ожидает появление дочерних ордеров в статусе waiting, предлагающих обмен. </para></parameterdescription>
+<para>Опциональный идентификатор родительской сделки, с которой происходит обмен. Если не установлен - ордер ожидает появление дочерних ордеров в статусе waiting, предлагающих обмен. </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">type</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Тип ордера buy / sell </para></parameterdescription>
+<para>Тип ордера buy / sell </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">root_contract</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Имя контракта токена обмена </para></parameterdescription>
+<para>Имя контракта токена обмена </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">root_quantity</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Количество токенов на обмене </para></parameterdescription>
+<para>Количество токенов на обмене </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">quote_type</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Тип опорной валюты, сейчас используем только тип external </para></parameterdescription>
+<para>Тип опорной валюты, сейчас используем только тип external </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">quote_rate</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Опорный курс обмена </para></parameterdescription>
+<para>Опорный курс обмена </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">quote_contract</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Опорный контракт обмена, сейчас используем только &quot;&quot; </para></parameterdescription>
+<para>Опорный контракт обмена, сейчас используем только &quot;&quot; </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">quote_quantity</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Количество опорной валюты на обмене, измеряемой в USD </para></parameterdescription>
+<para>Количество опорной валюты на обмене, измеряемой в USD </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">out_type</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Тип валюты выхода (сейчас любой) </para></parameterdescription>
+<para>Тип валюты выхода (сейчас любой) </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">out_rate</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Курс валюты выхода </para></parameterdescription>
+<para>Курс валюты выхода </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">out_contract</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Контракт валюты выхода (сейчас только &quot;&quot;) </para></parameterdescription>
+<para>Контракт валюты выхода (сейчас только &quot;&quot;) </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">out_quantity</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Количество валюты выхода </para></parameterdescription>
+<para>Количество валюты выхода </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">details</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Реквизиты для получения платежа, используются если тип нового ордера = buy </para></parameterdescription>
+<para>Реквизиты для получения платежа, используются если тип нового ордера = buy </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="39" column="1" bodyfile="p2p.cpp" bodystart="293" bodyend="406"/>
+        <location file="p2p.hpp" line="39" column="10" bodyfile="p2p.cpp" bodystart="304" bodyend="417"/>
       </memberdef>
-      <memberdef kind="function" id="classp2p_1ab7d91c105e22cc794a42cb12d996d0cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__public__actions_1gab7d91c105e22cc794a42cb12d996d0cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::accept</definition>
         <argsstring>(name username, uint64_t id, std::string details)</argsstring>
         <name>accept</name>
+        <qualifiedname>p2p::accept</qualifiedname>
         <param>
           <type>name</type>
           <declname>username</declname>
@@ -553,40 +611,48 @@
           <declname>details</declname>
         </param>
         <briefdescription>
-<para>Метод подтверждения факта присутствия и начало сделки </para>        </briefdescription>
+<para>Метод подтверждения факта присутствия и начало сделки </para>
+        </briefdescription>
         <detaileddescription>
-<para>AUTH = username</para><para>Реквизиты для оплаты передаются в поле details, если дочерний ордер типа buy. Статус ордера изменяется на process. <parameterlist kind="param"><parameteritem>
+<para>Реквизиты для оплаты передаются в поле details, если дочерний ордер типа buy. Статус ордера изменяется на process. <simplesect kind="par"><title>AUTH: username</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">username</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>имя пользователя, подтверждающего начало сделки </para></parameterdescription>
+<para>имя пользователя, подтверждающего начало сделки </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>идентификатор ордера </para></parameterdescription>
+<para>идентификатор ордера </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">details</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>реквизиты для получения оплаты по сделке </para></parameterdescription>
+<para>реквизиты для получения оплаты по сделке </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="42" column="1" bodyfile="p2p.cpp" bodystart="419" bodyend="502"/>
+        <location file="p2p.hpp" line="42" column="10" bodyfile="p2p.cpp" bodystart="432" bodyend="515"/>
       </memberdef>
-      <memberdef kind="function" id="classp2p_1a4562d6493c57589bf2259f119481d39a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__public__actions_1ga4562d6493c57589bf2259f119481d39a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::approve</definition>
         <argsstring>(name username, uint64_t id)</argsstring>
         <name>approve</name>
+        <qualifiedname>p2p::approve</qualifiedname>
         <param>
           <type>name</type>
           <declname>username</declname>
@@ -596,33 +662,40 @@
           <declname>id</declname>
         </param>
         <briefdescription>
-<para>Метод утверждения завершенного ордера </para>        </briefdescription>
+<para>Метод утверждения завершенного ордера </para>
+        </briefdescription>
         <detaileddescription>
-<para>AUTH = username</para><para>После получения оплаты, пользователь должен вызовать этот метод и утвердить завершение сделки, разблокировав токены для второго участника сделки. Статус ордера изменяется на finish и производится разблокирование токенов для получателя. <parameterlist kind="param"><parameteritem>
+<para>После получения оплаты, пользователь должен вызовать этот метод и утвердить завершение сделки, разблокировав токены для второго участника сделки. Статус ордера изменяется на finish и производится разблокирование токенов для получателя. <simplesect kind="par"><title>AUTH: username</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">username</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>имя аккаунта участника сделки, утверждающего успешное завершение сделки </para></parameterdescription>
+<para>имя аккаунта участника сделки, утверждающего успешное завершение сделки </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>идентификатор ордера </para></parameterdescription>
+<para>идентификатор ордера </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="45" column="1" bodyfile="p2p.cpp" bodystart="548" bodyend="674"/>
+        <location file="p2p.hpp" line="45" column="10" bodyfile="p2p.cpp" bodystart="566" bodyend="692"/>
       </memberdef>
-      <memberdef kind="function" id="classp2p_1aa1abaf488133faec3fae6c6c9c9917c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__public__actions_1gaa1abaf488133faec3fae6c6c9c9917c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::confirm</definition>
         <argsstring>(name username, uint64_t id)</argsstring>
         <name>confirm</name>
+        <qualifiedname>p2p::confirm</qualifiedname>
         <param>
           <type>name</type>
           <declname>username</declname>
@@ -632,33 +705,40 @@
           <declname>id</declname>
         </param>
         <briefdescription>
-<para>Метод подтверждения факта платежа </para>        </briefdescription>
+<para>Метод подтверждения факта платежа </para>
+        </briefdescription>
         <detaileddescription>
-<para>AUTH = username</para><para>После совершения оплаты на реквизиты, участник сделки должен подтвердить этот факт вызовом этого метода. Статус ордера изменяется на payed. <parameterlist kind="param"><parameteritem>
+<para>После совершения оплаты на реквизиты, участник сделки должен подтвердить этот факт вызовом этого метода. Статус ордера изменяется на payed. <simplesect kind="par"><title>AUTH: username</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">username</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>имя аккаунта участника сделки, утверждающего факт совершения оплаты на реквизиты </para></parameterdescription>
+<para>имя аккаунта участника сделки, утверждающего факт совершения оплаты на реквизиты </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>идентификатор ордера </para></parameterdescription>
+<para>идентификатор ордера </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="48" column="1" bodyfile="p2p.cpp" bodystart="513" bodyend="536"/>
+        <location file="p2p.hpp" line="48" column="10" bodyfile="p2p.cpp" bodystart="528" bodyend="551"/>
       </memberdef>
-      <memberdef kind="function" id="classp2p_1af81f265e37d1f1572a9a5fa17fa99f32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__public__actions_1gaf81f265e37d1f1572a9a5fa17fa99f32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::cancel</definition>
         <argsstring>(name username, uint64_t id)</argsstring>
         <name>cancel</name>
+        <qualifiedname>p2p::cancel</qualifiedname>
         <param>
           <type>name</type>
           <declname>username</declname>
@@ -668,33 +748,40 @@
           <declname>id</declname>
         </param>
         <briefdescription>
-<para>Метод отмены ордера </para>        </briefdescription>
+<para>Метод отмены ордера </para>
+        </briefdescription>
         <detaileddescription>
-<para>AUTH = username</para><para>Отменяет ордер и удаляет его из оперативной памяти, разблокируя средства согласну типу ордера. <parameterlist kind="param"><parameteritem>
+<para>Отменяет ордер и удаляет его из оперативной памяти, разблокируя средства согласну типу ордера. <simplesect kind="par"><title>AUTH: username</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">username</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>имя аккаунта участника сделки, производящего отмену ордера. </para></parameterdescription>
+<para>имя аккаунта участника сделки, производящего отмену ордера. </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>идентификатор ордера </para></parameterdescription>
+<para>идентификатор ордера </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="51" column="1" bodyfile="p2p.cpp" bodystart="685" bodyend="768"/>
+        <location file="p2p.hpp" line="51" column="10" bodyfile="p2p.cpp" bodystart="705" bodyend="788"/>
       </memberdef>
-      <memberdef kind="function" id="classp2p_1a4f0c0c376096f7a73b21b39f0dc58d1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__public__actions_1ga4f0c0c376096f7a73b21b39f0dc58d1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::dispute</definition>
         <argsstring>(name username, uint64_t id)</argsstring>
         <name>dispute</name>
+        <qualifiedname>p2p::dispute</qualifiedname>
         <param>
           <type>name</type>
           <declname>username</declname>
@@ -704,33 +791,40 @@
           <declname>id</declname>
         </param>
         <briefdescription>
-<para>Метод создания спора </para>        </briefdescription>
+<para>Метод создания спора </para>
+        </briefdescription>
         <detaileddescription>
-<para>AUTH = username</para><para>Перевод сделку в статус спора, блокируя вывод средств до его разрешения. Только сделка в статусе payed может быть переведена в статус спора. <parameterlist kind="param"><parameteritem>
+<para>Перевод сделку в статус спора, блокируя вывод средств до его разрешения. Только сделка в статусе payed может быть переведена в статус спора. <simplesect kind="par"><title>AUTH: username</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">username</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>имя аккаунта участника сделки, инициирующего спор </para></parameterdescription>
+<para>имя аккаунта участника сделки, инициирующего спор </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>идентификатор ордера </para></parameterdescription>
+<para>идентификатор ордера </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="54" column="1" bodyfile="p2p.cpp" bodystart="778" bodyend="801"/>
+        <location file="p2p.hpp" line="54" column="10" bodyfile="p2p.cpp" bodystart="800" bodyend="823"/>
       </memberdef>
-      <memberdef kind="function" id="classp2p_1a805effb2c6e15ab30e7f36bf13558910" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__public__actions_1ga805effb2c6e15ab30e7f36bf13558910" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::del</definition>
         <argsstring>(name username, uint64_t id)</argsstring>
         <name>del</name>
+        <qualifiedname>p2p::del</qualifiedname>
         <param>
           <type>name</type>
           <declname>username</declname>
@@ -740,33 +834,40 @@
           <declname>id</declname>
         </param>
         <briefdescription>
-<para>Метод удаления завершенной сделки из оперативной памяти </para>        </briefdescription>
+<para>Метод удаления завершенной сделки из оперативной памяти </para>
+        </briefdescription>
         <detaileddescription>
-<para>AUTH = username</para><para>Очищает завершенную сделку из оперативной памяти операционной системы. <parameterlist kind="param"><parameteritem>
+<para>Очищает завершенную сделку из оперативной памяти операционной системы. <simplesect kind="par"><title>AUTH: username</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">username</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>имя аккаунта, производящего очищение </para></parameterdescription>
+<para>имя аккаунта, производящего очищение </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>идентификатор ордера </para></parameterdescription>
+<para>идентификатор ордера </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="57" column="1" bodyfile="p2p.cpp" bodystart="811" bodyend="822"/>
+        <location file="p2p.hpp" line="57" column="10" bodyfile="p2p.cpp" bodystart="835" bodyend="846"/>
       </memberdef>
-      <memberdef kind="function" id="classp2p_1a432842119735888f862933882e6a4da6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__public__actions_1ga432842119735888f862933882e6a4da6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::setrate</definition>
         <argsstring>(eosio::name out_contract, eosio::asset out_asset, double rate)</argsstring>
         <name>setrate</name>
+        <qualifiedname>p2p::setrate</qualifiedname>
         <param>
           <type>eosio::name</type>
           <declname>out_contract</declname>
@@ -780,40 +881,48 @@
           <declname>rate</declname>
         </param>
         <briefdescription>
-<para>Метод установки курса обмена к USD. </para>        </briefdescription>
+<para>Метод установки курса обмена к USD. </para>
+        </briefdescription>
         <detaileddescription>
-<para>AUTH = _rater | _me</para><para>Устанавливает в таблицу usdrates новый актуальный курс от поставщика. <parameterlist kind="param"><parameteritem>
+<para>Устанавливает в таблицу usdrates новый актуальный курс от поставщика. <simplesect kind="par"><title>AUTH: _rater | _me</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">out_contract</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>имя контракта выхода (обычно &quot;&quot;) </para></parameterdescription>
+<para>имя контракта выхода (обычно &quot;&quot;) </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">out_asset</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>токен выхода с точностью и символом </para></parameterdescription>
+<para>токен выхода с точностью и символом </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">rate</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>курс обмена к USD </para></parameterdescription>
+<para>курс обмена к USD </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="60" column="1" bodyfile="p2p.cpp" bodystart="933" bodyend="961"/>
+        <location file="p2p.hpp" line="60" column="10" bodyfile="p2p.cpp" bodystart="964" bodyend="992"/>
       </memberdef>
-      <memberdef kind="function" id="classp2p_1a6684d814e1a17f87c492e2b394cc1846" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__public__actions_1ga6684d814e1a17f87c492e2b394cc1846" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::uprate</definition>
         <argsstring>(eosio::name out_contract, eosio::asset out_asset)</argsstring>
         <name>uprate</name>
+        <qualifiedname>p2p::uprate</qualifiedname>
         <param>
           <type>eosio::name</type>
           <declname>out_contract</declname>
@@ -823,58 +932,71 @@
           <declname>out_asset</declname>
         </param>
         <briefdescription>
-<para>Метод увеличения курса обмена системного токена </para>        </briefdescription>
+<para>Метод увеличения курса обмена системного токена </para>
+        </briefdescription>
         <detaileddescription>
-<para>AUTH = eosio</para><para>Периодически вызывается системным контрактом и увеличивает курс обмена системного токена согласно темпу роста в _PERCENTS_PER_MONTH. <parameterlist kind="param"><parameteritem>
+<para>Периодически вызывается системным контрактом и увеличивает курс обмена системного токена согласно темпу роста в _PERCENTS_PER_MONTH. <simplesect kind="par"><title>AUTH: eosio</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">out_contract</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>имя контракта выхода (обычно &quot;eosio.token&quot;) </para></parameterdescription>
+<para>имя контракта выхода (обычно &quot;eosio.token&quot;) </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">out_asset</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>токен выхода с точностью и символом (обычно равен _SYM) </para></parameterdescription>
+<para>токен выхода с точностью и символом (обычно равен _SYM) </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="63" column="1" bodyfile="p2p.cpp" bodystart="868" bodyend="922"/>
+        <location file="p2p.hpp" line="63" column="10" bodyfile="p2p.cpp" bodystart="898" bodyend="952"/>
       </memberdef>
-      <memberdef kind="function" id="classp2p_1abea413390558d072de45f9ff47217ff8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__public__actions_1gabea413390558d072de45f9ff47217ff8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::delrate</definition>
         <argsstring>(uint64_t id)</argsstring>
         <name>delrate</name>
+        <qualifiedname>p2p::delrate</qualifiedname>
         <param>
           <type>uint64_t</type>
           <declname>id</declname>
         </param>
         <briefdescription>
-<para>Метод удаление курса </para>        </briefdescription>
+<para>Метод удаление курса </para>
+        </briefdescription>
         <detaileddescription>
-<para>AUTH = eosio</para><para>Используется администратором для удаления курса из таблицы курсов <parameterlist kind="param"><parameteritem>
+<para>Используется администратором для удаления курса из таблицы курсов <simplesect kind="par"><title>AUTH: eosio</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>идентификатор курса </para></parameterdescription>
+<para>идентификатор курса </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="66" column="1" bodyfile="p2p.cpp" bodystart="831" bodyend="839"/>
+        <location file="p2p.hpp" line="66" column="10" bodyfile="p2p.cpp" bodystart="857" bodyend="865"/>
       </memberdef>
-      <memberdef kind="function" id="classp2p_1a6ef3ff3b489159e054195c1d8fbd7092" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__public__actions_1ga6ef3ff3b489159e054195c1d8fbd7092" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::delvesting</definition>
         <argsstring>(eosio::name owner, uint64_t id)</argsstring>
         <name>delvesting</name>
+        <qualifiedname>p2p::delvesting</qualifiedname>
         <param>
           <type>eosio::name</type>
           <declname>owner</declname>
@@ -884,33 +1006,40 @@
           <declname>id</declname>
         </param>
         <briefdescription>
-<para>Метод удаление вестинг-баланса </para>        </briefdescription>
+<para>Метод удаление вестинг-баланса </para>
+        </briefdescription>
         <detaileddescription>
-<para>AUTH = <ref refid="classp2p" kindref="compound">p2p</ref></para><para>Используется администратором для удаления ошибочного начисления вестинг-баланса <parameterlist kind="param"><parameteritem>
+<para>Используется администратором для удаления ошибочного начисления вестинг-баланса <simplesect kind="par"><title>AUTH: p2p</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">owner</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>имя аккаунта владельца вестинг-баланса </para></parameterdescription>
+<para>имя аккаунта владельца вестинг-баланса </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>идентификатор вестинг-баланса </para></parameterdescription>
+<para>идентификатор вестинг-баланса </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="69" column="1" bodyfile="p2p.cpp" bodystart="849" bodyend="857"/>
+        <location file="p2p.hpp" line="69" column="10" bodyfile="p2p.cpp" bodystart="877" bodyend="885"/>
       </memberdef>
-      <memberdef kind="function" id="classp2p_1a4f3c89b4ae21f54b6e16334e681a7860" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__public__actions_1ga4f3c89b4ae21f54b6e16334e681a7860" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::setbrate</definition>
         <argsstring>(eosio::name host, double distribution_rate)</argsstring>
         <name>setbrate</name>
+        <qualifiedname>p2p::setbrate</qualifiedname>
         <param>
           <type>eosio::name</type>
           <declname>host</declname>
@@ -920,33 +1049,41 @@
           <declname>distribution_rate</declname>
         </param>
         <briefdescription>
-<para>Метод установки бонусного курса </para>        </briefdescription>
+<para>Метод установки бонусного курса </para>
+        </briefdescription>
         <detaileddescription>
-<para>AUTH = host</para><para>Вызывается владельцем бонусного баланса в контракте для подключения распределения на партнёрскую сеть покупателя.</para><para><parameterlist kind="param"><parameteritem>
+<para>Вызывается владельцем бонусного баланса в контракте для подключения распределения на партнёрскую сеть покупателя.</para>
+<para><simplesect kind="par"><title>AUTH: host</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">host</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The host </para></parameterdescription>
+<para>The host </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">distribution_rate</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The distribution rate </para></parameterdescription>
+<para>The distribution rate </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="72" column="1" bodyfile="p2p.cpp" bodystart="161" bodyend="175"/>
+        <location file="p2p.hpp" line="72" column="10" bodyfile="p2p.cpp" bodystart="171" bodyend="185"/>
       </memberdef>
-      <memberdef kind="function" id="classp2p_1a2cb80d56fbb68ac3ccc688112d86532a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__public__actions_1ga2cb80d56fbb68ac3ccc688112d86532a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::refreshsh</definition>
         <argsstring>(eosio::name owner, uint64_t id)</argsstring>
         <name>refreshsh</name>
+        <qualifiedname>p2p::refreshsh</qualifiedname>
         <param>
           <type>eosio::name</type>
           <declname>owner</declname>
@@ -957,33 +1094,40 @@
         </param>
         <briefdescription>
 <para>Метод обновления вестинг-баланса. <linebreak/>
- </para>        </briefdescription>
+ </para>
+        </briefdescription>
         <detaileddescription>
-<para>AUTH = owner</para><para>Обновляет вестинг-баланс до доступного остатка. <parameterlist kind="param"><parameteritem>
+<para>Обновляет вестинг-баланс до доступного остатка. <simplesect kind="par"><title>AUTH: owner</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">owner</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>имя аккаунта владельца вестинг-баланса </para></parameterdescription>
+<para>имя аккаунта владельца вестинг-баланса </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>идентификатор вестинг-баланса </para></parameterdescription>
+<para>идентификатор вестинг-баланса </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="75" column="1" bodyfile="p2p.cpp" bodystart="974" bodyend="997"/>
+        <location file="p2p.hpp" line="75" column="10" bodyfile="p2p.cpp" bodystart="1007" bodyend="1030"/>
       </memberdef>
-      <memberdef kind="function" id="classp2p_1adb4fde78468ee3b060717a785febdcc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__public__actions_1gadb4fde78468ee3b060717a785febdcc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::withdrawsh</definition>
         <argsstring>(eosio::name owner, uint64_t id)</argsstring>
         <name>withdrawsh</name>
+        <qualifiedname>p2p::withdrawsh</qualifiedname>
         <param>
           <type>eosio::name</type>
           <declname>owner</declname>
@@ -993,27 +1137,33 @@
           <declname>id</declname>
         </param>
         <briefdescription>
-<para>Вывод вестинг-баланса </para>        </briefdescription>
+<para>Вывод вестинг-баланса </para>
+        </briefdescription>
         <detaileddescription>
-<para>AUTH = owner</para><para>Обеспечивает вывод доступных средств из вестинг-баланса. <parameterlist kind="param"><parameteritem>
+<para>Обеспечивает вывод доступных средств из вестинг-баланса. <simplesect kind="par"><title>AUTH: owner</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">owner</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>имя аккаунта владельца вестинг-баланса </para></parameterdescription>
+<para>имя аккаунта владельца вестинг-баланса </para>
+</parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="in">id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>идентификатор вестинг-баланса </para></parameterdescription>
+<para>идентификатор вестинг-баланса </para>
+</parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>        </detaileddescription>
+</para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="78" column="1" bodyfile="p2p.cpp" bodystart="1006" bodyend="1028"/>
+        <location file="p2p.hpp" line="78" column="10" bodyfile="p2p.cpp" bodystart="1041" bodyend="1063"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -1022,6 +1172,7 @@
         <definition>void p2p::add_balance</definition>
         <argsstring>(eosio::name payer, eosio::asset quantity, eosio::name contract)</argsstring>
         <name>add_balance</name>
+        <qualifiedname>p2p::add_balance</qualifiedname>
         <param>
           <type>eosio::name</type>
           <declname>payer</declname>
@@ -1040,13 +1191,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="24" column="1" bodyfile="p2p.cpp" bodystart="73" bodyend="95"/>
+        <location file="p2p.hpp" line="24" column="17" bodyfile="p2p.cpp" bodystart="83" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="classp2p_1afc44fa7dedaeea9559af5f70445b5218" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::sub_balance</definition>
         <argsstring>(eosio::name username, eosio::asset quantity, eosio::name contract)</argsstring>
         <name>sub_balance</name>
+        <qualifiedname>p2p::sub_balance</qualifiedname>
         <param>
           <type>eosio::name</type>
           <declname>username</declname>
@@ -1065,13 +1217,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="25" column="1" bodyfile="p2p.cpp" bodystart="221" bodyend="245"/>
+        <location file="p2p.hpp" line="25" column="17" bodyfile="p2p.cpp" bodystart="231" bodyend="255"/>
       </memberdef>
       <memberdef kind="function" id="classp2p_1aa6f449f9ebec47b6741ed3497a3b92f9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::addbbal</definition>
         <argsstring>(eosio::name host, eosio::name contract, eosio::asset quantity)</argsstring>
         <name>addbbal</name>
+        <qualifiedname>p2p::addbbal</qualifiedname>
         <param>
           <type>eosio::name</type>
           <declname>host</declname>
@@ -1090,13 +1243,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="27" column="1" bodyfile="p2p.cpp" bodystart="99" bodyend="126"/>
+        <location file="p2p.hpp" line="27" column="17" bodyfile="p2p.cpp" bodystart="109" bodyend="136"/>
       </memberdef>
       <memberdef kind="function" id="classp2p_1a9bbb48f7000e2ad2c901fe04f3e7f024" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::subbbal</definition>
         <argsstring>(eosio::name host, eosio::name contract, eosio::asset quantity)</argsstring>
         <name>subbbal</name>
+        <qualifiedname>p2p::subbbal</qualifiedname>
         <param>
           <type>eosio::name</type>
           <declname>host</declname>
@@ -1115,13 +1269,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="28" column="1" bodyfile="p2p.cpp" bodystart="130" bodyend="150"/>
+        <location file="p2p.hpp" line="28" column="17" bodyfile="p2p.cpp" bodystart="140" bodyend="160"/>
       </memberdef>
       <memberdef kind="function" id="classp2p_1a0b427c0584a5dd22a924273d3476dfd7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::make_vesting_action</definition>
         <argsstring>(eosio::name owner, eosio::name contract, eosio::asset amount)</argsstring>
         <name>make_vesting_action</name>
+        <qualifiedname>p2p::make_vesting_action</qualifiedname>
         <param>
           <type>eosio::name</type>
           <declname>owner</declname>
@@ -1140,13 +1295,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="30" column="1" bodyfile="p2p.cpp" bodystart="53" bodyend="71"/>
+        <location file="p2p.hpp" line="30" column="17" bodyfile="p2p.cpp" bodystart="63" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="classp2p_1ac62758f88566e5dafc0804182f324658" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::check_bonuse_system</definition>
         <argsstring>(eosio::name creator, eosio::name reciever, eosio::asset quantity)</argsstring>
         <name>check_bonuse_system</name>
+        <qualifiedname>p2p::check_bonuse_system</qualifiedname>
         <param>
           <type>eosio::name</type>
           <declname>creator</declname>
@@ -1165,13 +1321,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="32" column="1" bodyfile="p2p.cpp" bodystart="178" bodyend="214"/>
+        <location file="p2p.hpp" line="32" column="17" bodyfile="p2p.cpp" bodystart="188" bodyend="224"/>
       </memberdef>
       <memberdef kind="function" id="classp2p_1a5a20e06fb911402d5e343389bdf944d4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void p2p::check_guest_and_gift_account</definition>
         <argsstring>(eosio::name username, eosio::name contract, eosio::asset amount)</argsstring>
         <name>check_guest_and_gift_account</name>
+        <qualifiedname>p2p::check_guest_and_gift_account</qualifiedname>
         <param>
           <type>eosio::name</type>
           <declname>username</declname>
@@ -1190,26 +1347,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="34" column="1" bodyfile="p2p.cpp" bodystart="10" bodyend="51"/>
+        <location file="p2p.hpp" line="34" column="17" bodyfile="p2p.cpp" bodystart="20" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="classp2p_1a6277838ad086e92577864a4c59ec3e6c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint64_t</type>
         <definition>uint64_t p2p::get_order_id</definition>
         <argsstring>()</argsstring>
         <name>get_order_id</name>
+        <qualifiedname>p2p::get_order_id</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="36" column="1" bodyfile="p2p.cpp" bodystart="247" bodyend="268"/>
+        <location file="p2p.hpp" line="36" column="21" bodyfile="p2p.cpp" bodystart="257" bodyend="278"/>
       </memberdef>
       <memberdef kind="function" id="classp2p_1a4aa15958215b4647e9adc4ed3d53af8c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>uint128_t</type>
         <definition>static uint128_t p2p::combine_ids</definition>
         <argsstring>(const uint64_t &amp;x, const uint64_t &amp;y)</argsstring>
         <name>combine_ids</name>
+        <qualifiedname>p2p::combine_ids</qualifiedname>
         <param>
           <type>const uint64_t &amp;</type>
           <declname>x</declname>
@@ -1224,84 +1383,85 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="103" column="1" bodyfile="p2p.hpp" bodystart="103" bodyend="105"/>
+        <location file="p2p.hpp" line="112" column="22" bodyfile="p2p.hpp" bodystart="112" bodyend="114"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Начните ознакомление здесь. </para>    </briefdescription>
+<para>Начните ознакомление здесь. </para>
+    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="10">
+      <node id="2">
+        <label>eosio::contract</label>
+      </node>
+      <node id="1">
         <label>p2p</label>
         <link refid="classp2p"/>
-        <childnode refid="11" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="11">
-        <label>eosio::contract</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="12">
-        <label>p2p</label>
-        <link refid="classp2p"/>
-        <childnode refid="13" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="13">
+      <node id="2">
         <label>eosio::contract</label>
       </node>
+      <node id="1">
+        <label>p2p</label>
+        <link refid="classp2p"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
     </collaborationgraph>
-    <location file="p2p.hpp" line="17" column="1" bodyfile="p2p.hpp" bodystart="17" bodyend="350"/>
+    <location file="p2p.hpp" line="17" column="1" bodyfile="p2p.hpp" bodystart="17" bodyend="367"/>
     <listofallmembers>
-      <member refid="classp2p_1a582434add36ca36a326bdab9e7c8cb4e" prot="public" virt="non-virtual"><scope>p2p</scope><name>_core</name></member>
-      <member refid="classp2p_1aaf70e52c0f57cc4fa3d9d7fd0e8f0d99" prot="public" virt="non-virtual"><scope>p2p</scope><name>_CORE_SALE_ACCOUNT</name></member>
-      <member refid="classp2p_1aa5528a78186585c3a033d89b6c027a5b" prot="public" virt="non-virtual"><scope>p2p</scope><name>_curator</name></member>
-      <member refid="classp2p_1a738ddf63d1276c74f28b7d2f51ba1475" prot="public" virt="non-virtual"><scope>p2p</scope><name>_ENABLE_GROWHT</name></member>
-      <member refid="classp2p_1a817118e4e422393acc35439edb0187af" prot="public" virt="non-virtual"><scope>p2p</scope><name>_ENABLE_VESTING</name></member>
-      <member refid="classp2p_1ada18e95b855fa10dc57a33620b4dd51d" prot="public" virt="non-virtual"><scope>p2p</scope><name>_GIFT_ACCOUNT_FROM_AMOUNT</name></member>
-      <member refid="classp2p_1ade9426b6e05cdb60d41e808717199b89" prot="public" virt="non-virtual"><scope>p2p</scope><name>_me</name></member>
-      <member refid="classp2p_1a714001f0f556d0db16b3746fa2261ddb" prot="public" virt="non-virtual"><scope>p2p</scope><name>_ORDER_EXPIRATION</name></member>
-      <member refid="classp2p_1a6a7a6607c93e930cfa3984a8c318942b" prot="public" virt="non-virtual"><scope>p2p</scope><name>_PERCENTS_PER_MONTH</name></member>
-      <member refid="classp2p_1abaf26be47ba132e33bdadf4a6f65a052" prot="public" virt="non-virtual"><scope>p2p</scope><name>_rater</name></member>
-      <member refid="classp2p_1ad3c9fd465ea37d16657bd9910c631d22" prot="public" virt="non-virtual"><scope>p2p</scope><name>_REGISTRATOR_ACCOUNT</name></member>
-      <member refid="classp2p_1a41fd0523f7a4103ea012c69c376d0823" prot="public" virt="non-virtual"><scope>p2p</scope><name>_START_RATE</name></member>
-      <member refid="classp2p_1afe8d32633b8a87ce35209184d222f6de" prot="public" virt="non-virtual"><scope>p2p</scope><name>_SYM</name></member>
-      <member refid="classp2p_1af52bcfc4c42cb8a001ab4935d06539c0" prot="public" virt="non-virtual"><scope>p2p</scope><name>_VESTING_SECONDS</name></member>
-      <member refid="classp2p_1ab7d91c105e22cc794a42cb12d996d0cb" prot="public" virt="non-virtual"><scope>p2p</scope><name>accept</name></member>
+      <member refid="group__public__consts_1ga582434add36ca36a326bdab9e7c8cb4e" prot="public" virt="non-virtual"><scope>p2p</scope><name>_core</name></member>
+      <member refid="group__public__consts_1gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99" prot="public" virt="non-virtual"><scope>p2p</scope><name>_CORE_SALE_ACCOUNT</name></member>
+      <member refid="group__public__consts_1gaa5528a78186585c3a033d89b6c027a5b" prot="public" virt="non-virtual"><scope>p2p</scope><name>_curator</name></member>
+      <member refid="group__public__consts_1ga738ddf63d1276c74f28b7d2f51ba1475" prot="public" virt="non-virtual"><scope>p2p</scope><name>_ENABLE_GROWHT</name></member>
+      <member refid="group__public__consts_1ga817118e4e422393acc35439edb0187af" prot="public" virt="non-virtual"><scope>p2p</scope><name>_ENABLE_VESTING</name></member>
+      <member refid="group__public__consts_1gada18e95b855fa10dc57a33620b4dd51d" prot="public" virt="non-virtual"><scope>p2p</scope><name>_GIFT_ACCOUNT_FROM_AMOUNT</name></member>
+      <member refid="group__public__consts_1gade9426b6e05cdb60d41e808717199b89" prot="public" virt="non-virtual"><scope>p2p</scope><name>_me</name></member>
+      <member refid="group__public__consts_1ga714001f0f556d0db16b3746fa2261ddb" prot="public" virt="non-virtual"><scope>p2p</scope><name>_ORDER_EXPIRATION</name></member>
+      <member refid="group__public__consts_1ga6a7a6607c93e930cfa3984a8c318942b" prot="public" virt="non-virtual"><scope>p2p</scope><name>_PERCENTS_PER_MONTH</name></member>
+      <member refid="group__public__consts_1gabaf26be47ba132e33bdadf4a6f65a052" prot="public" virt="non-virtual"><scope>p2p</scope><name>_rater</name></member>
+      <member refid="group__public__consts_1gad3c9fd465ea37d16657bd9910c631d22" prot="public" virt="non-virtual"><scope>p2p</scope><name>_REGISTRATOR_ACCOUNT</name></member>
+      <member refid="group__public__consts_1ga41fd0523f7a4103ea012c69c376d0823" prot="public" virt="non-virtual"><scope>p2p</scope><name>_START_RATE</name></member>
+      <member refid="group__public__consts_1gafe8d32633b8a87ce35209184d222f6de" prot="public" virt="non-virtual"><scope>p2p</scope><name>_SYM</name></member>
+      <member refid="group__public__consts_1gaf52bcfc4c42cb8a001ab4935d06539c0" prot="public" virt="non-virtual"><scope>p2p</scope><name>_VESTING_SECONDS</name></member>
+      <member refid="group__public__actions_1gab7d91c105e22cc794a42cb12d996d0cb" prot="public" virt="non-virtual"><scope>p2p</scope><name>accept</name></member>
       <member refid="classp2p_1ac36f6042dcb8942679dddbf672684ddc" prot="public" virt="non-virtual"><scope>p2p</scope><name>add_balance</name></member>
       <member refid="classp2p_1aa6f449f9ebec47b6741ed3497a3b92f9" prot="public" virt="non-virtual"><scope>p2p</scope><name>addbbal</name></member>
       <member refid="classp2p_1a1ba9938186b683d21e39ae021d7a0a6f" prot="public" virt="non-virtual"><scope>p2p</scope><name>apply</name></member>
-      <member refid="classp2p_1a4562d6493c57589bf2259f119481d39a" prot="public" virt="non-virtual"><scope>p2p</scope><name>approve</name></member>
+      <member refid="group__public__actions_1ga4562d6493c57589bf2259f119481d39a" prot="public" virt="non-virtual"><scope>p2p</scope><name>approve</name></member>
       <member refid="classp2p_1a562223292a6b99a97d486136b2eb0d9e" prot="public" virt="non-virtual"><scope>p2p</scope><name>balances_index</name></member>
       <member refid="classp2p_1ad2b234c3e4a379adfeebb42efe3fdb25" prot="public" virt="non-virtual"><scope>p2p</scope><name>bbonuses_index</name></member>
-      <member refid="classp2p_1af81f265e37d1f1572a9a5fa17fa99f32" prot="public" virt="non-virtual"><scope>p2p</scope><name>cancel</name></member>
+      <member refid="group__public__actions_1gaf81f265e37d1f1572a9a5fa17fa99f32" prot="public" virt="non-virtual"><scope>p2p</scope><name>cancel</name></member>
       <member refid="classp2p_1ac62758f88566e5dafc0804182f324658" prot="public" virt="non-virtual"><scope>p2p</scope><name>check_bonuse_system</name></member>
       <member refid="classp2p_1a5a20e06fb911402d5e343389bdf944d4" prot="public" virt="non-virtual"><scope>p2p</scope><name>check_guest_and_gift_account</name></member>
       <member refid="classp2p_1a4aa15958215b4647e9adc4ed3d53af8c" prot="public" virt="non-virtual"><scope>p2p</scope><name>combine_ids</name></member>
-      <member refid="classp2p_1aa1abaf488133faec3fae6c6c9c9917c2" prot="public" virt="non-virtual"><scope>p2p</scope><name>confirm</name></member>
+      <member refid="group__public__actions_1gaa1abaf488133faec3fae6c6c9c9917c2" prot="public" virt="non-virtual"><scope>p2p</scope><name>confirm</name></member>
       <member refid="classp2p_1a6bef060ed784c193c2a60b397c869c29" prot="public" virt="non-virtual"><scope>p2p</scope><name>counts_index</name></member>
-      <member refid="classp2p_1a0b05f55568e9469d33379512b29a116a" prot="public" virt="non-virtual"><scope>p2p</scope><name>createorder</name></member>
-      <member refid="classp2p_1a805effb2c6e15ab30e7f36bf13558910" prot="public" virt="non-virtual"><scope>p2p</scope><name>del</name></member>
-      <member refid="classp2p_1abea413390558d072de45f9ff47217ff8" prot="public" virt="non-virtual"><scope>p2p</scope><name>delrate</name></member>
-      <member refid="classp2p_1a6ef3ff3b489159e054195c1d8fbd7092" prot="public" virt="non-virtual"><scope>p2p</scope><name>delvesting</name></member>
-      <member refid="classp2p_1a4f0c0c376096f7a73b21b39f0dc58d1d" prot="public" virt="non-virtual"><scope>p2p</scope><name>dispute</name></member>
+      <member refid="group__public__actions_1ga0b05f55568e9469d33379512b29a116a" prot="public" virt="non-virtual"><scope>p2p</scope><name>createorder</name></member>
+      <member refid="group__public__actions_1ga805effb2c6e15ab30e7f36bf13558910" prot="public" virt="non-virtual"><scope>p2p</scope><name>del</name></member>
+      <member refid="group__public__actions_1gabea413390558d072de45f9ff47217ff8" prot="public" virt="non-virtual"><scope>p2p</scope><name>delrate</name></member>
+      <member refid="group__public__actions_1ga6ef3ff3b489159e054195c1d8fbd7092" prot="public" virt="non-virtual"><scope>p2p</scope><name>delvesting</name></member>
+      <member refid="group__public__actions_1ga4f0c0c376096f7a73b21b39f0dc58d1d" prot="public" virt="non-virtual"><scope>p2p</scope><name>dispute</name></member>
       <member refid="classp2p_1a6277838ad086e92577864a4c59ec3e6c" prot="public" virt="non-virtual"><scope>p2p</scope><name>get_order_id</name></member>
       <member refid="classp2p_1a08507c2c104ad7e99765afd19d4fdd10" prot="public" virt="non-virtual"><scope>p2p</scope><name>guests_index</name></member>
       <member refid="classp2p_1a0b427c0584a5dd22a924273d3476dfd7" prot="public" virt="non-virtual"><scope>p2p</scope><name>make_vesting_action</name></member>
       <member refid="classp2p_1af7e337013ebdcc44b420a6d55d0d385f" prot="public" virt="non-virtual"><scope>p2p</scope><name>orders_index</name></member>
-      <member refid="classp2p_1a5dac3e80d9e970fbc86c4fbaf781f894" prot="public" virt="non-virtual"><scope>p2p</scope><name>p2p</name></member>
-      <member refid="classp2p_1a2cb80d56fbb68ac3ccc688112d86532a" prot="public" virt="non-virtual"><scope>p2p</scope><name>refreshsh</name></member>
-      <member refid="classp2p_1a4f3c89b4ae21f54b6e16334e681a7860" prot="public" virt="non-virtual"><scope>p2p</scope><name>setbrate</name></member>
-      <member refid="classp2p_1a432842119735888f862933882e6a4da6" prot="public" virt="non-virtual"><scope>p2p</scope><name>setrate</name></member>
+      <member refid="classp2p_1af05b8ff51661058078be1b96eb2bccb0" prot="public" virt="non-virtual"><scope>p2p</scope><name>p2p</name></member>
+      <member refid="group__public__actions_1ga2cb80d56fbb68ac3ccc688112d86532a" prot="public" virt="non-virtual"><scope>p2p</scope><name>refreshsh</name></member>
+      <member refid="group__public__actions_1ga4f3c89b4ae21f54b6e16334e681a7860" prot="public" virt="non-virtual"><scope>p2p</scope><name>setbrate</name></member>
+      <member refid="group__public__actions_1ga432842119735888f862933882e6a4da6" prot="public" virt="non-virtual"><scope>p2p</scope><name>setrate</name></member>
       <member refid="classp2p_1afc44fa7dedaeea9559af5f70445b5218" prot="public" virt="non-virtual"><scope>p2p</scope><name>sub_balance</name></member>
       <member refid="classp2p_1a9bbb48f7000e2ad2c901fe04f3e7f024" prot="public" virt="non-virtual"><scope>p2p</scope><name>subbbal</name></member>
-      <member refid="classp2p_1a6684d814e1a17f87c492e2b394cc1846" prot="public" virt="non-virtual"><scope>p2p</scope><name>uprate</name></member>
+      <member refid="group__public__actions_1ga6684d814e1a17f87c492e2b394cc1846" prot="public" virt="non-virtual"><scope>p2p</scope><name>uprate</name></member>
       <member refid="classp2p_1abbacbe5996794991fcbfb554dae6dc41" prot="public" virt="non-virtual"><scope>p2p</scope><name>usdrates2_index</name></member>
       <member refid="classp2p_1ac0dc7fa780d52c554aea91ab34bb3cfb" prot="public" virt="non-virtual"><scope>p2p</scope><name>usdrates_index</name></member>
       <member refid="classp2p_1a9e10c97b92e817371f627c84094dce39" prot="public" virt="non-virtual"><scope>p2p</scope><name>vesting_index</name></member>
-      <member refid="classp2p_1adb4fde78468ee3b060717a785febdcc4" prot="public" virt="non-virtual"><scope>p2p</scope><name>withdrawsh</name></member>
+      <member refid="group__public__actions_1gadb4fde78468ee3b060717a785febdcc4" prot="public" virt="non-virtual"><scope>p2p</scope><name>withdrawsh</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

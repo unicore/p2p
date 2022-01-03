@@ -1,0 +1,774 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="d1/df9/group__public__actions" kind="group">
+    <compoundname>public_actions</compoundname>
+    <title>ACTIONS</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="d1/df9/group__public__actions_1ga4f3c89b4ae21f54b6e16334e681a7860" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void p2p::setbrate</definition>
+        <argsstring>(eosio::name host, double distribution_rate)</argsstring>
+        <name>setbrate</name>
+        <qualifiedname>p2p::setbrate</qualifiedname>
+        <param>
+          <type>eosio::name</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>distribution_rate</declname>
+        </param>
+        <briefdescription>
+<para>Метод установки бонусного курса </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Вызывается владельцем бонусного баланса в контракте для подключения распределения на партнёрскую сеть покупателя.</para>
+<para><simplesect kind="par"><title>AUTH: host</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">host</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The host </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">distribution_rate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The distribution rate </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="72" column="10" bodyfile="p2p.cpp" bodystart="171" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/df9/group__public__actions_1ga0b05f55568e9469d33379512b29a116a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void p2p::createorder</definition>
+        <argsstring>(name username, uint64_t parent_id, name type, eosio::name root_contract, eosio::asset root_quantity, eosio::name quote_type, double quote_rate, eosio::name quote_contract, eosio::asset quote_quantity, eosio::name out_type, double out_rate, eosio::name out_contract, eosio::asset out_quantity, std::string details)</argsstring>
+        <name>createorder</name>
+        <qualifiedname>p2p::createorder</qualifiedname>
+        <param>
+          <type>name</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>parent_id</declname>
+        </param>
+        <param>
+          <type>name</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>eosio::name</type>
+          <declname>root_contract</declname>
+        </param>
+        <param>
+          <type>eosio::asset</type>
+          <declname>root_quantity</declname>
+        </param>
+        <param>
+          <type>eosio::name</type>
+          <declname>quote_type</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>quote_rate</declname>
+        </param>
+        <param>
+          <type>eosio::name</type>
+          <declname>quote_contract</declname>
+        </param>
+        <param>
+          <type>eosio::asset</type>
+          <declname>quote_quantity</declname>
+        </param>
+        <param>
+          <type>eosio::name</type>
+          <declname>out_type</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>out_rate</declname>
+        </param>
+        <param>
+          <type>eosio::name</type>
+          <declname>out_contract</declname>
+        </param>
+        <param>
+          <type>eosio::asset</type>
+          <declname>out_quantity</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>details</declname>
+        </param>
+        <briefdescription>
+<para>Метод создания ордера </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Используя метод, пользователь создаёт ордер для обмена. <simplesect kind="par"><title>AUTH: username</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Имя пользователя, инициирующего обмен </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">parent_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Опциональный идентификатор родительской сделки, с которой происходит обмен. Если не установлен - ордер ожидает появление дочерних ордеров в статусе waiting, предлагающих обмен. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Тип ордера buy / sell </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">root_contract</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Имя контракта токена обмена </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">root_quantity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Количество токенов на обмене </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">quote_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Тип опорной валюты, сейчас используем только тип external </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">quote_rate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Опорный курс обмена </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">quote_contract</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Опорный контракт обмена, сейчас используем только &quot;&quot; </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">quote_quantity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Количество опорной валюты на обмене, измеряемой в USD </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">out_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Тип валюты выхода (сейчас любой) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">out_rate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Курс валюты выхода </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">out_contract</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Контракт валюты выхода (сейчас только &quot;&quot;) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">out_quantity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Количество валюты выхода </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">details</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Реквизиты для получения платежа, используются если тип нового ордера = buy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="39" column="10" bodyfile="p2p.cpp" bodystart="304" bodyend="417"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/df9/group__public__actions_1gab7d91c105e22cc794a42cb12d996d0cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void p2p::accept</definition>
+        <argsstring>(name username, uint64_t id, std::string details)</argsstring>
+        <name>accept</name>
+        <qualifiedname>p2p::accept</qualifiedname>
+        <param>
+          <type>name</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>details</declname>
+        </param>
+        <briefdescription>
+<para>Метод подтверждения факта присутствия и начало сделки </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Реквизиты для оплаты передаются в поле details, если дочерний ордер типа buy. Статус ордера изменяется на process. <simplesect kind="par"><title>AUTH: username</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>имя пользователя, подтверждающего начало сделки </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>идентификатор ордера </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">details</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>реквизиты для получения оплаты по сделке </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="42" column="10" bodyfile="p2p.cpp" bodystart="432" bodyend="515"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/df9/group__public__actions_1gaa1abaf488133faec3fae6c6c9c9917c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void p2p::confirm</definition>
+        <argsstring>(name username, uint64_t id)</argsstring>
+        <name>confirm</name>
+        <qualifiedname>p2p::confirm</qualifiedname>
+        <param>
+          <type>name</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Метод подтверждения факта платежа </para>
+        </briefdescription>
+        <detaileddescription>
+<para>После совершения оплаты на реквизиты, участник сделки должен подтвердить этот факт вызовом этого метода. Статус ордера изменяется на payed. <simplesect kind="par"><title>AUTH: username</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>имя аккаунта участника сделки, утверждающего факт совершения оплаты на реквизиты </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>идентификатор ордера </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="48" column="10" bodyfile="p2p.cpp" bodystart="528" bodyend="551"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/df9/group__public__actions_1ga4562d6493c57589bf2259f119481d39a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void p2p::approve</definition>
+        <argsstring>(name username, uint64_t id)</argsstring>
+        <name>approve</name>
+        <qualifiedname>p2p::approve</qualifiedname>
+        <param>
+          <type>name</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Метод утверждения завершенного ордера </para>
+        </briefdescription>
+        <detaileddescription>
+<para>После получения оплаты, пользователь должен вызовать этот метод и утвердить завершение сделки, разблокировав токены для второго участника сделки. Статус ордера изменяется на finish и производится разблокирование токенов для получателя. <simplesect kind="par"><title>AUTH: username</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>имя аккаунта участника сделки, утверждающего успешное завершение сделки </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>идентификатор ордера </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="45" column="10" bodyfile="p2p.cpp" bodystart="566" bodyend="692"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/df9/group__public__actions_1gaf81f265e37d1f1572a9a5fa17fa99f32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void p2p::cancel</definition>
+        <argsstring>(name username, uint64_t id)</argsstring>
+        <name>cancel</name>
+        <qualifiedname>p2p::cancel</qualifiedname>
+        <param>
+          <type>name</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Метод отмены ордера </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Отменяет ордер и удаляет его из оперативной памяти, разблокируя средства согласну типу ордера. <simplesect kind="par"><title>AUTH: username</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>имя аккаунта участника сделки, производящего отмену ордера. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>идентификатор ордера </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="51" column="10" bodyfile="p2p.cpp" bodystart="705" bodyend="788"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/df9/group__public__actions_1ga4f0c0c376096f7a73b21b39f0dc58d1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void p2p::dispute</definition>
+        <argsstring>(name username, uint64_t id)</argsstring>
+        <name>dispute</name>
+        <qualifiedname>p2p::dispute</qualifiedname>
+        <param>
+          <type>name</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Метод создания спора </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Перевод сделку в статус спора, блокируя вывод средств до его разрешения. Только сделка в статусе payed может быть переведена в статус спора. <simplesect kind="par"><title>AUTH: username</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>имя аккаунта участника сделки, инициирующего спор </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>идентификатор ордера </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="54" column="10" bodyfile="p2p.cpp" bodystart="800" bodyend="823"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/df9/group__public__actions_1ga805effb2c6e15ab30e7f36bf13558910" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void p2p::del</definition>
+        <argsstring>(name username, uint64_t id)</argsstring>
+        <name>del</name>
+        <qualifiedname>p2p::del</qualifiedname>
+        <param>
+          <type>name</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Метод удаления завершенной сделки из оперативной памяти </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Очищает завершенную сделку из оперативной памяти операционной системы. <simplesect kind="par"><title>AUTH: username</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>имя аккаунта, производящего очищение </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>идентификатор ордера </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="57" column="10" bodyfile="p2p.cpp" bodystart="835" bodyend="846"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/df9/group__public__actions_1gabea413390558d072de45f9ff47217ff8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void p2p::delrate</definition>
+        <argsstring>(uint64_t id)</argsstring>
+        <name>delrate</name>
+        <qualifiedname>p2p::delrate</qualifiedname>
+        <param>
+          <type>uint64_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Метод удаление курса </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Используется администратором для удаления курса из таблицы курсов <simplesect kind="par"><title>AUTH: eosio</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>идентификатор курса </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="66" column="10" bodyfile="p2p.cpp" bodystart="857" bodyend="865"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/df9/group__public__actions_1ga6ef3ff3b489159e054195c1d8fbd7092" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void p2p::delvesting</definition>
+        <argsstring>(eosio::name owner, uint64_t id)</argsstring>
+        <name>delvesting</name>
+        <qualifiedname>p2p::delvesting</qualifiedname>
+        <param>
+          <type>eosio::name</type>
+          <declname>owner</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Метод удаление вестинг-баланса </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Используется администратором для удаления ошибочного начисления вестинг-баланса <simplesect kind="par"><title>AUTH: p2p</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">owner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>имя аккаунта владельца вестинг-баланса </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>идентификатор вестинг-баланса </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="69" column="10" bodyfile="p2p.cpp" bodystart="877" bodyend="885"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/df9/group__public__actions_1ga6684d814e1a17f87c492e2b394cc1846" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void p2p::uprate</definition>
+        <argsstring>(eosio::name out_contract, eosio::asset out_asset)</argsstring>
+        <name>uprate</name>
+        <qualifiedname>p2p::uprate</qualifiedname>
+        <param>
+          <type>eosio::name</type>
+          <declname>out_contract</declname>
+        </param>
+        <param>
+          <type>eosio::asset</type>
+          <declname>out_asset</declname>
+        </param>
+        <briefdescription>
+<para>Метод увеличения курса обмена системного токена </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Периодически вызывается системным контрактом и увеличивает курс обмена системного токена согласно темпу роста в _PERCENTS_PER_MONTH. <simplesect kind="par"><title>AUTH: eosio</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">out_contract</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>имя контракта выхода (обычно &quot;eosio.token&quot;) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">out_asset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>токен выхода с точностью и символом (обычно равен _SYM) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="63" column="10" bodyfile="p2p.cpp" bodystart="898" bodyend="952"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/df9/group__public__actions_1ga432842119735888f862933882e6a4da6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void p2p::setrate</definition>
+        <argsstring>(eosio::name out_contract, eosio::asset out_asset, double rate)</argsstring>
+        <name>setrate</name>
+        <qualifiedname>p2p::setrate</qualifiedname>
+        <param>
+          <type>eosio::name</type>
+          <declname>out_contract</declname>
+        </param>
+        <param>
+          <type>eosio::asset</type>
+          <declname>out_asset</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>rate</declname>
+        </param>
+        <briefdescription>
+<para>Метод установки курса обмена к USD. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Устанавливает в таблицу usdrates новый актуальный курс от поставщика. <simplesect kind="par"><title>AUTH: _rater | _me</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">out_contract</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>имя контракта выхода (обычно &quot;&quot;) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">out_asset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>токен выхода с точностью и символом </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>курс обмена к USD </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="60" column="10" bodyfile="p2p.cpp" bodystart="964" bodyend="992"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/df9/group__public__actions_1ga2cb80d56fbb68ac3ccc688112d86532a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void p2p::refreshsh</definition>
+        <argsstring>(eosio::name owner, uint64_t id)</argsstring>
+        <name>refreshsh</name>
+        <qualifiedname>p2p::refreshsh</qualifiedname>
+        <param>
+          <type>eosio::name</type>
+          <declname>owner</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Метод обновления вестинг-баланса. <linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Обновляет вестинг-баланс до доступного остатка. <simplesect kind="par"><title>AUTH: owner</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">owner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>имя аккаунта владельца вестинг-баланса </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>идентификатор вестинг-баланса </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="75" column="10" bodyfile="p2p.cpp" bodystart="1007" bodyend="1030"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/df9/group__public__actions_1gadb4fde78468ee3b060717a785febdcc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void p2p::withdrawsh</definition>
+        <argsstring>(eosio::name owner, uint64_t id)</argsstring>
+        <name>withdrawsh</name>
+        <qualifiedname>p2p::withdrawsh</qualifiedname>
+        <param>
+          <type>eosio::name</type>
+          <declname>owner</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Вывод вестинг-баланса </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Обеспечивает вывод доступных средств из вестинг-баланса. <simplesect kind="par"><title>AUTH: owner</title><para></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">owner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>имя аккаунта владельца вестинг-баланса </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>идентификатор вестинг-баланса </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="78" column="10" bodyfile="p2p.cpp" bodystart="1041" bodyend="1063"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Методы действий контракта </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

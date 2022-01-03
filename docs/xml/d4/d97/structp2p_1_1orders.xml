@@ -1,0 +1,741 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="d4/d97/structp2p_1_1orders" kind="struct" language="C++" prot="public">
+    <compoundname>p2p::orders</compoundname>
+    <includes refid="dd/d90/p2p_8hpp" local="no">p2p.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1a128d2278d493599833f51e06310cdeb4" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::orders::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <qualifiedname>p2p::orders::id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>идентификатор ордера </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="165" column="18" bodyfile="p2p.hpp" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1a587e23863136871fe42e47950037ae9c" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::orders::parent_id</definition>
+        <argsstring></argsstring>
+        <name>parent_id</name>
+        <qualifiedname>p2p::orders::parent_id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>идентификатор родительского ордера, с которым происходит сделка </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="166" column="18" bodyfile="p2p.hpp" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1a3f36507a769c0ec66ca553722a842c2a" prot="public" static="no" mutable="no">
+        <type>name</type>
+        <definition>name p2p::orders::curator</definition>
+        <argsstring></argsstring>
+        <name>curator</name>
+        <qualifiedname>p2p::orders::curator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>имя аккаунта куратора (оракула), обладающий доступом к методам разрешения конфликтов </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="168" column="14" bodyfile="p2p.hpp" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1ae2b7e5411d8ddcd0e7c2be0fbb177686" prot="public" static="no" mutable="no">
+        <type>name</type>
+        <definition>name p2p::orders::creator</definition>
+        <argsstring></argsstring>
+        <name>creator</name>
+        <qualifiedname>p2p::orders::creator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>имя аккаунта создателя ордера </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="169" column="14" bodyfile="p2p.hpp" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1aec4e15d60ed528fd396443cf448197aa" prot="public" static="no" mutable="no">
+        <type>name</type>
+        <definition>name p2p::orders::parent_creator</definition>
+        <argsstring></argsstring>
+        <name>parent_creator</name>
+        <qualifiedname>p2p::orders::parent_creator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>имя аккаунта создателя родительского ордера </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="170" column="14" bodyfile="p2p.hpp" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1a60ac740af13940b35f388cb2c17c4f3a" prot="public" static="no" mutable="no">
+        <type>name</type>
+        <definition>name p2p::orders::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>p2p::orders::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>тип ордера buy / sell </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="171" column="14" bodyfile="p2p.hpp" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1ab805e2be0b457dbba918a014d792d84a" prot="public" static="no" mutable="no">
+        <type>asset</type>
+        <definition>asset p2p::orders::root_quantity</definition>
+        <argsstring></argsstring>
+        <name>root_quantity</name>
+        <qualifiedname>p2p::orders::root_quantity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>количество токенов на обмене </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="172" column="15" bodyfile="p2p.hpp" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1aa2030987fac872badf6682757cd75a6c" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string p2p::orders::root_symbol</definition>
+        <argsstring></argsstring>
+        <name>root_symbol</name>
+        <qualifiedname>p2p::orders::root_symbol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>символ токена обмена </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="174" column="21" bodyfile="p2p.hpp" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1af0f8a3e55db6c2a7642eb25fdb4a4f50" prot="public" static="no" mutable="no">
+        <type>eosio::name</type>
+        <definition>eosio::name p2p::orders::root_contract</definition>
+        <argsstring></argsstring>
+        <name>root_contract</name>
+        <qualifiedname>p2p::orders::root_contract</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>контракт токена обмена </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="175" column="21" bodyfile="p2p.hpp" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1a303fa40509f75981e8353d066898b837" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::orders::root_precision</definition>
+        <argsstring></argsstring>
+        <name>root_precision</name>
+        <qualifiedname>p2p::orders::root_precision</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>точность токена обмена </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="176" column="18" bodyfile="p2p.hpp" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1aea7698baa46bbde12ec30bbb47be8abd" prot="public" static="no" mutable="no">
+        <type>asset</type>
+        <definition>asset p2p::orders::root_remain</definition>
+        <argsstring></argsstring>
+        <name>root_remain</name>
+        <qualifiedname>p2p::orders::root_remain</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>сколько токенов осталось на обмене </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="178" column="15" bodyfile="p2p.hpp" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1ab3e7388b2300e22f5b81678c6ccb70a7" prot="public" static="no" mutable="no">
+        <type>eosio::asset</type>
+        <definition>eosio::asset p2p::orders::root_locked</definition>
+        <argsstring></argsstring>
+        <name>root_locked</name>
+        <qualifiedname>p2p::orders::root_locked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>сколько токенов заблокировано в обмене </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="179" column="22" bodyfile="p2p.hpp" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1aff1ea77bef5d251952e8d5e1f1dcfbc1" prot="public" static="no" mutable="no">
+        <type>eosio::asset</type>
+        <definition>eosio::asset p2p::orders::root_completed</definition>
+        <argsstring></argsstring>
+        <name>root_completed</name>
+        <qualifiedname>p2p::orders::root_completed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>сколько токенов завершили обмен </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="180" column="22" bodyfile="p2p.hpp" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1ae2d706bd60dd6808b5d8d06cb584ca26" prot="public" static="no" mutable="no">
+        <type>name</type>
+        <definition>name p2p::orders::quote_type</definition>
+        <argsstring></argsstring>
+        <name>quote_type</name>
+        <qualifiedname>p2p::orders::quote_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>маркер внутреннего обмена external / internal. Сейчас используем только external, при internal контракт должен передать out_asset покупателю/продавцу, при external покупатель/продавец должен подтвердить поступление средств на свой счёт вручную, а средства это - внешние относительно блокчейна валюты (фиат). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="182" column="14" bodyfile="p2p.hpp" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1a899228a1b7443c077096429aa5498224" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double p2p::orders::quote_rate</definition>
+        <argsstring></argsstring>
+        <name>quote_rate</name>
+        <qualifiedname>p2p::orders::quote_rate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>курс опорной валюты при конвертации (USD) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="183" column="16" bodyfile="p2p.hpp" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1ade50869ce026a09b486aff7dcd157d39" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string p2p::orders::quote_symbol</definition>
+        <argsstring></argsstring>
+        <name>quote_symbol</name>
+        <qualifiedname>p2p::orders::quote_symbol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>символ опорной валюты при конвертации (USD) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="184" column="21" bodyfile="p2p.hpp" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1a033746dfead78477824e8ae920505faa" prot="public" static="no" mutable="no">
+        <type>eosio::name</type>
+        <definition>eosio::name p2p::orders::quote_contract</definition>
+        <argsstring></argsstring>
+        <name>quote_contract</name>
+        <qualifiedname>p2p::orders::quote_contract</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>контракт опорной валюты при конвертации (при USD - не указывается) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="185" column="21" bodyfile="p2p.hpp" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1af823490b297c8135453f15277efbf294" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::orders::quote_precision</definition>
+        <argsstring></argsstring>
+        <name>quote_precision</name>
+        <qualifiedname>p2p::orders::quote_precision</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>точность опорной валюты при конвертации (4 знака для USD) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="186" column="18" bodyfile="p2p.hpp" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1aaeba745745fe627561e3b9b608443c7f" prot="public" static="no" mutable="no">
+        <type>asset</type>
+        <definition>asset p2p::orders::quote_quantity</definition>
+        <argsstring></argsstring>
+        <name>quote_quantity</name>
+        <qualifiedname>p2p::orders::quote_quantity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>общее количество опорной валюты на конвертации (USD) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="188" column="15" bodyfile="p2p.hpp" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1a62f809bf29bcd440512ef3d508232ac0" prot="public" static="no" mutable="no">
+        <type>asset</type>
+        <definition>asset p2p::orders::quote_remain</definition>
+        <argsstring></argsstring>
+        <name>quote_remain</name>
+        <qualifiedname>p2p::orders::quote_remain</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>сколько опорной валюты осталось на конвертации (USD) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="189" column="15" bodyfile="p2p.hpp" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1a1c5f68d399cb96227e42833374aee105" prot="public" static="no" mutable="no">
+        <type>asset</type>
+        <definition>asset p2p::orders::quote_locked</definition>
+        <argsstring></argsstring>
+        <name>quote_locked</name>
+        <qualifiedname>p2p::orders::quote_locked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>сколько опорной валюты заблокировано на конвертации (USD) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="190" column="15" bodyfile="p2p.hpp" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1ad4da8c4849fb7f2488e3e000f9461002" prot="public" static="no" mutable="no">
+        <type>asset</type>
+        <definition>asset p2p::orders::quote_completed</definition>
+        <argsstring></argsstring>
+        <name>quote_completed</name>
+        <qualifiedname>p2p::orders::quote_completed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>сколько опорной валюты завершило конвертацию (USD) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="191" column="15" bodyfile="p2p.hpp" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1af4327f5bcde3db4dd60cfdd6ddce7611" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::orders::out_currency_code</definition>
+        <argsstring></argsstring>
+        <name>out_currency_code</name>
+        <qualifiedname>p2p::orders::out_currency_code</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>код валюты выхода из конвертации по стандарту ISO3166 (не используем сейчас) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="193" column="18" bodyfile="p2p.hpp" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1ad8c0bf06458e15a53a06e404e2e2130d" prot="public" static="no" mutable="no">
+        <type>name</type>
+        <definition>name p2p::orders::out_type</definition>
+        <argsstring></argsstring>
+        <name>out_type</name>
+        <qualifiedname>p2p::orders::out_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>тип валюты выхода из конвертации (crypto / fiat) - не используем сейчас </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="194" column="14" bodyfile="p2p.hpp" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1a3208416b574632d2aaef6c138223a0ea" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double p2p::orders::out_rate</definition>
+        <argsstring></argsstring>
+        <name>out_rate</name>
+        <qualifiedname>p2p::orders::out_rate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>курс валюты выхода из конвертации относительно опорной валюты (USD) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="195" column="16" bodyfile="p2p.hpp" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1a726223d82cdc43e2b734cf673835c582" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string p2p::orders::out_symbol</definition>
+        <argsstring></argsstring>
+        <name>out_symbol</name>
+        <qualifiedname>p2p::orders::out_symbol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>символ валюты выхода из конвертации </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="196" column="21" bodyfile="p2p.hpp" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1a48670835e7e5bd889473a81c3fafbbd2" prot="public" static="no" mutable="no">
+        <type>name</type>
+        <definition>name p2p::orders::out_contract</definition>
+        <argsstring></argsstring>
+        <name>out_contract</name>
+        <qualifiedname>p2p::orders::out_contract</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>контракт валюты выхода из конвертации (не используется сейчас) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="197" column="14" bodyfile="p2p.hpp" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1ae6b70d5a03f4d20a0ccf199e4ebf5af5" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::orders::out_precision</definition>
+        <argsstring></argsstring>
+        <name>out_precision</name>
+        <qualifiedname>p2p::orders::out_precision</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>точность валюты выхода из конвертации </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="198" column="18" bodyfile="p2p.hpp" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1ab1b872e009bc0f52603ba2b54c521c1a" prot="public" static="no" mutable="no">
+        <type>asset</type>
+        <definition>asset p2p::orders::out_quantity</definition>
+        <argsstring></argsstring>
+        <name>out_quantity</name>
+        <qualifiedname>p2p::orders::out_quantity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>общее количество валюты выхода из конвертации </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="200" column="15" bodyfile="p2p.hpp" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1ad375146e4c5f03d42250be97b8d43cde" prot="public" static="no" mutable="no">
+        <type>asset</type>
+        <definition>asset p2p::orders::out_remain</definition>
+        <argsstring></argsstring>
+        <name>out_remain</name>
+        <qualifiedname>p2p::orders::out_remain</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>сколько валюты выхода осталось на конвертации </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="201" column="15" bodyfile="p2p.hpp" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1ae159e6986c8beaf43892ca85f9c702d5" prot="public" static="no" mutable="no">
+        <type>asset</type>
+        <definition>asset p2p::orders::out_locked</definition>
+        <argsstring></argsstring>
+        <name>out_locked</name>
+        <qualifiedname>p2p::orders::out_locked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>сколько валюты выхода заблокировано на конвертации </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="202" column="15" bodyfile="p2p.hpp" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1ae63f9eba373c1c401e5326db46625068" prot="public" static="no" mutable="no">
+        <type>asset</type>
+        <definition>asset p2p::orders::out_completed</definition>
+        <argsstring></argsstring>
+        <name>out_completed</name>
+        <qualifiedname>p2p::orders::out_completed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>сколько валюты выхода завершило конвертацию </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="203" column="15" bodyfile="p2p.hpp" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1a223eac1f67f878e4bfc3c3918deadcfc" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string p2p::orders::details</definition>
+        <argsstring></argsstring>
+        <name>details</name>
+        <qualifiedname>p2p::orders::details</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>обычно зашированные детали сделки </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="205" column="21" bodyfile="p2p.hpp" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1a0a4acd537d4a6ac966469faa648b43f2" prot="public" static="no" mutable="no">
+        <type>name</type>
+        <definition>name p2p::orders::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <qualifiedname>p2p::orders::status</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>статус ордера: waiting / process / payed / finish / dispute </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="206" column="14" bodyfile="p2p.hpp" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1afe3f0c2fcb252679efbd4143fc86d42d" prot="public" static="no" mutable="no">
+        <type>eosio::time_point_sec</type>
+        <definition>eosio::time_point_sec p2p::orders::expired_at</definition>
+        <argsstring></argsstring>
+        <name>expired_at</name>
+        <qualifiedname>p2p::orders::expired_at</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>дата истечения срока давности ордера </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="207" column="31" bodyfile="p2p.hpp" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d97/structp2p_1_1orders_1afb5f4469a9ae8b84da84b287853ceb42" prot="public" static="no" mutable="no">
+        <type>eosio::time_point_sec</type>
+        <definition>eosio::time_point_sec p2p::orders::created_at</definition>
+        <argsstring></argsstring>
+        <name>created_at</name>
+        <qualifiedname>p2p::orders::created_at</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>дата создания ордера </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="208" column="31" bodyfile="p2p.hpp" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/d97/structp2p_1_1orders_1a550c32d8d3f0ec4770662acec7bb5197" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::orders::primary_key</definition>
+        <argsstring>() const</argsstring>
+        <name>primary_key</name>
+        <qualifiedname>p2p::orders::primary_key</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>id - primary_key </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="210" column="18" bodyfile="p2p.hpp" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d97/structp2p_1_1orders_1ab6f05a725122c94d3f2dcfaf24322c47" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::orders::bycurrcode</definition>
+        <argsstring>() const</argsstring>
+        <name>bycurrcode</name>
+        <qualifiedname>p2p::orders::bycurrcode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>out_currency_code - secondary_key 2 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="211" column="18" bodyfile="p2p.hpp" bodystart="211" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d97/structp2p_1_1orders_1a2b790da517561e8a593b6c56d63c4cfd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::orders::byparentid</definition>
+        <argsstring>() const</argsstring>
+        <name>byparentid</name>
+        <qualifiedname>p2p::orders::byparentid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>parent_id - secondary_key 3 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="213" column="18" bodyfile="p2p.hpp" bodystart="213" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d97/structp2p_1_1orders_1a17505cc3759a5ba5099f490c982535e1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::orders::bytype</definition>
+        <argsstring>() const</argsstring>
+        <name>bytype</name>
+        <qualifiedname>p2p::orders::bytype</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>type - secondary_key 4 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="214" column="18" bodyfile="p2p.hpp" bodystart="214" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d97/structp2p_1_1orders_1a91b49c417f79ef405982bfe348651a98" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::orders::bycreator</definition>
+        <argsstring>() const</argsstring>
+        <name>bycreator</name>
+        <qualifiedname>p2p::orders::bycreator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>creator - secondary_key 5 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="216" column="18" bodyfile="p2p.hpp" bodystart="216" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d97/structp2p_1_1orders_1a76fa8b54f391ccd2e29b640d4c0199df" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::orders::bycurator</definition>
+        <argsstring>() const</argsstring>
+        <name>bycurator</name>
+        <qualifiedname>p2p::orders::bycurator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>curator - secondary_key 6 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="217" column="18" bodyfile="p2p.hpp" bodystart="217" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d97/structp2p_1_1orders_1a31e70a285fb324d4ee07b1b149debff3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::orders::bystatus</definition>
+        <argsstring>() const</argsstring>
+        <name>bystatus</name>
+        <qualifiedname>p2p::orders::bystatus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>status - secondary_key 7 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="218" column="18" bodyfile="p2p.hpp" bodystart="218" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d97/structp2p_1_1orders_1a8cf94dfb0902511c6baae1dd0434dcbf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::orders::byexpr</definition>
+        <argsstring>() const</argsstring>
+        <name>byexpr</name>
+        <qualifiedname>p2p::orders::byexpr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>expired_at - secondary_key 8 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="219" column="18" bodyfile="p2p.hpp" bodystart="219" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d97/structp2p_1_1orders_1a6eab9cb4d0f7b605aef8856aad730fe5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::orders::bycreated</definition>
+        <argsstring>() const</argsstring>
+        <name>bycreated</name>
+        <qualifiedname>p2p::orders::bycreated</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>created_at - secondary_key 9 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="220" column="18" bodyfile="p2p.hpp" bodystart="220" bodyend="219"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Таблица ордеров </para>
+    </briefdescription>
+    <detaileddescription>
+<para>CONTRACT = _me, SCOPE = _me, TABLE = orders</para>
+<para>Ордера создаются продавцами или покупателями вызовом метода createorder, с дальнейшим использованием методов accept, approve и confirm. </para>
+    </detaileddescription>
+    <location file="p2p.hpp" line="164" column="5" bodyfile="p2p.hpp" bodystart="164" bodyend="222"/>
+    <listofallmembers>
+      <member refid="d4/d97/structp2p_1_1orders_1a6eab9cb4d0f7b605aef8856aad730fe5" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>bycreated</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a91b49c417f79ef405982bfe348651a98" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>bycreator</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a76fa8b54f391ccd2e29b640d4c0199df" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>bycurator</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1ab6f05a725122c94d3f2dcfaf24322c47" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>bycurrcode</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a8cf94dfb0902511c6baae1dd0434dcbf" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>byexpr</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a2b790da517561e8a593b6c56d63c4cfd" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>byparentid</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a31e70a285fb324d4ee07b1b149debff3" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>bystatus</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a17505cc3759a5ba5099f490c982535e1" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>bytype</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1afb5f4469a9ae8b84da84b287853ceb42" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>created_at</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1ae2b7e5411d8ddcd0e7c2be0fbb177686" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>creator</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a3f36507a769c0ec66ca553722a842c2a" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>curator</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a223eac1f67f878e4bfc3c3918deadcfc" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>details</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1afe3f0c2fcb252679efbd4143fc86d42d" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>expired_at</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a128d2278d493599833f51e06310cdeb4" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>id</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1ae63f9eba373c1c401e5326db46625068" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>out_completed</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a48670835e7e5bd889473a81c3fafbbd2" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>out_contract</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1af4327f5bcde3db4dd60cfdd6ddce7611" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>out_currency_code</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1ae159e6986c8beaf43892ca85f9c702d5" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>out_locked</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1ae6b70d5a03f4d20a0ccf199e4ebf5af5" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>out_precision</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1ab1b872e009bc0f52603ba2b54c521c1a" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>out_quantity</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a3208416b574632d2aaef6c138223a0ea" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>out_rate</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1ad375146e4c5f03d42250be97b8d43cde" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>out_remain</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a726223d82cdc43e2b734cf673835c582" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>out_symbol</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1ad8c0bf06458e15a53a06e404e2e2130d" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>out_type</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1aec4e15d60ed528fd396443cf448197aa" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>parent_creator</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a587e23863136871fe42e47950037ae9c" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>parent_id</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a550c32d8d3f0ec4770662acec7bb5197" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>primary_key</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1ad4da8c4849fb7f2488e3e000f9461002" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>quote_completed</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a033746dfead78477824e8ae920505faa" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>quote_contract</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a1c5f68d399cb96227e42833374aee105" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>quote_locked</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1af823490b297c8135453f15277efbf294" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>quote_precision</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1aaeba745745fe627561e3b9b608443c7f" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>quote_quantity</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a899228a1b7443c077096429aa5498224" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>quote_rate</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a62f809bf29bcd440512ef3d508232ac0" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>quote_remain</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1ade50869ce026a09b486aff7dcd157d39" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>quote_symbol</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1ae2d706bd60dd6808b5d8d06cb584ca26" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>quote_type</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1aff1ea77bef5d251952e8d5e1f1dcfbc1" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>root_completed</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1af0f8a3e55db6c2a7642eb25fdb4a4f50" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>root_contract</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1ab3e7388b2300e22f5b81678c6ccb70a7" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>root_locked</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a303fa40509f75981e8353d066898b837" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>root_precision</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1ab805e2be0b457dbba918a014d792d84a" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>root_quantity</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1aea7698baa46bbde12ec30bbb47be8abd" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>root_remain</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1aa2030987fac872badf6682757cd75a6c" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>root_symbol</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a0a4acd537d4a6ac966469faa648b43f2" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>status</name></member>
+      <member refid="d4/d97/structp2p_1_1orders_1a60ac740af13940b35f388cb2c17c4f3a" prot="public" virt="non-virtual"><scope>p2p::orders</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,4 +1,4 @@
-\hypertarget{classp2p}{}\section{p2p Class Reference}
+\hypertarget{classp2p}{}\doxysection{p2p Class Reference}
 \label{classp2p}\index{p2p@{p2p}}
 
 
@@ -15,7 +15,7 @@ Inheritance diagram for p2p\+:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{classp2p}
 \end{center}
 \end{figure}
-\subsection*{Classes}
+\doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structp2p_1_1balance}{balance}}
@@ -34,7 +34,7 @@ struct \mbox{\hyperlink{structp2p_1_1usdrates2}{usdrates2}}
 \begin{DoxyCompactList}\small\item\em Таблица расширения usdrates с указанием даты установки первого курса \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structp2p_1_1vesting}{vesting}}
 \begin{DoxyCompactList}\small\item\em Таблица вестинг-\/балансов пользователей \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Public Types}
+\doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classp2p_a562223292a6b99a97d486136b2eb0d9e}\label{classp2p_a562223292a6b99a97d486136b2eb0d9e}} 
@@ -61,45 +61,45 @@ typedef eosio\+::multi\+\_\+index$<$\char`\"{}vesting\char`\"{}\+\_\+n, \mbox{\h
 \mbox{\Hypertarget{classp2p_a08507c2c104ad7e99765afd19d4fdd10}\label{classp2p_a08507c2c104ad7e99765afd19d4fdd10}} 
 typedef eosio\+::multi\+\_\+index$<$\char`\"{}guests\char`\"{}\+\_\+n, \mbox{\hyperlink{structp2p_1_1guests}{guests}}, eosio\+::indexed\+\_\+by$<$ \char`\"{}byexpr\char`\"{}\+\_\+n, eosio\+::const\+\_\+mem\+\_\+fun$<$ \mbox{\hyperlink{structp2p_1_1guests}{guests}}, uint64\+\_\+t, \&guests\+::byexpr $>$ $>$, eosio\+::indexed\+\_\+by$<$ \char`\"{}byreg\char`\"{}\+\_\+n, eosio\+::const\+\_\+mem\+\_\+fun$<$ \mbox{\hyperlink{structp2p_1_1guests}{guests}}, uint64\+\_\+t, \&guests\+::byreg $>$ $>$ $>$ {\bfseries guests\+\_\+index}
 \end{DoxyCompactItemize}
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classp2p_a5dac3e80d9e970fbc86c4fbaf781f894}\label{classp2p_a5dac3e80d9e970fbc86c4fbaf781f894}} 
-{\bfseries p2p} (eosio\+::name receiver, eosio\+::name code, eosio\+::datastream$<$ const char $\ast$$>$ ds)
+\mbox{\Hypertarget{classp2p_af05b8ff51661058078be1b96eb2bccb0}\label{classp2p_af05b8ff51661058078be1b96eb2bccb0}} 
+{\bfseries p2p} (eosio\+::name receiver, eosio\+::name code, eosio\+::datastream$<$ const char $\ast$ $>$ ds)
 \item 
 \mbox{\Hypertarget{classp2p_a1ba9938186b683d21e39ae021d7a0a6f}\label{classp2p_a1ba9938186b683d21e39ae021d7a0a6f}} 
 void {\bfseries apply} (uint64\+\_\+t receiver, uint64\+\_\+t code, uint64\+\_\+t action)
 \item 
-void \mbox{\hyperlink{classp2p_a0b05f55568e9469d33379512b29a116a}{createorder}} (name username, uint64\+\_\+t parent\+\_\+id, name type, eosio\+::name root\+\_\+contract, eosio\+::asset root\+\_\+quantity, eosio\+::name quote\+\_\+type, double quote\+\_\+rate, eosio\+::name quote\+\_\+contract, eosio\+::asset quote\+\_\+quantity, eosio\+::name out\+\_\+type, double out\+\_\+rate, eosio\+::name out\+\_\+contract, eosio\+::asset out\+\_\+quantity, std\+::string details)
+void \mbox{\hyperlink{group__public__actions_ga0b05f55568e9469d33379512b29a116a}{createorder}} (name username, uint64\+\_\+t parent\+\_\+id, name type, eosio\+::name root\+\_\+contract, eosio\+::asset root\+\_\+quantity, eosio\+::name quote\+\_\+type, double quote\+\_\+rate, eosio\+::name quote\+\_\+contract, eosio\+::asset quote\+\_\+quantity, eosio\+::name out\+\_\+type, double out\+\_\+rate, eosio\+::name out\+\_\+contract, eosio\+::asset out\+\_\+quantity, std\+::string details)
 \begin{DoxyCompactList}\small\item\em Метод создания ордера \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classp2p_ab7d91c105e22cc794a42cb12d996d0cb}{accept}} (name username, uint64\+\_\+t id, std\+::string details)
+void \mbox{\hyperlink{group__public__actions_gab7d91c105e22cc794a42cb12d996d0cb}{accept}} (name username, uint64\+\_\+t id, std\+::string details)
 \begin{DoxyCompactList}\small\item\em Метод подтверждения факта присутствия и начало сделки \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classp2p_a4562d6493c57589bf2259f119481d39a}{approve}} (name username, uint64\+\_\+t id)
+void \mbox{\hyperlink{group__public__actions_ga4562d6493c57589bf2259f119481d39a}{approve}} (name username, uint64\+\_\+t id)
 \begin{DoxyCompactList}\small\item\em Метод утверждения завершенного ордера \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classp2p_aa1abaf488133faec3fae6c6c9c9917c2}{confirm}} (name username, uint64\+\_\+t id)
+void \mbox{\hyperlink{group__public__actions_gaa1abaf488133faec3fae6c6c9c9917c2}{confirm}} (name username, uint64\+\_\+t id)
 \begin{DoxyCompactList}\small\item\em Метод подтверждения факта платежа \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classp2p_af81f265e37d1f1572a9a5fa17fa99f32}{cancel}} (name username, uint64\+\_\+t id)
+void \mbox{\hyperlink{group__public__actions_gaf81f265e37d1f1572a9a5fa17fa99f32}{cancel}} (name username, uint64\+\_\+t id)
 \begin{DoxyCompactList}\small\item\em Метод отмены ордера \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classp2p_a4f0c0c376096f7a73b21b39f0dc58d1d}{dispute}} (name username, uint64\+\_\+t id)
+void \mbox{\hyperlink{group__public__actions_ga4f0c0c376096f7a73b21b39f0dc58d1d}{dispute}} (name username, uint64\+\_\+t id)
 \begin{DoxyCompactList}\small\item\em Метод создания спора \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classp2p_a805effb2c6e15ab30e7f36bf13558910}{del}} (name username, uint64\+\_\+t id)
+void \mbox{\hyperlink{group__public__actions_ga805effb2c6e15ab30e7f36bf13558910}{del}} (name username, uint64\+\_\+t id)
 \begin{DoxyCompactList}\small\item\em Метод удаления завершенной сделки из оперативной памяти \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classp2p_a432842119735888f862933882e6a4da6}{setrate}} (eosio\+::name out\+\_\+contract, eosio\+::asset out\+\_\+asset, double rate)
-\begin{DoxyCompactList}\small\item\em Метод установки курса обмена к U\+SD. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classp2p_a6684d814e1a17f87c492e2b394cc1846}{uprate}} (eosio\+::name out\+\_\+contract, eosio\+::asset out\+\_\+asset)
+void \mbox{\hyperlink{group__public__actions_ga432842119735888f862933882e6a4da6}{setrate}} (eosio\+::name out\+\_\+contract, eosio\+::asset out\+\_\+asset, double rate)
+\begin{DoxyCompactList}\small\item\em Метод установки курса обмена к USD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__public__actions_ga6684d814e1a17f87c492e2b394cc1846}{uprate}} (eosio\+::name out\+\_\+contract, eosio\+::asset out\+\_\+asset)
 \begin{DoxyCompactList}\small\item\em Метод увеличения курса обмена системного токена \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classp2p_abea413390558d072de45f9ff47217ff8}{delrate}} (uint64\+\_\+t id)
+void \mbox{\hyperlink{group__public__actions_gabea413390558d072de45f9ff47217ff8}{delrate}} (uint64\+\_\+t id)
 \begin{DoxyCompactList}\small\item\em Метод удаление курса \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classp2p_a6ef3ff3b489159e054195c1d8fbd7092}{delvesting}} (eosio\+::name owner, uint64\+\_\+t id)
+void \mbox{\hyperlink{group__public__actions_ga6ef3ff3b489159e054195c1d8fbd7092}{delvesting}} (eosio\+::name owner, uint64\+\_\+t id)
 \begin{DoxyCompactList}\small\item\em Метод удаление вестинг-\/баланса \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classp2p_a4f3c89b4ae21f54b6e16334e681a7860}{setbrate}} (eosio\+::name host, double distribution\+\_\+rate)
+void \mbox{\hyperlink{group__public__actions_ga4f3c89b4ae21f54b6e16334e681a7860}{setbrate}} (eosio\+::name host, double distribution\+\_\+rate)
 \begin{DoxyCompactList}\small\item\em Метод установки бонусного курса \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classp2p_a2cb80d56fbb68ac3ccc688112d86532a}{refreshsh}} (eosio\+::name owner, uint64\+\_\+t id)
+void \mbox{\hyperlink{group__public__actions_ga2cb80d56fbb68ac3ccc688112d86532a}{refreshsh}} (eosio\+::name owner, uint64\+\_\+t id)
 \begin{DoxyCompactList}\small\item\em Метод обновления вестинг-\/баланса. ~\newline
  \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classp2p_adb4fde78468ee3b060717a785febdcc4}{withdrawsh}} (eosio\+::name owner, uint64\+\_\+t id)
+void \mbox{\hyperlink{group__public__actions_gadb4fde78468ee3b060717a785febdcc4}{withdrawsh}} (eosio\+::name owner, uint64\+\_\+t id)
 \begin{DoxyCompactList}\small\item\em Вывод вестинг-\/баланса \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
+\doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classp2p_ac36f6042dcb8942679dddbf672684ddc}\label{classp2p_ac36f6042dcb8942679dddbf672684ddc}} 
@@ -129,428 +129,43 @@ static uint64\+\_\+t {\bfseries get\+\_\+order\+\_\+id} ()
 \mbox{\Hypertarget{classp2p_a4aa15958215b4647e9adc4ed3d53af8c}\label{classp2p_a4aa15958215b4647e9adc4ed3d53af8c}} 
 static uint128\+\_\+t {\bfseries combine\+\_\+ids} (const uint64\+\_\+t \&x, const uint64\+\_\+t \&y)
 \end{DoxyCompactItemize}
-\subsection*{Static Public Attributes}
+\doxysubsection*{Static Public Attributes}
+\textbf{ }\par
 \begin{DoxyCompactItemize}
 \item 
-static constexpr eosio\+::name \mbox{\hyperlink{classp2p_ade9426b6e05cdb60d41e808717199b89}{\+\_\+me}} = \char`\"{}p2p\char`\"{}\+\_\+n
+static constexpr eosio\+::name \mbox{\hyperlink{group__public__consts_gade9426b6e05cdb60d41e808717199b89}{\+\_\+me}} = \char`\"{}p2p\char`\"{}\+\_\+n
 \item 
-static constexpr eosio\+::name \mbox{\hyperlink{classp2p_aa5528a78186585c3a033d89b6c027a5b}{\+\_\+curator}} = \char`\"{}p2p\char`\"{}\+\_\+n
+static constexpr eosio\+::name \mbox{\hyperlink{group__public__consts_gaa5528a78186585c3a033d89b6c027a5b}{\+\_\+curator}} = \char`\"{}p2p\char`\"{}\+\_\+n
 \item 
-static constexpr eosio\+::name \mbox{\hyperlink{classp2p_abaf26be47ba132e33bdadf4a6f65a052}{\+\_\+rater}} = \char`\"{}rater\char`\"{}\+\_\+n
+static constexpr eosio\+::name \mbox{\hyperlink{group__public__consts_gabaf26be47ba132e33bdadf4a6f65a052}{\+\_\+rater}} = \char`\"{}rater\char`\"{}\+\_\+n
 \item 
-static constexpr eosio\+::symbol \mbox{\hyperlink{classp2p_afe8d32633b8a87ce35209184d222f6de}{\+\_\+\+S\+YM}} = eosio\+::symbol(eosio\+::symbol\+\_\+code(\char`\"{}N\+BT\char`\"{}), 4)
+static constexpr eosio\+::symbol \mbox{\hyperlink{group__public__consts_gafe8d32633b8a87ce35209184d222f6de}{\+\_\+\+SYM}} = eosio\+::symbol(eosio\+::symbol\+\_\+code(\char`\"{}FLOWER\char`\"{}), 4)
 \item 
-static constexpr eosio\+::name \mbox{\hyperlink{classp2p_a582434add36ca36a326bdab9e7c8cb4e}{\+\_\+core}} = \char`\"{}unicore\char`\"{}\+\_\+n
+static constexpr eosio\+::name \mbox{\hyperlink{group__public__consts_ga582434add36ca36a326bdab9e7c8cb4e}{\+\_\+core}} = \char`\"{}unicore\char`\"{}\+\_\+n
 \item 
-static const uint64\+\_\+t \mbox{\hyperlink{classp2p_a6a7a6607c93e930cfa3984a8c318942b}{\+\_\+\+P\+E\+R\+C\+E\+N\+T\+S\+\_\+\+P\+E\+R\+\_\+\+M\+O\+N\+TH}} = 42
+static const uint64\+\_\+t \mbox{\hyperlink{group__public__consts_ga6a7a6607c93e930cfa3984a8c318942b}{\+\_\+\+PERCENTS\+\_\+\+PER\+\_\+\+MONTH}} = 42
 \item 
-static const bool \mbox{\hyperlink{classp2p_a738ddf63d1276c74f28b7d2f51ba1475}{\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+R\+O\+W\+HT}} = true
+static const bool \mbox{\hyperlink{group__public__consts_ga738ddf63d1276c74f28b7d2f51ba1475}{\+\_\+\+ENABLE\+\_\+\+GROWHT}} = false
 \item 
-static const bool \mbox{\hyperlink{classp2p_a817118e4e422393acc35439edb0187af}{\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+V\+E\+S\+T\+I\+NG}} = true
+static const bool \mbox{\hyperlink{group__public__consts_ga817118e4e422393acc35439edb0187af}{\+\_\+\+ENABLE\+\_\+\+VESTING}} = false
 \item 
-static const uint64\+\_\+t \mbox{\hyperlink{classp2p_af52bcfc4c42cb8a001ab4935d06539c0}{\+\_\+\+V\+E\+S\+T\+I\+N\+G\+\_\+\+S\+E\+C\+O\+N\+DS}} = 15770000
+static const uint64\+\_\+t \mbox{\hyperlink{group__public__consts_gaf52bcfc4c42cb8a001ab4935d06539c0}{\+\_\+\+VESTING\+\_\+\+SECONDS}} = 15770000
 \item 
-static constexpr eosio\+::name \mbox{\hyperlink{classp2p_aaf70e52c0f57cc4fa3d9d7fd0e8f0d99}{\+\_\+\+C\+O\+R\+E\+\_\+\+S\+A\+L\+E\+\_\+\+A\+C\+C\+O\+U\+NT}} = \char`\"{}core\char`\"{}\+\_\+n
+static constexpr eosio\+::name \mbox{\hyperlink{group__public__consts_gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99}{\+\_\+\+CORE\+\_\+\+SALE\+\_\+\+ACCOUNT}} = \char`\"{}core\char`\"{}\+\_\+n
 \item 
-static constexpr eosio\+::name \mbox{\hyperlink{classp2p_ad3c9fd465ea37d16657bd9910c631d22}{\+\_\+\+R\+E\+G\+I\+S\+T\+R\+A\+T\+O\+R\+\_\+\+A\+C\+C\+O\+U\+NT}} = \char`\"{}registrator\char`\"{}\+\_\+n
+static constexpr eosio\+::name \mbox{\hyperlink{group__public__consts_gad3c9fd465ea37d16657bd9910c631d22}{\+\_\+\+REGISTRATOR\+\_\+\+ACCOUNT}} = \char`\"{}registrator\char`\"{}\+\_\+n
 \item 
-static const uint64\+\_\+t \mbox{\hyperlink{classp2p_ada18e95b855fa10dc57a33620b4dd51d}{\+\_\+\+G\+I\+F\+T\+\_\+\+A\+C\+C\+O\+U\+N\+T\+\_\+\+F\+R\+O\+M\+\_\+\+A\+M\+O\+U\+NT}} = 100000
+static const uint64\+\_\+t \mbox{\hyperlink{group__public__consts_gada18e95b855fa10dc57a33620b4dd51d}{\+\_\+\+GIFT\+\_\+\+ACCOUNT\+\_\+\+FROM\+\_\+\+AMOUNT}} = 100000
 \item 
-static const uint64\+\_\+t \mbox{\hyperlink{classp2p_a714001f0f556d0db16b3746fa2261ddb}{\+\_\+\+O\+R\+D\+E\+R\+\_\+\+E\+X\+P\+I\+R\+A\+T\+I\+ON}} = 30 $\ast$ 60
+static const uint64\+\_\+t \mbox{\hyperlink{group__public__consts_ga714001f0f556d0db16b3746fa2261ddb}{\+\_\+\+ORDER\+\_\+\+EXPIRATION}} = 30 $\ast$ 60
 \item 
-static constexpr double \mbox{\hyperlink{classp2p_a41fd0523f7a4103ea012c69c376d0823}{\+\_\+\+S\+T\+A\+R\+T\+\_\+\+R\+A\+TE}} = 0.\+2
+static constexpr double \mbox{\hyperlink{group__public__consts_ga41fd0523f7a4103ea012c69c376d0823}{\+\_\+\+START\+\_\+\+RATE}} = 0.\+2
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+
+\doxysubsection{Detailed Description}
 Начните ознакомление здесь. 
-
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{classp2p_ab7d91c105e22cc794a42cb12d996d0cb}\label{classp2p_ab7d91c105e22cc794a42cb12d996d0cb}} 
-\index{p2p@{p2p}!accept@{accept}}
-\index{accept@{accept}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{accept()}{accept()}}
-{\footnotesize\ttfamily void p2p\+::accept (\begin{DoxyParamCaption}\item[{name}]{username,  }\item[{uint64\+\_\+t}]{id,  }\item[{std\+::string}]{details }\end{DoxyParamCaption})}
-
-
-
-Метод подтверждения факта присутствия и начало сделки 
-
-A\+U\+TH = username
-
-Реквизиты для оплаты передаются в поле details, если дочерний ордер типа buy. Статус ордера изменяется на process. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em username} & имя пользователя, подтверждающего начало сделки \\
-\hline
-\mbox{\tt in}  & {\em id} & идентификатор ордера \\
-\hline
-\mbox{\tt in}  & {\em details} & реквизиты для получения оплаты по сделке \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classp2p_a4562d6493c57589bf2259f119481d39a}\label{classp2p_a4562d6493c57589bf2259f119481d39a}} 
-\index{p2p@{p2p}!approve@{approve}}
-\index{approve@{approve}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{approve()}{approve()}}
-{\footnotesize\ttfamily void p2p\+::approve (\begin{DoxyParamCaption}\item[{name}]{username,  }\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
-
-
-
-Метод утверждения завершенного ордера 
-
-A\+U\+TH = username
-
-После получения оплаты, пользователь должен вызовать этот метод и утвердить завершение сделки, разблокировав токены для второго участника сделки. Статус ордера изменяется на finish и производится разблокирование токенов для получателя. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em username} & имя аккаунта участника сделки, утверждающего успешное завершение сделки \\
-\hline
-\mbox{\tt in}  & {\em id} & идентификатор ордера \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classp2p_af81f265e37d1f1572a9a5fa17fa99f32}\label{classp2p_af81f265e37d1f1572a9a5fa17fa99f32}} 
-\index{p2p@{p2p}!cancel@{cancel}}
-\index{cancel@{cancel}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{cancel()}{cancel()}}
-{\footnotesize\ttfamily void p2p\+::cancel (\begin{DoxyParamCaption}\item[{name}]{username,  }\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
-
-
-
-Метод отмены ордера 
-
-A\+U\+TH = username
-
-Отменяет ордер и удаляет его из оперативной памяти, разблокируя средства согласну типу ордера. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em username} & имя аккаунта участника сделки, производящего отмену ордера. \\
-\hline
-\mbox{\tt in}  & {\em id} & идентификатор ордера \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classp2p_aa1abaf488133faec3fae6c6c9c9917c2}\label{classp2p_aa1abaf488133faec3fae6c6c9c9917c2}} 
-\index{p2p@{p2p}!confirm@{confirm}}
-\index{confirm@{confirm}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{confirm()}{confirm()}}
-{\footnotesize\ttfamily void p2p\+::confirm (\begin{DoxyParamCaption}\item[{name}]{username,  }\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
-
-
-
-Метод подтверждения факта платежа 
-
-A\+U\+TH = username
-
-После совершения оплаты на реквизиты, участник сделки должен подтвердить этот факт вызовом этого метода. Статус ордера изменяется на payed. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em username} & имя аккаунта участника сделки, утверждающего факт совершения оплаты на реквизиты \\
-\hline
-\mbox{\tt in}  & {\em id} & идентификатор ордера \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classp2p_a0b05f55568e9469d33379512b29a116a}\label{classp2p_a0b05f55568e9469d33379512b29a116a}} 
-\index{p2p@{p2p}!createorder@{createorder}}
-\index{createorder@{createorder}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{createorder()}{createorder()}}
-{\footnotesize\ttfamily void p2p\+::createorder (\begin{DoxyParamCaption}\item[{name}]{username,  }\item[{uint64\+\_\+t}]{parent\+\_\+id,  }\item[{name}]{type,  }\item[{eosio\+::name}]{root\+\_\+contract,  }\item[{eosio\+::asset}]{root\+\_\+quantity,  }\item[{eosio\+::name}]{quote\+\_\+type,  }\item[{double}]{quote\+\_\+rate,  }\item[{eosio\+::name}]{quote\+\_\+contract,  }\item[{eosio\+::asset}]{quote\+\_\+quantity,  }\item[{eosio\+::name}]{out\+\_\+type,  }\item[{double}]{out\+\_\+rate,  }\item[{eosio\+::name}]{out\+\_\+contract,  }\item[{eosio\+::asset}]{out\+\_\+quantity,  }\item[{std\+::string}]{details }\end{DoxyParamCaption})}
-
-
-
-Метод создания ордера 
-
-A\+U\+TH = username
-
-Используя метод, пользователь создаёт ордер для обмена.
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em username} & Имя пользователя, инициирующего обмен \\
-\hline
-\mbox{\tt in}  & {\em parent\+\_\+id} & Опциональный идентификатор родительской сделки, с которой происходит обмен. Если не установлен -\/ ордер ожидает появление дочерних ордеров в статусе waiting, предлагающих обмен. \\
-\hline
-\mbox{\tt in}  & {\em type} & Тип ордера buy / sell \\
-\hline
-\mbox{\tt in}  & {\em root\+\_\+contract} & Имя контракта токена обмена \\
-\hline
-\mbox{\tt in}  & {\em root\+\_\+quantity} & Количество токенов на обмене \\
-\hline
-\mbox{\tt in}  & {\em quote\+\_\+type} & Тип опорной валюты, сейчас используем только тип external \\
-\hline
-\mbox{\tt in}  & {\em quote\+\_\+rate} & Опорный курс обмена \\
-\hline
-\mbox{\tt in}  & {\em quote\+\_\+contract} & Опорный контракт обмена, сейчас используем только \char`\"{}\char`\"{} \\
-\hline
-\mbox{\tt in}  & {\em quote\+\_\+quantity} & Количество опорной валюты на обмене, измеряемой в U\+SD \\
-\hline
-\mbox{\tt in}  & {\em out\+\_\+type} & Тип валюты выхода (сейчас любой) \\
-\hline
-\mbox{\tt in}  & {\em out\+\_\+rate} & Курс валюты выхода \\
-\hline
-\mbox{\tt in}  & {\em out\+\_\+contract} & Контракт валюты выхода (сейчас только \char`\"{}\char`\"{}) \\
-\hline
-\mbox{\tt in}  & {\em out\+\_\+quantity} & Количество валюты выхода \\
-\hline
-\mbox{\tt in}  & {\em details} & Реквизиты для получения платежа, используются если тип нового ордера = buy \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classp2p_a805effb2c6e15ab30e7f36bf13558910}\label{classp2p_a805effb2c6e15ab30e7f36bf13558910}} 
-\index{p2p@{p2p}!del@{del}}
-\index{del@{del}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{del()}{del()}}
-{\footnotesize\ttfamily void p2p\+::del (\begin{DoxyParamCaption}\item[{name}]{username,  }\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
-
-
-
-Метод удаления завершенной сделки из оперативной памяти 
-
-A\+U\+TH = username
-
-Очищает завершенную сделку из оперативной памяти операционной системы. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em username} & имя аккаунта, производящего очищение \\
-\hline
-\mbox{\tt in}  & {\em id} & идентификатор ордера \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classp2p_abea413390558d072de45f9ff47217ff8}\label{classp2p_abea413390558d072de45f9ff47217ff8}} 
-\index{p2p@{p2p}!delrate@{delrate}}
-\index{delrate@{delrate}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{delrate()}{delrate()}}
-{\footnotesize\ttfamily void p2p\+::delrate (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
-
-
-
-Метод удаление курса 
-
-A\+U\+TH = eosio
-
-Используется администратором для удаления курса из таблицы курсов 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em id} & идентификатор курса \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classp2p_a6ef3ff3b489159e054195c1d8fbd7092}\label{classp2p_a6ef3ff3b489159e054195c1d8fbd7092}} 
-\index{p2p@{p2p}!delvesting@{delvesting}}
-\index{delvesting@{delvesting}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{delvesting()}{delvesting()}}
-{\footnotesize\ttfamily void p2p\+::delvesting (\begin{DoxyParamCaption}\item[{eosio\+::name}]{owner,  }\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
-
-
-
-Метод удаление вестинг-\/баланса 
-
-A\+U\+TH = \mbox{\hyperlink{classp2p}{p2p}}
-
-Используется администратором для удаления ошибочного начисления вестинг-\/баланса 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em owner} & имя аккаунта владельца вестинг-\/баланса \\
-\hline
-\mbox{\tt in}  & {\em id} & идентификатор вестинг-\/баланса \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classp2p_a4f0c0c376096f7a73b21b39f0dc58d1d}\label{classp2p_a4f0c0c376096f7a73b21b39f0dc58d1d}} 
-\index{p2p@{p2p}!dispute@{dispute}}
-\index{dispute@{dispute}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{dispute()}{dispute()}}
-{\footnotesize\ttfamily void p2p\+::dispute (\begin{DoxyParamCaption}\item[{name}]{username,  }\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
-
-
-
-Метод создания спора 
-
-A\+U\+TH = username
-
-Перевод сделку в статус спора, блокируя вывод средств до его разрешения. Только сделка в статусе payed может быть переведена в статус спора. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em username} & имя аккаунта участника сделки, инициирующего спор \\
-\hline
-\mbox{\tt in}  & {\em id} & идентификатор ордера \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classp2p_a2cb80d56fbb68ac3ccc688112d86532a}\label{classp2p_a2cb80d56fbb68ac3ccc688112d86532a}} 
-\index{p2p@{p2p}!refreshsh@{refreshsh}}
-\index{refreshsh@{refreshsh}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{refreshsh()}{refreshsh()}}
-{\footnotesize\ttfamily void p2p\+::refreshsh (\begin{DoxyParamCaption}\item[{eosio\+::name}]{owner,  }\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
-
-
-
-Метод обновления вестинг-\/баланса. ~\newline
- 
-
-A\+U\+TH = owner
-
-Обновляет вестинг-\/баланс до доступного остатка. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em owner} & имя аккаунта владельца вестинг-\/баланса \\
-\hline
-\mbox{\tt in}  & {\em id} & идентификатор вестинг-\/баланса \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classp2p_a4f3c89b4ae21f54b6e16334e681a7860}\label{classp2p_a4f3c89b4ae21f54b6e16334e681a7860}} 
-\index{p2p@{p2p}!setbrate@{setbrate}}
-\index{setbrate@{setbrate}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{setbrate()}{setbrate()}}
-{\footnotesize\ttfamily void p2p\+::setbrate (\begin{DoxyParamCaption}\item[{eosio\+::name}]{host,  }\item[{double}]{distribution\+\_\+rate }\end{DoxyParamCaption})}
-
-
-
-Метод установки бонусного курса 
-
-A\+U\+TH = host
-
-Вызывается владельцем бонусного баланса в контракте для подключения распределения на партнёрскую сеть покупателя.
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em host} & The host \\
-\hline
-\mbox{\tt in}  & {\em distribution\+\_\+rate} & The distribution rate \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classp2p_a432842119735888f862933882e6a4da6}\label{classp2p_a432842119735888f862933882e6a4da6}} 
-\index{p2p@{p2p}!setrate@{setrate}}
-\index{setrate@{setrate}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{setrate()}{setrate()}}
-{\footnotesize\ttfamily void p2p\+::setrate (\begin{DoxyParamCaption}\item[{eosio\+::name}]{out\+\_\+contract,  }\item[{eosio\+::asset}]{out\+\_\+asset,  }\item[{double}]{rate }\end{DoxyParamCaption})}
-
-
-
-Метод установки курса обмена к U\+SD. 
-
-A\+U\+TH = \+\_\+rater $\vert$ \+\_\+me
-
-Устанавливает в таблицу usdrates новый актуальный курс от поставщика. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em out\+\_\+contract} & имя контракта выхода (обычно \char`\"{}\char`\"{}) \\
-\hline
-\mbox{\tt in}  & {\em out\+\_\+asset} & токен выхода с точностью и символом \\
-\hline
-\mbox{\tt in}  & {\em rate} & курс обмена к U\+SD \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classp2p_a6684d814e1a17f87c492e2b394cc1846}\label{classp2p_a6684d814e1a17f87c492e2b394cc1846}} 
-\index{p2p@{p2p}!uprate@{uprate}}
-\index{uprate@{uprate}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{uprate()}{uprate()}}
-{\footnotesize\ttfamily void p2p\+::uprate (\begin{DoxyParamCaption}\item[{eosio\+::name}]{out\+\_\+contract,  }\item[{eosio\+::asset}]{out\+\_\+asset }\end{DoxyParamCaption})}
-
-
-
-Метод увеличения курса обмена системного токена 
-
-A\+U\+TH = eosio
-
-Периодически вызывается системным контрактом и увеличивает курс обмена системного токена согласно темпу роста в \+\_\+\+P\+E\+R\+C\+E\+N\+T\+S\+\_\+\+P\+E\+R\+\_\+\+M\+O\+N\+TH. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em out\+\_\+contract} & имя контракта выхода (обычно \char`\"{}eosio.\+token\char`\"{}) \\
-\hline
-\mbox{\tt in}  & {\em out\+\_\+asset} & токен выхода с точностью и символом (обычно равен \+\_\+\+S\+YM) \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classp2p_adb4fde78468ee3b060717a785febdcc4}\label{classp2p_adb4fde78468ee3b060717a785febdcc4}} 
-\index{p2p@{p2p}!withdrawsh@{withdrawsh}}
-\index{withdrawsh@{withdrawsh}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{withdrawsh()}{withdrawsh()}}
-{\footnotesize\ttfamily void p2p\+::withdrawsh (\begin{DoxyParamCaption}\item[{eosio\+::name}]{owner,  }\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
-
-
-
-Вывод вестинг-\/баланса 
-
-A\+U\+TH = owner
-
-Обеспечивает вывод доступных средств из вестинг-\/баланса. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em owner} & имя аккаунта владельца вестинг-\/баланса \\
-\hline
-\mbox{\tt in}  & {\em id} & идентификатор вестинг-\/баланса \\
-\hline
-\end{DoxyParams}
-
-
-\subsection{Member Data Documentation}
-\mbox{\Hypertarget{classp2p_a582434add36ca36a326bdab9e7c8cb4e}\label{classp2p_a582434add36ca36a326bdab9e7c8cb4e}} 
-\index{p2p@{p2p}!\+\_\+core@{\+\_\+core}}
-\index{\+\_\+core@{\+\_\+core}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{\+\_\+core}{\_core}}
-{\footnotesize\ttfamily constexpr eosio\+::name p2p\+::\+\_\+core = \char`\"{}unicore\char`\"{}\+\_\+n\hspace{0.3cm}{\ttfamily [static]}}
-
-имя аккаунта распределения реферальных бонусов в сеть \mbox{\Hypertarget{classp2p_aaf70e52c0f57cc4fa3d9d7fd0e8f0d99}\label{classp2p_aaf70e52c0f57cc4fa3d9d7fd0e8f0d99}} 
-\index{p2p@{p2p}!\+\_\+\+C\+O\+R\+E\+\_\+\+S\+A\+L\+E\+\_\+\+A\+C\+C\+O\+U\+NT@{\+\_\+\+C\+O\+R\+E\+\_\+\+S\+A\+L\+E\+\_\+\+A\+C\+C\+O\+U\+NT}}
-\index{\+\_\+\+C\+O\+R\+E\+\_\+\+S\+A\+L\+E\+\_\+\+A\+C\+C\+O\+U\+NT@{\+\_\+\+C\+O\+R\+E\+\_\+\+S\+A\+L\+E\+\_\+\+A\+C\+C\+O\+U\+NT}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{\+\_\+\+C\+O\+R\+E\+\_\+\+S\+A\+L\+E\+\_\+\+A\+C\+C\+O\+U\+NT}{\_CORE\_SALE\_ACCOUNT}}
-{\footnotesize\ttfamily constexpr eosio\+::name p2p\+::\+\_\+\+C\+O\+R\+E\+\_\+\+S\+A\+L\+E\+\_\+\+A\+C\+C\+O\+U\+NT = \char`\"{}core\char`\"{}\+\_\+n\hspace{0.3cm}{\ttfamily [static]}}
-
-аккаунт системного продавца токенов, в сделке к которым срабатывает вестинг \mbox{\Hypertarget{classp2p_aa5528a78186585c3a033d89b6c027a5b}\label{classp2p_aa5528a78186585c3a033d89b6c027a5b}} 
-\index{p2p@{p2p}!\+\_\+curator@{\+\_\+curator}}
-\index{\+\_\+curator@{\+\_\+curator}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{\+\_\+curator}{\_curator}}
-{\footnotesize\ttfamily constexpr eosio\+::name p2p\+::\+\_\+curator = \char`\"{}p2p\char`\"{}\+\_\+n\hspace{0.3cm}{\ttfamily [static]}}
-
-дефолтное имя аккаунта куратора всех сделок \mbox{\Hypertarget{classp2p_a738ddf63d1276c74f28b7d2f51ba1475}\label{classp2p_a738ddf63d1276c74f28b7d2f51ba1475}} 
-\index{p2p@{p2p}!\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+R\+O\+W\+HT@{\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+R\+O\+W\+HT}}
-\index{\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+R\+O\+W\+HT@{\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+R\+O\+W\+HT}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+R\+O\+W\+HT}{\_ENABLE\_GROWHT}}
-{\footnotesize\ttfamily const bool p2p\+::\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+G\+R\+O\+W\+HT = true\hspace{0.3cm}{\ttfamily [static]}}
-
-флаг подключения автоматического роста курса, допускающего вызов метода uprate от системного контракта eosio \mbox{\Hypertarget{classp2p_a817118e4e422393acc35439edb0187af}\label{classp2p_a817118e4e422393acc35439edb0187af}} 
-\index{p2p@{p2p}!\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+V\+E\+S\+T\+I\+NG@{\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+V\+E\+S\+T\+I\+NG}}
-\index{\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+V\+E\+S\+T\+I\+NG@{\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+V\+E\+S\+T\+I\+NG}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+V\+E\+S\+T\+I\+NG}{\_ENABLE\_VESTING}}
-{\footnotesize\ttfamily const bool p2p\+::\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+V\+E\+S\+T\+I\+NG = true\hspace{0.3cm}{\ttfamily [static]}}
-
-флаг подключения режима вестинга для совершенных покупок у аккаунта \+\_\+\+C\+O\+R\+E\+\_\+\+S\+A\+L\+E\+\_\+\+A\+C\+C\+O\+U\+NT \mbox{\Hypertarget{classp2p_ada18e95b855fa10dc57a33620b4dd51d}\label{classp2p_ada18e95b855fa10dc57a33620b4dd51d}} 
-\index{p2p@{p2p}!\+\_\+\+G\+I\+F\+T\+\_\+\+A\+C\+C\+O\+U\+N\+T\+\_\+\+F\+R\+O\+M\+\_\+\+A\+M\+O\+U\+NT@{\+\_\+\+G\+I\+F\+T\+\_\+\+A\+C\+C\+O\+U\+N\+T\+\_\+\+F\+R\+O\+M\+\_\+\+A\+M\+O\+U\+NT}}
-\index{\+\_\+\+G\+I\+F\+T\+\_\+\+A\+C\+C\+O\+U\+N\+T\+\_\+\+F\+R\+O\+M\+\_\+\+A\+M\+O\+U\+NT@{\+\_\+\+G\+I\+F\+T\+\_\+\+A\+C\+C\+O\+U\+N\+T\+\_\+\+F\+R\+O\+M\+\_\+\+A\+M\+O\+U\+NT}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{\+\_\+\+G\+I\+F\+T\+\_\+\+A\+C\+C\+O\+U\+N\+T\+\_\+\+F\+R\+O\+M\+\_\+\+A\+M\+O\+U\+NT}{\_GIFT\_ACCOUNT\_FROM\_AMOUNT}}
-{\footnotesize\ttfamily const uint64\+\_\+t p2p\+::\+\_\+\+G\+I\+F\+T\+\_\+\+A\+C\+C\+O\+U\+N\+T\+\_\+\+F\+R\+O\+M\+\_\+\+A\+M\+O\+U\+NT = 100000\hspace{0.3cm}{\ttfamily [static]}}
-
-подарок в виде аккаунта партнера осуществляется, если гость совершает покупку на сумму более, чем указано здесь (с учётом точности) \mbox{\Hypertarget{classp2p_ade9426b6e05cdb60d41e808717199b89}\label{classp2p_ade9426b6e05cdb60d41e808717199b89}} 
-\index{p2p@{p2p}!\+\_\+me@{\+\_\+me}}
-\index{\+\_\+me@{\+\_\+me}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{\+\_\+me}{\_me}}
-{\footnotesize\ttfamily constexpr eosio\+::name p2p\+::\+\_\+me = \char`\"{}p2p\char`\"{}\+\_\+n\hspace{0.3cm}{\ttfamily [static]}}
-
-собственное имя аккаунта контракта \mbox{\Hypertarget{classp2p_a714001f0f556d0db16b3746fa2261ddb}\label{classp2p_a714001f0f556d0db16b3746fa2261ddb}} 
-\index{p2p@{p2p}!\+\_\+\+O\+R\+D\+E\+R\+\_\+\+E\+X\+P\+I\+R\+A\+T\+I\+ON@{\+\_\+\+O\+R\+D\+E\+R\+\_\+\+E\+X\+P\+I\+R\+A\+T\+I\+ON}}
-\index{\+\_\+\+O\+R\+D\+E\+R\+\_\+\+E\+X\+P\+I\+R\+A\+T\+I\+ON@{\+\_\+\+O\+R\+D\+E\+R\+\_\+\+E\+X\+P\+I\+R\+A\+T\+I\+ON}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{\+\_\+\+O\+R\+D\+E\+R\+\_\+\+E\+X\+P\+I\+R\+A\+T\+I\+ON}{\_ORDER\_EXPIRATION}}
-{\footnotesize\ttfamily const uint64\+\_\+t p2p\+::\+\_\+\+O\+R\+D\+E\+R\+\_\+\+E\+X\+P\+I\+R\+A\+T\+I\+ON = 30 $\ast$ 60\hspace{0.3cm}{\ttfamily [static]}}
-
-время до истечения срока давности ордера \mbox{\Hypertarget{classp2p_a6a7a6607c93e930cfa3984a8c318942b}\label{classp2p_a6a7a6607c93e930cfa3984a8c318942b}} 
-\index{p2p@{p2p}!\+\_\+\+P\+E\+R\+C\+E\+N\+T\+S\+\_\+\+P\+E\+R\+\_\+\+M\+O\+N\+TH@{\+\_\+\+P\+E\+R\+C\+E\+N\+T\+S\+\_\+\+P\+E\+R\+\_\+\+M\+O\+N\+TH}}
-\index{\+\_\+\+P\+E\+R\+C\+E\+N\+T\+S\+\_\+\+P\+E\+R\+\_\+\+M\+O\+N\+TH@{\+\_\+\+P\+E\+R\+C\+E\+N\+T\+S\+\_\+\+P\+E\+R\+\_\+\+M\+O\+N\+TH}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{\+\_\+\+P\+E\+R\+C\+E\+N\+T\+S\+\_\+\+P\+E\+R\+\_\+\+M\+O\+N\+TH}{\_PERCENTS\_PER\_MONTH}}
-{\footnotesize\ttfamily const uint64\+\_\+t p2p\+::\+\_\+\+P\+E\+R\+C\+E\+N\+T\+S\+\_\+\+P\+E\+R\+\_\+\+M\+O\+N\+TH = 42\hspace{0.3cm}{\ttfamily [static]}}
-
-если рост курса системного токена подключен, то растёт с указанной здесь скоростью \mbox{\Hypertarget{classp2p_abaf26be47ba132e33bdadf4a6f65a052}\label{classp2p_abaf26be47ba132e33bdadf4a6f65a052}} 
-\index{p2p@{p2p}!\+\_\+rater@{\+\_\+rater}}
-\index{\+\_\+rater@{\+\_\+rater}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{\+\_\+rater}{\_rater}}
-{\footnotesize\ttfamily constexpr eosio\+::name p2p\+::\+\_\+rater = \char`\"{}rater\char`\"{}\+\_\+n\hspace{0.3cm}{\ttfamily [static]}}
-
-имя аккаунта поставщика курсов \mbox{\Hypertarget{classp2p_ad3c9fd465ea37d16657bd9910c631d22}\label{classp2p_ad3c9fd465ea37d16657bd9910c631d22}} 
-\index{p2p@{p2p}!\+\_\+\+R\+E\+G\+I\+S\+T\+R\+A\+T\+O\+R\+\_\+\+A\+C\+C\+O\+U\+NT@{\+\_\+\+R\+E\+G\+I\+S\+T\+R\+A\+T\+O\+R\+\_\+\+A\+C\+C\+O\+U\+NT}}
-\index{\+\_\+\+R\+E\+G\+I\+S\+T\+R\+A\+T\+O\+R\+\_\+\+A\+C\+C\+O\+U\+NT@{\+\_\+\+R\+E\+G\+I\+S\+T\+R\+A\+T\+O\+R\+\_\+\+A\+C\+C\+O\+U\+NT}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{\+\_\+\+R\+E\+G\+I\+S\+T\+R\+A\+T\+O\+R\+\_\+\+A\+C\+C\+O\+U\+NT}{\_REGISTRATOR\_ACCOUNT}}
-{\footnotesize\ttfamily constexpr eosio\+::name p2p\+::\+\_\+\+R\+E\+G\+I\+S\+T\+R\+A\+T\+O\+R\+\_\+\+A\+C\+C\+O\+U\+NT = \char`\"{}registrator\char`\"{}\+\_\+n\hspace{0.3cm}{\ttfamily [static]}}
-
-аккаунт контракта регистратора, хранящего таблицу с гостями для подарочного выкупа \mbox{\Hypertarget{classp2p_a41fd0523f7a4103ea012c69c376d0823}\label{classp2p_a41fd0523f7a4103ea012c69c376d0823}} 
-\index{p2p@{p2p}!\+\_\+\+S\+T\+A\+R\+T\+\_\+\+R\+A\+TE@{\+\_\+\+S\+T\+A\+R\+T\+\_\+\+R\+A\+TE}}
-\index{\+\_\+\+S\+T\+A\+R\+T\+\_\+\+R\+A\+TE@{\+\_\+\+S\+T\+A\+R\+T\+\_\+\+R\+A\+TE}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{\+\_\+\+S\+T\+A\+R\+T\+\_\+\+R\+A\+TE}{\_START\_RATE}}
-{\footnotesize\ttfamily constexpr double p2p\+::\+\_\+\+S\+T\+A\+R\+T\+\_\+\+R\+A\+TE = 0.\+2\hspace{0.3cm}{\ttfamily [static]}}
-
-начальный курс старта роста системного токена относительно U\+SD \mbox{\Hypertarget{classp2p_afe8d32633b8a87ce35209184d222f6de}\label{classp2p_afe8d32633b8a87ce35209184d222f6de}} 
-\index{p2p@{p2p}!\+\_\+\+S\+YM@{\+\_\+\+S\+YM}}
-\index{\+\_\+\+S\+YM@{\+\_\+\+S\+YM}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{\+\_\+\+S\+YM}{\_SYM}}
-{\footnotesize\ttfamily constexpr eosio\+::symbol p2p\+::\+\_\+\+S\+YM = eosio\+::symbol(eosio\+::symbol\+\_\+code(\char`\"{}N\+BT\char`\"{}), 4)\hspace{0.3cm}{\ttfamily [static]}}
-
-системный токен \mbox{\Hypertarget{classp2p_af52bcfc4c42cb8a001ab4935d06539c0}\label{classp2p_af52bcfc4c42cb8a001ab4935d06539c0}} 
-\index{p2p@{p2p}!\+\_\+\+V\+E\+S\+T\+I\+N\+G\+\_\+\+S\+E\+C\+O\+N\+DS@{\+\_\+\+V\+E\+S\+T\+I\+N\+G\+\_\+\+S\+E\+C\+O\+N\+DS}}
-\index{\+\_\+\+V\+E\+S\+T\+I\+N\+G\+\_\+\+S\+E\+C\+O\+N\+DS@{\+\_\+\+V\+E\+S\+T\+I\+N\+G\+\_\+\+S\+E\+C\+O\+N\+DS}!p2p@{p2p}}
-\subsubsection{\texorpdfstring{\+\_\+\+V\+E\+S\+T\+I\+N\+G\+\_\+\+S\+E\+C\+O\+N\+DS}{\_VESTING\_SECONDS}}
-{\footnotesize\ttfamily const uint64\+\_\+t p2p\+::\+\_\+\+V\+E\+S\+T\+I\+N\+G\+\_\+\+S\+E\+C\+O\+N\+DS = 15770000\hspace{0.3cm}{\ttfamily [static]}}
-
-продолжительность вестинга в секундах 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

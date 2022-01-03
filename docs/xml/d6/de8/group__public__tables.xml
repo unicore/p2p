@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="d6/de8/group__public__tables" kind="group">
+    <compoundname>public_tables</compoundname>
+    <title>TABLES</title>
+    <innerclass refid="da/d4e/structp2p_1_1balance" prot="public">p2p::balance</innerclass>
+    <innerclass refid="dc/d1b/structp2p_1_1counts" prot="public">p2p::counts</innerclass>
+    <innerclass refid="d4/d97/structp2p_1_1orders" prot="public">p2p::orders</innerclass>
+    <innerclass refid="d6/d65/structp2p_1_1usdrates" prot="public">p2p::usdrates</innerclass>
+    <innerclass refid="dd/d6d/structp2p_1_1usdrates2" prot="public">p2p::usdrates2</innerclass>
+    <innerclass refid="da/d5f/structp2p_1_1bbonuses" prot="public">p2p::bbonuses</innerclass>
+    <innerclass refid="df/d9e/structp2p_1_1vesting" prot="public">p2p::vesting</innerclass>
+    <innerclass refid="d6/db2/structp2p_1_1guests" prot="public">p2p::guests</innerclass>
+    <briefdescription>
+<para>Структуры таблиц контракта </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

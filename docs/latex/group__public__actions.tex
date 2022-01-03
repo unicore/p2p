@@ -1,0 +1,356 @@
+\hypertarget{group__public__actions}{}\doxysection{ACTIONS}
+\label{group__public__actions}\index{ACTIONS@{ACTIONS}}
+
+
+Методы действий контракта  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__public__actions_ga4f3c89b4ae21f54b6e16334e681a7860}{p2p\+::setbrate}} (eosio\+::name host, double distribution\+\_\+rate)
+\begin{DoxyCompactList}\small\item\em Метод установки бонусного курса \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__public__actions_ga0b05f55568e9469d33379512b29a116a}{p2p\+::createorder}} (name username, uint64\+\_\+t parent\+\_\+id, name type, eosio\+::name root\+\_\+contract, eosio\+::asset root\+\_\+quantity, eosio\+::name quote\+\_\+type, double quote\+\_\+rate, eosio\+::name quote\+\_\+contract, eosio\+::asset quote\+\_\+quantity, eosio\+::name out\+\_\+type, double out\+\_\+rate, eosio\+::name out\+\_\+contract, eosio\+::asset out\+\_\+quantity, std\+::string details)
+\begin{DoxyCompactList}\small\item\em Метод создания ордера \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__public__actions_gab7d91c105e22cc794a42cb12d996d0cb}{p2p\+::accept}} (name username, uint64\+\_\+t id, std\+::string details)
+\begin{DoxyCompactList}\small\item\em Метод подтверждения факта присутствия и начало сделки \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__public__actions_gaa1abaf488133faec3fae6c6c9c9917c2}{p2p\+::confirm}} (name username, uint64\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Метод подтверждения факта платежа \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__public__actions_ga4562d6493c57589bf2259f119481d39a}{p2p\+::approve}} (name username, uint64\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Метод утверждения завершенного ордера \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__public__actions_gaf81f265e37d1f1572a9a5fa17fa99f32}{p2p\+::cancel}} (name username, uint64\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Метод отмены ордера \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__public__actions_ga4f0c0c376096f7a73b21b39f0dc58d1d}{p2p\+::dispute}} (name username, uint64\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Метод создания спора \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__public__actions_ga805effb2c6e15ab30e7f36bf13558910}{p2p\+::del}} (name username, uint64\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Метод удаления завершенной сделки из оперативной памяти \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__public__actions_gabea413390558d072de45f9ff47217ff8}{p2p\+::delrate}} (uint64\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Метод удаление курса \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__public__actions_ga6ef3ff3b489159e054195c1d8fbd7092}{p2p\+::delvesting}} (eosio\+::name owner, uint64\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Метод удаление вестинг-\/баланса \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__public__actions_ga6684d814e1a17f87c492e2b394cc1846}{p2p\+::uprate}} (eosio\+::name out\+\_\+contract, eosio\+::asset out\+\_\+asset)
+\begin{DoxyCompactList}\small\item\em Метод увеличения курса обмена системного токена \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__public__actions_ga432842119735888f862933882e6a4da6}{p2p\+::setrate}} (eosio\+::name out\+\_\+contract, eosio\+::asset out\+\_\+asset, double rate)
+\begin{DoxyCompactList}\small\item\em Метод установки курса обмена к USD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__public__actions_ga2cb80d56fbb68ac3ccc688112d86532a}{p2p\+::refreshsh}} (eosio\+::name owner, uint64\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Метод обновления вестинг-\/баланса. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__public__actions_gadb4fde78468ee3b060717a785febdcc4}{p2p\+::withdrawsh}} (eosio\+::name owner, uint64\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Вывод вестинг-\/баланса \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Методы действий контракта 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__public__actions_gab7d91c105e22cc794a42cb12d996d0cb}\label{group__public__actions_gab7d91c105e22cc794a42cb12d996d0cb}} 
+\index{ACTIONS@{ACTIONS}!accept@{accept}}
+\index{accept@{accept}!ACTIONS@{ACTIONS}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void p2p\+::accept (\begin{DoxyParamCaption}\item[{name}]{username,  }\item[{uint64\+\_\+t}]{id,  }\item[{std\+::string}]{details }\end{DoxyParamCaption})}
+
+
+
+Метод подтверждения факта присутствия и начало сделки 
+
+Реквизиты для оплаты передаются в поле details, если дочерний ордер типа buy. Статус ордера изменяется на process. \begin{DoxyParagraph}{AUTH\+: username}
+
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em username} & имя пользователя, подтверждающего начало сделки \\
+\hline
+\mbox{\texttt{ in}}  & {\em id} & идентификатор ордера \\
+\hline
+\mbox{\texttt{ in}}  & {\em details} & реквизиты для получения оплаты по сделке \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__public__actions_ga4562d6493c57589bf2259f119481d39a}\label{group__public__actions_ga4562d6493c57589bf2259f119481d39a}} 
+\index{ACTIONS@{ACTIONS}!approve@{approve}}
+\index{approve@{approve}!ACTIONS@{ACTIONS}}
+\doxysubsubsection{\texorpdfstring{approve()}{approve()}}
+{\footnotesize\ttfamily void p2p\+::approve (\begin{DoxyParamCaption}\item[{name}]{username,  }\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Метод утверждения завершенного ордера 
+
+После получения оплаты, пользователь должен вызовать этот метод и утвердить завершение сделки, разблокировав токены для второго участника сделки. Статус ордера изменяется на finish и производится разблокирование токенов для получателя. \begin{DoxyParagraph}{AUTH\+: username}
+
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em username} & имя аккаунта участника сделки, утверждающего успешное завершение сделки \\
+\hline
+\mbox{\texttt{ in}}  & {\em id} & идентификатор ордера \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__public__actions_gaf81f265e37d1f1572a9a5fa17fa99f32}\label{group__public__actions_gaf81f265e37d1f1572a9a5fa17fa99f32}} 
+\index{ACTIONS@{ACTIONS}!cancel@{cancel}}
+\index{cancel@{cancel}!ACTIONS@{ACTIONS}}
+\doxysubsubsection{\texorpdfstring{cancel()}{cancel()}}
+{\footnotesize\ttfamily void p2p\+::cancel (\begin{DoxyParamCaption}\item[{name}]{username,  }\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Метод отмены ордера 
+
+Отменяет ордер и удаляет его из оперативной памяти, разблокируя средства согласну типу ордера. \begin{DoxyParagraph}{AUTH\+: username}
+
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em username} & имя аккаунта участника сделки, производящего отмену ордера. \\
+\hline
+\mbox{\texttt{ in}}  & {\em id} & идентификатор ордера \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__public__actions_gaa1abaf488133faec3fae6c6c9c9917c2}\label{group__public__actions_gaa1abaf488133faec3fae6c6c9c9917c2}} 
+\index{ACTIONS@{ACTIONS}!confirm@{confirm}}
+\index{confirm@{confirm}!ACTIONS@{ACTIONS}}
+\doxysubsubsection{\texorpdfstring{confirm()}{confirm()}}
+{\footnotesize\ttfamily void p2p\+::confirm (\begin{DoxyParamCaption}\item[{name}]{username,  }\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Метод подтверждения факта платежа 
+
+После совершения оплаты на реквизиты, участник сделки должен подтвердить этот факт вызовом этого метода. Статус ордера изменяется на payed. \begin{DoxyParagraph}{AUTH\+: username}
+
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em username} & имя аккаунта участника сделки, утверждающего факт совершения оплаты на реквизиты \\
+\hline
+\mbox{\texttt{ in}}  & {\em id} & идентификатор ордера \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__public__actions_ga0b05f55568e9469d33379512b29a116a}\label{group__public__actions_ga0b05f55568e9469d33379512b29a116a}} 
+\index{ACTIONS@{ACTIONS}!createorder@{createorder}}
+\index{createorder@{createorder}!ACTIONS@{ACTIONS}}
+\doxysubsubsection{\texorpdfstring{createorder()}{createorder()}}
+{\footnotesize\ttfamily void p2p\+::createorder (\begin{DoxyParamCaption}\item[{name}]{username,  }\item[{uint64\+\_\+t}]{parent\+\_\+id,  }\item[{name}]{type,  }\item[{eosio\+::name}]{root\+\_\+contract,  }\item[{eosio\+::asset}]{root\+\_\+quantity,  }\item[{eosio\+::name}]{quote\+\_\+type,  }\item[{double}]{quote\+\_\+rate,  }\item[{eosio\+::name}]{quote\+\_\+contract,  }\item[{eosio\+::asset}]{quote\+\_\+quantity,  }\item[{eosio\+::name}]{out\+\_\+type,  }\item[{double}]{out\+\_\+rate,  }\item[{eosio\+::name}]{out\+\_\+contract,  }\item[{eosio\+::asset}]{out\+\_\+quantity,  }\item[{std\+::string}]{details }\end{DoxyParamCaption})}
+
+
+
+Метод создания ордера 
+
+Используя метод, пользователь создаёт ордер для обмена. \begin{DoxyParagraph}{AUTH\+: username}
+
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em username} & Имя пользователя, инициирующего обмен \\
+\hline
+\mbox{\texttt{ in}}  & {\em parent\+\_\+id} & Опциональный идентификатор родительской сделки, с которой происходит обмен. Если не установлен -\/ ордер ожидает появление дочерних ордеров в статусе waiting, предлагающих обмен. \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & Тип ордера buy / sell \\
+\hline
+\mbox{\texttt{ in}}  & {\em root\+\_\+contract} & Имя контракта токена обмена \\
+\hline
+\mbox{\texttt{ in}}  & {\em root\+\_\+quantity} & Количество токенов на обмене \\
+\hline
+\mbox{\texttt{ in}}  & {\em quote\+\_\+type} & Тип опорной валюты, сейчас используем только тип external \\
+\hline
+\mbox{\texttt{ in}}  & {\em quote\+\_\+rate} & Опорный курс обмена \\
+\hline
+\mbox{\texttt{ in}}  & {\em quote\+\_\+contract} & Опорный контракт обмена, сейчас используем только \char`\"{}\char`\"{} \\
+\hline
+\mbox{\texttt{ in}}  & {\em quote\+\_\+quantity} & Количество опорной валюты на обмене, измеряемой в USD \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+type} & Тип валюты выхода (сейчас любой) \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+rate} & Курс валюты выхода \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+contract} & Контракт валюты выхода (сейчас только \char`\"{}\char`\"{}) \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+quantity} & Количество валюты выхода \\
+\hline
+\mbox{\texttt{ in}}  & {\em details} & Реквизиты для получения платежа, используются если тип нового ордера = buy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__public__actions_ga805effb2c6e15ab30e7f36bf13558910}\label{group__public__actions_ga805effb2c6e15ab30e7f36bf13558910}} 
+\index{ACTIONS@{ACTIONS}!del@{del}}
+\index{del@{del}!ACTIONS@{ACTIONS}}
+\doxysubsubsection{\texorpdfstring{del()}{del()}}
+{\footnotesize\ttfamily void p2p\+::del (\begin{DoxyParamCaption}\item[{name}]{username,  }\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Метод удаления завершенной сделки из оперативной памяти 
+
+Очищает завершенную сделку из оперативной памяти операционной системы. \begin{DoxyParagraph}{AUTH\+: username}
+
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em username} & имя аккаунта, производящего очищение \\
+\hline
+\mbox{\texttt{ in}}  & {\em id} & идентификатор ордера \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__public__actions_gabea413390558d072de45f9ff47217ff8}\label{group__public__actions_gabea413390558d072de45f9ff47217ff8}} 
+\index{ACTIONS@{ACTIONS}!delrate@{delrate}}
+\index{delrate@{delrate}!ACTIONS@{ACTIONS}}
+\doxysubsubsection{\texorpdfstring{delrate()}{delrate()}}
+{\footnotesize\ttfamily void p2p\+::delrate (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Метод удаление курса 
+
+Используется администратором для удаления курса из таблицы курсов \begin{DoxyParagraph}{AUTH\+: eosio}
+
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em id} & идентификатор курса \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__public__actions_ga6ef3ff3b489159e054195c1d8fbd7092}\label{group__public__actions_ga6ef3ff3b489159e054195c1d8fbd7092}} 
+\index{ACTIONS@{ACTIONS}!delvesting@{delvesting}}
+\index{delvesting@{delvesting}!ACTIONS@{ACTIONS}}
+\doxysubsubsection{\texorpdfstring{delvesting()}{delvesting()}}
+{\footnotesize\ttfamily void p2p\+::delvesting (\begin{DoxyParamCaption}\item[{eosio\+::name}]{owner,  }\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Метод удаление вестинг-\/баланса 
+
+Используется администратором для удаления ошибочного начисления вестинг-\/баланса \begin{DoxyParagraph}{AUTH\+: p2p}
+
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em owner} & имя аккаунта владельца вестинг-\/баланса \\
+\hline
+\mbox{\texttt{ in}}  & {\em id} & идентификатор вестинг-\/баланса \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__public__actions_ga4f0c0c376096f7a73b21b39f0dc58d1d}\label{group__public__actions_ga4f0c0c376096f7a73b21b39f0dc58d1d}} 
+\index{ACTIONS@{ACTIONS}!dispute@{dispute}}
+\index{dispute@{dispute}!ACTIONS@{ACTIONS}}
+\doxysubsubsection{\texorpdfstring{dispute()}{dispute()}}
+{\footnotesize\ttfamily void p2p\+::dispute (\begin{DoxyParamCaption}\item[{name}]{username,  }\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Метод создания спора 
+
+Перевод сделку в статус спора, блокируя вывод средств до его разрешения. Только сделка в статусе payed может быть переведена в статус спора. \begin{DoxyParagraph}{AUTH\+: username}
+
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em username} & имя аккаунта участника сделки, инициирующего спор \\
+\hline
+\mbox{\texttt{ in}}  & {\em id} & идентификатор ордера \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__public__actions_ga2cb80d56fbb68ac3ccc688112d86532a}\label{group__public__actions_ga2cb80d56fbb68ac3ccc688112d86532a}} 
+\index{ACTIONS@{ACTIONS}!refreshsh@{refreshsh}}
+\index{refreshsh@{refreshsh}!ACTIONS@{ACTIONS}}
+\doxysubsubsection{\texorpdfstring{refreshsh()}{refreshsh()}}
+{\footnotesize\ttfamily void p2p\+::refreshsh (\begin{DoxyParamCaption}\item[{eosio\+::name}]{owner,  }\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Метод обновления вестинг-\/баланса. ~\newline
+ 
+
+Обновляет вестинг-\/баланс до доступного остатка. \begin{DoxyParagraph}{AUTH\+: owner}
+
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em owner} & имя аккаунта владельца вестинг-\/баланса \\
+\hline
+\mbox{\texttt{ in}}  & {\em id} & идентификатор вестинг-\/баланса \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__public__actions_ga4f3c89b4ae21f54b6e16334e681a7860}\label{group__public__actions_ga4f3c89b4ae21f54b6e16334e681a7860}} 
+\index{ACTIONS@{ACTIONS}!setbrate@{setbrate}}
+\index{setbrate@{setbrate}!ACTIONS@{ACTIONS}}
+\doxysubsubsection{\texorpdfstring{setbrate()}{setbrate()}}
+{\footnotesize\ttfamily void p2p\+::setbrate (\begin{DoxyParamCaption}\item[{eosio\+::name}]{host,  }\item[{double}]{distribution\+\_\+rate }\end{DoxyParamCaption})}
+
+
+
+Метод установки бонусного курса 
+
+Вызывается владельцем бонусного баланса в контракте для подключения распределения на партнёрскую сеть покупателя.
+
+\begin{DoxyParagraph}{AUTH\+: host}
+
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em host} & The host \\
+\hline
+\mbox{\texttt{ in}}  & {\em distribution\+\_\+rate} & The distribution rate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__public__actions_ga432842119735888f862933882e6a4da6}\label{group__public__actions_ga432842119735888f862933882e6a4da6}} 
+\index{ACTIONS@{ACTIONS}!setrate@{setrate}}
+\index{setrate@{setrate}!ACTIONS@{ACTIONS}}
+\doxysubsubsection{\texorpdfstring{setrate()}{setrate()}}
+{\footnotesize\ttfamily void p2p\+::setrate (\begin{DoxyParamCaption}\item[{eosio\+::name}]{out\+\_\+contract,  }\item[{eosio\+::asset}]{out\+\_\+asset,  }\item[{double}]{rate }\end{DoxyParamCaption})}
+
+
+
+Метод установки курса обмена к USD. 
+
+Устанавливает в таблицу usdrates новый актуальный курс от поставщика. \begin{DoxyParagraph}{AUTH\+: \+\_\+rater $\vert$ \+\_\+me}
+
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em out\+\_\+contract} & имя контракта выхода (обычно \char`\"{}\char`\"{}) \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+asset} & токен выхода с точностью и символом \\
+\hline
+\mbox{\texttt{ in}}  & {\em rate} & курс обмена к USD \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__public__actions_ga6684d814e1a17f87c492e2b394cc1846}\label{group__public__actions_ga6684d814e1a17f87c492e2b394cc1846}} 
+\index{ACTIONS@{ACTIONS}!uprate@{uprate}}
+\index{uprate@{uprate}!ACTIONS@{ACTIONS}}
+\doxysubsubsection{\texorpdfstring{uprate()}{uprate()}}
+{\footnotesize\ttfamily void p2p\+::uprate (\begin{DoxyParamCaption}\item[{eosio\+::name}]{out\+\_\+contract,  }\item[{eosio\+::asset}]{out\+\_\+asset }\end{DoxyParamCaption})}
+
+
+
+Метод увеличения курса обмена системного токена 
+
+Периодически вызывается системным контрактом и увеличивает курс обмена системного токена согласно темпу роста в \+\_\+\+PERCENTS\+\_\+\+PER\+\_\+\+MONTH. \begin{DoxyParagraph}{AUTH\+: eosio}
+
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em out\+\_\+contract} & имя контракта выхода (обычно \char`\"{}eosio.\+token\char`\"{}) \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+asset} & токен выхода с точностью и символом (обычно равен \+\_\+\+SYM) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__public__actions_gadb4fde78468ee3b060717a785febdcc4}\label{group__public__actions_gadb4fde78468ee3b060717a785febdcc4}} 
+\index{ACTIONS@{ACTIONS}!withdrawsh@{withdrawsh}}
+\index{withdrawsh@{withdrawsh}!ACTIONS@{ACTIONS}}
+\doxysubsubsection{\texorpdfstring{withdrawsh()}{withdrawsh()}}
+{\footnotesize\ttfamily void p2p\+::withdrawsh (\begin{DoxyParamCaption}\item[{eosio\+::name}]{owner,  }\item[{uint64\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Вывод вестинг-\/баланса 
+
+Обеспечивает вывод доступных средств из вестинг-\/баланса. \begin{DoxyParagraph}{AUTH\+: owner}
+
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em owner} & имя аккаунта владельца вестинг-\/баланса \\
+\hline
+\mbox{\texttt{ in}}  & {\em id} & идентификатор вестинг-\/баланса \\
+\hline
+\end{DoxyParams}

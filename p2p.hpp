@@ -78,6 +78,11 @@ public:
     void withdrawsh(eosio::name owner, uint64_t id);
         
     
+/**
+* @ingroup public_consts 
+    /**
+    * @{ 
+    */
     
     static constexpr eosio::name _me = "p2p"_n;                                             /*!< собственное имя аккаунта контракта */
     static constexpr eosio::name _curator = "p2p"_n;                                        /*!< дефолтное имя аккаунта куратора всех сделок */
@@ -100,6 +105,10 @@ public:
     static const uint64_t _ORDER_EXPIRATION = 30 * 60;                                      /*!< время до истечения срока давности ордера */
     static constexpr double _START_RATE = 0.2;                                              /*!< начальный курс старта роста системного токена относительно USD */
 
+    /**
+    * @}
+    */
+
     static uint128_t combine_ids(const uint64_t &x, const uint64_t &y) {
         return (uint128_t{x} << 64) | y;
     };
@@ -107,6 +116,7 @@ public:
 
     /**
      * @brief      Таблица промежуточного хранения балансов пользователей.
+     * @ingroup public_tables
      * @details CONTRACT = _me, SCOPE = username, TABLE = balance
      * @details Таблица баланса пользователя пополняется им путём совершения перевода на аккаунт контракта p2p. При создании ордера используется баланс пользователя из этой таблицы. Чтобы исключить необходимость пользователю контролировать свой баланс в контракте p2p, терминал доступа вызывает транзакцию с одновременно двумя действиями: перевод на аккаунт p2p и создание ордера на ту же сумму. 
      */
@@ -134,8 +144,9 @@ public:
 
     /**
      * @brief      Таблица счётчиков ордеров
+     * @ingroup public_tables
      * @details CONTRACT = _me, SCOPE = _me, TABLE = counts
-     * @detals Используется для хранения счётчика ордеров с ключом totalorders. При создании нового ордера, счётчик увеличивается на 1. При завершении или удалении ордера, счётчик не изменяется. 
+     * @details Используется для хранения счётчика ордеров с ключом totalorders. При создании нового ордера, счётчик увеличивается на 1. При завершении или удалении ордера, счётчик не изменяется. 
      */
     struct [[eosio::table]] counts {
         name key;           /*!< идентификатор ключа */
@@ -150,6 +161,7 @@ public:
 
     /**
      * @brief      Таблица ордеров
+     * @ingroup public_tables
      * @details    CONTRACT = _me, SCOPE = _me, TABLE = orders
      * @details    Ордера создаются продавцами или покупателями вызовом метода createorder, с дальнейшим использованием методов accept, approve и confirm.
     */
@@ -230,6 +242,7 @@ public:
 
     /**
      * @brief      Таблица содержит курсы конвертации к доллару.
+     * @ingroup public_tables
      * @details    CONTRACT = _me, SCOPE = _me, TABLE = usdrates
      * @details    Курсы обновляются аккаунтом rater методом setrate или системным контрактом eosio методом uprate. 
     */
@@ -256,6 +269,7 @@ public:
 
     /**
      * @brief      Таблица расширения usdrates с указанием даты установки первого курса
+     * @ingroup public_tables
      * @details    CONTRACT = _me, SCOPE = _me, TABLE = usdrates2
      */
     struct [[eosio::table]] usdrates2 {
@@ -271,6 +285,7 @@ public:
 
     /**
      * @brief      Таблица резервов контракта для выплат бонусов в реферальную сеть
+     * @ingroup public_tables
      * @details    CONTRACT = _me, SCOPE = _me, TABLE = bbonuses
      * @details    Таблица пополняется переводом на аккаунт контракта с указаним в поле memo аккаунта продавца, 
      * который будет использовать распределение на сеть покупателя. Распределение срабатывает в момент завершения сделки, увеличивая значение в поле distributed согласно курсу распределения disctribution_rate.
@@ -294,6 +309,7 @@ public:
 
     /**
      * @brief      Таблица вестинг-балансов пользователей
+     * @ingroup public_tables
      * @details CONTRACT = _me, SCOPE = owner, TABLE = vesting
      * @details Пополняется контрактом в случае, если ключ _ENABLE_VESTING = TRUE на количество секунд в _VESTING_SECONDS, срабатывает только для аккаунта продавца _CORE_SALE_ACCOUNT. Позволяет заморозить покупку токенов у компании на указанное количество секунд.
      */
@@ -318,6 +334,7 @@ public:
 
     /**
      * @brief      Таблица доступа к записям гостей платформы
+     * @ingroup public_tables
      * @details CONTRACT = _REGISTRATOR_ACCOUNT, SCOPE = _REGISTRATOR_ACCOUNT, TABLE = guests
      * @details Таблица находится на контракте registrator и используется для проверки необходимости выкупа аккаунта пользователя, если его покупка у _CORE_SALE_ACCOUNT больше, чем _GIFT_ACCOUNT_FROM_AMOUNT. Если пользователю полагается подарочный аккаунт, то контракт p2p совершает его выкуп для пользователя из числа токенов бонусного баланса контракта.
      */

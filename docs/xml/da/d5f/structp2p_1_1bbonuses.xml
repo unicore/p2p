@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="da/d5f/structp2p_1_1bbonuses" kind="struct" language="C++" prot="public">
+    <compoundname>p2p::bbonuses</compoundname>
+    <includes refid="dd/d90/p2p_8hpp" local="no">p2p.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="da/d5f/structp2p_1_1bbonuses_1a196ad62fd6230686cb4cbad9f7ee2aeb" prot="public" static="no" mutable="no">
+        <type>eosio::name</type>
+        <definition>eosio::name p2p::bbonuses::host</definition>
+        <argsstring></argsstring>
+        <name>host</name>
+        <qualifiedname>p2p::bbonuses::host</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>имя хоста продавца, при сделке с которым, срабатывает выплата в сеть </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="289" column="21" bodyfile="p2p.hpp" bodystart="289" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/structp2p_1_1bbonuses_1af7676fed529979ab6365421cd6cf72ef" prot="public" static="no" mutable="no">
+        <type>eosio::name</type>
+        <definition>eosio::name p2p::bbonuses::contract</definition>
+        <argsstring></argsstring>
+        <name>contract</name>
+        <qualifiedname>p2p::bbonuses::contract</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>имя контракта токена </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="290" column="21" bodyfile="p2p.hpp" bodystart="290" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/structp2p_1_1bbonuses_1a11511c80fc9d57acbf5c61359850ca41" prot="public" static="no" mutable="no">
+        <type>eosio::asset</type>
+        <definition>eosio::asset p2p::bbonuses::total</definition>
+        <argsstring></argsstring>
+        <name>total</name>
+        <qualifiedname>p2p::bbonuses::total</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>сколько токенов всего было на распределении </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="291" column="22" bodyfile="p2p.hpp" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/structp2p_1_1bbonuses_1a931f287a96041d2c581c4c733a62185e" prot="public" static="no" mutable="no">
+        <type>eosio::asset</type>
+        <definition>eosio::asset p2p::bbonuses::available</definition>
+        <argsstring></argsstring>
+        <name>available</name>
+        <qualifiedname>p2p::bbonuses::available</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>сколько токенов доступно для распределения </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="292" column="22" bodyfile="p2p.hpp" bodystart="292" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/structp2p_1_1bbonuses_1a14d9c11b5763d73a0c7723556b875349" prot="public" static="no" mutable="no">
+        <type>eosio::asset</type>
+        <definition>eosio::asset p2p::bbonuses::distributed</definition>
+        <argsstring></argsstring>
+        <name>distributed</name>
+        <qualifiedname>p2p::bbonuses::distributed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>сколько токенов уже распределено </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="293" column="22" bodyfile="p2p.hpp" bodystart="293" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d5f/structp2p_1_1bbonuses_1ac0043fc0d3d405501823046c6e9484ed" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double p2p::bbonuses::distribution_rate</definition>
+        <argsstring></argsstring>
+        <name>distribution_rate</name>
+        <qualifiedname>p2p::bbonuses::distribution_rate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>курс распределения бонусов, согласно которому, в сеть распределяется столько же монет, сколько получил пользователь, умноженное на этот курс </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="294" column="16" bodyfile="p2p.hpp" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="da/d5f/structp2p_1_1bbonuses_1a1707459d7b5c7a86f93973cd2af50736" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::bbonuses::primary_key</definition>
+        <argsstring>() const</argsstring>
+        <name>primary_key</name>
+        <qualifiedname>p2p::bbonuses::primary_key</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>host - primary_key </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="296" column="18" bodyfile="p2p.hpp" bodystart="296" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Таблица резервов контракта для выплат бонусов в реферальную сеть </para>
+    </briefdescription>
+    <detaileddescription>
+<para>CONTRACT = _me, SCOPE = _me, TABLE = bbonuses</para>
+<para>Таблица пополняется переводом на аккаунт контракта с указаним в поле memo аккаунта продавца, который будет использовать распределение на сеть покупателя. Распределение срабатывает в момент завершения сделки, увеличивая значение в поле distributed согласно курсу распределения disctribution_rate. </para>
+    </detaileddescription>
+    <location file="p2p.hpp" line="288" column="5" bodyfile="p2p.hpp" bodystart="288" bodyend="297"/>
+    <listofallmembers>
+      <member refid="da/d5f/structp2p_1_1bbonuses_1a931f287a96041d2c581c4c733a62185e" prot="public" virt="non-virtual"><scope>p2p::bbonuses</scope><name>available</name></member>
+      <member refid="da/d5f/structp2p_1_1bbonuses_1af7676fed529979ab6365421cd6cf72ef" prot="public" virt="non-virtual"><scope>p2p::bbonuses</scope><name>contract</name></member>
+      <member refid="da/d5f/structp2p_1_1bbonuses_1a14d9c11b5763d73a0c7723556b875349" prot="public" virt="non-virtual"><scope>p2p::bbonuses</scope><name>distributed</name></member>
+      <member refid="da/d5f/structp2p_1_1bbonuses_1ac0043fc0d3d405501823046c6e9484ed" prot="public" virt="non-virtual"><scope>p2p::bbonuses</scope><name>distribution_rate</name></member>
+      <member refid="da/d5f/structp2p_1_1bbonuses_1a196ad62fd6230686cb4cbad9f7ee2aeb" prot="public" virt="non-virtual"><scope>p2p::bbonuses</scope><name>host</name></member>
+      <member refid="da/d5f/structp2p_1_1bbonuses_1a1707459d7b5c7a86f93973cd2af50736" prot="public" virt="non-virtual"><scope>p2p::bbonuses</scope><name>primary_key</name></member>
+      <member refid="da/d5f/structp2p_1_1bbonuses_1a11511c80fc9d57acbf5c61359850ca41" prot="public" virt="non-virtual"><scope>p2p::bbonuses</scope><name>total</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

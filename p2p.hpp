@@ -82,14 +82,14 @@ public:
     static constexpr eosio::name _me = "p2p"_n;                                             /*!< собственное имя аккаунта контракта */
     static constexpr eosio::name _curator = "p2p"_n;                                        /*!< дефолтное имя аккаунта куратора всех сделок */
     static constexpr eosio::name _rater = "rater"_n;                                        /*!< имя аккаунта поставщика курсов */
-    static constexpr eosio::symbol _SYM     = eosio::symbol(eosio::symbol_code("NBT"), 4);  /*!< системный токен */
+    static constexpr eosio::symbol _SYM     = eosio::symbol(eosio::symbol_code("FLOWER"), 4);  /*!< системный токен */
     static constexpr eosio::name _core = "unicore"_n;                                       /*!< имя аккаунта распределения реферальных бонусов в сеть */
     
     static const uint64_t _PERCENTS_PER_MONTH = 42;                                         /*!< если рост курса системного токена подключен, то растёт с указанной здесь скоростью */
 
-    static const bool _ENABLE_GROWHT = true;                                                /*!< флаг подключения автоматического роста курса, допускающего вызов метода uprate от системного контракта eosio */
+    static const bool _ENABLE_GROWHT = false;                                                /*!< флаг подключения автоматического роста курса, допускающего вызов метода uprate от системного контракта eosio */
 
-    static const bool _ENABLE_VESTING = true;                                               /*!< флаг подключения режима вестинга для совершенных покупок у аккаунта _CORE_SALE_ACCOUNT */
+    static const bool _ENABLE_VESTING = false;                                               /*!< флаг подключения режима вестинга для совершенных покупок у аккаунта _CORE_SALE_ACCOUNT */
     static const uint64_t _VESTING_SECONDS = 15770000;                                      /*!< продолжительность вестинга в секундах */
     static constexpr eosio::name _CORE_SALE_ACCOUNT = "core"_n;                             /*!< аккаунт системного продавца токенов, в сделке к которым срабатывает вестинг */
     static constexpr eosio::name _REGISTRATOR_ACCOUNT = "registrator"_n;                    /*!< аккаунт контракта регистратора, хранящего таблицу с гостями для подарочного выкупа */

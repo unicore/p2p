@@ -42,6 +42,9 @@
   <option  id='TAB_SIZE' default='yes' type='int'><value>4</value></option>
   <option  id='ALIASES' default='no' type='stringlist'>
     <value><![CDATA["auth=@par AUTH:"]]></value>
+    <value><![CDATA["scope=@par Scope:"]]></value>
+    <value><![CDATA["contract=@par Contract:"]]></value>
+    <value><![CDATA["table=@par Table:"]]></value>
   </option>
   <option  id='OPTIMIZE_OUTPUT_FOR_C' default='no' type='bool'><value>YES</value></option>
   <option  id='OPTIMIZE_OUTPUT_JAVA' default='yes' type='bool'><value>NO</value></option>

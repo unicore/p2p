@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="317" column="18" bodyfile="p2p.hpp" bodystart="317" bodyend="-1"/>
+        <location file="p2p.hpp" line="333" column="18" bodyfile="p2p.hpp" bodystart="333" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1vesting_1a46a58437b03f9c7947c76e91f358003e" prot="public" static="no" mutable="no">
         <type>eosio::name</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="318" column="21" bodyfile="p2p.hpp" bodystart="318" bodyend="-1"/>
+        <location file="p2p.hpp" line="334" column="21" bodyfile="p2p.hpp" bodystart="334" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1vesting_1aa514aefb9ae797ecbf711997efb94d5b" prot="public" static="no" mutable="no">
         <type>eosio::name</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="319" column="21" bodyfile="p2p.hpp" bodystart="319" bodyend="-1"/>
+        <location file="p2p.hpp" line="335" column="21" bodyfile="p2p.hpp" bodystart="335" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1vesting_1ac2a702d706aa9146588fffb6113d1c79" prot="public" static="no" mutable="no">
         <type>eosio::time_point_sec</type>
@@ -62,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="320" column="31" bodyfile="p2p.hpp" bodystart="320" bodyend="-1"/>
+        <location file="p2p.hpp" line="336" column="31" bodyfile="p2p.hpp" bodystart="336" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1vesting_1a86ada5ec19fb224f483ab95bf5908547" prot="public" static="no" mutable="no">
         <type>uint64_t</type>
@@ -77,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="321" column="18" bodyfile="p2p.hpp" bodystart="321" bodyend="-1"/>
+        <location file="p2p.hpp" line="337" column="18" bodyfile="p2p.hpp" bodystart="337" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1vesting_1a5a06c08d24cb3f9b929bc4285dd51179" prot="public" static="no" mutable="no">
         <type>eosio::asset</type>
@@ -92,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="322" column="22" bodyfile="p2p.hpp" bodystart="322" bodyend="-1"/>
+        <location file="p2p.hpp" line="338" column="22" bodyfile="p2p.hpp" bodystart="338" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1vesting_1a3759f66455f668a402c365554ad6550d" prot="public" static="no" mutable="no">
         <type>eosio::asset</type>
@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="323" column="22" bodyfile="p2p.hpp" bodystart="323" bodyend="-1"/>
+        <location file="p2p.hpp" line="339" column="22" bodyfile="p2p.hpp" bodystart="339" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1vesting_1a88ce3db1c7e1d53750a8d6e864da8c6c" prot="public" static="no" mutable="no">
         <type>eosio::asset</type>
@@ -122,7 +122,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="324" column="22" bodyfile="p2p.hpp" bodystart="324" bodyend="-1"/>
+        <location file="p2p.hpp" line="340" column="22" bodyfile="p2p.hpp" bodystart="340" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -139,17 +139,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="326" column="18" bodyfile="p2p.hpp" bodystart="326" bodyend="-1"/>
+        <location file="p2p.hpp" line="342" column="18" bodyfile="p2p.hpp" bodystart="342" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Таблица вестинг-балансов пользователей </para>
     </briefdescription>
     <detaileddescription>
-<para>CONTRACT = _me, SCOPE = owner, TABLE = vesting</para>
-<para>Пополняется контрактом в случае, если ключ _ENABLE_VESTING = TRUE на количество секунд в _VESTING_SECONDS, срабатывает только для аккаунта продавца _CORE_SALE_ACCOUNT. Позволяет заморозить покупку токенов у компании на указанное количество секунд. </para>
+<para><simplesect kind="par"><title>Table: vesting</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>Contract: _me</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>Scope: owner</title><para></para>
+</simplesect>
+Пополняется контрактом в случае, если ключ _ENABLE_VESTING = TRUE на количество секунд в _VESTING_SECONDS, срабатывает только для аккаунта продавца _CORE_SALE_ACCOUNT. Позволяет заморозить покупку токенов у компании на указанное количество секунд. </para>
     </detaileddescription>
-    <location file="p2p.hpp" line="316" column="7" bodyfile="p2p.hpp" bodystart="316" bodyend="329"/>
+    <location file="p2p.hpp" line="332" column="7" bodyfile="p2p.hpp" bodystart="332" bodyend="345"/>
     <listofallmembers>
       <member refid="structp2p_1_1vesting_1a5a06c08d24cb3f9b929bc4285dd51179" prot="public" virt="non-virtual"><scope>p2p::vesting</scope><name>amount</name></member>
       <member refid="structp2p_1_1vesting_1a3759f66455f668a402c365554ad6550d" prot="public" virt="non-virtual"><scope>p2p::vesting</scope><name>available</name></member>

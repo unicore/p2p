@@ -117,7 +117,9 @@ public:
     /**
      * @brief      Таблица промежуточного хранения балансов пользователей.
      * @ingroup public_tables
-     * @details CONTRACT = _me, SCOPE = username, TABLE = balance
+     * @table balance
+     * @contract _me
+     * @scope username
      * @details Таблица баланса пользователя пополняется им путём совершения перевода на аккаунт контракта p2p. При создании ордера используется баланс пользователя из этой таблицы. Чтобы исключить необходимость пользователю контролировать свой баланс в контракте p2p, терминал доступа вызывает транзакцию с одновременно двумя действиями: перевод на аккаунт p2p и создание ордера на ту же сумму. 
      */
 
@@ -145,7 +147,10 @@ public:
     /**
      * @brief      Таблица счётчиков ордеров
      * @ingroup public_tables
-     * @details CONTRACT = _me, SCOPE = _me, TABLE = counts
+     * @table counts
+     * @contract _me
+     * @scope _me
+     
      * @details Используется для хранения счётчика ордеров с ключом totalorders. При создании нового ордера, счётчик увеличивается на 1. При завершении или удалении ордера, счётчик не изменяется. 
      */
     struct [[eosio::table]] counts {
@@ -162,7 +167,9 @@ public:
     /**
      * @brief      Таблица ордеров
      * @ingroup public_tables
-     * @details    CONTRACT = _me, SCOPE = _me, TABLE = orders
+     * @table orders
+     * @contract _me
+     * @scope _me
      * @details    Ордера создаются продавцами или покупателями вызовом метода createorder, с дальнейшим использованием методов accept, approve и confirm.
     */
 
@@ -243,7 +250,9 @@ public:
     /**
      * @brief      Таблица содержит курсы конвертации к доллару.
      * @ingroup public_tables
-     * @details    CONTRACT = _me, SCOPE = _me, TABLE = usdrates
+     * @table usdrates
+     * @contract _me
+     * @scope _me
      * @details    Курсы обновляются аккаунтом rater методом setrate или системным контрактом eosio методом uprate. 
     */
     
@@ -270,7 +279,10 @@ public:
     /**
      * @brief      Таблица расширения usdrates с указанием даты установки первого курса
      * @ingroup public_tables
-     * @details    CONTRACT = _me, SCOPE = _me, TABLE = usdrates2
+     * @table usdrates2
+     * @contract _me
+     * @scope _me
+     
      */
     struct [[eosio::table]] usdrates2 {
         uint64_t id; /*!< идентификатор курса */
@@ -286,7 +298,9 @@ public:
     /**
      * @brief      Таблица резервов контракта для выплат бонусов в реферальную сеть
      * @ingroup public_tables
-     * @details    CONTRACT = _me, SCOPE = _me, TABLE = bbonuses
+     * @table bbonuses
+     * @contract _me
+     * @scope _me
      * @details    Таблица пополняется переводом на аккаунт контракта с указаним в поле memo аккаунта продавца, 
      * который будет использовать распределение на сеть покупателя. Распределение срабатывает в момент завершения сделки, увеличивая значение в поле distributed согласно курсу распределения disctribution_rate.
      */
@@ -310,7 +324,9 @@ public:
     /**
      * @brief      Таблица вестинг-балансов пользователей
      * @ingroup public_tables
-     * @details CONTRACT = _me, SCOPE = owner, TABLE = vesting
+     * @table vesting
+     * @contract _me
+     * @scope owner
      * @details Пополняется контрактом в случае, если ключ _ENABLE_VESTING = TRUE на количество секунд в _VESTING_SECONDS, срабатывает только для аккаунта продавца _CORE_SALE_ACCOUNT. Позволяет заморозить покупку токенов у компании на указанное количество секунд.
      */
       struct [[eosio::table]] vesting {
@@ -335,7 +351,10 @@ public:
     /**
      * @brief      Таблица доступа к записям гостей платформы
      * @ingroup public_tables
-     * @details CONTRACT = _REGISTRATOR_ACCOUNT, SCOPE = _REGISTRATOR_ACCOUNT, TABLE = guests
+     * @table guests
+     * @contract _REGISTRATOR_ACCOUNT
+     * @scope _REGISTRATOR_ACCOUNT
+     
      * @details Таблица находится на контракте registrator и используется для проверки необходимости выкупа аккаунта пользователя, если его покупка у _CORE_SALE_ACCOUNT больше, чем _GIFT_ACCOUNT_FROM_AMOUNT. Если пользователю полагается подарочный аккаунт, то контракт p2p совершает его выкуп для пользователя из числа токенов бонусного баланса контракта.
      */
     

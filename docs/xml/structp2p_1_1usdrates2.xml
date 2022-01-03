@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="276" column="18" bodyfile="p2p.hpp" bodystart="276" bodyend="-1"/>
+        <location file="p2p.hpp" line="288" column="18" bodyfile="p2p.hpp" bodystart="288" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1usdrates2_1a2f8aa31571d84a178259fa42461cf140" prot="public" static="no" mutable="no">
         <type>eosio::time_point_sec</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="277" column="31" bodyfile="p2p.hpp" bodystart="277" bodyend="-1"/>
+        <location file="p2p.hpp" line="289" column="31" bodyfile="p2p.hpp" bodystart="289" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -49,16 +49,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="279" column="18" bodyfile="p2p.hpp" bodystart="279" bodyend="-1"/>
+        <location file="p2p.hpp" line="291" column="18" bodyfile="p2p.hpp" bodystart="291" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Таблица расширения usdrates с указанием даты установки первого курса </para>
     </briefdescription>
     <detaileddescription>
-<para>CONTRACT = _me, SCOPE = _me, TABLE = <ref refid="structp2p_1_1usdrates2" kindref="compound">usdrates2</ref> </para>
+<para><simplesect kind="par"><title>Table: usdrates2</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>Contract: _me</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>Scope: _me</title><para></para>
+</simplesect>
+</para>
     </detaileddescription>
-    <location file="p2p.hpp" line="275" column="5" bodyfile="p2p.hpp" bodystart="275" bodyend="280"/>
+    <location file="p2p.hpp" line="287" column="5" bodyfile="p2p.hpp" bodystart="287" bodyend="292"/>
     <listofallmembers>
       <member refid="structp2p_1_1usdrates2_1a2f8aa31571d84a178259fa42461cf140" prot="public" virt="non-virtual"><scope>p2p::usdrates2</scope><name>created_at</name></member>
       <member refid="structp2p_1_1usdrates2_1aba230f3a86e3c9eb693c41d501378c22" prot="public" virt="non-virtual"><scope>p2p::usdrates2</scope><name>id</name></member>

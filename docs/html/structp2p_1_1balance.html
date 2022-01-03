@@ -121,8 +121,10 @@ eosio::asset&#160;</td><td class="memItemRight" valign="bottom"><b>quantity</b><
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Таблица промежуточного хранения балансов пользователей. </p>
-<p >CONTRACT = _me, SCOPE = username, TABLE = balance</p>
-<p >Таблица баланса пользователя пополняется им путём совершения перевода на аккаунт контракта <a class="el" href="classp2p.html" title="Начните ознакомление здесь.">p2p</a>. При создании ордера используется баланс пользователя из этой таблицы. Чтобы исключить необходимость пользователю контролировать свой баланс в контракте <a class="el" href="classp2p.html" title="Начните ознакомление здесь.">p2p</a>, терминал доступа вызывает транзакцию с одновременно двумя действиями: перевод на аккаунт <a class="el" href="classp2p.html" title="Начните ознакомление здесь.">p2p</a> и создание ордера на ту же сумму. </p>
+<dl class="section user"><dt>Table: balance</dt><dd></dd></dl>
+<dl class="section user"><dt>Contract: _me</dt><dd></dd></dl>
+<dl class="section user"><dt>Scope: username</dt><dd></dd></dl>
+<p>Таблица баланса пользователя пополняется им путём совершения перевода на аккаунт контракта <a class="el" href="classp2p.html" title="Начните ознакомление здесь.">p2p</a>. При создании ордера используется баланс пользователя из этой таблицы. Чтобы исключить необходимость пользователю контролировать свой баланс в контракте <a class="el" href="classp2p.html" title="Начните ознакомление здесь.">p2p</a>, терминал доступа вызывает транзакцию с одновременно двумя действиями: перевод на аккаунт <a class="el" href="classp2p.html" title="Начните ознакомление здесь.">p2p</a> и создание ордера на ту же сумму. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="p2p_8hpp_source.html">p2p.hpp</a></li>
 </ul>

@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="343" column="21" bodyfile="p2p.hpp" bodystart="343" bodyend="-1"/>
+        <location file="p2p.hpp" line="362" column="21" bodyfile="p2p.hpp" bodystart="362" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1guests_1a7d81b8f733dfeea21966a8a31edb301d" prot="public" static="no" mutable="no">
         <type>eosio::name</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="345" column="21" bodyfile="p2p.hpp" bodystart="345" bodyend="-1"/>
+        <location file="p2p.hpp" line="364" column="21" bodyfile="p2p.hpp" bodystart="364" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1guests_1a4b73f584111d94b3a6fb5622d8216ed3" prot="public" static="no" mutable="no">
         <type>eosio::public_key</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="346" column="27" bodyfile="p2p.hpp" bodystart="346" bodyend="-1"/>
+        <location file="p2p.hpp" line="365" column="27" bodyfile="p2p.hpp" bodystart="365" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1guests_1a09bbcdc724ea96a5cdf347367b4f7041" prot="public" static="no" mutable="no">
         <type>eosio::asset</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="347" column="22" bodyfile="p2p.hpp" bodystart="347" bodyend="-1"/>
+        <location file="p2p.hpp" line="366" column="22" bodyfile="p2p.hpp" bodystart="366" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1guests_1aff18f2163f3b24aea4575794e55425b4" prot="public" static="no" mutable="no">
         <type>eosio::asset</type>
@@ -72,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="348" column="22" bodyfile="p2p.hpp" bodystart="348" bodyend="-1"/>
+        <location file="p2p.hpp" line="367" column="22" bodyfile="p2p.hpp" bodystart="367" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1guests_1a395b94e26a5cfdd479d740f626f12180" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -87,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="349" column="14" bodyfile="p2p.hpp" bodystart="349" bodyend="-1"/>
+        <location file="p2p.hpp" line="368" column="14" bodyfile="p2p.hpp" bodystart="368" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1guests_1ad45fc1ab56a406b0459e2800370b35e1" prot="public" static="no" mutable="no">
         <type>eosio::time_point_sec</type>
@@ -101,7 +101,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="350" column="31" bodyfile="p2p.hpp" bodystart="350" bodyend="-1"/>
+        <location file="p2p.hpp" line="369" column="31" bodyfile="p2p.hpp" bodystart="369" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1guests_1ac8da955e150475f48c17508b45c097c9" prot="public" static="no" mutable="no">
         <type>eosio::asset</type>
@@ -115,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="352" column="22" bodyfile="p2p.hpp" bodystart="352" bodyend="-1"/>
+        <location file="p2p.hpp" line="371" column="22" bodyfile="p2p.hpp" bodystart="371" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -131,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="354" column="18" bodyfile="p2p.hpp" bodystart="354" bodyend="354"/>
+        <location file="p2p.hpp" line="373" column="18" bodyfile="p2p.hpp" bodystart="373" bodyend="373"/>
       </memberdef>
       <memberdef kind="function" id="structp2p_1_1guests_1ab0bd423df57e4e4cb8c037f3b8d19975" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>uint64_t</type>
@@ -145,7 +145,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="355" column="18" bodyfile="p2p.hpp" bodystart="355" bodyend="355"/>
+        <location file="p2p.hpp" line="374" column="18" bodyfile="p2p.hpp" bodystart="374" bodyend="374"/>
       </memberdef>
       <memberdef kind="function" id="structp2p_1_1guests_1ae7c6e94ea3fb3000bca7512ff94b9d4d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>uint64_t</type>
@@ -159,17 +159,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="356" column="18" bodyfile="p2p.hpp" bodystart="356" bodyend="356"/>
+        <location file="p2p.hpp" line="375" column="18" bodyfile="p2p.hpp" bodystart="375" bodyend="375"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Таблица доступа к записям гостей платформы </para>
     </briefdescription>
     <detaileddescription>
-<para>CONTRACT = _REGISTRATOR_ACCOUNT, SCOPE = _REGISTRATOR_ACCOUNT, TABLE = guests</para>
-<para>Таблица находится на контракте registrator и используется для проверки необходимости выкупа аккаунта пользователя, если его покупка у _CORE_SALE_ACCOUNT больше, чем _GIFT_ACCOUNT_FROM_AMOUNT. Если пользователю полагается подарочный аккаунт, то контракт <ref refid="classp2p" kindref="compound">p2p</ref> совершает его выкуп для пользователя из числа токенов бонусного баланса контракта. </para>
+<para><simplesect kind="par"><title>Table: guests</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>Contract: _REGISTRATOR_ACCOUNT</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>Scope: _REGISTRATOR_ACCOUNT</title><para></para>
+</simplesect>
+Таблица находится на контракте registrator и используется для проверки необходимости выкупа аккаунта пользователя, если его покупка у _CORE_SALE_ACCOUNT больше, чем _GIFT_ACCOUNT_FROM_AMOUNT. Если пользователю полагается подарочный аккаунт, то контракт <ref refid="classp2p" kindref="compound">p2p</ref> совершает его выкуп для пользователя из числа токенов бонусного баланса контракта. </para>
     </detaileddescription>
-    <location file="p2p.hpp" line="342" column="5" bodyfile="p2p.hpp" bodystart="342" bodyend="359"/>
+    <location file="p2p.hpp" line="361" column="5" bodyfile="p2p.hpp" bodystart="361" bodyend="378"/>
     <listofallmembers>
       <member refid="structp2p_1_1guests_1ab0bd423df57e4e4cb8c037f3b8d19975" prot="public" virt="non-virtual"><scope>p2p::guests</scope><name>byexpr</name></member>
       <member refid="structp2p_1_1guests_1ae7c6e94ea3fb3000bca7512ff94b9d4d" prot="public" virt="non-virtual"><scope>p2p::guests</scope><name>byreg</name></member>

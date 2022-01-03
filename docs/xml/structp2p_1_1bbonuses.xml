@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="294" column="21" bodyfile="p2p.hpp" bodystart="294" bodyend="-1"/>
+        <location file="p2p.hpp" line="308" column="21" bodyfile="p2p.hpp" bodystart="308" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1bbonuses_1af7676fed529979ab6365421cd6cf72ef" prot="public" static="no" mutable="no">
         <type>eosio::name</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="295" column="21" bodyfile="p2p.hpp" bodystart="295" bodyend="-1"/>
+        <location file="p2p.hpp" line="309" column="21" bodyfile="p2p.hpp" bodystart="309" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1bbonuses_1a11511c80fc9d57acbf5c61359850ca41" prot="public" static="no" mutable="no">
         <type>eosio::asset</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="296" column="22" bodyfile="p2p.hpp" bodystart="296" bodyend="-1"/>
+        <location file="p2p.hpp" line="310" column="22" bodyfile="p2p.hpp" bodystart="310" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1bbonuses_1a931f287a96041d2c581c4c733a62185e" prot="public" static="no" mutable="no">
         <type>eosio::asset</type>
@@ -62,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="297" column="22" bodyfile="p2p.hpp" bodystart="297" bodyend="-1"/>
+        <location file="p2p.hpp" line="311" column="22" bodyfile="p2p.hpp" bodystart="311" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1bbonuses_1a14d9c11b5763d73a0c7723556b875349" prot="public" static="no" mutable="no">
         <type>eosio::asset</type>
@@ -77,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="298" column="22" bodyfile="p2p.hpp" bodystart="298" bodyend="-1"/>
+        <location file="p2p.hpp" line="312" column="22" bodyfile="p2p.hpp" bodystart="312" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1bbonuses_1ac0043fc0d3d405501823046c6e9484ed" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -92,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="299" column="16" bodyfile="p2p.hpp" bodystart="299" bodyend="-1"/>
+        <location file="p2p.hpp" line="313" column="16" bodyfile="p2p.hpp" bodystart="313" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -109,17 +109,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="301" column="18" bodyfile="p2p.hpp" bodystart="301" bodyend="-1"/>
+        <location file="p2p.hpp" line="315" column="18" bodyfile="p2p.hpp" bodystart="315" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Таблица резервов контракта для выплат бонусов в реферальную сеть </para>
     </briefdescription>
     <detaileddescription>
-<para>CONTRACT = _me, SCOPE = _me, TABLE = bbonuses</para>
-<para>Таблица пополняется переводом на аккаунт контракта с указаним в поле memo аккаунта продавца, который будет использовать распределение на сеть покупателя. Распределение срабатывает в момент завершения сделки, увеличивая значение в поле distributed согласно курсу распределения disctribution_rate. </para>
+<para><simplesect kind="par"><title>Table: bbonuses</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>Contract: _me</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>Scope: _me</title><para></para>
+</simplesect>
+Таблица пополняется переводом на аккаунт контракта с указаним в поле memo аккаунта продавца, который будет использовать распределение на сеть покупателя. Распределение срабатывает в момент завершения сделки, увеличивая значение в поле distributed согласно курсу распределения disctribution_rate. </para>
     </detaileddescription>
-    <location file="p2p.hpp" line="293" column="5" bodyfile="p2p.hpp" bodystart="293" bodyend="302"/>
+    <location file="p2p.hpp" line="307" column="5" bodyfile="p2p.hpp" bodystart="307" bodyend="316"/>
     <listofallmembers>
       <member refid="structp2p_1_1bbonuses_1a931f287a96041d2c581c4c733a62185e" prot="public" virt="non-virtual"><scope>p2p::bbonuses</scope><name>available</name></member>
       <member refid="structp2p_1_1bbonuses_1af7676fed529979ab6365421cd6cf72ef" prot="public" virt="non-virtual"><scope>p2p::bbonuses</scope><name>contract</name></member>

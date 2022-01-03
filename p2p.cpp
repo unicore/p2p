@@ -3,7 +3,7 @@
 using namespace eosio;
 /**
 \defgroup public_consts CONSTS
-\brief Структуры констант контракта
+\brief Константы контракта
 */
 
 /**

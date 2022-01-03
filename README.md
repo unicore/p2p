@@ -39,8 +39,9 @@ _CORE_SALE_ACCOUNT - аккаунт компании, осуществляющи
 _GIFT_ACCOUNT_FROM_AMOUNT - если покупка совершается у компании на сумму, превышающую в этом поле, то компания совершает выкуп прав владельца аккаунта у регистратора и передаёт их пользователю (переводит аккаунт из статуса гость в статус партнёр).
  
 # Компиляция
+Заменить ABSOLUTE_PATH_TO_CONTRACT на абсолютный путь к директории контракта p2p. 
 ```
-docker
+docker run --rm --name eosio.cdt_v1.7.0 --volume /ABSOLUTE_PATH_TO_CONTRACT:/project -w /project eostudio/eosio.cdt:v1.7.0 /bin/bash -c "eosio-cpp -abigen -I include -R include -contract p2p -o p2p.wasm p2p.cpp" &
 ```
 
 # Роли

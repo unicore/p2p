@@ -25,26 +25,15 @@
 var NAVTREE =
 [
   [ "P2P", "index.html", [
-    [ "Modules", "modules.html", "modules" ],
-    [ "Data Structures", "annotated.html", [
-      [ "Data Structures", "annotated.html", "annotated_dup" ],
-      [ "Data Structure Index", "classes.html", null ],
-      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
-      [ "Data Fields", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
-      ] ]
-    ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
-    ] ]
+    [ "Константы", "group__public__consts.html", null ],
+    [ "Действия", "group__public__actions.html", null ],
+    [ "Таблицы", "group__public__tables.html", null ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"group__public__actions.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -4,7 +4,7 @@
   <option  id='PROJECT_NAME' default='no' type='string'><value><![CDATA[P2P]]></value></option>
   <option  id='PROJECT_NUMBER' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='PROJECT_BRIEF' default='no' type='string'><value><![CDATA[смарт-контакт]]></value></option>
-  <option  id='PROJECT_LOGO' default='yes' type='string'><value><![CDATA[]]></value></option>
+  <option  id='PROJECT_LOGO' default='no' type='string'><value><![CDATA[docs/logo.png]]></value></option>
   <option  id='OUTPUT_DIRECTORY' default='no' type='string'><value><![CDATA[docs]]></value></option>
   <option  id='CREATE_SUBDIRS' default='yes' type='bool'><value>NO</value></option>
   <option  id='ALLOW_UNICODE_NAMES' default='yes' type='bool'><value>NO</value></option>
@@ -104,7 +104,7 @@
   <option  id='SHOW_FILES' default='yes' type='bool'><value>YES</value></option>
   <option  id='SHOW_NAMESPACES' default='yes' type='bool'><value>YES</value></option>
   <option  id='FILE_VERSION_FILTER' default='yes' type='string'><value><![CDATA[]]></value></option>
-  <option  id='LAYOUT_FILE' default='yes' type='string'><value><![CDATA[]]></value></option>
+  <option  id='LAYOUT_FILE' default='no' type='string'><value><![CDATA[DoxygenLayout.xml]]></value></option>
   <option  id='CITE_BIB_FILES' default='yes' type='stringlist'>
   </option>
   <option  id='QUIET' default='yes' type='bool'><value>NO</value></option>
@@ -271,7 +271,7 @@
   <option  id='EXTERNAL_SEARCH_ID' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='EXTRA_SEARCH_MAPPINGS' default='yes' type='stringlist'>
   </option>
-  <option  id='GENERATE_LATEX' default='yes' type='bool'><value>YES</value></option>
+  <option  id='GENERATE_LATEX' default='no' type='bool'><value>NO</value></option>
   <option  id='LATEX_OUTPUT' default='yes' type='string'><value><![CDATA[latex]]></value></option>
   <option  id='LATEX_CMD_NAME' default='no' type='string'><value><![CDATA[latex]]></value></option>
   <option  id='MAKEINDEX_CMD_NAME' default='yes' type='string'><value><![CDATA[makeindex]]></value></option>

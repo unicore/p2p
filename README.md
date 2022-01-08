@@ -12,6 +12,27 @@
 - out_asset - токен выхода, который получает продавец и отправляет покупатель на реквизиты продавца. 
 
 
+# Компиляция
+Заменить ABSOLUTE_PATH_TO_CONTRACT на абсолютный путь к директории контракта p2p. 
+```
+docker run --rm --name eosio.cdt_v1.7.0 --volume /ABSOLUTE_PATH_TO_CONTRACT:/project -w /project eostudio/eosio.cdt:v1.7.0 /bin/bash -c "eosio-cpp -abigen -I include -R include -contract p2p -o p2p.wasm p2p.cpp" &
+```
+
+
+# Генерация документации
+Требуется Doxygen версии от 1.9.3
+```
+git submodule update --init --recursive
+doxygen
+```
+
+
+# Установка
+```
+cleos set contract p2p ABSOLUTE_PATH_TO_CONTRACT -p p2p
+```
+
+
 # Применение
 Контракт может использоваться:
 - как p2p биржа обмена любым стандартным заменяемым цифровым активом;
@@ -38,12 +59,6 @@ VESTING_SECONDS - продолжительность вестинга;
 CORE_SALE_ACCOUNT - аккаунт компании, осуществляющий IDO, продажа от которого проходит с применением вестинга. Все остальные аккаунты совершают сделки без вестинга;
 GIFT_ACCOUNT_FROM_AMOUNT - если покупка совершается у компании на сумму, превышающую в этом поле, то компания совершает выкуп прав владельца аккаунта у регистратора и передаёт их пользователю (переводит аккаунт из статуса гость в статус партнёр).
  
-# Компиляция
-Заменить ABSOLUTE_PATH_TO_CONTRACT на абсолютный путь к директории контракта p2p. 
-```
-docker run --rm --name eosio.cdt_v1.7.0 --volume /ABSOLUTE_PATH_TO_CONTRACT:/project -w /project eostudio/eosio.cdt:v1.7.0 /bin/bash -c "eosio-cpp -abigen -I include -R include -contract p2p -o p2p.wasm p2p.cpp" &
-```
-
 # Роли
 - Продавец - создаёт ордер типа sell
 - Покупатель - создаёт ордер типа buy

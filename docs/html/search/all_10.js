@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['updated_5fat_0',['updated_at',['../structp2p_1_1usdrates.html#a79bb6e9971e40371c8003013887bf294',1,'p2p::usdrates']]],
-  ['uprate_1',['uprate',['../group__public__actions.html#ga6684d814e1a17f87c492e2b394cc1846',1,'p2p']]],
-  ['usdrates_2',['usdrates',['../structp2p_1_1usdrates.html',1,'p2p']]],
-  ['usdrates2_3',['usdrates2',['../structp2p_1_1usdrates2.html',1,'p2p']]]
+  ['tables_0',['TABLES',['../group__public__tables.html',1,'']]],
+  ['to_5fpay_1',['to_pay',['../structp2p_1_1guests.html#ac8da955e150475f48c17508b45c097c9',1,'p2p::guests']]],
+  ['total_2',['total',['../structp2p_1_1bbonuses.html#a11511c80fc9d57acbf5c61359850ca41',1,'p2p::bbonuses']]],
+  ['type_3',['type',['../structp2p_1_1orders.html#a60ac740af13940b35f388cb2c17c4f3a',1,'p2p::orders']]]
 ];

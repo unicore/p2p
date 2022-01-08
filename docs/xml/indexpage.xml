@@ -18,6 +18,14 @@
 </listitem><listitem><para>out_asset - токен выхода, который получает продавец и отправляет покупатель на реквизиты продавца.</para>
 </listitem></itemizedlist>
 </para>
+<para><heading level="1">Компиляция</heading>
+</para>
+<para>Заменить ABSOLUTE_PATH_TO_CONTRACT на абсолютный путь к директории контракта <ref refid="classp2p" kindref="compound">p2p</ref>. <programlisting><codeline><highlight class="normal">docker<sp/>run<sp/>--rm<sp/>--name<sp/>eosio.cdt_v1.7.0<sp/>--volume<sp/>/ABSOLUTE_PATH_TO_CONTRACT:/project<sp/>-w<sp/>/project<sp/>eostudio/eosio.cdt:v1.7.0<sp/>/bin/bash<sp/>-c<sp/>&quot;eosio-cpp<sp/>-abigen<sp/>-I<sp/>include<sp/>-R<sp/>include<sp/>-contract<sp/>p2p<sp/>-o<sp/>p2p.wasm<sp/>p2p.cpp&quot;<sp/>&amp;</highlight></codeline>
+</programlisting></para>
+<para><heading level="1">Установка</heading>
+</para>
+<para><programlisting><codeline><highlight class="normal">cleos<sp/>set<sp/>contract<sp/>p2p<sp/>ABSOLUTE_PATH_TO_CONTRACT<sp/>-p<sp/>p2p</highlight></codeline>
+</programlisting></para>
 <para><heading level="1">Применение</heading>
 </para>
 <para>Контракт может использоваться:<itemizedlist>
@@ -33,10 +41,6 @@
 <para><heading level="1">Основные управляющие параметры</heading>
 </para>
 <para>ENABLE_GROWHT = TRUE - допускает изменение курса системного токена в процентном соотношении от стартового курса (линейный рост) START_RATE - стартовый курс системного токена, используемый при расчёте линейного роста; PERCENTS_PER_MONTH - устанавливает скорость роста системного токена; ENABLE_VESTING - включает режим продаж через вестинг равными долями от момента создания объекта; VESTING_SECONDS - продолжительность вестинга; CORE_SALE_ACCOUNT - аккаунт компании, осуществляющий IDO, продажа от которого проходит с применением вестинга. Все остальные аккаунты совершают сделки без вестинга; GIFT_ACCOUNT_FROM_AMOUNT - если покупка совершается у компании на сумму, превышающую в этом поле, то компания совершает выкуп прав владельца аккаунта у регистратора и передаёт их пользователю (переводит аккаунт из статуса гость в статус партнёр).</para>
-<para><heading level="1">Компиляция</heading>
-</para>
-<para>Заменить ABSOLUTE_PATH_TO_CONTRACT на абсолютный путь к директории контракта <ref refid="classp2p" kindref="compound">p2p</ref>. <programlisting><codeline><highlight class="normal">docker<sp/>run<sp/>--rm<sp/>--name<sp/>eosio.cdt_v1.7.0<sp/>--volume<sp/>/ABSOLUTE_PATH_TO_CONTRACT:/project<sp/>-w<sp/>/project<sp/>eostudio/eosio.cdt:v1.7.0<sp/>/bin/bash<sp/>-c<sp/>&quot;eosio-cpp<sp/>-abigen<sp/>-I<sp/>include<sp/>-R<sp/>include<sp/>-contract<sp/>p2p<sp/>-o<sp/>p2p.wasm<sp/>p2p.cpp&quot;<sp/>&amp;</highlight></codeline>
-</programlisting></para>
 <para><heading level="1">Роли</heading>
 </para>
 <para><itemizedlist>

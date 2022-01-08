@@ -1,7 +1,13 @@
 var searchData=
 [
-  ['setbrate_0',['setbrate',['../group__public__actions.html#ga4f3c89b4ae21f54b6e16334e681a7860',1,'p2p']]],
-  ['setrate_1',['setrate',['../group__public__actions.html#ga432842119735888f862933882e6a4da6',1,'p2p']]],
-  ['startat_2',['startat',['../structp2p_1_1vesting.html#ac2a702d706aa9146588fffb6113d1c79',1,'p2p::vesting']]],
-  ['status_3',['status',['../structp2p_1_1orders.html#a0a4acd537d4a6ac966469faa648b43f2',1,'p2p::orders']]]
+  ['rate_0',['rate',['../structp2p_1_1usdrates.html#a4a0439519abb54675759686a1b5fe43a',1,'p2p::usdrates']]],
+  ['refreshsh_1',['refreshsh',['../group__public__actions.html#ga2cb80d56fbb68ac3ccc688112d86532a',1,'p2p']]],
+  ['registrator_2',['registrator',['../structp2p_1_1guests.html#a7d81b8f733dfeea21966a8a31edb301d',1,'p2p::guests']]],
+  ['root_5fcompleted_3',['root_completed',['../structp2p_1_1orders.html#aff1ea77bef5d251952e8d5e1f1dcfbc1',1,'p2p::orders']]],
+  ['root_5fcontract_4',['root_contract',['../structp2p_1_1orders.html#af0f8a3e55db6c2a7642eb25fdb4a4f50',1,'p2p::orders']]],
+  ['root_5flocked_5',['root_locked',['../structp2p_1_1orders.html#ab3e7388b2300e22f5b81678c6ccb70a7',1,'p2p::orders']]],
+  ['root_5fprecision_6',['root_precision',['../structp2p_1_1orders.html#a303fa40509f75981e8353d066898b837',1,'p2p::orders']]],
+  ['root_5fquantity_7',['root_quantity',['../structp2p_1_1orders.html#ab805e2be0b457dbba918a014d792d84a',1,'p2p::orders']]],
+  ['root_5fremain_8',['root_remain',['../structp2p_1_1orders.html#aea7698baa46bbde12ec30bbb47be8abd',1,'p2p::orders']]],
+  ['root_5fsymbol_9',['root_symbol',['../structp2p_1_1orders.html#aa2030987fac872badf6682757cd75a6c',1,'p2p::orders']]]
 ];

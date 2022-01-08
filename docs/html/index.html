@@ -98,7 +98,11 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <li>quote_asset - опорный токен, который используется для расчёта количества валюты выхода.</li>
 <li>out_asset - токен выхода, который получает продавец и отправляет покупатель на реквизиты продавца.</li>
 </ul>
-<h1>Применение</h1>
+<h1>Компиляция</h1>
+<p >Заменить ABSOLUTE_PATH_TO_CONTRACT на абсолютный путь к директории контракта <a class="el" href="classp2p.html" title="Начните ознакомление здесь.">p2p</a>. </p><div class="fragment"><div class="line">docker run --rm --name eosio.cdt_v1.7.0 --volume /ABSOLUTE_PATH_TO_CONTRACT:/project -w /project eostudio/eosio.cdt:v1.7.0 /bin/bash -c &quot;eosio-cpp -abigen -I include -R include -contract p2p -o p2p.wasm p2p.cpp&quot; &amp;</div>
+</div><!-- fragment --><h1>Установка</h1>
+<div class="fragment"><div class="line">cleos set contract p2p ABSOLUTE_PATH_TO_CONTRACT -p p2p</div>
+</div><!-- fragment --><h1>Применение</h1>
 <p >Контракт может использоваться:</p><ul>
 <li>как <a class="el" href="classp2p.html" title="Начните ознакомление здесь.">p2p</a> биржа обмена любым стандартным заменяемым цифровым активом;</li>
 <li>как точка реализации токена компанией (IDO), которая не исключает возможность перепродаж токенов пользователями;</li>
@@ -109,9 +113,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <p >me - собственное имя контракта; curator - дефолтный оракул, используемый во всех сделках; rater - имя аккаунта поставщика курсов обмена; core - имя аккаунта, распределяющего партнерское вознаграждение;</p>
 <h1>Основные управляющие параметры</h1>
 <p >ENABLE_GROWHT = TRUE - допускает изменение курса системного токена в процентном соотношении от стартового курса (линейный рост) START_RATE - стартовый курс системного токена, используемый при расчёте линейного роста; PERCENTS_PER_MONTH - устанавливает скорость роста системного токена; ENABLE_VESTING - включает режим продаж через вестинг равными долями от момента создания объекта; VESTING_SECONDS - продолжительность вестинга; CORE_SALE_ACCOUNT - аккаунт компании, осуществляющий IDO, продажа от которого проходит с применением вестинга. Все остальные аккаунты совершают сделки без вестинга; GIFT_ACCOUNT_FROM_AMOUNT - если покупка совершается у компании на сумму, превышающую в этом поле, то компания совершает выкуп прав владельца аккаунта у регистратора и передаёт их пользователю (переводит аккаунт из статуса гость в статус партнёр).</p>
-<h1>Компиляция</h1>
-<p >Заменить ABSOLUTE_PATH_TO_CONTRACT на абсолютный путь к директории контракта <a class="el" href="classp2p.html" title="Начните ознакомление здесь.">p2p</a>. </p><div class="fragment"><div class="line">docker run --rm --name eosio.cdt_v1.7.0 --volume /ABSOLUTE_PATH_TO_CONTRACT:/project -w /project eostudio/eosio.cdt:v1.7.0 /bin/bash -c &quot;eosio-cpp -abigen -I include -R include -contract p2p -o p2p.wasm p2p.cpp&quot; &amp;</div>
-</div><!-- fragment --><h1>Роли</h1>
+<h1>Роли</h1>
 <ul>
 <li>Продавец - создаёт ордер типа sell</li>
 <li>Покупатель - создаёт ордер типа buy</li>

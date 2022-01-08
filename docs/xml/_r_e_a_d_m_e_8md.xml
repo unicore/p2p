@@ -21,6 +21,18 @@
 <codeline><highlight class="normal">-<sp/>out_asset<sp/>-<sp/>токен<sp/>выхода,<sp/>который<sp/>получает<sp/>продавец<sp/>и<sp/>отправляет<sp/>покупатель<sp/>на<sp/>реквизиты<sp/>продавца.<sp/></highlight></codeline>
 <codeline></codeline>
 <codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Компиляция</highlight></codeline>
+<codeline><highlight class="normal">Заменить<sp/>ABSOLUTE_PATH_TO_CONTRACT<sp/>на<sp/>абсолютный<sp/>путь<sp/>к<sp/>директории<sp/>контракта<sp/>p2p.<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">docker<sp/>run<sp/>--rm<sp/>--name<sp/>eosio.cdt_v1.7.0<sp/>--volume<sp/>/ABSOLUTE_PATH_TO_CONTRACT:/project<sp/>-w<sp/>/project<sp/>eostudio/eosio.cdt:v1.7.0<sp/>/bin/bash<sp/>-c<sp/>&quot;eosio-cpp<sp/>-abigen<sp/>-I<sp/>include<sp/>-R<sp/>include<sp/>-contract<sp/>p2p<sp/>-o<sp/>p2p.wasm<sp/>p2p.cpp&quot;<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Установка</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">cleos<sp/>set<sp/>contract<sp/>p2p<sp/>ABSOLUTE_PATH_TO_CONTRACT<sp/>-p<sp/>p2p</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal">#<sp/>Применение</highlight></codeline>
 <codeline><highlight class="normal">Контракт<sp/>может<sp/>использоваться:</highlight></codeline>
 <codeline><highlight class="normal">-<sp/>как<sp/>p2p<sp/>биржа<sp/>обмена<sp/>любым<sp/>стандартным<sp/>заменяемым<sp/>цифровым<sp/>активом;</highlight></codeline>
@@ -47,12 +59,6 @@
 <codeline><highlight class="normal">CORE_SALE_ACCOUNT<sp/>-<sp/>аккаунт<sp/>компании,<sp/>осуществляющий<sp/>IDO,<sp/>продажа<sp/>от<sp/>которого<sp/>проходит<sp/>с<sp/>применением<sp/>вестинга.<sp/>Все<sp/>остальные<sp/>аккаунты<sp/>совершают<sp/>сделки<sp/>без<sp/>вестинга;</highlight></codeline>
 <codeline><highlight class="normal">GIFT_ACCOUNT_FROM_AMOUNT<sp/>-<sp/>если<sp/>покупка<sp/>совершается<sp/>у<sp/>компании<sp/>на<sp/>сумму,<sp/>превышающую<sp/>в<sp/>этом<sp/>поле,<sp/>то<sp/>компания<sp/>совершает<sp/>выкуп<sp/>прав<sp/>владельца<sp/>аккаунта<sp/>у<sp/>регистратора<sp/>и<sp/>передаёт<sp/>их<sp/>пользователю<sp/>(переводит<sp/>аккаунт<sp/>из<sp/>статуса<sp/>гость<sp/>в<sp/>статус<sp/>партнёр).</highlight></codeline>
 <codeline><highlight class="normal"><sp/></highlight></codeline>
-<codeline><highlight class="normal">#<sp/>Компиляция</highlight></codeline>
-<codeline><highlight class="normal">Заменить<sp/>ABSOLUTE_PATH_TO_CONTRACT<sp/>на<sp/>абсолютный<sp/>путь<sp/>к<sp/>директории<sp/>контракта<sp/>p2p.<sp/></highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline><highlight class="normal">docker<sp/>run<sp/>--rm<sp/>--name<sp/>eosio.cdt_v1.7.0<sp/>--volume<sp/>/ABSOLUTE_PATH_TO_CONTRACT:/project<sp/>-w<sp/>/project<sp/>eostudio/eosio.cdt:v1.7.0<sp/>/bin/bash<sp/>-c<sp/>&quot;eosio-cpp<sp/>-abigen<sp/>-I<sp/>include<sp/>-R<sp/>include<sp/>-contract<sp/>p2p<sp/>-o<sp/>p2p.wasm<sp/>p2p.cpp&quot;<sp/>&amp;</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal">#<sp/>Роли</highlight></codeline>
 <codeline><highlight class="normal">-<sp/>Продавец<sp/>-<sp/>создаёт<sp/>ордер<sp/>типа<sp/>sell</highlight></codeline>
 <codeline><highlight class="normal">-<sp/>Покупатель<sp/>-<sp/>создаёт<sp/>ордер<sp/>типа<sp/>buy</highlight></codeline>

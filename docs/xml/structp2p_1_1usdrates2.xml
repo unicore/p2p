@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="288" column="18" bodyfile="p2p.hpp" bodystart="288" bodyend="-1"/>
+        <location file="p2p.hpp" line="287" column="18" bodyfile="p2p.hpp" bodystart="287" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structp2p_1_1usdrates2_1a2f8aa31571d84a178259fa42461cf140" prot="public" static="no" mutable="no">
         <type>eosio::time_point_sec</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="289" column="31" bodyfile="p2p.hpp" bodystart="289" bodyend="-1"/>
+        <location file="p2p.hpp" line="288" column="31" bodyfile="p2p.hpp" bodystart="288" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -45,11 +45,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>id - primary_key </para>
+<para>return id - primary_key </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="291" column="18" bodyfile="p2p.hpp" bodystart="291" bodyend="-1"/>
+        <location file="p2p.hpp" line="290" column="18" bodyfile="p2p.hpp" bodystart="290" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -64,7 +64,7 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="p2p.hpp" line="287" column="5" bodyfile="p2p.hpp" bodystart="287" bodyend="292"/>
+    <location file="p2p.hpp" line="286" column="5" bodyfile="p2p.hpp" bodystart="286" bodyend="291"/>
     <listofallmembers>
       <member refid="structp2p_1_1usdrates2_1a2f8aa31571d84a178259fa42461cf140" prot="public" virt="non-virtual"><scope>p2p::usdrates2</scope><name>created_at</name></member>
       <member refid="structp2p_1_1usdrates2_1aba230f3a86e3c9eb693c41d501378c22" prot="public" virt="non-virtual"><scope>p2p::usdrates2</scope><name>id</name></member>

@@ -78,9 +78,8 @@ public:
     void withdrawsh(eosio::name owner, uint64_t id);
         
     
-/**
-* @ingroup public_consts 
     /**
+    * @ingroup public_consts 
     * @{ 
     */
     
@@ -124,12 +123,12 @@ public:
      */
 
     struct [[eosio::table]] balance {
-        uint64_t id;
-        eosio::name contract;
-        eosio::asset quantity;
+        uint64_t id;                    /*!< идентификатор баланса */
+        eosio::name contract;           /*!< имя контракта токена */
+        eosio::asset quantity;          /*!< количество токенов на балансе */
 
-        uint64_t primary_key() const {return id;}
-        uint128_t byconsym() const {return combine_ids(contract.value, quantity.symbol.code().raw());}
+        uint64_t primary_key() const {return id;} /*!< return id - primary_key */
+        uint128_t byconsym() const {return combine_ids(contract.value, quantity.symbol.code().raw());} /*!< return combine_ids(contract, quantity) - комбинированный secondary_index 2 */
 
         EOSLIB_SERIALIZE(balance, (id)(contract)(quantity))
     };
@@ -157,7 +156,7 @@ public:
         name key;           /*!< идентификатор ключа */
         uint64_t value;     /*!< идентификатор значения */
 
-        uint64_t primary_key()const { return key.value; } /*!< key - primary_key */
+        uint64_t primary_key()const { return key.value; } /*!< return key - primary_key */
         
     };
 
@@ -219,7 +218,7 @@ public:
         eosio::time_point_sec expired_at;           /*!< дата истечения срока давности ордера */ 
         eosio::time_point_sec created_at;           /*!< дата создания ордера */ 
 
-        uint64_t primary_key()const { return id; }                              /*!< id - primary_key */
+        uint64_t primary_key()const { return id; }                              /*!< return id - primary_key */
         uint64_t bycurrcode() const {return out_currency_code;}                 /*!< out_currency_code - secondary_key 2 */
 
         uint64_t byparentid()const { return parent_id;}                         /*!< parent_id - secondary_key 3 */
@@ -263,7 +262,7 @@ public:
         double rate;                        /*!< курс токена выхода к доллару */
         eosio::time_point_sec updated_at;   /*!< дата последнего обновления курса */
         
-        uint64_t primary_key() const {return id;} /*!< id - primary_key */
+        uint64_t primary_key() const {return id;} /*!< return id - primary_key */
         uint128_t byconsym() const {return combine_ids(out_contract.value, out_asset.symbol.code().raw());} /*!< (out_contract, out_asset.symbol) - комбинированный secondary_key для получения курса по имени выходного контракта и символу */
 
     };
@@ -288,7 +287,7 @@ public:
         uint64_t id; /*!< идентификатор курса */
         eosio::time_point_sec created_at; /*!< дата установки первого курса */
         
-        uint64_t primary_key() const {return id;} /*!< id - primary_key */
+        uint64_t primary_key() const {return id;} /*!< return id - primary_key */
     };
 
 
@@ -312,7 +311,7 @@ public:
         eosio::asset distributed;   /*!< сколько токенов уже распределено */
         double distribution_rate;   /*!< курс распределения бонусов, согласно которому, в сеть распределяется столько же монет, сколько получил пользователь, умноженное на этот курс */
 
-        uint64_t primary_key() const {return host.value;} /*!< host - primary_key */
+        uint64_t primary_key() const {return host.value;} /*!< return host - primary_key */
     };
 
 
@@ -339,7 +338,7 @@ public:
         eosio::asset available;                 /*!< доступное количество токенов из вестинга */
         eosio::asset withdrawed;                /*!< выведенное количество токенов из вестинга */
 
-        uint64_t primary_key() const {return id;} /*!< id - primary_key */
+        uint64_t primary_key() const {return id;} /*!< return id - primary_key */
 
         EOSLIB_SERIALIZE(vesting, (id)(owner)(contract)(startat)(duration)(amount)(available)(withdrawed))
       };
@@ -359,23 +358,24 @@ public:
      */
     
     struct [[eosio::table]] guests {
-        eosio::name username;
+        eosio::name username;             /*!< имя аккаунта гостя */
         
-        eosio::name registrator;
-        eosio::public_key public_key;
-        eosio::asset cpu;
-        eosio::asset net;
-        bool set_referer = false;
-        eosio::time_point_sec expiration;
+        eosio::name registrator;          /*!< имя аккаунта регистратора гостя */
+        eosio::public_key public_key;     /*!< публичный ключ гостя, который использовался в качестве активного ключа и на который будут переданы права владельца после оплаты */
+        eosio::asset cpu;                 /*!< количество системного токена, закладываемого в CPU */
+        eosio::asset net;                 /*!< количество системного токена, закладываемого в NET */
+        bool set_referer = false;         /*!< флаг автоматической регистрации партёром (не используется) */
+        eosio::time_point_sec expiration; /*!< дата истечения пользования аккаунтом */
 
-        eosio::asset to_pay;
+        eosio::asset to_pay;              /*!< количество токенов к оплате */
         
-        uint64_t primary_key() const {return username.value;}
-        uint64_t byexpr() const {return expiration.sec_since_epoch();}
-        uint64_t byreg() const {return registrator.value;}
+        uint64_t primary_key() const {return username.value;}     /*!< return username - primary_key */
+        uint64_t byexpr() const {return expiration.sec_since_epoch();} /*!< return expiration - secondary_key 2 */
+        uint64_t byreg() const {return registrator.value;}            /*!< return registrator - secondary_key 3 */
 
         EOSLIB_SERIALIZE(guests, (username)(registrator)(public_key)(cpu)(net)(set_referer)(expiration)(to_pay))
     };
+
 
     typedef eosio::multi_index<"guests"_n, guests,
        eosio::indexed_by< "byexpr"_n, eosio::const_mem_fun<guests, uint64_t, &guests::byexpr>>,

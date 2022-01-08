@@ -23,11 +23,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>/** собственное имя аккаунта контракта </para>
+<para>собственное имя аккаунта контракта </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="87" column="34" bodyfile="p2p.hpp" bodystart="87" bodyend="-1"/>
+        <location file="p2p.hpp" line="86" column="34" bodyfile="p2p.hpp" bodystart="86" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1gaa5528a78186585c3a033d89b6c027a5b" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr eosio::name</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="88" column="34" bodyfile="p2p.hpp" bodystart="88" bodyend="-1"/>
+        <location file="p2p.hpp" line="87" column="34" bodyfile="p2p.hpp" bodystart="87" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1gabaf26be47ba132e33bdadf4a6f65a052" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr eosio::name</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="89" column="34" bodyfile="p2p.hpp" bodystart="89" bodyend="-1"/>
+        <location file="p2p.hpp" line="88" column="34" bodyfile="p2p.hpp" bodystart="88" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1gafe8d32633b8a87ce35209184d222f6de" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr eosio::symbol</type>
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="90" column="36" bodyfile="p2p.hpp" bodystart="90" bodyend="-1"/>
+        <location file="p2p.hpp" line="89" column="36" bodyfile="p2p.hpp" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1ga582434add36ca36a326bdab9e7c8cb4e" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr eosio::name</type>
@@ -91,7 +91,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="91" column="34" bodyfile="p2p.hpp" bodystart="91" bodyend="-1"/>
+        <location file="p2p.hpp" line="90" column="34" bodyfile="p2p.hpp" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1ga6a7a6607c93e930cfa3984a8c318942b" prot="public" static="yes" mutable="no">
         <type>const uint64_t</type>
@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="93" column="27" bodyfile="p2p.hpp" bodystart="93" bodyend="-1"/>
+        <location file="p2p.hpp" line="92" column="27" bodyfile="p2p.hpp" bodystart="92" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1ga738ddf63d1276c74f28b7d2f51ba1475" prot="public" static="yes" mutable="no">
         <type>const bool</type>
@@ -123,7 +123,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="95" column="23" bodyfile="p2p.hpp" bodystart="95" bodyend="-1"/>
+        <location file="p2p.hpp" line="94" column="23" bodyfile="p2p.hpp" bodystart="94" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1ga817118e4e422393acc35439edb0187af" prot="public" static="yes" mutable="no">
         <type>const bool</type>
@@ -139,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="97" column="23" bodyfile="p2p.hpp" bodystart="97" bodyend="-1"/>
+        <location file="p2p.hpp" line="96" column="23" bodyfile="p2p.hpp" bodystart="96" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1gaf52bcfc4c42cb8a001ab4935d06539c0" prot="public" static="yes" mutable="no">
         <type>const uint64_t</type>
@@ -155,7 +155,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="98" column="27" bodyfile="p2p.hpp" bodystart="98" bodyend="-1"/>
+        <location file="p2p.hpp" line="97" column="27" bodyfile="p2p.hpp" bodystart="97" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr eosio::name</type>
@@ -171,7 +171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="99" column="34" bodyfile="p2p.hpp" bodystart="99" bodyend="-1"/>
+        <location file="p2p.hpp" line="98" column="34" bodyfile="p2p.hpp" bodystart="98" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1gad3c9fd465ea37d16657bd9910c631d22" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr eosio::name</type>
@@ -187,7 +187,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="100" column="34" bodyfile="p2p.hpp" bodystart="100" bodyend="-1"/>
+        <location file="p2p.hpp" line="99" column="34" bodyfile="p2p.hpp" bodystart="99" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1gada18e95b855fa10dc57a33620b4dd51d" prot="public" static="yes" mutable="no">
         <type>const uint64_t</type>
@@ -203,7 +203,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="102" column="27" bodyfile="p2p.hpp" bodystart="102" bodyend="-1"/>
+        <location file="p2p.hpp" line="101" column="27" bodyfile="p2p.hpp" bodystart="101" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1ga714001f0f556d0db16b3746fa2261ddb" prot="public" static="yes" mutable="no">
         <type>const uint64_t</type>
@@ -219,7 +219,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="105" column="27" bodyfile="p2p.hpp" bodystart="105" bodyend="-1"/>
+        <location file="p2p.hpp" line="104" column="27" bodyfile="p2p.hpp" bodystart="104" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1ga41fd0523f7a4103ea012c69c376d0823" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr double</type>
@@ -235,7 +235,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="106" column="29" bodyfile="p2p.hpp" bodystart="106" bodyend="-1"/>
+        <location file="p2p.hpp" line="105" column="29" bodyfile="p2p.hpp" bodystart="105" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-type">
@@ -251,7 +251,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="143" column="2" bodyfile="p2p.hpp" bodystart="143" bodyend="-1"/>
+        <location file="p2p.hpp" line="142" column="2" bodyfile="p2p.hpp" bodystart="142" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classp2p_1a6bef060ed784c193c2a60b397c869c29" prot="public" static="no">
         <type>eosio::multi_index&lt;&quot;counts&quot;_n, <ref refid="structp2p_1_1counts" kindref="compound">counts</ref> &gt;</type>
@@ -265,7 +265,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="164" column="32" bodyfile="p2p.hpp" bodystart="164" bodyend="-1"/>
+        <location file="p2p.hpp" line="163" column="32" bodyfile="p2p.hpp" bodystart="163" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classp2p_1af7e337013ebdcc44b420a6d55d0d385f" prot="public" static="no">
         <type>eosio::multi_index&lt; &quot;orders&quot;_n, <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, eosio::indexed_by&lt;&quot;bycurrcode&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, uint64_t, &amp;<ref refid="structp2p_1_1orders_1ab6f05a725122c94d3f2dcfaf24322c47" kindref="member">orders::bycurrcode</ref> &gt; &gt;, eosio::indexed_by&lt;&quot;byparentid&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, uint64_t, &amp;<ref refid="structp2p_1_1orders_1a2b790da517561e8a593b6c56d63c4cfd" kindref="member">orders::byparentid</ref> &gt; &gt;, eosio::indexed_by&lt;&quot;bytype&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, uint64_t, &amp;<ref refid="structp2p_1_1orders_1a17505cc3759a5ba5099f490c982535e1" kindref="member">orders::bytype</ref> &gt; &gt;, eosio::indexed_by&lt;&quot;bycreator&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, uint64_t, &amp;<ref refid="structp2p_1_1orders_1a91b49c417f79ef405982bfe348651a98" kindref="member">orders::bycreator</ref> &gt; &gt;, eosio::indexed_by&lt;&quot;bycurator&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, uint64_t, &amp;<ref refid="structp2p_1_1orders_1a76fa8b54f391ccd2e29b640d4c0199df" kindref="member">orders::bycurator</ref> &gt; &gt;, eosio::indexed_by&lt;&quot;bystatus&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, uint64_t, &amp;<ref refid="structp2p_1_1orders_1a31e70a285fb324d4ee07b1b149debff3" kindref="member">orders::bystatus</ref> &gt; &gt;, eosio::indexed_by&lt;&quot;byexpr&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, uint64_t, &amp;<ref refid="structp2p_1_1orders_1a8cf94dfb0902511c6baae1dd0434dcbf" kindref="member">orders::byexpr</ref> &gt; &gt;, eosio::indexed_by&lt;&quot;bycreated&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1orders" kindref="compound">orders</ref>, uint64_t, &amp;<ref refid="structp2p_1_1orders_1a6eab9cb4d0f7b605aef8856aad730fe5" kindref="member">orders::bycreated</ref> &gt; &gt; &gt;</type>
@@ -279,7 +279,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="246" column="2" bodyfile="p2p.hpp" bodystart="246" bodyend="-1"/>
+        <location file="p2p.hpp" line="245" column="2" bodyfile="p2p.hpp" bodystart="245" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classp2p_1ac0dc7fa780d52c554aea91ab34bb3cfb" prot="public" static="no">
         <type>eosio::multi_index&lt;&quot;usdrates&quot;_n, <ref refid="structp2p_1_1usdrates" kindref="compound">usdrates</ref>, eosio::indexed_by&lt; &quot;byconsym&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1usdrates" kindref="compound">usdrates</ref>, uint128_t, &amp;<ref refid="structp2p_1_1usdrates_1a6d13bdd9e62d26ca68146e642e330099" kindref="member">usdrates::byconsym</ref> &gt; &gt; &gt;</type>
@@ -293,7 +293,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="275" column="2" bodyfile="p2p.hpp" bodystart="275" bodyend="-1"/>
+        <location file="p2p.hpp" line="274" column="2" bodyfile="p2p.hpp" bodystart="274" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classp2p_1abbacbe5996794991fcbfb554dae6dc41" prot="public" static="no">
         <type>eosio::multi_index&lt;&quot;usdrates2&quot;_n, <ref refid="structp2p_1_1usdrates2" kindref="compound">usdrates2</ref> &gt;</type>
@@ -307,7 +307,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="295" column="32" bodyfile="p2p.hpp" bodystart="295" bodyend="-1"/>
+        <location file="p2p.hpp" line="294" column="32" bodyfile="p2p.hpp" bodystart="294" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classp2p_1ad2b234c3e4a379adfeebb42efe3fdb25" prot="public" static="no">
         <type>eosio::multi_index&lt;&quot;bbonuses&quot;_n, <ref refid="structp2p_1_1bbonuses" kindref="compound">bbonuses</ref> &gt;</type>
@@ -321,7 +321,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="319" column="32" bodyfile="p2p.hpp" bodystart="319" bodyend="-1"/>
+        <location file="p2p.hpp" line="318" column="32" bodyfile="p2p.hpp" bodystart="318" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classp2p_1a9e10c97b92e817371f627c84094dce39" prot="public" static="no">
         <type>eosio::multi_index&lt;&quot;vesting&quot;_n, <ref refid="structp2p_1_1vesting" kindref="compound">vesting</ref> &gt;</type>
@@ -335,10 +335,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="347" column="34" bodyfile="p2p.hpp" bodystart="347" bodyend="-1"/>
+        <location file="p2p.hpp" line="346" column="34" bodyfile="p2p.hpp" bodystart="346" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classp2p_1a08507c2c104ad7e99765afd19d4fdd10" prot="public" static="no">
-        <type>eosio::multi_index&lt;&quot;guests&quot;_n, <ref refid="structp2p_1_1guests" kindref="compound">guests</ref>, eosio::indexed_by&lt; &quot;byexpr&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1guests" kindref="compound">guests</ref>, uint64_t, &amp;guests::byexpr &gt; &gt;, eosio::indexed_by&lt; &quot;byreg&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1guests" kindref="compound">guests</ref>, uint64_t, &amp;guests::byreg &gt; &gt; &gt;</type>
+        <type>eosio::multi_index&lt;&quot;guests&quot;_n, <ref refid="structp2p_1_1guests" kindref="compound">guests</ref>, eosio::indexed_by&lt; &quot;byexpr&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1guests" kindref="compound">guests</ref>, uint64_t, &amp;<ref refid="structp2p_1_1guests_1ab0bd423df57e4e4cb8c037f3b8d19975" kindref="member">guests::byexpr</ref> &gt; &gt;, eosio::indexed_by&lt; &quot;byreg&quot;_n, eosio::const_mem_fun&lt; <ref refid="structp2p_1_1guests" kindref="compound">guests</ref>, uint64_t, &amp;<ref refid="structp2p_1_1guests_1ae7c6e94ea3fb3000bca7512ff94b9d4d" kindref="member">guests::byreg</ref> &gt; &gt; &gt;</type>
         <definition>typedef eosio::multi_index&lt;&quot;guests&quot;_n, guests, eosio::indexed_by&lt; &quot;byexpr&quot;_n, eosio::const_mem_fun&lt;guests, uint64_t, &amp;guests::byexpr&gt; &gt;, eosio::indexed_by&lt; &quot;byreg&quot;_n, eosio::const_mem_fun&lt;guests, uint64_t, &amp;guests::byreg&gt; &gt; &gt; p2p::guests_index</definition>
         <argsstring></argsstring>
         <name>guests_index</name>
@@ -1383,7 +1383,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="112" column="22" bodyfile="p2p.hpp" bodystart="112" bodyend="114"/>
+        <location file="p2p.hpp" line="111" column="22" bodyfile="p2p.hpp" bodystart="111" bodyend="113"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

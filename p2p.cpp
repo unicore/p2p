@@ -431,7 +431,13 @@ void p2p::createorder(name username, uint64_t parent_id, name type, eosio::name 
  */
 void p2p::accept(name username, uint64_t id, std::string details) // подтверждение факта присутствия
 {
-    require_auth( username );
+    
+    if (!has_auth(username) ) {
+      require_auth( _CORE_SALE_ACCOUNT );
+    } else {
+      require_auth( username );
+    } 
+
 
     orders_index orders(_me, _me.value);
     auto order = orders.find(id);
@@ -497,7 +503,7 @@ void p2p::accept(name username, uint64_t id, std::string details) // подтв�
     });
 
     //parent
-    orders.modify(parent_order, username, [&](auto &p){
+    orders.modify(parent_order, _me, [&](auto &p){
     
       check(parent_order -> root_remain >= root_quantity, "Not enought remain quantity for accept the order");
       
@@ -527,7 +533,12 @@ void p2p::accept(name username, uint64_t id, std::string details) // подтв�
  */
 void p2p::confirm(name username, uint64_t id)
 {
-    require_auth( username );
+    if (!has_auth(username) ) {
+      require_auth( _CORE_SALE_ACCOUNT );
+    } else {
+      require_auth( username );
+    } 
+
 
     orders_index orders(_me, _me.value);
     auto order = orders.find(id);
@@ -565,7 +576,11 @@ void p2p::confirm(name username, uint64_t id)
  */
 void p2p::approve(name username, uint64_t id) 
 {
-    require_auth( username );
+    if (!has_auth(username) ) {
+      require_auth( _CORE_SALE_ACCOUNT );
+    } else {
+      require_auth( username );
+    } 
 
     orders_index orders(_me, _me.value);
     

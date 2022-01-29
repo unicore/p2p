@@ -597,8 +597,6 @@ void p2p::approve(name username, uint64_t id)
     params_index params(_me, _me.value);
     auto pm = params.find(0);
     
-    eosio::check(pm != params.end(), "Contract is not enabled");
-
     auto order = orders.find(id);
     
     eosio::check(order != orders.end(), "Order is not found");

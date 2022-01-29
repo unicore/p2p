@@ -1037,10 +1037,20 @@ void p2p::setrate(eosio::name out_contract, eosio::asset out_asset, double rate)
   [[eosio::action]] void p2p::refreshsh (eosio::name owner, uint64_t id){
     require_auth(owner);
     vesting_index vests(_me, owner.value);
+    params_index params(_me, _me.value);
+    
+    auto pm = params.find(0);
+    eosio::check(pm != params.end(), "Contract is not activated");
+
     auto v = vests.find(id);
     eosio::check(v != vests.end(), "Vesting object does not exist");
     
-    if (eosio::time_point_sec(eosio::current_time_point().sec_since_epoch() ) > v->startat){
+    uint64_t now_secs = eosio::current_time_point().sec_since_epoch() ;
+    uint64_t full_freeze_until_secs = pm->vesting_pause_until.sec_since_epoch() ;
+    print("now_secs > v->startat.sec_since_epoch() ", now_secs > v->startat.sec_since_epoch());
+    print("now_secs > full_freeze_until_secs ", now_secs > full_freeze_until_secs);
+    
+    if (now_secs > v->startat.sec_since_epoch() && now_secs > full_freeze_until_secs){
       
       auto elapsed_seconds = (eosio::time_point_sec(eosio::current_time_point().sec_since_epoch()) - v->startat).to_seconds();
       eosio::asset available;

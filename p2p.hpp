@@ -31,7 +31,7 @@ public:
 
     static void check_bonuse_system(eosio::name creator, eosio::name reciever, eosio::asset quantity);
 
-    static void check_guest_and_gift_account(eosio::name username, eosio::name contract, eosio::asset amount);
+    static void check_guest_and_gift_account(eosio::name username, eosio::name contract, eosio::asset amount, uint64_t gift_account_from_amount);
 
     static uint64_t get_order_id();
 
@@ -76,8 +76,10 @@ public:
     
     [[eosio::action]] 
     void withdrawsh(eosio::name owner, uint64_t id);
-        
     
+    [[eosio::action]] 
+    void setparams(bool enable_growth, eosio::name growth_type, double start_rate, uint64_t percents_per_month, bool enable_vesting, uint64_t vesting_seconds, eosio::time_point_sec vesting_pause_until, uint64_t gift_account_from_amount, eosio::name ref_pay_type);
+
     /**
     * @ingroup public_consts 
     * @{ 
@@ -88,15 +90,16 @@ public:
     static constexpr eosio::name _rater = "rater"_n;                                        /*!< имя аккаунта поставщика курсов */
     static constexpr eosio::symbol _SYM     = eosio::symbol(eosio::symbol_code("FLOWER"), 4);  /*!< системный токен */
     static constexpr eosio::name _core = "unicore"_n;                                       /*!< имя аккаунта распределения реферальных бонусов в сеть */
+    static constexpr eosio::name _CORE_SALE_ACCOUNT = "core"_n;                             /*!< аккаунт системного продавца токенов, в сделке к которым срабатывает вестинг */
+    static constexpr eosio::name _REGISTRATOR_ACCOUNT = "registrator"_n;                    /*!< аккаунт контракта регистратора, хранящего таблицу с гостями для подарочного выкупа */
     
+
     static const uint64_t _PERCENTS_PER_MONTH = 42;                                         /*!< если рост курса системного токена подключен, то растёт с указанной здесь скоростью */
 
     static const bool _ENABLE_GROWHT = false;                                                /*!< флаг подключения автоматического роста курса, допускающего вызов метода uprate от системного контракта eosio */
 
     static const bool _ENABLE_VESTING = false;                                               /*!< флаг подключения режима вестинга для совершенных покупок у аккаунта _CORE_SALE_ACCOUNT */
     static const uint64_t _VESTING_SECONDS = 15770000;                                      /*!< продолжительность вестинга в секундах */
-    static constexpr eosio::name _CORE_SALE_ACCOUNT = "core"_n;                             /*!< аккаунт системного продавца токенов, в сделке к которым срабатывает вестинг */
-    static constexpr eosio::name _REGISTRATOR_ACCOUNT = "registrator"_n;                    /*!< аккаунт контракта регистратора, хранящего таблицу с гостями для подарочного выкупа */
     
     static const uint64_t _GIFT_ACCOUNT_FROM_AMOUNT = 100000;                               /*!< подарок в виде аккаунта партнера осуществляется, если гость совершает покупку на сумму более, чем указано здесь (с учётом точности) */
 
@@ -111,6 +114,38 @@ public:
     static uint128_t combine_ids(const uint64_t &x, const uint64_t &y) {
         return (uint128_t{x} << 64) | y;
     };
+
+
+    /**
+     * @brief      Таблица параметров контракта.
+     * @ingroup public_tables
+     * @table params
+     * @contract _me
+     * @scope _me
+     * @details Таблица хранит параметры управления курсом и заморозками балансов при покупке
+     */
+
+    struct [[eosio::table]] params {
+        uint64_t id;                    /*!< идентификатор баланса */
+        bool enable_growth = false;     /*!< флаг роста */
+        eosio::name growth_type;        /*!< тип роста */
+        double start_rate = 0.2;        /*!< стартовый курс */
+        uint64_t percents_per_month;    /*!< темп роста */
+        bool enable_vesting = false;    /*!< флаг заморозки */
+        uint64_t vesting_seconds = 0;   /*!< продолжительность заморозки */
+        eosio::time_point_sec vesting_pause_until;           /*!< разморозка всех вестингов приостанавливается до даты */ 
+        
+        uint64_t gift_account_from_amount = 0; /*!< аккаунт в дар от покупки на сумму*/
+        eosio::name ref_pay_type;               /*!< тип начисления реферальной выплаты (fixed/flexible) */
+        
+        uint64_t primary_key() const {return id;} /*!< return id - primary_key */
+        
+        EOSLIB_SERIALIZE(params, (id)(enable_growth)(growth_type)(start_rate)(percents_per_month)(enable_vesting)(vesting_seconds)(vesting_pause_until)(gift_account_from_amount)(ref_pay_type))
+    };
+
+
+    typedef eosio::multi_index<"params"_n, params> params_index;
+
 
 
     /**

@@ -17,10 +17,10 @@ using namespace eosio;
 */
 
 
-void p2p::check_guest_and_gift_account(eosio::name username, eosio::name contract, eosio::asset amount){
+void p2p::check_guest_and_gift_account(eosio::name username, eosio::name contract, eosio::asset amount, uint64_t gift_account_from_amount){
     
 
-    if (amount.amount >= _GIFT_ACCOUNT_FROM_AMOUNT) {
+    if (amount.amount >= gift_account_from_amount) {
 
       guests_index guests(_REGISTRATOR_ACCOUNT, _REGISTRATOR_ACCOUNT.value);
 
@@ -67,6 +67,11 @@ void p2p::make_vesting_action(eosio::name owner, eosio::name contract, eosio::as
     
     vesting_index vests (_me, owner.value);
     
+    params_index params(_me, _me.value);
+    auto pm = params.find(0);
+    eosio::check(pm != params.end(), "Contract is not enabled");
+
+
     vests.emplace(_me, [&](auto &v) {
       v.id = vests.available_primary_key();
       v.owner = owner;
@@ -75,7 +80,7 @@ void p2p::make_vesting_action(eosio::name owner, eosio::name contract, eosio::as
       v.available = asset(0, amount.symbol);
       v.withdrawed = asset(0, amount.symbol);
       v.startat = eosio::time_point_sec(eosio::current_time_point().sec_since_epoch());
-      v.duration = _VESTING_SECONDS;
+      v.duration = pm->vesting_seconds;
     });
 
   }
@@ -149,7 +154,7 @@ void p2p::subbbal(eosio::name host, eosio::name contract, eosio::asset quantity)
       eosio::check(false, "Cannot spread bonuse balance without balance");
 
     } else {
-      eosio::check(bonuse_bal -> contract == contract, "Wrong contract for add to bonuse balance");
+      eosio::check(bonuse_bal -> contract == contract, "Wrong contract for bonuse balance");
 
       bonuses.modify(bonuse_bal, _me, [&](auto &b) {
         b.available -= quantity;
@@ -307,6 +312,11 @@ void p2p::createorder(name username, uint64_t parent_id, name type, eosio::name 
 
     orders_index orders(_me, _me.value);
     
+    params_index params(_me, _me.value);
+    auto pm = params.find(0);
+    eosio::check(pm != params.end(), "Contract is not enabled");
+
+
     check(type == "buy"_n || type == "sell"_n, "Only buy or sell types");
 
     //CHECK for currency which can be used as a quote and out
@@ -583,7 +593,12 @@ void p2p::approve(name username, uint64_t id)
     } 
 
     orders_index orders(_me, _me.value);
+  
+    params_index params(_me, _me.value);
+    auto pm = params.find(0);
     
+    eosio::check(pm != params.end(), "Contract is not enabled");
+
     auto order = orders.find(id);
     
     eosio::check(order != orders.end(), "Order is not found");
@@ -596,7 +611,7 @@ void p2p::approve(name username, uint64_t id)
 
       eosio::check(parent_order -> creator == username, "Waiting approve from creator of parent order");
 
-      if (_ENABLE_VESTING == false) {
+      if ( pm->enable_vesting == false) {
 
         action(
             permission_level{ _me, "active"_n },
@@ -610,7 +625,7 @@ void p2p::approve(name username, uint64_t id)
        
           make_vesting_action(order->creator, order->root_contract, order->root_quantity);
           //TODO check for guest and gift account to user
-          check_guest_and_gift_account(order->creator, order->root_contract, order->root_quantity);
+          check_guest_and_gift_account(order->creator, order->root_contract, order->root_quantity, pm->gift_account_from_amount);
 
         } else {
 
@@ -632,7 +647,7 @@ void p2p::approve(name username, uint64_t id)
     } else if (order -> type == "sell"_n) {
       eosio::check(order -> creator == username, "Waiting approve from creator of child order");
       
-      if (_ENABLE_VESTING == false) {
+      if (pm->enable_vesting == false) {
 
         action(
           permission_level{ _me, "active"_n },
@@ -645,7 +660,7 @@ void p2p::approve(name username, uint64_t id)
         if (parent_order->creator == _CORE_SALE_ACCOUNT) {
         
           make_vesting_action(parent_order->creator, order->root_contract, order->root_quantity);
-          check_guest_and_gift_account(parent_order->creator, order->root_contract, order->root_quantity);
+          check_guest_and_gift_account(parent_order->creator, order->root_contract, order->root_quantity, pm->gift_account_from_amount);
 
         } else {
 
@@ -904,7 +919,7 @@ void p2p::delvesting(eosio::name owner, uint64_t id){
  * @brief      Метод увеличения курса обмена системного токена
  * @ingroup public_actions
  
- * @details Периодически вызывается системным контрактом и увеличивает курс обмена системного токена согласно темпу роста в _PERCENTS_PER_MONTH.
+ * @details Периодически вызывается системным контрактом и увеличивает курс обмена системного токена согласно темпу роста в pm->percents_per_month.
  * @auth eosio
  * @param[in]  out_contract    имя контракта выхода (обычно "eosio.token")
  * @param[in]  out_asset       токен выхода с точностью и символом (обычно равен _SYM)
@@ -913,8 +928,10 @@ void p2p::delvesting(eosio::name owner, uint64_t id){
 void p2p::uprate(eosio::name out_contract, eosio::asset out_asset){
   
   require_auth( "eosio"_n );
-  
-  if (_ENABLE_GROWHT == true) {
+  params_index params(_me, _me.value);
+  auto pm = params.find(0);
+
+  if (pm != params.end() && pm -> enable_growth == true) {
 
     usdrates_index usd_rates(_me, _me.value);
 
@@ -932,14 +949,14 @@ void p2p::uprate(eosio::name out_contract, eosio::asset out_asset){
           r.id = usd_rates.available_primary_key();
           r.out_contract = out_contract;
           r.out_asset = out_asset;
-          r.rate = _START_RATE;
+          r.rate = pm -> start_rate;
           r.updated_at = eosio::time_point_sec(eosio::current_time_point().sec_since_epoch());
 
         });
       
       } else {
 
-        double rate = usd_rate -> rate  + _START_RATE * (double(eosio::current_time_point().sec_since_epoch() - usd_rate -> updated_at.sec_since_epoch() ) / (double)86400 * (double)_PERCENTS_PER_MONTH / (double)30 / (double)100);
+        double rate = usd_rate -> rate  + pm->start_rate * (double(eosio::current_time_point().sec_since_epoch() - usd_rate -> updated_at.sec_since_epoch() ) / (double)86400 * (double)pm->percents_per_month / (double)30 / (double)100);
 
         rates_by_contract_and_symbol.modify(usd_rate, "eosio"_n, [&](auto &r){
         
@@ -1044,6 +1061,50 @@ void p2p::setrate(eosio::name out_contract, eosio::asset out_asset, double rate)
     }
   }
 
+
+  [[eosio::action]] void p2p::setparams(bool enable_growth, eosio::name growth_type, double start_rate, uint64_t percents_per_month, bool enable_vesting, uint64_t vesting_seconds, eosio::time_point_sec vesting_pause_until, uint64_t gift_account_from_amount, eosio::name ref_pay_type){
+    require_auth(_me);
+
+    params_index params(_me, _me.value);
+    auto pm = params.find(0);
+    
+    if (pm == params.end()) {
+
+      
+      params.emplace(_me, [&](auto &p) {
+        p.id = 0;
+        p.enable_growth = enable_growth;
+        p.growth_type = growth_type;
+        p.start_rate = start_rate;
+        p.percents_per_month = percents_per_month;
+        p.enable_vesting = enable_vesting;
+        p.vesting_seconds = vesting_seconds;
+        p.vesting_pause_until = vesting_pause_until;
+        p.gift_account_from_amount = gift_account_from_amount;
+        p.ref_pay_type = ref_pay_type;
+      });
+
+    } else {
+
+      params.modify(pm, _me, [&](auto &p){
+        p.enable_growth = enable_growth;
+        p.growth_type = growth_type;
+        p.start_rate = start_rate;
+        p.percents_per_month = percents_per_month;
+        p.enable_vesting = enable_vesting;
+        p.vesting_seconds = vesting_seconds;
+        p.vesting_pause_until = vesting_pause_until;
+        p.gift_account_from_amount = gift_account_from_amount;
+        p.ref_pay_type = ref_pay_type;
+      });
+
+    }
+
+
+    
+  }
+
+
   /**
    * @brief      Вывод вестинг-баланса
    * @ingroup public_actions
@@ -1119,7 +1180,10 @@ extern "C" {
             execute_action(name(receiver), name(code), &p2p::refreshsh);
           } else if (action == "delvesting"_n.value){
             execute_action(name(receiver), name(code), &p2p::delvesting);
+          } else if (action == "setparams"_n.value){
+            execute_action(name(receiver), name(code), &p2p::setparams);
           } 
+
           
 
         } else {

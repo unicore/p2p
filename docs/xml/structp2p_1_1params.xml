@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="structp2p_1_1params" kind="struct" language="C++" prot="public">
+    <compoundname>p2p::params</compoundname>
+    <includes refid="p2p_8hpp" local="no">p2p.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structp2p_1_1params_1a6329583694d12a217208b151e9b134fc" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::params::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <qualifiedname>p2p::params::id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>идентификатор баланса </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="129" column="18" bodyfile="p2p.hpp" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structp2p_1_1params_1a6713ae94c813505eb050cd5474218fec" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool p2p::params::enable_growth</definition>
+        <argsstring></argsstring>
+        <name>enable_growth</name>
+        <qualifiedname>p2p::params::enable_growth</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>флаг роста </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="130" column="14" bodyfile="p2p.hpp" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structp2p_1_1params_1a80d599ffabc4cad95c58ad5407c59e39" prot="public" static="no" mutable="no">
+        <type>eosio::name</type>
+        <definition>eosio::name p2p::params::growth_type</definition>
+        <argsstring></argsstring>
+        <name>growth_type</name>
+        <qualifiedname>p2p::params::growth_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>тип роста </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="131" column="21" bodyfile="p2p.hpp" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structp2p_1_1params_1a0f711754dad93797fa9e9188a21e0b04" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double p2p::params::start_rate</definition>
+        <argsstring></argsstring>
+        <name>start_rate</name>
+        <qualifiedname>p2p::params::start_rate</qualifiedname>
+        <initializer>= 0.2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>стартовый курс </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="132" column="16" bodyfile="p2p.hpp" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structp2p_1_1params_1a1d8c5d052beb610bdf57eb8828275664" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::params::percents_per_month</definition>
+        <argsstring></argsstring>
+        <name>percents_per_month</name>
+        <qualifiedname>p2p::params::percents_per_month</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>темп роста </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="133" column="18" bodyfile="p2p.hpp" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structp2p_1_1params_1aaa9066757642b87376aa86664b28379f" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool p2p::params::enable_vesting</definition>
+        <argsstring></argsstring>
+        <name>enable_vesting</name>
+        <qualifiedname>p2p::params::enable_vesting</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>флаг заморозки </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="134" column="14" bodyfile="p2p.hpp" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structp2p_1_1params_1a36ff37b723933b0c4ba0eb86552285ad" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::params::vesting_seconds</definition>
+        <argsstring></argsstring>
+        <name>vesting_seconds</name>
+        <qualifiedname>p2p::params::vesting_seconds</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>продолжительность заморозки </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="135" column="18" bodyfile="p2p.hpp" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structp2p_1_1params_1aaa10e239c4e82166799feff4a95865b5" prot="public" static="no" mutable="no">
+        <type>eosio::time_point_sec</type>
+        <definition>eosio::time_point_sec p2p::params::vesting_pause_until</definition>
+        <argsstring></argsstring>
+        <name>vesting_pause_until</name>
+        <qualifiedname>p2p::params::vesting_pause_until</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>разморозка всех вестингов приостанавливается до даты </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="136" column="31" bodyfile="p2p.hpp" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structp2p_1_1params_1a43f61e62e7a78c12ab858f453157658d" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::params::gift_account_from_amount</definition>
+        <argsstring></argsstring>
+        <name>gift_account_from_amount</name>
+        <qualifiedname>p2p::params::gift_account_from_amount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>аккаунт в дар от покупки на сумму </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="138" column="18" bodyfile="p2p.hpp" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structp2p_1_1params_1a5242c883307309cc23171f36287718dc" prot="public" static="no" mutable="no">
+        <type>eosio::name</type>
+        <definition>eosio::name p2p::params::ref_pay_type</definition>
+        <argsstring></argsstring>
+        <name>ref_pay_type</name>
+        <qualifiedname>p2p::params::ref_pay_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>тип начисления реферальной выплаты (fixed/flexible) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="139" column="21" bodyfile="p2p.hpp" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structp2p_1_1params_1ac2096b39f651078c22633ebb7b7fc5aa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t p2p::params::primary_key</definition>
+        <argsstring>() const</argsstring>
+        <name>primary_key</name>
+        <qualifiedname>p2p::params::primary_key</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>return id - primary_key </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="141" column="18" bodyfile="p2p.hpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Таблица параметров контракта. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="par"><title>Table: params</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>Contract: _me</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>Scope: _me</title><para></para>
+</simplesect>
+Таблица хранит параметры управления курсом и заморозками балансов при покупке </para>
+    </detaileddescription>
+    <location file="p2p.hpp" line="128" column="5" bodyfile="p2p.hpp" bodystart="128" bodyend="144"/>
+    <listofallmembers>
+      <member refid="structp2p_1_1params_1a6713ae94c813505eb050cd5474218fec" prot="public" virt="non-virtual"><scope>p2p::params</scope><name>enable_growth</name></member>
+      <member refid="structp2p_1_1params_1aaa9066757642b87376aa86664b28379f" prot="public" virt="non-virtual"><scope>p2p::params</scope><name>enable_vesting</name></member>
+      <member refid="structp2p_1_1params_1a43f61e62e7a78c12ab858f453157658d" prot="public" virt="non-virtual"><scope>p2p::params</scope><name>gift_account_from_amount</name></member>
+      <member refid="structp2p_1_1params_1a80d599ffabc4cad95c58ad5407c59e39" prot="public" virt="non-virtual"><scope>p2p::params</scope><name>growth_type</name></member>
+      <member refid="structp2p_1_1params_1a6329583694d12a217208b151e9b134fc" prot="public" virt="non-virtual"><scope>p2p::params</scope><name>id</name></member>
+      <member refid="structp2p_1_1params_1a1d8c5d052beb610bdf57eb8828275664" prot="public" virt="non-virtual"><scope>p2p::params</scope><name>percents_per_month</name></member>
+      <member refid="structp2p_1_1params_1ac2096b39f651078c22633ebb7b7fc5aa" prot="public" virt="non-virtual"><scope>p2p::params</scope><name>primary_key</name></member>
+      <member refid="structp2p_1_1params_1a5242c883307309cc23171f36287718dc" prot="public" virt="non-virtual"><scope>p2p::params</scope><name>ref_pay_type</name></member>
+      <member refid="structp2p_1_1params_1a0f711754dad93797fa9e9188a21e0b04" prot="public" virt="non-virtual"><scope>p2p::params</scope><name>start_rate</name></member>
+      <member refid="structp2p_1_1params_1aaa10e239c4e82166799feff4a95865b5" prot="public" virt="non-virtual"><scope>p2p::params</scope><name>vesting_pause_until</name></member>
+      <member refid="structp2p_1_1params_1a36ff37b723933b0c4ba0eb86552285ad" prot="public" virt="non-virtual"><scope>p2p::params</scope><name>vesting_seconds</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -3,6 +3,7 @@
   <compounddef id="group__public__tables" kind="group">
     <compoundname>public_tables</compoundname>
     <title>TABLES</title>
+    <innerclass refid="structp2p_1_1params" prot="public">p2p::params</innerclass>
     <innerclass refid="structp2p_1_1balance" prot="public">p2p::balance</innerclass>
     <innerclass refid="structp2p_1_1counts" prot="public">p2p::counts</innerclass>
     <innerclass refid="structp2p_1_1orders" prot="public">p2p::orders</innerclass>

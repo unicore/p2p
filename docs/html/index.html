@@ -100,6 +100,9 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </ul>
 <h1>Компиляция</h1>
 <p >Заменить ABSOLUTE_PATH_TO_CONTRACT на абсолютный путь к директории контракта <a class="el" href="classp2p.html" title="Начните ознакомление здесь.">p2p</a>. </p><div class="fragment"><div class="line">docker run --rm --name eosio.cdt_v1.7.0 --volume /ABSOLUTE_PATH_TO_CONTRACT:/project -w /project eostudio/eosio.cdt:v1.7.0 /bin/bash -c &quot;eosio-cpp -abigen -I include -R include -contract p2p -o p2p.wasm p2p.cpp&quot; &amp;</div>
+</div><!-- fragment --><h1>Генерация документации</h1>
+<p >Требуется Doxygen версии от 1.9.3 </p><div class="fragment"><div class="line">git submodule update --init --recursive</div>
+<div class="line">doxygen</div>
 </div><!-- fragment --><h1>Установка</h1>
 <div class="fragment"><div class="line">cleos set contract p2p ABSOLUTE_PATH_TO_CONTRACT -p p2p</div>
 </div><!-- fragment --><h1>Применение</h1>

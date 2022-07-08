@@ -27,6 +27,15 @@
 <codeline><highlight class="normal">docker<sp/>run<sp/>--rm<sp/>--name<sp/>eosio.cdt_v1.7.0<sp/>--volume<sp/>/ABSOLUTE_PATH_TO_CONTRACT:/project<sp/>-w<sp/>/project<sp/>eostudio/eosio.cdt:v1.7.0<sp/>/bin/bash<sp/>-c<sp/>&quot;eosio-cpp<sp/>-abigen<sp/>-I<sp/>include<sp/>-R<sp/>include<sp/>-contract<sp/>p2p<sp/>-o<sp/>p2p.wasm<sp/>p2p.cpp&quot;<sp/>&amp;</highlight></codeline>
 <codeline><highlight class="normal">```</highlight></codeline>
 <codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Генерация<sp/>документации</highlight></codeline>
+<codeline><highlight class="normal">Требуется<sp/>Doxygen<sp/>версии<sp/>от<sp/>1.9.3</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>submodule<sp/>update<sp/>--init<sp/>--recursive</highlight></codeline>
+<codeline><highlight class="normal">doxygen</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal">#<sp/>Установка</highlight></codeline>
 <codeline><highlight class="normal">```</highlight></codeline>
 <codeline><highlight class="normal">cleos<sp/>set<sp/>contract<sp/>p2p<sp/>ABSOLUTE_PATH_TO_CONTRACT<sp/>-p<sp/>p2p</highlight></codeline>

@@ -123,6 +123,9 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structp2p_1_1orders.html">orders</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Таблица ордеров  <a href="structp2p_1_1orders.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structp2p_1_1params.html">params</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Таблица параметров контракта.  <a href="structp2p_1_1params.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structp2p_1_1usdrates.html">usdrates</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Таблица содержит курсы конвертации к доллару.  <a href="structp2p_1_1usdrates.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,8 +138,11 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
+<tr class="memitem:ac0ecad97a435f7a239d67e234b9ec4e3"><td class="memItemLeft" align="right" valign="top"><a id="ac0ecad97a435f7a239d67e234b9ec4e3" name="ac0ecad97a435f7a239d67e234b9ec4e3"></a>
+typedef eosio::multi_index&lt;&quot;params&quot;_n, <a class="el" href="structp2p_1_1params.html">params</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>params_index</b></td></tr>
+<tr class="separator:ac0ecad97a435f7a239d67e234b9ec4e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a562223292a6b99a97d486136b2eb0d9e"><td class="memItemLeft" align="right" valign="top"><a id="a562223292a6b99a97d486136b2eb0d9e" name="a562223292a6b99a97d486136b2eb0d9e"></a>
-typedef eosio::multi_index&lt;&quot;balance&quot;_n, <a class="el" href="structp2p_1_1balance.html">balance</a>, eosio::indexed_by&lt; &quot;byconsym&quot;_n, eosio::const_mem_fun&lt; <a class="el" href="structp2p_1_1balance.html">balance</a>, uint128_t, &amp;balance::byconsym &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>balances_index</b></td></tr>
+typedef eosio::multi_index&lt;&quot;balance&quot;_n, <a class="el" href="structp2p_1_1balance.html">balance</a>, eosio::indexed_by&lt; &quot;byconsym&quot;_n, eosio::const_mem_fun&lt; <a class="el" href="structp2p_1_1balance.html">balance</a>, uint128_t, &amp;<a class="el" href="structp2p_1_1balance.html#a156c77b56c8c0bd71d769fd3281bdf11">balance::byconsym</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>balances_index</b></td></tr>
 <tr class="separator:a562223292a6b99a97d486136b2eb0d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bef060ed784c193c2a60b397c869c29"><td class="memItemLeft" align="right" valign="top"><a id="a6bef060ed784c193c2a60b397c869c29" name="a6bef060ed784c193c2a60b397c869c29"></a>
 typedef eosio::multi_index&lt;&quot;counts&quot;_n, <a class="el" href="structp2p_1_1counts.html">counts</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>counts_index</b></td></tr>
@@ -211,6 +217,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>apply</b> (uint64_t r
 <tr class="memitem:gadb4fde78468ee3b060717a785febdcc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__public__actions.html#gadb4fde78468ee3b060717a785febdcc4">withdrawsh</a> (eosio::name owner, uint64_t id)</td></tr>
 <tr class="memdesc:gadb4fde78468ee3b060717a785febdcc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вывод вестинг-баланса  <a href="group__public__actions.html#gadb4fde78468ee3b060717a785febdcc4">More...</a><br /></td></tr>
 <tr class="separator:gadb4fde78468ee3b060717a785febdcc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74787709e029935f29fe367525f20fe6"><td class="memItemLeft" align="right" valign="top"><a id="a74787709e029935f29fe367525f20fe6" name="a74787709e029935f29fe367525f20fe6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setparams</b> (bool enable_growth, eosio::name growth_type, double start_rate, uint64_t percents_per_month, bool enable_vesting, uint64_t vesting_seconds, eosio::time_point_sec vesting_pause_until, uint64_t gift_account_from_amount, eosio::name ref_pay_type)</td></tr>
+<tr class="separator:a74787709e029935f29fe367525f20fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -232,9 +241,9 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>make_vesting_a
 <tr class="memitem:ac62758f88566e5dafc0804182f324658"><td class="memItemLeft" align="right" valign="top"><a id="ac62758f88566e5dafc0804182f324658" name="ac62758f88566e5dafc0804182f324658"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>check_bonuse_system</b> (eosio::name creator, eosio::name reciever, eosio::asset quantity)</td></tr>
 <tr class="separator:ac62758f88566e5dafc0804182f324658"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a20e06fb911402d5e343389bdf944d4"><td class="memItemLeft" align="right" valign="top"><a id="a5a20e06fb911402d5e343389bdf944d4" name="a5a20e06fb911402d5e343389bdf944d4"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>check_guest_and_gift_account</b> (eosio::name username, eosio::name contract, eosio::asset amount)</td></tr>
-<tr class="separator:a5a20e06fb911402d5e343389bdf944d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a40cf3033525f3c4a12925c9068a868"><td class="memItemLeft" align="right" valign="top"><a id="a4a40cf3033525f3c4a12925c9068a868" name="a4a40cf3033525f3c4a12925c9068a868"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>check_guest_and_gift_account</b> (eosio::name username, eosio::name contract, eosio::asset amount, uint64_t gift_account_from_amount)</td></tr>
+<tr class="separator:a4a40cf3033525f3c4a12925c9068a868"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6277838ad086e92577864a4c59ec3e6c"><td class="memItemLeft" align="right" valign="top"><a id="a6277838ad086e92577864a4c59ec3e6c" name="a6277838ad086e92577864a4c59ec3e6c"></a>
 static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_order_id</b> ()</td></tr>
 <tr class="separator:a6277838ad086e92577864a4c59ec3e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -255,6 +264,10 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:gafe8d32633b8a87ce35209184d222f6de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga582434add36ca36a326bdab9e7c8cb4e"><td class="memItemLeft" align="right" valign="top">static constexpr eosio::name&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__public__consts.html#ga582434add36ca36a326bdab9e7c8cb4e">_core</a> = &quot;unicore&quot;_n</td></tr>
 <tr class="separator:ga582434add36ca36a326bdab9e7c8cb4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99"><td class="memItemLeft" align="right" valign="top">static constexpr eosio::name&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__public__consts.html#gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99">_CORE_SALE_ACCOUNT</a> = &quot;core&quot;_n</td></tr>
+<tr class="separator:gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad3c9fd465ea37d16657bd9910c631d22"><td class="memItemLeft" align="right" valign="top">static constexpr eosio::name&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__public__consts.html#gad3c9fd465ea37d16657bd9910c631d22">_REGISTRATOR_ACCOUNT</a> = &quot;registrator&quot;_n</td></tr>
+<tr class="separator:gad3c9fd465ea37d16657bd9910c631d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6a7a6607c93e930cfa3984a8c318942b"><td class="memItemLeft" align="right" valign="top">static const uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__public__consts.html#ga6a7a6607c93e930cfa3984a8c318942b">_PERCENTS_PER_MONTH</a> = 42</td></tr>
 <tr class="separator:ga6a7a6607c93e930cfa3984a8c318942b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga738ddf63d1276c74f28b7d2f51ba1475"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__public__consts.html#ga738ddf63d1276c74f28b7d2f51ba1475">_ENABLE_GROWHT</a> = false</td></tr>
@@ -263,10 +276,6 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:ga817118e4e422393acc35439edb0187af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf52bcfc4c42cb8a001ab4935d06539c0"><td class="memItemLeft" align="right" valign="top">static const uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__public__consts.html#gaf52bcfc4c42cb8a001ab4935d06539c0">_VESTING_SECONDS</a> = 15770000</td></tr>
 <tr class="separator:gaf52bcfc4c42cb8a001ab4935d06539c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99"><td class="memItemLeft" align="right" valign="top">static constexpr eosio::name&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__public__consts.html#gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99">_CORE_SALE_ACCOUNT</a> = &quot;core&quot;_n</td></tr>
-<tr class="separator:gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad3c9fd465ea37d16657bd9910c631d22"><td class="memItemLeft" align="right" valign="top">static constexpr eosio::name&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__public__consts.html#gad3c9fd465ea37d16657bd9910c631d22">_REGISTRATOR_ACCOUNT</a> = &quot;registrator&quot;_n</td></tr>
-<tr class="separator:gad3c9fd465ea37d16657bd9910c631d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gada18e95b855fa10dc57a33620b4dd51d"><td class="memItemLeft" align="right" valign="top">static const uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__public__consts.html#gada18e95b855fa10dc57a33620b4dd51d">_GIFT_ACCOUNT_FROM_AMOUNT</a> = 100000</td></tr>
 <tr class="separator:gada18e95b855fa10dc57a33620b4dd51d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga714001f0f556d0db16b3746fa2261ddb"><td class="memItemLeft" align="right" valign="top">static const uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__public__consts.html#ga714001f0f556d0db16b3746fa2261ddb">_ORDER_EXPIRATION</a> = 30 * 60</td></tr>

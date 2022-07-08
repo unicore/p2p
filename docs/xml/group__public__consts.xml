@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="86" column="34" bodyfile="p2p.hpp" bodystart="86" bodyend="-1"/>
+        <location file="p2p.hpp" line="88" column="34" bodyfile="p2p.hpp" bodystart="88" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1gaa5528a78186585c3a033d89b6c027a5b" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr eosio::name</type>
@@ -34,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="87" column="34" bodyfile="p2p.hpp" bodystart="87" bodyend="-1"/>
+        <location file="p2p.hpp" line="89" column="34" bodyfile="p2p.hpp" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1gabaf26be47ba132e33bdadf4a6f65a052" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr eosio::name</type>
@@ -50,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="88" column="34" bodyfile="p2p.hpp" bodystart="88" bodyend="-1"/>
+        <location file="p2p.hpp" line="90" column="34" bodyfile="p2p.hpp" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1gafe8d32633b8a87ce35209184d222f6de" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr eosio::symbol</type>
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="89" column="36" bodyfile="p2p.hpp" bodystart="89" bodyend="-1"/>
+        <location file="p2p.hpp" line="91" column="36" bodyfile="p2p.hpp" bodystart="91" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1ga582434add36ca36a326bdab9e7c8cb4e" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr eosio::name</type>
@@ -82,71 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="90" column="34" bodyfile="p2p.hpp" bodystart="90" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="group__public__consts_1ga6a7a6607c93e930cfa3984a8c318942b" prot="public" static="yes" mutable="no">
-        <type>const uint64_t</type>
-        <definition>const uint64_t p2p::_PERCENTS_PER_MONTH</definition>
-        <argsstring></argsstring>
-        <name>_PERCENTS_PER_MONTH</name>
-        <qualifiedname>p2p::_PERCENTS_PER_MONTH</qualifiedname>
-        <initializer>= 42</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>если рост курса системного токена подключен, то растёт с указанной здесь скоростью </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="92" column="27" bodyfile="p2p.hpp" bodystart="92" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="group__public__consts_1ga738ddf63d1276c74f28b7d2f51ba1475" prot="public" static="yes" mutable="no">
-        <type>const bool</type>
-        <definition>const bool p2p::_ENABLE_GROWHT</definition>
-        <argsstring></argsstring>
-        <name>_ENABLE_GROWHT</name>
-        <qualifiedname>p2p::_ENABLE_GROWHT</qualifiedname>
-        <initializer>= false</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>флаг подключения автоматического роста курса, допускающего вызов метода uprate от системного контракта eosio </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="94" column="23" bodyfile="p2p.hpp" bodystart="94" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="group__public__consts_1ga817118e4e422393acc35439edb0187af" prot="public" static="yes" mutable="no">
-        <type>const bool</type>
-        <definition>const bool p2p::_ENABLE_VESTING</definition>
-        <argsstring></argsstring>
-        <name>_ENABLE_VESTING</name>
-        <qualifiedname>p2p::_ENABLE_VESTING</qualifiedname>
-        <initializer>= false</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>флаг подключения режима вестинга для совершенных покупок у аккаунта _CORE_SALE_ACCOUNT </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="96" column="23" bodyfile="p2p.hpp" bodystart="96" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="group__public__consts_1gaf52bcfc4c42cb8a001ab4935d06539c0" prot="public" static="yes" mutable="no">
-        <type>const uint64_t</type>
-        <definition>const uint64_t p2p::_VESTING_SECONDS</definition>
-        <argsstring></argsstring>
-        <name>_VESTING_SECONDS</name>
-        <qualifiedname>p2p::_VESTING_SECONDS</qualifiedname>
-        <initializer>= 15770000</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>продолжительность вестинга в секундах </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="p2p.hpp" line="97" column="27" bodyfile="p2p.hpp" bodystart="97" bodyend="-1"/>
+        <location file="p2p.hpp" line="92" column="34" bodyfile="p2p.hpp" bodystart="92" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr eosio::name</type>
@@ -162,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="98" column="34" bodyfile="p2p.hpp" bodystart="98" bodyend="-1"/>
+        <location file="p2p.hpp" line="93" column="34" bodyfile="p2p.hpp" bodystart="93" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1gad3c9fd465ea37d16657bd9910c631d22" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr eosio::name</type>
@@ -178,7 +114,71 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="99" column="34" bodyfile="p2p.hpp" bodystart="99" bodyend="-1"/>
+        <location file="p2p.hpp" line="94" column="34" bodyfile="p2p.hpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1ga6a7a6607c93e930cfa3984a8c318942b" prot="public" static="yes" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t p2p::_PERCENTS_PER_MONTH</definition>
+        <argsstring></argsstring>
+        <name>_PERCENTS_PER_MONTH</name>
+        <qualifiedname>p2p::_PERCENTS_PER_MONTH</qualifiedname>
+        <initializer>= 42</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>если рост курса системного токена подключен, то растёт с указанной здесь скоростью </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="97" column="27" bodyfile="p2p.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1ga738ddf63d1276c74f28b7d2f51ba1475" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool p2p::_ENABLE_GROWHT</definition>
+        <argsstring></argsstring>
+        <name>_ENABLE_GROWHT</name>
+        <qualifiedname>p2p::_ENABLE_GROWHT</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>флаг подключения автоматического роста курса, допускающего вызов метода uprate от системного контракта eosio </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="99" column="23" bodyfile="p2p.hpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1ga817118e4e422393acc35439edb0187af" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool p2p::_ENABLE_VESTING</definition>
+        <argsstring></argsstring>
+        <name>_ENABLE_VESTING</name>
+        <qualifiedname>p2p::_ENABLE_VESTING</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>флаг подключения режима вестинга для совершенных покупок у аккаунта _CORE_SALE_ACCOUNT </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="101" column="23" bodyfile="p2p.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__public__consts_1gaf52bcfc4c42cb8a001ab4935d06539c0" prot="public" static="yes" mutable="no">
+        <type>const uint64_t</type>
+        <definition>const uint64_t p2p::_VESTING_SECONDS</definition>
+        <argsstring></argsstring>
+        <name>_VESTING_SECONDS</name>
+        <qualifiedname>p2p::_VESTING_SECONDS</qualifiedname>
+        <initializer>= 15770000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>продолжительность вестинга в секундах </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="p2p.hpp" line="102" column="27" bodyfile="p2p.hpp" bodystart="102" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1gada18e95b855fa10dc57a33620b4dd51d" prot="public" static="yes" mutable="no">
         <type>const uint64_t</type>
@@ -194,7 +194,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="101" column="27" bodyfile="p2p.hpp" bodystart="101" bodyend="-1"/>
+        <location file="p2p.hpp" line="104" column="27" bodyfile="p2p.hpp" bodystart="104" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1ga714001f0f556d0db16b3746fa2261ddb" prot="public" static="yes" mutable="no">
         <type>const uint64_t</type>
@@ -210,7 +210,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="104" column="27" bodyfile="p2p.hpp" bodystart="104" bodyend="-1"/>
+        <location file="p2p.hpp" line="107" column="27" bodyfile="p2p.hpp" bodystart="107" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__public__consts_1ga41fd0523f7a4103ea012c69c376d0823" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr double</type>
@@ -226,7 +226,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="105" column="29" bodyfile="p2p.hpp" bodystart="105" bodyend="-1"/>
+        <location file="p2p.hpp" line="108" column="29" bodyfile="p2p.hpp" bodystart="108" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

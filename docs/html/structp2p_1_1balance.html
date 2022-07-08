@@ -102,8 +102,7 @@ $(document).ready(function(){initNavTree('structp2p_1_1balance.html',''); initRe
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae23379e6dde9970bcc5a54e4e590da63"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structp2p_1_1balance.html#ae23379e6dde9970bcc5a54e4e590da63">primary_key</a> () const</td></tr>
 <tr class="separator:ae23379e6dde9970bcc5a54e4e590da63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a156c77b56c8c0bd71d769fd3281bdf11"><td class="memItemLeft" align="right" valign="top"><a id="a156c77b56c8c0bd71d769fd3281bdf11" name="a156c77b56c8c0bd71d769fd3281bdf11"></a>
-uint128_t&#160;</td><td class="memItemRight" valign="bottom"><b>byconsym</b> () const</td></tr>
+<tr class="memitem:a156c77b56c8c0bd71d769fd3281bdf11"><td class="memItemLeft" align="right" valign="top">uint128_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structp2p_1_1balance.html#a156c77b56c8c0bd71d769fd3281bdf11">byconsym</a> () const</td></tr>
 <tr class="separator:a156c77b56c8c0bd71d769fd3281bdf11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -122,6 +121,32 @@ Data Fields</h2></td></tr>
 <dl class="section user"><dt>Scope: username</dt><dd></dd></dl>
 <p>Таблица баланса пользователя пополняется им путём совершения перевода на аккаунт контракта <a class="el" href="classp2p.html" title="Начните ознакомление здесь.">p2p</a>. При создании ордера используется баланс пользователя из этой таблицы. Чтобы исключить необходимость пользователю контролировать свой баланс в контракте <a class="el" href="classp2p.html" title="Начните ознакомление здесь.">p2p</a>, терминал доступа вызывает транзакцию с одновременно двумя действиями: перевод на аккаунт <a class="el" href="classp2p.html" title="Начните ознакомление здесь.">p2p</a> и создание ордера на ту же сумму. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a156c77b56c8c0bd71d769fd3281bdf11" name="a156c77b56c8c0bd71d769fd3281bdf11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a156c77b56c8c0bd71d769fd3281bdf11">&#9670;&nbsp;</a></span>byconsym()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint128_t p2p::balance::byconsym </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >return combine_ids(contract, quantity) - комбинированный secondary_index 2 </p>
+
+</div>
+</div>
 <a id="ae23379e6dde9970bcc5a54e4e590da63" name="ae23379e6dde9970bcc5a54e4e590da63"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae23379e6dde9970bcc5a54e4e590da63">&#9670;&nbsp;</a></span>primary_key()</h2>
 

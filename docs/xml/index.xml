@@ -87,15 +87,16 @@
     <member refid="group__public__consts_1gabaf26be47ba132e33bdadf4a6f65a052" kind="variable"><name>_rater</name></member>
     <member refid="group__public__consts_1gafe8d32633b8a87ce35209184d222f6de" kind="variable"><name>_SYM</name></member>
     <member refid="group__public__consts_1ga582434add36ca36a326bdab9e7c8cb4e" kind="variable"><name>_core</name></member>
+    <member refid="group__public__consts_1gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99" kind="variable"><name>_CORE_SALE_ACCOUNT</name></member>
+    <member refid="group__public__consts_1gad3c9fd465ea37d16657bd9910c631d22" kind="variable"><name>_REGISTRATOR_ACCOUNT</name></member>
     <member refid="group__public__consts_1ga6a7a6607c93e930cfa3984a8c318942b" kind="variable"><name>_PERCENTS_PER_MONTH</name></member>
     <member refid="group__public__consts_1ga738ddf63d1276c74f28b7d2f51ba1475" kind="variable"><name>_ENABLE_GROWHT</name></member>
     <member refid="group__public__consts_1ga817118e4e422393acc35439edb0187af" kind="variable"><name>_ENABLE_VESTING</name></member>
     <member refid="group__public__consts_1gaf52bcfc4c42cb8a001ab4935d06539c0" kind="variable"><name>_VESTING_SECONDS</name></member>
-    <member refid="group__public__consts_1gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99" kind="variable"><name>_CORE_SALE_ACCOUNT</name></member>
-    <member refid="group__public__consts_1gad3c9fd465ea37d16657bd9910c631d22" kind="variable"><name>_REGISTRATOR_ACCOUNT</name></member>
     <member refid="group__public__consts_1gada18e95b855fa10dc57a33620b4dd51d" kind="variable"><name>_GIFT_ACCOUNT_FROM_AMOUNT</name></member>
     <member refid="group__public__consts_1ga714001f0f556d0db16b3746fa2261ddb" kind="variable"><name>_ORDER_EXPIRATION</name></member>
     <member refid="group__public__consts_1ga41fd0523f7a4103ea012c69c376d0823" kind="variable"><name>_START_RATE</name></member>
+    <member refid="classp2p_1ac0ecad97a435f7a239d67e234b9ec4e3" kind="typedef"><name>params_index</name></member>
     <member refid="classp2p_1a562223292a6b99a97d486136b2eb0d9e" kind="typedef"><name>balances_index</name></member>
     <member refid="classp2p_1a6bef060ed784c193c2a60b397c869c29" kind="typedef"><name>counts_index</name></member>
     <member refid="classp2p_1af7e337013ebdcc44b420a6d55d0d385f" kind="typedef"><name>orders_index</name></member>
@@ -120,15 +121,29 @@
     <member refid="group__public__actions_1ga4f3c89b4ae21f54b6e16334e681a7860" kind="function"><name>setbrate</name></member>
     <member refid="group__public__actions_1ga2cb80d56fbb68ac3ccc688112d86532a" kind="function"><name>refreshsh</name></member>
     <member refid="group__public__actions_1gadb4fde78468ee3b060717a785febdcc4" kind="function"><name>withdrawsh</name></member>
+    <member refid="classp2p_1a74787709e029935f29fe367525f20fe6" kind="function"><name>setparams</name></member>
     <member refid="classp2p_1ac36f6042dcb8942679dddbf672684ddc" kind="function"><name>add_balance</name></member>
     <member refid="classp2p_1afc44fa7dedaeea9559af5f70445b5218" kind="function"><name>sub_balance</name></member>
     <member refid="classp2p_1aa6f449f9ebec47b6741ed3497a3b92f9" kind="function"><name>addbbal</name></member>
     <member refid="classp2p_1a9bbb48f7000e2ad2c901fe04f3e7f024" kind="function"><name>subbbal</name></member>
     <member refid="classp2p_1a0b427c0584a5dd22a924273d3476dfd7" kind="function"><name>make_vesting_action</name></member>
     <member refid="classp2p_1ac62758f88566e5dafc0804182f324658" kind="function"><name>check_bonuse_system</name></member>
-    <member refid="classp2p_1a5a20e06fb911402d5e343389bdf944d4" kind="function"><name>check_guest_and_gift_account</name></member>
+    <member refid="classp2p_1a4a40cf3033525f3c4a12925c9068a868" kind="function"><name>check_guest_and_gift_account</name></member>
     <member refid="classp2p_1a6277838ad086e92577864a4c59ec3e6c" kind="function"><name>get_order_id</name></member>
     <member refid="classp2p_1a4aa15958215b4647e9adc4ed3d53af8c" kind="function"><name>combine_ids</name></member>
+  </compound>
+  <compound refid="structp2p_1_1params" kind="struct"><name>p2p::params</name>
+    <member refid="structp2p_1_1params_1a6329583694d12a217208b151e9b134fc" kind="variable"><name>id</name></member>
+    <member refid="structp2p_1_1params_1a6713ae94c813505eb050cd5474218fec" kind="variable"><name>enable_growth</name></member>
+    <member refid="structp2p_1_1params_1a80d599ffabc4cad95c58ad5407c59e39" kind="variable"><name>growth_type</name></member>
+    <member refid="structp2p_1_1params_1a0f711754dad93797fa9e9188a21e0b04" kind="variable"><name>start_rate</name></member>
+    <member refid="structp2p_1_1params_1a1d8c5d052beb610bdf57eb8828275664" kind="variable"><name>percents_per_month</name></member>
+    <member refid="structp2p_1_1params_1aaa9066757642b87376aa86664b28379f" kind="variable"><name>enable_vesting</name></member>
+    <member refid="structp2p_1_1params_1a36ff37b723933b0c4ba0eb86552285ad" kind="variable"><name>vesting_seconds</name></member>
+    <member refid="structp2p_1_1params_1aaa10e239c4e82166799feff4a95865b5" kind="variable"><name>vesting_pause_until</name></member>
+    <member refid="structp2p_1_1params_1a43f61e62e7a78c12ab858f453157658d" kind="variable"><name>gift_account_from_amount</name></member>
+    <member refid="structp2p_1_1params_1a5242c883307309cc23171f36287718dc" kind="variable"><name>ref_pay_type</name></member>
+    <member refid="structp2p_1_1params_1ac2096b39f651078c22633ebb7b7fc5aa" kind="function"><name>primary_key</name></member>
   </compound>
   <compound refid="structp2p_1_1usdrates" kind="struct"><name>p2p::usdrates</name>
     <member refid="structp2p_1_1usdrates_1a5f755d95b0efa7942636fddfae33db2f" kind="variable"><name>id</name></member>
@@ -170,12 +185,12 @@
     <member refid="group__public__consts_1gabaf26be47ba132e33bdadf4a6f65a052" kind="variable"><name>_rater</name></member>
     <member refid="group__public__consts_1gafe8d32633b8a87ce35209184d222f6de" kind="variable"><name>_SYM</name></member>
     <member refid="group__public__consts_1ga582434add36ca36a326bdab9e7c8cb4e" kind="variable"><name>_core</name></member>
+    <member refid="group__public__consts_1gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99" kind="variable"><name>_CORE_SALE_ACCOUNT</name></member>
+    <member refid="group__public__consts_1gad3c9fd465ea37d16657bd9910c631d22" kind="variable"><name>_REGISTRATOR_ACCOUNT</name></member>
     <member refid="group__public__consts_1ga6a7a6607c93e930cfa3984a8c318942b" kind="variable"><name>_PERCENTS_PER_MONTH</name></member>
     <member refid="group__public__consts_1ga738ddf63d1276c74f28b7d2f51ba1475" kind="variable"><name>_ENABLE_GROWHT</name></member>
     <member refid="group__public__consts_1ga817118e4e422393acc35439edb0187af" kind="variable"><name>_ENABLE_VESTING</name></member>
     <member refid="group__public__consts_1gaf52bcfc4c42cb8a001ab4935d06539c0" kind="variable"><name>_VESTING_SECONDS</name></member>
-    <member refid="group__public__consts_1gaaf70e52c0f57cc4fa3d9d7fd0e8f0d99" kind="variable"><name>_CORE_SALE_ACCOUNT</name></member>
-    <member refid="group__public__consts_1gad3c9fd465ea37d16657bd9910c631d22" kind="variable"><name>_REGISTRATOR_ACCOUNT</name></member>
     <member refid="group__public__consts_1gada18e95b855fa10dc57a33620b4dd51d" kind="variable"><name>_GIFT_ACCOUNT_FROM_AMOUNT</name></member>
     <member refid="group__public__consts_1ga714001f0f556d0db16b3746fa2261ddb" kind="variable"><name>_ORDER_EXPIRATION</name></member>
     <member refid="group__public__consts_1ga41fd0523f7a4103ea012c69c376d0823" kind="variable"><name>_START_RATE</name></member>

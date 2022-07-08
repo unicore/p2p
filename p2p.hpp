@@ -25,8 +25,7 @@ public:
     static void sub_balance(eosio::name username, eosio::asset quantity, eosio::name contract);
 
     static void addbbal(eosio::name host, eosio::name contract, eosio::asset quantity);
-    static void subbbal(eosio::name host, eosio::name contract, eosio::asset quantity);
-
+    
     static void make_vesting_action(eosio::name owner, eosio::name contract, eosio::asset amount);
 
     static void check_bonuse_system(eosio::name creator, eosio::name reciever, eosio::asset quantity);
@@ -40,7 +39,10 @@ public:
 
     [[eosio::action]]
     void accept(name username, uint64_t id, std::string details);
-     
+
+    [[eosio::action]] 
+    void fixrate(uint64_t id);
+
     [[eosio::action]]
     void approve(name username, uint64_t id);
 
@@ -64,7 +66,7 @@ public:
      
     [[eosio::action]]
     void delrate(uint64_t id);
-    
+
     [[eosio::action]]
     void delvesting(eosio::name owner, uint64_t id);
 
@@ -79,6 +81,10 @@ public:
     
     [[eosio::action]] 
     void setparams(bool enable_growth, eosio::name growth_type, double start_rate, uint64_t percents_per_month, bool enable_vesting, uint64_t vesting_seconds, eosio::time_point_sec vesting_pause_until, uint64_t gift_account_from_amount, eosio::name ref_pay_type);
+
+    [[eosio::action]] 
+    void subbbal(eosio::name host, eosio::name contract, eosio::asset quantity);
+
 
     /**
     * @ingroup public_consts 
@@ -264,7 +270,9 @@ public:
         uint64_t bystatus() const {return status.value;}                        /*!< status - secondary_key 7 */
         uint64_t byexpr() const {return expired_at.sec_since_epoch();}          /*!< expired_at - secondary_key 8 */
         uint64_t bycreated() const {return created_at.sec_since_epoch();}       /*!< created_at - secondary_key 9 */
-    
+        
+        uint128_t byparandus() const {return combine_ids(parent_id, creator.value);} /*!< (out_contract, out_asset.symbol) - комбинированный secondary_key для получения курса по имени выходного контракта и символу */
+        
     };
 
     typedef eosio::multi_index< "orders"_n, orders,
@@ -275,7 +283,8 @@ public:
         eosio::indexed_by<"bycurator"_n, eosio::const_mem_fun<orders, uint64_t, &orders::bycurator>>,
         eosio::indexed_by<"bystatus"_n, eosio::const_mem_fun<orders, uint64_t, &orders::bystatus>>,
         eosio::indexed_by<"byexpr"_n, eosio::const_mem_fun<orders, uint64_t, &orders::byexpr>>,
-        eosio::indexed_by<"bycreated"_n, eosio::const_mem_fun<orders, uint64_t, &orders::bycreated>>
+        eosio::indexed_by<"bycreated"_n, eosio::const_mem_fun<orders, uint64_t, &orders::bycreated>>,
+        eosio::indexed_by<"byparandus"_n, eosio::const_mem_fun<orders, uint128_t, &orders::byparandus>>
   
     > orders_index;
 

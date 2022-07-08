@@ -154,12 +154,13 @@ void p2p::subbbal(eosio::name host, eosio::name contract, eosio::asset quantity)
       eosio::check(false, "Cannot spread bonuse balance without balance");
 
     } else {
-      eosio::check(bonuse_bal -> contract == contract, "Wrong contract for bonuse balance");
+      // eosio::check(bonuse_bal -> contract == contract, "Wrong contract for bonuse balance");
 
-      bonuses.modify(bonuse_bal, _me, [&](auto &b) {
-        b.available -= quantity;
-        b.distributed += quantity;
-      });
+      bonuses.erase(bonuse_bal);
+      // bonuses.modify(bonuse_bal, _me, [&](auto &b) {
+      //   b.available -= quantity;
+      //   b.distributed += quantity;
+      // });
 
     };
 }
@@ -348,6 +349,12 @@ void p2p::createorder(name username, uint64_t parent_id, name type, eosio::name 
       check(parent_order -> out_quantity.symbol == out_quantity.symbol, "Out symbols is not equal");
       check(parent_order -> out_contract == out_contract, "Out contracts is not equal");
 
+      //TODO check for exist for current user
+      // auto orders_by_parent_id_and_creator = orders.template get_index<"byparandus"_n>();
+      // auto orders_by_parent_id_and_creator_index = combine_ids(parent_id, username.value);
+      // auto exist = orders_by_parent_id_and_creator.find(orders_by_parent_id_and_creator_index);
+      // eosio::check(exist == orders_by_parent_id_and_creator.end(), "Order with current parent order is already exist. Cancel or finish it first.");
+
       if (type == "sell"_n) {
         
         check(parent_order -> type == "buy"_n, "Wrong parent order type");
@@ -423,6 +430,9 @@ void p2p::createorder(name username, uint64_t parent_id, name type, eosio::name 
       o.details = details;
       o.created_at = eosio::time_point_sec(eosio::current_time_point().sec_since_epoch());
     });
+
+    //WARN DO NOT DELETE THIS! USEFUL FOR PRODUCTION ON BACKEND
+    print("ORDER_ID:", id);
 
 }
 
@@ -553,7 +563,7 @@ void p2p::confirm(name username, uint64_t id)
     orders_index orders(_me, _me.value);
     auto order = orders.find(id);
     eosio::check(order != orders.end(), "Order is not found");
-    eosio::check(order -> status == "process"_n, "Only order on process mode can be confirmed");
+    eosio::check(order -> status == "process"_n || order -> status == "payed"_n, "Only order on process mode can be confirmed");
 
     auto parent_order = orders.find(order -> parent_id);
     
@@ -732,15 +742,16 @@ void p2p::approve(name username, uint64_t id)
  */
 void p2p::cancel(name username, uint64_t id)
 {
-    require_auth( username );
-    
+    // require_auth( username );
+    eosio::check(has_auth(username) || has_auth(_me), "missing required authority");
+       
     orders_index orders(_me, _me.value);
     auto order = orders.find(id);
     eosio::check(order != orders.end(), "Order is not found");
     
     if (order -> parent_id == 0) {
 
-      eosio::check(order -> creator == username, "Only creator can cancel order");
+      eosio::check(order -> creator == username || has_auth(_me), "Only creator can cancel order");
     
       if ((order -> status == "waiting"_n)){ 
         eosio::check(order -> root_locked.amount == 0, "Can not cancel order with locked amounts");
@@ -761,17 +772,21 @@ void p2p::cancel(name username, uint64_t id)
 
         orders.erase(order);
 
+      } else if (order -> status == "finish"_n){
+        //nothing, just erase next
+        orders.erase(order);
+
       } else {check(false, "Order is canceled or finished already");}
 
     } else {
       
-      check(order -> status == "process"_n || order -> status == "waiting"_n, "Order can not be canceled now.");
+      // check(order -> status == "process"_n || order -> status == "waiting"_n || order -> status == "payed"_n, "Order can not be canceled now.");
       
       auto parent_order = orders.find(order -> parent_id);
 
-      if (order -> status == "process"_n) { 
+      if (order -> status == "process"_n || order -> status == "payed"_n) { 
 
-        check(order -> type == "buy"_n, "Only child buy order can be canceled on process status");
+        check(order -> type == "buy"_n, "Only child buy order can be canceled on process or payed status");
 
         eosio::check(order -> creator == username || parent_order -> creator == username, "Only creator can cancel the order");
         
@@ -805,7 +820,11 @@ void p2p::cancel(name username, uint64_t id)
               std::make_tuple( _me, order->creator, order->root_remain, std::string("p2pcancel")) 
           ).send(); 
         };
-      };
+      } else if (order -> status == "finish"_n){
+
+        eosio::check(order -> creator == username, "Only creator can cancel this order");
+        
+      }
 
       orders.erase(order);
 
@@ -954,7 +973,10 @@ void p2p::uprate(eosio::name out_contract, eosio::asset out_asset){
       
       } else {
 
+        //LINEAR PER MONTH
         double rate = usd_rate -> rate  + pm->start_rate * (double(eosio::current_time_point().sec_since_epoch() - usd_rate -> updated_at.sec_since_epoch() ) / (double)86400 * (double)pm->percents_per_month / (double)30 / (double)100);
+
+        //DOWNGRADE PER MONTH
 
         rates_by_contract_and_symbol.modify(usd_rate, "eosio"_n, [&](auto &r){
         
@@ -1146,6 +1168,26 @@ void p2p::setrate(eosio::name out_contract, eosio::asset out_asset, double rate)
     
   };
 
+
+  [[eosio::action]] void p2p::fixrate(uint64_t id) {
+    require_auth(_me);
+    
+    usdrates2_index usdrates2(_me, _me.value);
+    
+    auto usdrate2 = usdrates2.find(id);
+
+    if (usdrate2 != usdrates2.end()) {
+      usdrates2.modify(usdrate2, _me, [&](auto &ur2) {
+        ur2.created_at = eosio::time_point_sec(eosio::current_time_point().sec_since_epoch());
+      });
+    }
+    
+    
+  };
+
+
+  
+
 extern "C" {
    
    /**
@@ -1190,6 +1232,10 @@ extern "C" {
             execute_action(name(receiver), name(code), &p2p::delvesting);
           } else if (action == "setparams"_n.value){
             execute_action(name(receiver), name(code), &p2p::setparams);
+          } else if (action == "fixrate"_n.value){
+            execute_action(name(receiver), name(code), &p2p::fixrate);
+          } else if (action == "subbbal"_n.value){
+            execute_action(name(receiver), name(code), &p2p::subbbal);
           } 
 
           

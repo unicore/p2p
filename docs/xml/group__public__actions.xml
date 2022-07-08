@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="72" column="10" bodyfile="p2p.cpp" bodystart="171" bodyend="185"/>
+        <location file="p2p.hpp" line="72" column="10" bodyfile="p2p.cpp" bodystart="176" bodyend="190"/>
       </memberdef>
       <memberdef kind="function" id="group__public__actions_1ga0b05f55568e9469d33379512b29a116a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -233,7 +233,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="39" column="10" bodyfile="p2p.cpp" bodystart="304" bodyend="417"/>
+        <location file="p2p.hpp" line="39" column="10" bodyfile="p2p.cpp" bodystart="309" bodyend="427"/>
       </memberdef>
       <memberdef kind="function" id="group__public__actions_1gab7d91c105e22cc794a42cb12d996d0cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -288,7 +288,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="42" column="10" bodyfile="p2p.cpp" bodystart="432" bodyend="515"/>
+        <location file="p2p.hpp" line="42" column="10" bodyfile="p2p.cpp" bodystart="442" bodyend="531"/>
       </memberdef>
       <memberdef kind="function" id="group__public__actions_1gaa1abaf488133faec3fae6c6c9c9917c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -331,7 +331,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="48" column="10" bodyfile="p2p.cpp" bodystart="528" bodyend="551"/>
+        <location file="p2p.hpp" line="48" column="10" bodyfile="p2p.cpp" bodystart="544" bodyend="572"/>
       </memberdef>
       <memberdef kind="function" id="group__public__actions_1ga4562d6493c57589bf2259f119481d39a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -374,7 +374,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="45" column="10" bodyfile="p2p.cpp" bodystart="566" bodyend="692"/>
+        <location file="p2p.hpp" line="45" column="10" bodyfile="p2p.cpp" bodystart="587" bodyend="720"/>
       </memberdef>
       <memberdef kind="function" id="group__public__actions_1gaf81f265e37d1f1572a9a5fa17fa99f32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -417,7 +417,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="51" column="10" bodyfile="p2p.cpp" bodystart="705" bodyend="788"/>
+        <location file="p2p.hpp" line="51" column="10" bodyfile="p2p.cpp" bodystart="733" bodyend="816"/>
       </memberdef>
       <memberdef kind="function" id="group__public__actions_1ga4f0c0c376096f7a73b21b39f0dc58d1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -460,7 +460,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="54" column="10" bodyfile="p2p.cpp" bodystart="800" bodyend="823"/>
+        <location file="p2p.hpp" line="54" column="10" bodyfile="p2p.cpp" bodystart="828" bodyend="851"/>
       </memberdef>
       <memberdef kind="function" id="group__public__actions_1ga805effb2c6e15ab30e7f36bf13558910" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -503,7 +503,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="57" column="10" bodyfile="p2p.cpp" bodystart="835" bodyend="846"/>
+        <location file="p2p.hpp" line="57" column="10" bodyfile="p2p.cpp" bodystart="863" bodyend="874"/>
       </memberdef>
       <memberdef kind="function" id="group__public__actions_1gabea413390558d072de45f9ff47217ff8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -534,7 +534,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="66" column="10" bodyfile="p2p.cpp" bodystart="857" bodyend="865"/>
+        <location file="p2p.hpp" line="66" column="10" bodyfile="p2p.cpp" bodystart="885" bodyend="893"/>
       </memberdef>
       <memberdef kind="function" id="group__public__actions_1ga6ef3ff3b489159e054195c1d8fbd7092" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -577,7 +577,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="69" column="10" bodyfile="p2p.cpp" bodystart="877" bodyend="885"/>
+        <location file="p2p.hpp" line="69" column="10" bodyfile="p2p.cpp" bodystart="905" bodyend="913"/>
       </memberdef>
       <memberdef kind="function" id="group__public__actions_1ga6684d814e1a17f87c492e2b394cc1846" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -597,7 +597,7 @@
 <para>Метод увеличения курса обмена системного токена </para>
         </briefdescription>
         <detaileddescription>
-<para>Периодически вызывается системным контрактом и увеличивает курс обмена системного токена согласно темпу роста в _PERCENTS_PER_MONTH. <simplesect kind="par"><title>AUTH: eosio</title><para></para>
+<para>Периодически вызывается системным контрактом и увеличивает курс обмена системного токена согласно темпу роста в pm-&gt;percents_per_month. <simplesect kind="par"><title>AUTH: eosio</title><para></para>
 </simplesect>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -620,7 +620,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="63" column="10" bodyfile="p2p.cpp" bodystart="898" bodyend="952"/>
+        <location file="p2p.hpp" line="63" column="10" bodyfile="p2p.cpp" bodystart="926" bodyend="985"/>
       </memberdef>
       <memberdef kind="function" id="group__public__actions_1ga432842119735888f862933882e6a4da6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -675,7 +675,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="60" column="10" bodyfile="p2p.cpp" bodystart="964" bodyend="992"/>
+        <location file="p2p.hpp" line="60" column="10" bodyfile="p2p.cpp" bodystart="997" bodyend="1025"/>
       </memberdef>
       <memberdef kind="function" id="group__public__actions_1ga2cb80d56fbb68ac3ccc688112d86532a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -719,7 +719,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="75" column="10" bodyfile="p2p.cpp" bodystart="1007" bodyend="1030"/>
+        <location file="p2p.hpp" line="75" column="10" bodyfile="p2p.cpp" bodystart="1040" bodyend="1073"/>
       </memberdef>
       <memberdef kind="function" id="group__public__actions_1gadb4fde78468ee3b060717a785febdcc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -762,7 +762,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="p2p.hpp" line="78" column="10" bodyfile="p2p.cpp" bodystart="1041" bodyend="1063"/>
+        <location file="p2p.hpp" line="78" column="10" bodyfile="p2p.cpp" bodystart="1128" bodyend="1150"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

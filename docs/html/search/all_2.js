@@ -2,7 +2,7 @@ var searchData=
 [
   ['balance_0',['balance',['../structp2p_1_1balance.html',1,'p2p']]],
   ['bbonuses_1',['bbonuses',['../structp2p_1_1bbonuses.html',1,'p2p']]],
-  ['byconsym_2',['byconsym',['../structp2p_1_1usdrates.html#a6d13bdd9e62d26ca68146e642e330099',1,'p2p::usdrates']]],
+  ['byconsym_2',['byconsym',['../structp2p_1_1balance.html#a156c77b56c8c0bd71d769fd3281bdf11',1,'p2p::balance::byconsym()'],['../structp2p_1_1usdrates.html#a6d13bdd9e62d26ca68146e642e330099',1,'p2p::usdrates::byconsym()']]],
   ['bycreated_3',['bycreated',['../structp2p_1_1orders.html#a6eab9cb4d0f7b605aef8856aad730fe5',1,'p2p::orders']]],
   ['bycreator_4',['bycreator',['../structp2p_1_1orders.html#a91b49c417f79ef405982bfe348651a98',1,'p2p::orders']]],
   ['bycurator_5',['bycurator',['../structp2p_1_1orders.html#a76fa8b54f391ccd2e29b640d4c0199df',1,'p2p::orders']]],

@@ -203,7 +203,7 @@ void p2p::check_bonuse_system(eosio::name creator, eosio::name reciever, eosio::
       
       account_index accounts(_core, creator.value);
       auto acc = accounts.find(creator.value);
-      uint64_t to_ref_percent = 100 * 10000;
+      uint64_t to_ref_percent = _HUNDR_PERCENT;
       uint64_t to_dac_percent = 0;
       eosio::asset to_ref_amount = to_distribution;
       eosio::asset to_dac_amount = asset(0, quantity.symbol); 
@@ -211,9 +211,9 @@ void p2p::check_bonuse_system(eosio::name creator, eosio::name reciever, eosio::
 
       if (acc != accounts.end()) {
          to_ref_percent = acc -> referral_percent;
-         to_dac_percent = (100 * 10000) - to_ref_percent;
-         to_ref_amount = to_distribution * to_ref_percent / (100 * 10000);
-         to_dac_amount = to_distribution * to_dac_percent / (100 * 10000);
+         to_dac_percent = _HUNDR_PERCENT - to_ref_percent;
+         to_ref_amount = to_distribution * to_ref_percent / _HUNDR_PERCENT;
+         to_dac_amount = to_distribution * to_dac_percent / _HUNDR_PERCENT;
       }
 
       if (to_ref_amount <= bonuse_bal -> available && to_ref_amount.amount > 0) {

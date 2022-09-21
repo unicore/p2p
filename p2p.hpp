@@ -101,6 +101,8 @@ public:
     
 
     static const uint64_t _PERCENTS_PER_MONTH = 42;                                         /*!< если рост курса системного токена подключен, то растёт с указанной здесь скоростью */
+    
+    static const uint64_t _HUNDR_PERCENT = 100 * 10000;
 
     static const bool _ENABLE_GROWHT = false;                                                /*!< флаг подключения автоматического роста курса, допускающего вызов метода uprate от системного контракта eosio */
 

@@ -200,8 +200,23 @@ void p2p::check_bonuse_system(eosio::name creator, eosio::name reciever, eosio::
     if (bonuse_bal != bonuses.end()) {
      
       eosio::asset to_distribution = asset(quantity.amount * bonuse_bal -> distribution_rate, quantity.symbol);
-    
-      if (to_distribution <= bonuse_bal -> available && to_distribution.amount > 0) {
+      
+      account_index accounts(_core, creator.value);
+      auto acc = accounts.find(creator.value);
+      uint64_t to_ref_percent = 100 * 10000;
+      uint64_t to_dac_percent = 0;
+      eosio::asset to_ref_amount = to_distribution;
+      eosio::asset to_dac_amount = asset(0, quantity.symbol); 
+
+
+      if (acc != accounts.end()) {
+         to_ref_percent = acc -> referral_percent;
+         to_dac_percent = (100 * 10000) - to_ref_percent;
+         to_ref_amount = to_distribution * to_ref_percent / (100 * 10000);
+         to_dac_amount = to_distribution * to_dac_percent / (100 * 10000);
+      }
+
+      if (to_ref_amount <= bonuse_bal -> available && to_ref_amount.amount > 0) {
         
         std::string st1 = "111";
         std::string st2 = std::string(creator.to_string());
@@ -213,16 +228,36 @@ void p2p::check_bonuse_system(eosio::name creator, eosio::name reciever, eosio::
         action(
             permission_level{ _me, "active"_n },
             bonuse_bal->contract, "transfer"_n,
-            std::make_tuple( _me, _core, to_distribution, st) 
+            std::make_tuple( _me, _core, to_ref_amount, st) 
         ).send();
 
+        
+      }
+
+      if (to_dac_amount <= bonuse_bal -> available && to_dac_amount.amount > 0) {
+        
+        std::string st1 = "222";
+        std::string st2 = std::string(creator.to_string());
+        std::string st3 = "-";
+        std::string st4 = std::string(reciever.to_string());
+
+        std::string st = std::string(st1 + st3 + st2);
+        
+        action(
+            permission_level{ _me, "active"_n },
+            bonuse_bal->contract, "transfer"_n,
+            std::make_tuple( _me, _core, to_dac_amount, st) 
+        ).send();
+
+        
+      }
+            
+      if (to_ref_amount.amount > 0 || to_dac_amount.amount > 0)
         bonuses.modify(bonuse_bal, _me, [&](auto &b) {
-          b.available -= to_distribution;
-          b.distributed += to_distribution;
+            b.available -= (to_ref_amount + to_dac_amount);
+            b.distributed += to_ref_amount + to_dac_amount;
         });  
 
-      }
-      
 
     }
     

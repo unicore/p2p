@@ -427,4 +427,110 @@ public:
     > guests_index;
 
 
+
+
+/*!
+   \brief Структура хоста Двойной Спирали.
+*/
+
+    struct [[eosio::table, eosio::contract("unicore")]] hosts{
+        eosio::name username;
+        eosio::time_point_sec registered_at;
+        eosio::name architect;
+        eosio::name hoperator;
+        eosio::name type;
+        eosio::name chat_mode;
+        uint64_t consensus_percent;
+        uint64_t referral_percent;
+        uint64_t dacs_percent;
+        uint64_t cfund_percent;
+        uint64_t hfund_percent;
+        uint64_t sys_percent;
+        std::vector<uint64_t> levels;
+        std::vector<eosio::name> gsponsor_model;
+        bool direct_goal_withdraw = false;
+        uint64_t dac_mode;
+        uint64_t total_dacs_weight;
+        
+        eosio::name ahost;
+        std::vector<eosio::name> chosts;
+        
+        bool sale_is_enabled = false;
+        eosio::name sale_mode;
+        eosio::name sale_token_contract;
+        eosio::asset asset_on_sale;
+        uint64_t asset_on_sale_precision;
+        std::string asset_on_sale_symbol;
+        int64_t sale_shift = 1;
+        
+        bool non_active_chost = false;
+        bool need_switch = false;
+
+        uint64_t fhosts_mode;
+        std::vector<eosio::name> fhosts;
+        
+
+        std::string title;
+        std::string purpose;
+        bool voting_only_up = false;
+        eosio::name power_market_id;
+        uint64_t total_shares;
+        eosio::asset quote_amount;
+        eosio::name quote_token_contract;
+        std::string quote_symbol;
+        uint64_t quote_precision;
+        eosio::name root_token_contract;
+        eosio::asset root_token;
+        std::string symbol;
+        uint64_t precision;
+        eosio::asset to_pay;
+        bool payed = false;
+        
+        uint64_t cycle_start_id = 0;
+        uint64_t current_pool_id = 0;
+        uint64_t current_cycle_num = 1;
+        uint64_t current_pool_num = 1;
+        bool parameters_setted = false;
+        bool activated = false;
+        
+        bool priority_flag = false;
+
+        uint64_t total_goals = 0;
+        uint64_t achieved_goals = 0;
+        uint64_t total_tasks = 0;
+        uint64_t completed_tasks = 0;
+        uint64_t total_reports = 0;
+        uint64_t approved_reports = 0;
+        
+
+        std::string meta;
+        
+
+
+        EOSLIB_SERIALIZE( hosts, (username)(registered_at)(architect)(hoperator)(type)(chat_mode)(consensus_percent)(referral_percent)
+            (dacs_percent)(cfund_percent)(hfund_percent)(sys_percent)(levels)(gsponsor_model)(direct_goal_withdraw)(dac_mode)(total_dacs_weight)(ahost)(chosts)
+            (sale_is_enabled)(sale_mode)(sale_token_contract)(asset_on_sale)(asset_on_sale_precision)(asset_on_sale_symbol)(sale_shift)
+            (non_active_chost)(need_switch)(fhosts_mode)(fhosts)
+            (title)(purpose)(voting_only_up)(power_market_id)(total_shares)(quote_amount)(quote_token_contract)(quote_symbol)(quote_precision)(root_token_contract)(root_token)(symbol)(precision)
+            (to_pay)(payed)(cycle_start_id)(current_pool_id)
+            (current_cycle_num)(current_pool_num)(parameters_setted)(activated)(priority_flag)(total_goals)(achieved_goals)(total_tasks)(completed_tasks)(total_reports)(approved_reports)(meta))
+
+        uint64_t primary_key()const { return username.value; }
+
+        eosio::name get_ahost() const {
+            if (ahost == username)
+                return username;
+            else 
+                return ahost; 
+        }
+
+        eosio::symbol get_root_symbol() const {
+            return root_token.symbol;
+        }
+
+
+    };
+
+    typedef eosio::multi_index <"hosts"_n, hosts> account_index;
+    
 };

@@ -788,7 +788,7 @@ void p2p::cancel(name username, uint64_t id)
 
       eosio::check(order -> creator == username || has_auth(_me), "Only creator can cancel order");
     
-      if ((order -> status == "waiting"_n)){ 
+      if ((order -> status == "waiting"_n)) { 
         eosio::check(order -> root_locked.amount == 0, "Can not cancel order with locked amounts");
 
         if (order -> type == "sell"_n) {
@@ -829,7 +829,7 @@ void p2p::cancel(name username, uint64_t id)
           eosio::check(order->expired_at < eosio::time_point_sec(eosio::current_time_point().sec_since_epoch()), "Order is not expired yet for be a canceled from the parent owner");
         };
 
-        orders.modify(parent_order, username, [&](auto &o){
+        orders.modify(parent_order, _self, [&](auto &o){
           o.root_remain += order -> root_quantity;
           o.root_locked -= order -> root_quantity;  
 
@@ -842,7 +842,7 @@ void p2p::cancel(name username, uint64_t id)
 
       } else if (order -> status == "waiting"_n) {
         // if (parent_order -> root_remain.amount == 0) {
-          eosio::check(has_auth(order->creator) || has_auth(order->parent_creator), "missing required authority");
+          eosio::check(has_auth(order->creator) || has_auth(order->parent_creator) || has_auth(_me), "missing required authority");
         // } else {
           // eosio::check(order -> creator == username, "Only creator can cancel order2");
         // }
